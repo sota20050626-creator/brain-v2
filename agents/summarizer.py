@@ -4,6 +4,11 @@ import urllib.request
 import re
 from datetime import datetime
 from pathlib import Path
+import numpy as np
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.manifold import TSNE
+from sklearn.cluster import KMeans
+from sklearn.metrics.pairwise import euclidean_distances
 
 TODAY = datetime.now().strftime("%Y-%m-%d")
 DATA_FILE = Path("knowledge/daily/" + TODAY + ".json")
@@ -16,6 +21,78 @@ SONNET_OUTPUT_PRICE = 15.0 / 1_000_000
 # Qwen3料金（OpenRouter経由）
 QWEN_INPUT_PRICE = 0.1 / 1_000_000
 QWEN_OUTPUT_PRICE = 0.3 / 1_000_000
+
+
+class GeometricScorer:
+    """重要度スコアリングの幾何学的正則化"""
+    
+    def __init__(self):
+        self.vectorizer = TfidfVectorizer(max_features=1000, stop_words='english')
+        self.manifold = TSNE(n_components=2, random_state=42)
+        
+    def calculate_importance_scores(self, articles):
+        """記事リストから重要度スコアを計算"""
+        try:
+            if len(articles) < 2:
+                return [1.0] * len(articles)  # 記事が少ない場合はすべて重要とする
+            
+            # テキストを抽出
+            texts = []
+            for article in articles:
+                text = ""
+                if isinstance(article, dict):
+                    text = str(article.get('title', '')) + " " + str(article.get('content', ''))
+                else:
+                    text = str(article)
+                texts.append(text)
+            
+            # TF-IDFベクトル化
+            tfidf_matrix = self.vectorizer.fit_transform(texts)
+            
+            # 低次元多様体にマッピング
+            if tfidf_matrix.shape[0] > 1:
+                coords_2d = self.manifold.fit_transform(tfidf_matrix.toarray())
+            else:
+                coords_2d = np.array([[0, 0]])
+            
+            # 距離ベースでクラスタリング
+            n_clusters = min(3, len(articles))  # 最大3クラスタ
+            if n_clusters > 1:
+                kmeans = KMeans(n_clusters=n_clusters, random_state=42)
+                clusters = kmeans.fit_predict(coords_2d)
+                cluster_centers = kmeans.cluster_centers_
+            else:
+                clusters = np.array([0])
+                cluster_centers = coords_2d
+            
+            # 重要度スコア計算
+            scores = []
+            for i, (coord, cluster) in enumerate(zip(coords_2d, clusters)):
+                # クラスタ中心からの距離（特異性）
+                center_distance = np.linalg.norm(coord - cluster_centers[cluster])
+                
+                # 他の記事からの平均距離（独自性）
+                distances = euclidean_distances([coord], coords_2d)[0]
+                avg_distance = np.mean(distances)
+                
+                # 重要度スコア = 独自性 + 特異性の逆数（中心に近いほど代表性が高い）
+                score = avg_distance + (1.0 / (1.0 + center_distance))
+                scores.append(score)
+            
+            # 正規化（0-1の範囲）
+            if len(scores) > 1:
+                min_score, max_score = min(scores), max(scores)
+                if max_score > min_score:
+                    scores = [(s - min_score) / (max_score - min_score) for s in scores]
+                else:
+                    scores = [0.5] * len(scores)
+            
+            return scores
+            
+        except Exception as e:
+            print(f"  幾何学的スコアリングエラー: {e}")
+            # フォールバック: 均等スコア
+            return [1.0] * len(articles)
 
 
 def load_cost_log():
@@ -83,17 +160,17 @@ def call_qwen(prompt, max_tokens=2000, label="qwen_call"):
         )
         return result["choices"][0]["message"]["content"]
     except Exception as e:
-        print("  Qwen3エラー: " + str(e) + " → Claudeにフォールバック")
+        print("  Qwen3エラー: " + str(e) + " Claudeにフォールバック")
         return call_claude(prompt, max_tokens, label)
 
 
-def call_claude(prompt, max_tokens=2000, label="api_call"):
-    """Claude APIを呼び出す（重要な処理用・高品質）"""
+def call_claude(prompt, max_tokens=8000, label="claude_call"):
+    """Claude 3.5 Sonnetを呼び出す（複雑な処理用）"""
     api_key = os.environ.get("ANTHROPIC_API_KEY")
     if not api_key:
-        raise ValueError("ANTHROPIC_API_KEY not set")
+        raise Exception("ANTHROPIC_API_KEY未設定")
     payload = json.dumps({
-        "model": "claude-sonnet-4-20250514",
+        "model": "claude-3-5-sonnet-20241022",
         "max_tokens": max_tokens,
         "messages": [{"role": "user", "content": prompt}]
     }).encode()
@@ -102,8 +179,8 @@ def call_claude(prompt, max_tokens=2000, label="api_call"):
         data=payload,
         headers={
             "x-api-key": api_key,
-            "anthropic-version": "2023-06-01",
             "content-type": "application/json",
+            "anthropic-version": "2023-06-01"
         }
     )
     with urllib.request.urlopen(req) as r:
@@ -117,115 +194,74 @@ def call_claude(prompt, max_tokens=2000, label="api_call"):
     return result["content"][0]["text"]
 
 
-def summarize_items(items):
-    """要約はQwen3で処理（コスト削減）"""
-    top_items = sorted(items, key=lambda x: x.get("score", 0), reverse=True)[:5]
-    items_text = "\n\n".join([
-        "[" + str(i+1) + "] SOURCE: " + item["source"] + "\nTITLE: " + item["title"] + "\nTEXT: " + item.get("text","")[:200]
-        for i, item in enumerate(top_items)
-    ])
-    prompt = """あなたはAI技術のエキスパートアナリストです。
-以下の""" + str(len(top_items)) + """件のAI関連情報を分析してください。
-
-""" + items_text + """
-
-各アイテムについて以下のJSONフォーマットで回答してください。
-必ずJSON配列のみを返し、余分なテキストは含めないこと。
-
-[
-  {
-    "id": 1,
-    "title_ja": "日本語タイトル",
-    "summary_ja": "2から3文の日本語要約",
-    "importance": 8,
-    "tags": ["LLM", "ビジネス"],
-    "category": "技術"
-  }
-]
-
-importanceは1から10で評価。
-tagsはLLM/Agent/ビジネス/画像生成/音声/コード/論文/中国AI/オープンソースから選択。
-categoryは技術/ビジネス/ツール/論文/その他から選択。"""
-
-    # 要約はQwen3で処理（激安）
-    response = call_qwen(prompt, max_tokens=3000, label="summarize_items")
-    try:
-        match = re.search(r"\[.*\]", response, re.DOTALL)
-        if not match:
-            return []
-        summaries = json.loads(match.group())
-    except json.JSONDecodeError:
-        print("JSON parse error, skipping batch")
-        return []
-
-    results = []
-    for s in summaries:
-        idx = s["id"] - 1
-        if 0 <= idx < len(top_items):
-            item = top_items[idx].copy()
-            item.update({
-                "title_ja": s.get("title_ja", item["title"]),
-                "summary_ja": s.get("summary_ja", ""),
-                "importance": s.get("importance", 5),
-                "tags": s.get("tags", []),
-                "category": s.get("category", "その他"),
-            })
-            results.append(item)
-    return sorted(results, key=lambda x: x.get("importance", 0), reverse=True)
-
-
-def generate_daily_digest(items):
-    """digestはClaudeで処理（品質重視）"""
-    top5 = items[:5]
-    top5_text = "\n".join([
-        "- " + item["title_ja"] + ": " + item["summary_ja"]
-        for item in top5
-    ])
-    prompt = """今日のAIトレンドトップ5:
-""" + top5_text + """
-
-これらを踏まえて、以下を日本語で書いてください：
-1. 今日の最重要トレンド（3行以内）
-2. ビジネスへの示唆（2行以内）
-3. 注目すべき技術動向（2行以内）
-
-簡潔にまとめてください。"""
-    # digestはClaude（高品質）
-    return call_claude(prompt, max_tokens=500, label="daily_digest")
-
-
-def _count_tags(items):
-    from collections import Counter
-    tags = []
-    for item in items:
-        tags.extend(item.get("tags", []))
-    return dict(Counter(tags).most_common(10))
-
-
-def main():
-    print("Brain-v2 Summarizer starting... [" + TODAY + "]")
-    print("  モード: 要約=Qwen3（激安）/ Digest=Claude（高品質）")
+def get_articles_with_scores():
+    """記事を重要度スコア付きで取得"""
     if not DATA_FILE.exists():
-        print("No data file found: " + str(DATA_FILE))
-        return
+        return []
+    
     with open(DATA_FILE, encoding="utf-8") as f:
         data = json.load(f)
-    items = data.get("raw_items", [])
-    if not items:
-        print("No items to summarize")
+    
+    articles = data.get("articles", [])
+    if not articles:
+        return []
+    
+    # 幾何学的重要度スコアリング
+    try:
+        scorer = GeometricScorer()
+        scores = scorer.calculate_importance_scores(articles)
+        print(f"  幾何学的スコアリング完了: {len(articles)}記事")
+    except Exception as e:
+        print(f"  幾何学的スコアリング失敗、均等スコアを使用: {e}")
+        scores = [1.0] * len(articles)
+    
+    # スコアを記事に付加
+    for article, score in zip(articles, scores):
+        article['importance_score'] = score
+    
+    # スコア順にソート
+    articles.sort(key=lambda x: x.get('importance_score', 0), reverse=True)
+    
+    return articles
+
+
+def summarize_daily():
+    """日次サマリー生成（重要度スコアリング統合版）"""
+    articles = get_articles_with_scores()
+    if not articles:
+        print("  記事がありません")
         return
-    print("Summarizing " + str(len(items)) + " items...")
-    summarized = summarize_items(items)
-    print("Summarized " + str(len(summarized)) + " items")
-    print("Generating daily digest...")
-    digest = generate_daily_digest(summarized) if summarized else "本日はデータなし"
-    data["summarized_items"] = summarized
-    data["digest"] = digest
-    data["top_tags"] = _count_tags(summarized)
-    with open(DATA_FILE, "w", encoding="utf-8") as f:
-        json.dump(data, f, ensure_ascii=False, indent=2)
-    print("Done! -> " + str(DATA_FILE))
+    
+    # 上位の重要記事を選択（最大20記事）
+    top_articles = articles[:20]
+    
+    # プロンプト作成
+    article_texts = []
+    for i, article in enumerate(top_articles):
+        score = article.get('importance_score', 0)
+        text = f"[記事{i+1}] (重要度: {score:.3f})\n"
+        text += f"タイトル: {article.get('title', 'なし')}\n"
+        text += f"内容: {article.get('content', 'なし')}\n\n"
+        article_texts.append(text)
+    
+    prompt = f"""以下の{len(top_articles)}記事を重要度順に並べました。幾何学的解析による重要度スコアも参考に、簡潔で読みやすい日次サマリーを作成してください。
+
+{chr(10).join(article_texts)}
+
+要求:
+1. 最も重要なトピック3-5個に絞る
+2. 各トピック200文字以内
+3. 重要度の高い記事を優先的に含める
+4. 読みやすい日本語で"""
+    
+    summary = call_claude(prompt, 4000, "daily_summary")
+    
+    print("\n=== 日次サマリー（重要度スコアリング版） ===")
+    print(summary)
+    print(f"\n処理記事数: {len(articles)} (上位{len(top_articles)}記事を分析)")
+    
+    return summary
 
 
 if __name__ == "__main__":
-    main()
+    summarize_daily()
