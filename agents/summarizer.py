@@ -59,7 +59,7 @@ def call_qwen(prompt, max_tokens=2000, label="qwen_call"):
         print("  OPENROUTER_API_KEY未設定、Claudeにフォールバック")
         return call_claude(prompt, max_tokens, label)
     payload = json.dumps({
-        "model": "qwen/qwen3-8b",
+        "model": "qwen/qwen3.6-plus-preview:free",
         "max_tokens": max_tokens,
         "messages": [{"role": "user", "content": prompt}]
     }).encode()
