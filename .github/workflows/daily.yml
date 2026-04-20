@@ -32,6 +32,7 @@ jobs:
       - name: Run Summarizer
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
         run: python agents/summarizer.py
       - name: Clean old data
         run: python agents/cleaner.py
