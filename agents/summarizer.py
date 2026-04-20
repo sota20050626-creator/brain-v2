@@ -4,6 +4,7 @@ import urllib.request
 import re
 from datetime import datetime
 from pathlib import Path
+import time
 
 TODAY = datetime.now().strftime("%Y-%m-%d")
 DATA_FILE = Path("knowledge/daily/" + TODAY + ".json")
@@ -17,12 +18,20 @@ SONNET_OUTPUT_PRICE = 15.0 / 1_000_000
 QWEN_INPUT_PRICE = 0.1 / 1_000_000
 QWEN_OUTPUT_PRICE = 0.3 / 1_000_000
 
+# リトライ設定
+MAX_RETRIES = 3
+RETRY_DELAY = 2
+
 
 def load_cost_log():
     if not COST_FILE.exists():
         return {"monthly": {}, "total_usd": 0}
-    with open(COST_FILE, encoding="utf-8") as f:
-        return json.load(f)
+    try:
+        with open(COST_FILE, encoding="utf-8") as f:
+            return json.load(f)
+    except (json.JSONDecodeError, FileNotFoundError) as e:
+        print(f"  コストログ読み込みエラー: {e}, 新規作成します")
+        return {"monthly": {}, "total_usd": 0}
 
 
 def save_cost(input_tokens, output_tokens, label, model="claude"):
@@ -30,10 +39,12 @@ def save_cost(input_tokens, output_tokens, label, model="claude"):
         cost = input_tokens * QWEN_INPUT_PRICE + output_tokens * QWEN_OUTPUT_PRICE
     else:
         cost = input_tokens * SONNET_INPUT_PRICE + output_tokens * SONNET_OUTPUT_PRICE
+    
     log = load_cost_log()
     month = TODAY[:7]
     if month not in log["monthly"]:
         log["monthly"][month] = {"usd": 0, "calls": [], "input_tokens": 0, "output_tokens": 0}
+    
     log["monthly"][month]["usd"] = round(log["monthly"][month]["usd"] + cost, 6)
     log["monthly"][month]["input_tokens"] += input_tokens
     log["monthly"][month]["output_tokens"] += output_tokens
@@ -46,8 +57,13 @@ def save_cost(input_tokens, output_tokens, label, model="claude"):
         "usd": round(cost, 6)
     })
     log["total_usd"] = round(sum(v["usd"] for v in log["monthly"].values()), 6)
-    with open(COST_FILE, "w", encoding="utf-8") as f:
-        json.dump(log, f, ensure_ascii=False, indent=2)
+    
+    try:
+        with open(COST_FILE, "w", encoding="utf-8") as f:
+            json.dump(log, f, ensure_ascii=False, indent=2)
+    except Exception as e:
+        print(f"  コストログ保存エラー: {e}")
+    
     print("  コスト記録: " + label + " $" + str(round(cost, 6)) + " [" + model + "]")
     return cost
 
@@ -58,11 +74,14 @@ def call_qwen(prompt, max_tokens=2000, label="qwen_call"):
     if not api_key:
         print("  OPENROUTER_API_KEY未設定、Claudeにフォールバック")
         return call_claude(prompt, max_tokens, label)
+    
     payload = json.dumps({
-        "model": "qwen/qwen3-8b",
+        "model": "qwen/qwen-2.5-72b-instruct",
         "max_tokens": max_tokens,
+        "temperature": 0.3,
         "messages": [{"role": "user", "content": prompt}]
     }).encode()
+    
     req = urllib.request.Request(
         "https://openrouter.ai/api/v1/chat/completions",
         data=payload,
@@ -72,160 +91,163 @@ def call_qwen(prompt, max_tokens=2000, label="qwen_call"):
             "HTTP-Referer": "https://github.com/sota20050626-creator/brain-v2",
         }
     )
-    try:
-        with urllib.request.urlopen(req) as r:
-            result = json.loads(r.read())
-        usage = result.get("usage", {})
-        save_cost(
-            usage.get("prompt_tokens", 0),
-            usage.get("completion_tokens", 0),
-            label, model="qwen"
-        )
-        return result["choices"][0]["message"]["content"]
-    except Exception as e:
-        print("  Qwen3エラー: " + str(e) + " → Claudeにフォールバック")
-        return call_claude(prompt, max_tokens, label)
+    
+    for attempt in range(MAX_RETRIES):
+        try:
+            with urllib.request.urlopen(req, timeout=60) as r:
+                result = json.loads(r.read())
+            
+            if "error" in result:
+                raise Exception(f"API Error: {result['error']}")
+            
+            usage = result.get("usage", {})
+            save_cost(
+                usage.get("prompt_tokens", 0),
+                usage.get("completion_tokens", 0),
+                label, model="qwen"
+            )
+            return result["choices"][0]["message"]["content"]
+            
+        except Exception as e:
+            print(f"  Qwen3エラー (試行{attempt+1}/{MAX_RETRIES}): {e}")
+            if attempt < MAX_RETRIES - 1:
+                time.sleep(RETRY_DELAY * (attempt + 1))
+            else:
+                print("  → Claudeにフォールバック")
+                return call_claude(prompt, max_tokens, label)
 
 
-def call_claude(prompt, max_tokens=2000, label="api_call"):
-    """Claude APIを呼び出す（重要な処理用・高品質）"""
+def call_claude(prompt, max_tokens=2000, label="claude_call"):
+    """Claude API呼び出し（フォールバック用）"""
     api_key = os.environ.get("ANTHROPIC_API_KEY")
     if not api_key:
-        raise ValueError("ANTHROPIC_API_KEY not set")
+        print("  ANTHROPIC_API_KEY未設定、エラーです")
+        return "APIキーが設定されていません"
+    
     payload = json.dumps({
-        "model": "claude-sonnet-4-20250514",
+        "model": "claude-3-5-sonnet-20241022",
         "max_tokens": max_tokens,
+        "temperature": 0.3,
         "messages": [{"role": "user", "content": prompt}]
     }).encode()
+    
     req = urllib.request.Request(
         "https://api.anthropic.com/v1/messages",
         data=payload,
         headers={
             "x-api-key": api_key,
-            "anthropic-version": "2023-06-01",
-            "content-type": "application/json",
+            "Content-Type": "application/json",
+            "anthropic-version": "2023-06-01"
         }
     )
-    with urllib.request.urlopen(req) as r:
-        result = json.loads(r.read())
-    usage = result.get("usage", {})
-    save_cost(
-        usage.get("input_tokens", 0),
-        usage.get("output_tokens", 0),
-        label, model="claude"
-    )
-    return result["content"][0]["text"]
+    
+    for attempt in range(MAX_RETRIES):
+        try:
+            with urllib.request.urlopen(req, timeout=60) as r:
+                result = json.loads(r.read())
+            
+            if "error" in result:
+                raise Exception(f"Claude Error: {result['error']}")
+            
+            usage = result.get("usage", {})
+            save_cost(
+                usage.get("input_tokens", 0),
+                usage.get("output_tokens", 0),
+                label, model="claude"
+            )
+            return result["content"][0]["text"]
+            
+        except Exception as e:
+            print(f"  Claude API エラー (試行{attempt+1}/{MAX_RETRIES}): {e}")
+            if attempt < MAX_RETRIES - 1:
+                time.sleep(RETRY_DELAY * (attempt + 1))
+            else:
+                return f"API呼び出しに失敗しました: {e}"
 
 
-def summarize_items(items):
-    """要約はQwen3で処理（コスト削減）"""
-    top_items = sorted(items, key=lambda x: x.get("score", 0), reverse=True)[:5]
-    items_text = "\n\n".join([
-        "[" + str(i+1) + "] SOURCE: " + item["source"] + "\nTITLE: " + item["title"] + "\nTEXT: " + item.get("text","")[:200]
-        for i, item in enumerate(top_items)
-    ])
-    prompt = """あなたはAI技術のエキスパートアナリストです。
-以下の""" + str(len(top_items)) + """件のAI関連情報を分析してください。
+def create_summary_prompt(content, summary_type="general"):
+    """要約プロンプトを動的生成（重要度スコアリング付き）"""
+    if summary_type == "technical":
+        return f"""以下の技術的なコンテンツを分析し、重要度スコア（1-10）付きで要約してください。
 
-""" + items_text + """
+【分析観点】
+- 新技術・手法の革新性
+- 実装の具体性・実用性
+- 業界への影響度
+- 学習・応用価値
 
-各アイテムについて以下のJSONフォーマットで回答してください。
-必ずJSON配列のみを返し、余分なテキストは含めないこと。
+コンテンツ:
+{content}
 
-[
-  {
-    "id": 1,
-    "title_ja": "日本語タイトル",
-    "summary_ja": "2から3文の日本語要約",
-    "importance": 8,
-    "tags": ["LLM", "ビジネス"],
-    "category": "技術"
-  }
-]
+【出力形式】
+重要度: [1-10]
+カテゴリ: [技術分野]
+要約: [200文字以内の簡潔な要約]
+キーポイント: [3つの要点を箇条書き]"""
+    
+    elif summary_type == "news":
+        return f"""以下のニュースを分析し、重要度スコア（1-10）付きで要約してください。
 
-importanceは1から10で評価。
-tagsはLLM/Agent/ビジネス/画像生成/音声/コード/論文/中国AI/オープンソースから選択。
-categoryは技術/ビジネス/ツール/論文/その他から選択。"""
+【分析観点】
+- 社会的影響度
+- 緊急性・時事性
+- 信頼性・情報源
+- 長期的な意義
 
-    # 要約はQwen3で処理（激安）
-    response = call_qwen(prompt, max_tokens=3000, label="summarize_items")
-    try:
-        match = re.search(r"\[.*\]", response, re.DOTALL)
-        if not match:
-            return []
-        summaries = json.loads(match.group())
-    except json.JSONDecodeError:
-        print("JSON parse error, skipping batch")
-        return []
+コンテンツ:
+{content}
 
-    results = []
-    for s in summaries:
-        idx = s["id"] - 1
-        if 0 <= idx < len(top_items):
-            item = top_items[idx].copy()
-            item.update({
-                "title_ja": s.get("title_ja", item["title"]),
-                "summary_ja": s.get("summary_ja", ""),
-                "importance": s.get("importance", 5),
-                "tags": s.get("tags", []),
-                "category": s.get("category", "その他"),
-            })
-            results.append(item)
-    return sorted(results, key=lambda x: x.get("importance", 0), reverse=True)
+【出力形式】
+重要度: [1-10]
+カテゴリ: [ニュース分野]
+要約: [200文字以内の簡潔な要約]
+影響: [想定される影響や意義]"""
+    
+    else:
+        return f"""以下のコンテンツを分析し、重要度スコア（1-10）付きで要約してください。
 
+【分析観点】
+- 情報の新規性
+- 実用性・応用可能性
+- 学習価値
+- 将来への関連性
 
-def generate_daily_digest(items):
-    """digestはClaudeで処理（品質重視）"""
-    top5 = items[:5]
-    top5_text = "\n".join([
-        "- " + item["title_ja"] + ": " + item["summary_ja"]
-        for item in top5
-    ])
-    prompt = """今日のAIトレンドトップ5:
-""" + top5_text + """
+コンテンツ:
+{content}
 
-これらを踏まえて、以下を日本語で書いてください：
-1. 今日の最重要トレンド（3行以内）
-2. ビジネスへの示唆（2行以内）
-3. 注目すべき技術動向（2行以内）
-
-簡潔にまとめてください。"""
-    # digestはClaude（高品質）
-    return call_claude(prompt, max_tokens=500, label="daily_digest")
+【出力形式】
+重要度: [1-10]
+カテゴリ: [内容分野]
+要約: [200文字以内の簡潔な要約]
+ポイント: [重要な要点を2-3個]"""
 
 
-def _count_tags(items):
-    from collections import Counter
-    tags = []
-    for item in items:
-        tags.extend(item.get("tags", []))
-    return dict(Counter(tags).most_common(10))
+def extract_importance_score(summary_text):
+    """要約テキストから重要度スコアを抽出"""
+    match = re.search(r'重要度[:\s]*(\d+)', summary_text)
+    if match:
+        return min(10, max(1, int(match.group(1))))
+    return 5  # デフォルトスコア
 
 
-def main():
-    print("Brain-v2 Summarizer starting... [" + TODAY + "]")
-    print("  モード: 要約=Qwen3（激安）/ Digest=Claude（高品質）")
-    if not DATA_FILE.exists():
-        print("No data file found: " + str(DATA_FILE))
-        return
-    with open(DATA_FILE, encoding="utf-8") as f:
-        data = json.load(f)
-    items = data.get("raw_items", [])
-    if not items:
-        print("No items to summarize")
-        return
-    print("Summarizing " + str(len(items)) + " items...")
-    summarized = summarize_items(items)
-    print("Summarized " + str(len(summarized)) + " items")
-    print("Generating daily digest...")
-    digest = generate_daily_digest(summarized) if summarized else "本日はデータなし"
-    data["summarized_items"] = summarized
-    data["digest"] = digest
-    data["top_tags"] = _count_tags(summarized)
-    with open(DATA_FILE, "w", encoding="utf-8") as f:
-        json.dump(data, f, ensure_ascii=False, indent=2)
-    print("Done! -> " + str(DATA_FILE))
-
-
-if __name__ == "__main__":
-    main()
+def smart_summarize(content, content_type="general", max_tokens=1500):
+    """改善された要約機能（重要度判定・適応的処理）"""
+    if not content or len(content.strip()) < 50:
+        return "要約するには内容が不十分です"
+    
+    # コンテンツタイプに応じたプロンプト生成
+    prompt = create_summary_prompt(content, content_type)
+    
+    # 軽量モデル（Qwen）で初回処理
+    result = call_qwen(prompt, max_tokens, f"summary_{content_type}")
+    
+    # 重要度スコア抽出
+    importance = extract_importance_score(result)
+    
+    # 高重要度（8以上）の場合はClaude再処理
+    if importance >= 8:
+        print(f"  高重要度コンテンツ({importance}/10)をCluade再処理")
+        enhanced_prompt = prompt + "\n\n【追加指示】高重要度コンテンツとして詳細分析し、より精密な要約を作成してください。"
+        result = call_claude(enhanced_prompt, max_tokens, f"enhanced_summary_{content_type}")
+    
+    return result
