@@ -1,0 +1,73 @@
+{
+  "built_at": "2026-04-20T17:08:51.903452",
+  "days_covered": 1,
+  "total_articles": 5,
+  "entries": [
+    {
+      "date": "2026-04-20",
+      "digest": "## 今日の最重要トレンド\nAIツールの**民主化**が本格化し、誰でも手軽に高度なAI機能を活用できる環境が整ってきています。複数のLLMモデルを簡単に実行できるollamaや、視覚的にワークフローを構築できるn8nなど、技術的専門知識がなくても利用できるツールが主流となっています。パーソナライゼーションと自動化を軸とした実用的なAIソリューションが注目されています。\n\n## ビジネスへの示唆\n企業は専門的なAI開発チームに依存せず、既存の業務プロセスを効率的に自動化できるようになります。400以上の統合が可能なワークフロー自動化により、コスト削減と生産性向上の両立が現実的になっています。\n\n## 注目すべき技術動向\nマルチモデル対応プラットフォームが普及し、用途に応じた最適なAIモデルの選択が容易になっています。コミュニティ主導のプロンプト共有により、AI活用のノウハウが組織を超えて蓄積・共有される仕組みが確立されつつあります。",
+      "articles": [
+        {
+          "title": "AutoGPT - すべての人向けのAIツール",
+          "summary": "誰でも簡単にAIを活用できるためのツールを提供。ユーザー自身の目的に集中できるように設計されています。",
+          "importance": 9,
+          "tags": [
+            "LLM",
+            "オープンソース"
+          ],
+          "category": "技術",
+          "source": "github_trending",
+          "url": "https://github.com/Significant-Gravitas/AutoGPT"
+        },
+        {
+          "title": "ollama/ollama - 多種モデルの実行環境",
+          "summary": "Kimi-K2.5、GLM-5、Qwenなど、多数のLLMモデルを簡単に実行できる環境を提供。",
+          "importance": 9,
+          "tags": [
+            "LLM",
+            "オープンソース"
+          ],
+          "category": "技術",
+          "source": "github_trending",
+          "url": "https://github.com/ollama/ollama"
+        },
+        {
+          "title": "openclaw/openclaw - 自分のAIアシスタント",
+          "summary": "OSやプラットフォームを選ばないパーソナライズAIアシスタント。ロブスターの方法で動作します。",
+          "importance": 8,
+          "tags": [
+            "AI Agent",
+            "オープンソース"
+          ],
+          "category": "技術",
+          "source": "github_trending",
+          "url": "https://github.com/openclaw/openclaw"
+        },
+        {
+          "title": "n8n-io/n8n - ワークフロー自動化プラットフォーム",
+          "summary": "視覚的ビルディングとカスタムコードを組み合わせたAI機能付きワークフロー自動化ツール。400以上の統合が可能。",
+          "importance": 8,
+          "tags": [
+            "コード",
+            "ビジネス"
+          ],
+          "category": "技術",
+          "source": "github_trending",
+          "url": "https://github.com/n8n-io/n8n"
+        },
+        {
+          "title": "f/prompts.chat - コミュニティのプロンプト共有プラットフォーム",
+          "summary": "ChatGPTプロンプトを共有・収集できるオープンソースツール。組織向けのプライバシー保護機能付き。",
+          "importance": 7,
+          "tags": [
+            "コード",
+            "オープンソース"
+          ],
+          "category": "ツール",
+          "source": "github_trending",
+          "url": "https://github.com/f/prompts.chat"
+        }
+      ]
+    }
+  ]
+}

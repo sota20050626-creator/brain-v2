@@ -1,0 +1,986 @@
+{
+  "date": "2026-04-20",
+  "collected_at": "2026-04-20T17:08:27.411229+00:00",
+  "total": 111,
+  "raw_items": [
+    {
+      "title": "Qwen3.6-Max-Preview: Smarter, Sharper, Still Evolving",
+      "url": "https://qwen.ai/blog?id=qwen3.6-max-preview",
+      "score": 224,
+      "comments": 130,
+      "source": "hackernews",
+      "text": ""
+    },
+    {
+      "title": "Atlassian Enables Default Data Collection to Train AI",
+      "url": "https://letsdatascience.com/news/atlassian-enables-default-data-collection-to-train-ai-f71343d8",
+      "score": 274,
+      "comments": 66,
+      "source": "hackernews",
+      "text": ""
+    },
+    {
+      "title": "Deezer says 44% of songs uploaded to its platform daily are AI-generated",
+      "url": "https://techcrunch.com/2026/04/20/deezer-says-44-of-songs-uploaded-to-its-platform-daily-are-ai-generated/",
+      "score": 82,
+      "comments": 73,
+      "source": "hackernews",
+      "text": ""
+    },
+    {
+      "title": "I prompted ChatGPT, Claude, Perplexity, and Gemini and watched my Nginx logs",
+      "url": "https://surfacedby.com/blog/nginx-logs-ai-traffic-vs-referral-traffic",
+      "score": 84,
+      "comments": 13,
+      "source": "hackernews",
+      "text": ""
+    },
+    {
+      "title": "Larry Tesler: A Personal History of Modeless Text Editing and Cut/Copy-Paste (2012)",
+      "url": "https://dl.acm.org/doi/epdf/10.1145/2212877.2212896",
+      "score": 5,
+      "comments": 1,
+      "source": "hackernews",
+      "text": ""
+    },
+    {
+      "title": "NSA is using Anthropic's Mythos despite blacklist",
+      "url": "https://www.axios.com/2026/04/19/nsa-anthropic-mythos-pentagon",
+      "score": 344,
+      "comments": 254,
+      "source": "hackernews",
+      "text": ""
+    },
+    {
+      "title": "Claude Token Counter, now with model comparisons",
+      "url": "https://simonwillison.net/2026/Apr/20/claude-token-counts/",
+      "score": 187,
+      "comments": 73,
+      "source": "hackernews",
+      "text": ""
+    },
+    {
+      "title": "AI chatbots could be making you stupider",
+      "url": "https://www.bbc.com/future/article/20260417-ai-chatbots-could-be-making-you-stupider",
+      "score": 7,
+      "comments": 2,
+      "source": "hackernews",
+      "text": ""
+    },
+    {
+      "title": "Allbirds' Move to AI Has Echoes of the Dot-Com Frenzy",
+      "url": "https://www.bloomberg.com/news/newsletters/2026-04-20/allbirds-pivot-to-ai-stirs-memory-of-dot-com-boom-and-bust",
+      "score": 14,
+      "comments": 1,
+      "source": "hackernews",
+      "text": ""
+    },
+    {
+      "title": "Users unable to load ChatGPT, Codex and API Platform",
+      "url": "https://status.openai.com/incidents/01KPNN2V2SMP3TAN3MCJK87W50",
+      "score": 22,
+      "comments": 4,
+      "source": "hackernews",
+      "text": ""
+    },
+    {
+      "title": "ChatGPT and Codex Down",
+      "url": "https://status.openai.com/history",
+      "score": 28,
+      "comments": 7,
+      "source": "hackernews",
+      "text": ""
+    },
+    {
+      "title": "Amazon's AI boom is creating mess of duplicate tools and data inside the company",
+      "url": "https://www.businessinsider.com/ai-sprawl-amazon-tool-duplication-data-risk-2026-4",
+      "score": 31,
+      "comments": 11,
+      "source": "hackernews",
+      "text": ""
+    },
+    {
+      "title": "Show HN: CyberWriter – a .md editor built on Apple's (barely-used) on-device AI",
+      "url": "https://cyberwriter.app",
+      "score": 6,
+      "comments": 3,
+      "source": "hackernews",
+      "text": ""
+    },
+    {
+      "title": "Swiss AI Initiative (2023)",
+      "url": "https://www.swiss-ai.org",
+      "score": 86,
+      "comments": 26,
+      "source": "hackernews",
+      "text": ""
+    },
+    {
+      "title": "2,100 Swiss municipalities showing which provider handles their official email",
+      "url": "https://mxmap.ch/",
+      "score": 221,
+      "comments": 68,
+      "source": "hackernews",
+      "text": ""
+    },
+    {
+      "title": "Peter Thiel Is Building a Parallel Justice System – Powered by AI",
+      "url": "https://www.codastory.com/polarization/can-we-trust-an-ai-jury-to-judge-journalism/",
+      "score": 12,
+      "comments": 3,
+      "source": "hackernews",
+      "text": ""
+    },
+    {
+      "title": "The Victorian sex abuse scandal that shocked Britain and changed the law",
+      "url": "https://theconversation.com/the-victorian-sex-abuse-scandal-that-shocked-britain-and-changed-the-law-long-before-epstein-278822",
+      "score": 34,
+      "comments": 0,
+      "source": "hackernews",
+      "text": ""
+    },
+    {
+      "title": "Changes in the system prompt between Claude Opus 4.6 and 4.7",
+      "url": "https://simonwillison.net/2026/Apr/18/opus-system-prompt/",
+      "score": 349,
+      "comments": 204,
+      "source": "hackernews",
+      "text": ""
+    },
+    {
+      "title": "Yann LeCun says Dario Amodei \"knows nothing about AI effects on jobs\"",
+      "url": "https://timesofindia.indiatimes.com/technology/tech-news/godfather-of-ai-and-metas-most-popular-ex-employee-yann-lecun-says-anthropic-ceo-dario-amodei-knows-absolutely-nothing-about-ai-effects-on-jobs-dario-is-wrong/articleshow/130377621.cms",
+      "score": 19,
+      "comments": 16,
+      "source": "hackernews",
+      "text": ""
+    },
+    {
+      "title": "Show HN: A lightweight way to make agents talk without paying for API usage",
+      "url": "https://juanpabloaj.com/2026/04/16/a-lightweight-way-to-make-agents-talk-without-paying-for-api-usage/",
+      "score": 47,
+      "comments": 11,
+      "source": "hackernews",
+      "text": ""
+    },
+    {
+      "title": "Notion leaks email addresses of all editors of any public page",
+      "url": "https://twitter.com/weezerOSINT/status/2045849358462222720",
+      "score": 385,
+      "comments": 143,
+      "source": "hackernews",
+      "text": ""
+    },
+    {
+      "title": "Game devs explain the tricks involved with letting you pause a game",
+      "url": "https://kotaku.com/video-game-devs-explain-how-pausing-works-and-sometimes-it-gets-weird-2000686339",
+      "score": 435,
+      "comments": 248,
+      "source": "hackernews",
+      "text": ""
+    },
+    {
+      "title": "College instructor turns to typewriters to curb AI-written work",
+      "url": "https://sentinelcolorado.com/uncategorized/a-college-instructor-turns-to-typewriters-to-curb-ai-written-work-and-teach-life-lessons/",
+      "score": 478,
+      "comments": 423,
+      "source": "hackernews",
+      "text": ""
+    },
+    {
+      "title": "Repurposing 3D Generative Model for Autoregressive Layout Generation",
+      "url": "http://arxiv.org/abs/2604.16299v1",
+      "score": 0,
+      "comments": 0,
+      "source": "arxiv",
+      "text": "We introduce LaviGen, a framework that repurposes 3D generative models for 3D layout generation. Unlike previous methods that infer object layouts from textual descriptions, LaviGen operates directly in the native 3D space, formulating layout generation as an autoregressive process that explicitly models geometric relations and physical constraints among objects, producing coherent and physically plausible 3D scenes. To further enhance this process, we propose an adapted 3D diffusion model that "
+    },
+    {
+      "title": "FineCog-Nav: Integrating Fine-grained Cognitive Modules for Zero-shot Multimodal UAV Navigation",
+      "url": "http://arxiv.org/abs/2604.16298v1",
+      "score": 0,
+      "comments": 0,
+      "source": "arxiv",
+      "text": "UAV vision-language navigation (VLN) requires an agent to navigate complex 3D environments from an egocentric perspective while following ambiguous multi-step instructions over long horizons. Existing zero-shot methods remain limited, as they often rely on large base models, generic prompts, and loosely coordinated modules. In this work, we propose FineCog-Nav, a top-down framework inspired by human cognition that organizes navigation into fine-grained modules for language processing, perception"
+    },
+    {
+      "title": "ASMR-Bench: Auditing for Sabotage in ML Research",
+      "url": "http://arxiv.org/abs/2604.16286v1",
+      "score": 0,
+      "comments": 0,
+      "source": "arxiv",
+      "text": "As AI systems are increasingly used to conduct research autonomously, misaligned systems could introduce subtle flaws that produce misleading results while evading detection. We introduce ASMR-Bench (Auditing for Sabotage in ML Research), a benchmark for evaluating the ability of auditors to detect sabotage in ML research codebases. ASMR-Bench consists of 9 ML research codebases with sabotaged variants that produce qualitatively different experimental results. Each sabotage modifies implementati"
+    },
+    {
+      "title": "Enhancing Hazy Wildlife Imagery: AnimalHaze3k and IncepDehazeGan",
+      "url": "http://arxiv.org/abs/2604.16284v1",
+      "score": 0,
+      "comments": 0,
+      "source": "arxiv",
+      "text": "Atmospheric haze significantly degrades wildlife imagery, impeding computer vision applications critical for conservation, such as animal detection, tracking, and behavior analysis. To address this challenge, we introduce AnimalHaze3k a synthetic dataset comprising of 3,477 hazy images generated from 1,159 clear wildlife photographs through a physics-based pipeline. Our novel IncepDehazeGan architecture combines inception blocks with residual skip connections in a GAN framework, achieving state-"
+    },
+    {
+      "title": "Geometric regularization of autoencoders via observed stochastic dynamics",
+      "url": "http://arxiv.org/abs/2604.16282v1",
+      "score": 0,
+      "comments": 0,
+      "source": "arxiv",
+      "text": "Stochastic dynamical systems with slow or metastable behavior evolve, on long time scales, on an unknown low-dimensional manifold in high-dimensional ambient space. Building a reduced simulator from short-burst ambient ensembles is a long-standing problem: local-chart methods like ATLAS suffer from exponential landmark scaling and per-step reprojection, while autoencoder alternatives leave tangent-bundle geometry poorly constrained, and the errors propagate into the learned drift and diffusion. "
+    },
+    {
+      "title": "Using Large Language Models and Knowledge Graphs to Improve the Interpretability of Machine Learning Models in Manufacturing",
+      "url": "http://arxiv.org/abs/2604.16280v1",
+      "score": 0,
+      "comments": 0,
+      "source": "arxiv",
+      "text": "Explaining Machine Learning (ML) results in a transparent and user-friendly manner remains a challenging task of Explainable Artificial Intelligence (XAI). In this paper, we present a method to enhance the interpretability of ML models by using a Knowledge Graph (KG). We store domain-specific data along with ML results and their corresponding explanations, establishing a structured connection between domain knowledge and ML insights. To make these insights accessible to users, we designed a sele"
+    },
+    {
+      "title": "Evaluating the Progression of Large Language Model Capabilities for Small-Molecule Drug Design",
+      "url": "http://arxiv.org/abs/2604.16279v1",
+      "score": 0,
+      "comments": 0,
+      "source": "arxiv",
+      "text": "Large Language Models (LLMs) have the potential to accelerate small molecule drug design due to their ability to reason about information from diverse sources and formats. However, their practical utility remains unclear due to the lack of benchmarks that reflect real-world scenarios. In this work, we introduce a suite of chemically-grounded tasks spanning molecular property prediction, molecular representation transformations, and molecular design. Importantly, we formulate these tasks as reinf"
+    },
+    {
+      "title": "Learning to Reason with Insight for Informal Theorem Proving",
+      "url": "http://arxiv.org/abs/2604.16278v1",
+      "score": 0,
+      "comments": 0,
+      "source": "arxiv",
+      "text": "Although most of the automated theorem-proving approaches depend on formal proof systems, informal theorem proving can align better with large language models' (LLMs) strength in natural language processing. In this work, we identify a primary bottleneck in informal theorem proving as a lack of insight, namely the difficulty of recognizing the core techniques required to solve complex problems. To address this, we propose a novel framework designed to cultivate this essential reasoning skill and"
+    },
+    {
+      "title": "No Universal Courtesy: A Cross-Linguistic, Multi-Model Study of Politeness Effects on LLMs Using the PLUM Corpus",
+      "url": "http://arxiv.org/abs/2604.16275v1",
+      "score": 0,
+      "comments": 0,
+      "source": "arxiv",
+      "text": "This paper explores the response of Large Language Models (LLMs) to user prompts with different degrees of politeness and impoliteness. The Politeness Theory by Brown and Levinson and the Impoliteness Framework by Culpeper form the basis of experiments conducted across three languages (English, Hindi, Spanish), five models (Gemini-Pro, GPT-4o Mini, Claude 3.7 Sonnet, DeepSeek-Chat, and Llama 3), and three interaction histories between users (raw, polite, and impolite). Our sample consists of 22,"
+    },
+    {
+      "title": "VEFX-Bench: A Holistic Benchmark for Generic Video Editing and Visual Effects",
+      "url": "http://arxiv.org/abs/2604.16272v1",
+      "score": 0,
+      "comments": 0,
+      "source": "arxiv",
+      "text": "As AI-assisted video creation becomes increasingly practical, instruction-guided video editing has become essential for refining generated or captured footage to meet professional requirements. Yet the field still lacks both a large-scale human-annotated dataset with complete editing examples and a standardized evaluator for comparing editing systems. Existing resources are limited by small scale, missing edited outputs, or the absence of human quality labels, while current evaluation often reli"
+    },
+    {
+      "title": "From Benchmarking to Reasoning: A Dual-Aspect, Large-Scale Evaluation of LLMs on Vietnamese Legal Text",
+      "url": "http://arxiv.org/abs/2604.16270v1",
+      "score": 0,
+      "comments": 0,
+      "source": "arxiv",
+      "text": "The complexity of Vietnam's legal texts presents a significant barrier to public access to justice. While Large Language Models offer a promising solution for legal text simplification, evaluating their true capabilities requires a multifaceted approach that goes beyond surface-level metrics. This paper introduces a comprehensive dual-aspect evaluation framework to address this need. First, we establish a performance benchmark for four state-of-the-art large language models (GPT-4o, Claude 3 Opu"
+    },
+    {
+      "title": "Hero-Mamba: Mamba-based Dual Domain Learning for Underwater Image Enhancement",
+      "url": "http://arxiv.org/abs/2604.16266v1",
+      "score": 0,
+      "comments": 0,
+      "source": "arxiv",
+      "text": "Underwater images often suffer from severe degradation, such as color distortion, low contrast, and blurred details, due to light absorption and scattering in water. While learning-based methods like CNNs and Transformers have shown promise, they face critical limitations: CNNs struggle to model the long-range dependencies needed for non-uniform degradation, and Transformers incur quadratic computational complexity, making them inefficient for high-resolution images. To address these challenges,"
+    },
+    {
+      "title": "FL-MHSM: Spatially-adaptive Fusion and Ensemble Learning for Flood-Landslide Multi-Hazard Susceptibility Mapping at Regional Scale",
+      "url": "http://arxiv.org/abs/2604.16265v1",
+      "score": 0,
+      "comments": 0,
+      "source": "arxiv",
+      "text": "Existing multi-hazard susceptibility mapping (MHSM) studies often rely on spatially uniform models, treat hazards independently, and provide limited representation of cross-hazard dependence and uncertainty. To address these limitations, this study proposes a deep learning (DL) workflow for joint flood-landslide multi-hazard susceptibility mapping (FL-MHSM) that combines two-level spatial partitioning, probabilistic Early Fusion (EF), a tree-based Late Fusion (LF) baseline, and a soft-gating Mix"
+    },
+    {
+      "title": "Information Router for Mitigating Modality Dominance in Vision-Language Models",
+      "url": "http://arxiv.org/abs/2604.16264v1",
+      "score": 0,
+      "comments": 0,
+      "source": "arxiv",
+      "text": "Vision Language models (VLMs) have demonstrated strong performance across a wide range of benchmarks, yet they often suffer from modality dominance, where predictions rely disproportionately on a single modality. Prior approaches primarily address this issue by steering model's attention allocation, implicitly assuming that all modalities provide sufficient information. However, attention only determines where the model focuses, and cannot enrich information that is missing or ambiguous. In the "
+    },
+    {
+      "title": "Semantic Area Graph Reasoning for Multi-Robot Language-Guided Search",
+      "url": "http://arxiv.org/abs/2604.16263v1",
+      "score": 0,
+      "comments": 0,
+      "source": "arxiv",
+      "text": "Coordinating multi-robot systems (MRS) to search in unknown environments is particularly challenging for tasks that require semantic reasoning beyond geometric exploration. Classical coordination strategies rely on frontier coverage or information gain and cannot incorporate high-level task intent, such as searching for objects associated with specific room types. We propose \\textit{Semantic Area Graph Reasoning} (SAGR), a hierarchical framework that enables Large Language Models (LLMs) to coord"
+    },
+    {
+      "title": "Significant-Gravitas/AutoGPT - AutoGPT is the vision of accessible AI for everyone, to use and to build on. Our mission is to provide the tools, so that you can focus on what matters.",
+      "url": "https://github.com/Significant-Gravitas/AutoGPT",
+      "score": 183604,
+      "comments": 0,
+      "source": "github_trending",
+      "text": "AutoGPT is the vision of accessible AI for everyone, to use and to build on. Our mission is to provide the tools, so that you can focus on what matters."
+    },
+    {
+      "title": "ollama/ollama - Get up and running with Kimi-K2.5, GLM-5, MiniMax, DeepSeek, gpt-oss, Qwen, Gemma and other models.",
+      "url": "https://github.com/ollama/ollama",
+      "score": 169528,
+      "comments": 0,
+      "source": "github_trending",
+      "text": "Get up and running with Kimi-K2.5, GLM-5, MiniMax, DeepSeek, gpt-oss, Qwen, Gemma and other models."
+    },
+    {
+      "title": "f/prompts.chat - f.k.a. Awesome ChatGPT Prompts. Share, discover, and collect prompts from the community. Free and open source — self-host for your organization with complete privacy.",
+      "url": "https://github.com/f/prompts.chat",
+      "score": 160197,
+      "comments": 0,
+      "source": "github_trending",
+      "text": "f.k.a. Awesome ChatGPT Prompts. Share, discover, and collect prompts from the community. Free and open source — self-host for your organization with complete privacy."
+    },
+    {
+      "title": "huggingface/transformers - 🤗 Transformers: the model-definition framework for state-of-the-art machine learning models in text, vision, audio, and multimodal models, for both inference and training. ",
+      "url": "https://github.com/huggingface/transformers",
+      "score": 159657,
+      "comments": 0,
+      "source": "github_trending",
+      "text": "🤗 Transformers: the model-definition framework for state-of-the-art machine learning models in text, vision, audio, and multimodal models, for both inference and training. "
+    },
+    {
+      "title": "langgenius/dify - Production-ready platform for agentic workflow development.",
+      "url": "https://github.com/langgenius/dify",
+      "score": 138496,
+      "comments": 0,
+      "source": "github_trending",
+      "text": "Production-ready platform for agentic workflow development."
+    },
+    {
+      "title": "openclaw/openclaw - Your own personal AI assistant. Any OS. Any Platform. The lobster way. 🦞 ",
+      "url": "https://github.com/openclaw/openclaw",
+      "score": 361102,
+      "comments": 0,
+      "source": "github_trending",
+      "text": "Your own personal AI assistant. Any OS. Any Platform. The lobster way. 🦞 "
+    },
+    {
+      "title": "n8n-io/n8n - Fair-code workflow automation platform with native AI capabilities. Combine visual building with custom code, self-host or cloud, 400+ integrations.",
+      "url": "https://github.com/n8n-io/n8n",
+      "score": 184852,
+      "comments": 0,
+      "source": "github_trending",
+      "text": "Fair-code workflow automation platform with native AI capabilities. Combine visual building with custom code, self-host or cloud, 400+ integrations."
+    },
+    {
+      "title": "NousResearch/hermes-agent - The agent that grows with you",
+      "url": "https://github.com/NousResearch/hermes-agent",
+      "score": 104811,
+      "comments": 0,
+      "source": "github_trending",
+      "text": "The agent that grows with you"
+    },
+    {
+      "title": "lobehub/lobehub - The ultimate space for work and life — to find, build, and collaborate with agent teammates that grow with you. We are taking agent harness to the next level — enabling multi-agent collaboration, effortless agent team design, and introducing agents as the unit of work interaction.",
+      "url": "https://github.com/lobehub/lobehub",
+      "score": 75392,
+      "comments": 0,
+      "source": "github_trending",
+      "text": "The ultimate space for work and life — to find, build, and collaborate with agent teammates that grow with you. We are taking agent harness to the next level — enabling multi-agent collaboration, effortless agent team design, and introducing agents as the unit of work interaction."
+    },
+    {
+      "title": "thedotmack/claude-mem - A Claude Code plugin that automatically captures everything Claude does during your coding sessions, compresses it with AI (using Claude's agent-sdk), and injects relevant context back into future sessions.",
+      "url": "https://github.com/thedotmack/claude-mem",
+      "score": 64076,
+      "comments": 0,
+      "source": "github_trending",
+      "text": "A Claude Code plugin that automatically captures everything Claude does during your coding sessions, compresses it with AI (using Claude's agent-sdk), and injects relevant context back into future sessions."
+    },
+    {
+      "title": "AI コーディングエージェントを日本語でつかうのは無駄にトークンを消費する？",
+      "url": "https://zenn.dev/iqbqioza/articles/a7f66866f3b27d",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_zenn",
+      "text": "まえがき\nAnthropic Claude Code(Opus/Sonnet)、OpenAI Codex、GitHub Copilot、Google Gemini などコーディングエージェントで指示したりドキュメントを読み込ませたりするとあっという間にトークンを消費してしまいます。原始人など日本語の冗長な言い回しを削るといった使い方もありますが、そもそもトークンの消費についてしらべてみました。\n\n モデルのほとんどは英語でできている\n日本語のトークンを分割しているため、日本語→英語のコストが大きいです。\n日本語はそもそも「分かち書き」がないため、文章をどこで区切るかわかりません。\nま..."
+    },
+    {
+      "title": "AIエージェントのUXはチャットの先にある——Ambient Agentという考え方",
+      "url": "https://zenn.dev/explaza/articles/dafba25b8cba34",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_zenn",
+      "text": "はじめに\nこんにちは！\n株式会社エクスプラザのhyodoです！\nAIエージェントを開発していて、こんな声を聞いたことはありませんか？\n\n「便利なのは分かるんだけど、毎回チャットで指示するのが面倒」\n「経費精算をお願いしたいけど、何て言えばいいのか分からない」\n「前にお願いした件の続きやってほしいんだけど、また最初から説明するの？」\n\nAIエージェントを作ったのに使ってもらえない。使ってもらっても定着しない。この問題、技術の出来が悪いのではなく、UIの選択が間違っているケースが多いです。\nAIエージェントといえばチャットUI——この思い込みを一度疑ってみると、まったく違う設計が見えてき..."
+    },
+    {
+      "title": "RAG か Lucene か：プライベートデプロイ型カスタマーサポートシステムにおける AI 知識ベースのアーキテクチャ選定",
+      "url": "https://zenn.dev/chaoshushen/articles/23e52a82f6a1fe",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_zenn",
+      "text": "はじめに\n皆さん、こんにちは。ShenDesk の開発者です。\n私は数年にわたり、安全・安定・信頼、そして軽量かつプライベートデプロイ（オンプレミス）が可能なカスタマーサポートシステムの開発に注力してきました。その甲斐あって、これまでに多くのユーザーにご利用いただいています。一人のプログラマーとして、自分のプロダクトが実際のビジネス現場で活用されているのを目にすることは、何よりの喜びであり、開発の原動力となっています。\n2026年を迎え、今年は私にとって大きな転換点になるかもしれません。これまでの試行錯誤、特に昨年一年の集中開発（サイトの更新履歴を見ていただければ分かりますが、昨年の..."
+    },
+    {
+      "title": "AIバイブコーディングのジレンマ｜実装はAI、責任は人間という非対称性",
+      "url": "https://zenn.dev/tomo27/articles/se-ai-coexistence-01",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_zenn",
+      "text": "はじめに\n\n この文章について\nこれは「SEとAIの共存を模索する記録」シリーズの第1回です。\nAIを開発業務に取り入れる中で感じている違和感や難しさを、現場目線で整理していくシリーズとして書いています。\n今回のテーマは、AIの実装速度と、人間が負う責任の重さが釣り合っていないという問題です。\n\n こんな方に向けて書いています\n\n業務でAIを使い始めたエンジニア\nAIに実装を任せつつ、不安や違和感もある人\nAI活用を進めたいが、品質や責任分界に悩んでいる人\nAI時代にSEの役割がどう変わるのか考えたい人\n\n\n 今回書きたいこと\n\nなぜAI活用にジレンマが生まれるのか\n「実装はAI、責..."
+    },
+    {
+      "title": "Claudeが設計でCodexが実装(dual-loop-simple skillを作った)",
+      "url": "https://zenn.dev/umidesign/articles/a98178c744bd78",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_zenn",
+      "text": "3行まとめ\n\n\nClaude Code に「設計」だけさせ、Codex CLI に「実装＋レビュー＋修正」を丸投げする skill を作った\nフェーズは 5 つ、所要 10〜20 分、main ブランチは拒否\ncodexに渡したい\n\n\n きっかけ\nClaude Codeを20xから5xに下げ、ChatGPT Proを契約した。のでせっかくならCodexを活用したいんだけど、Claude Codeで完結してしまう癖?切り替える面倒くささがどうしてもでてきた。\nClaude Codeの /feature-dev を多用しているけど、これの対話設計をそのままに、実装だけCodexに投げれれ..."
+    },
+    {
+      "title": "windows上のLLMとxangiを接続し、xangi同士で会話させる",
+      "url": "https://zenn.dev/okpisokapi/articles/ef4868910e73b1",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_zenn",
+      "text": "本記事は個人的なメモを残していくための記事です\nDiscordにでxangiをBOTとして参加させ、参加させたBOT同士で会話ができれば面白そうだなということでセットアップをしていく\n今回は友人のもつLLMと自分が持つLLMをDiscordに参加させる\nxangiのGithubページについては以下の通り\nhttps://github.com/karaage0703/xangi\nv0.19.0を使用する\n前提：\n・windowsマシン上にollamaをインストールしてgemma4:26bを使えるようにしておく\n・windowsマシン上にVirtualBoxをインストールしてRockyLin..."
+    },
+    {
+      "title": "SOWでシンプルにClaude Codeを活用する",
+      "url": "https://zenn.dev/chihaso/articles/2d613b6ac154e8",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_zenn",
+      "text": "はじめに\nAIすごいですね（今更）\n私も現在は業務や個人開発をほとんど Claude Code か Codex で行っており、自分の手でコードを書くことはかなり少なくなりました。\n使い始めた頃は全然活用できていなかったのですが、「SOW」というものを知ってから便利に使えるようになりました。\n世間では日々様々な AI 活用術が飛び交っていますが、私はここ8ヶ月くらい、AIは「SOW」一本で使い続けており、特に不自由なく活用できていると感じます。\n今回は、SOW を使った自分なりのシンプルな AI 活用法をご紹介します。\n\n 三浦半島.rbでSOWに出会った\n私がSOWという言葉を知った..."
+    },
+    {
+      "title": "LLMコーディングエージェントの振る舞いを制約する設計思想",
+      "url": "https://zenn.dev/aienthusiast/articles/article-20260420-090110",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_zenn",
+      "text": "LLMによるコード生成の構造的問題\nLLM（Large Language Model）を活用したコーディング支援が一般化する中で、その課題も明確になってきた。Andrej Karpathyが指摘したように、LLMは誤った前提のもとで突き進み、不要な抽象化を生み出し、理解が不十分なコードを変更する傾向がある。これらは単なる「精度の問題」ではなく、LLMの推論プロセスに内在する構造的な課題だ。\n今回紹介する「andrej-karpathy-skills」リポジトリは、こうした課題に対して、単一の制約ファイルという最小限のアプローチで対処する試みである。過剰な機能追加ではなく、明確な原則に..."
+    },
+    {
+      "title": "RAGかファインチューニングか、もう迷わない——2026年版・企業LLM導入の判断フロー",
+      "url": "https://zenn.dev/drasenas/articles/rag-ft-hybrid-2026",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_zenn",
+      "text": "!\nこの記事でわかること\n\nRAG・ファインチューニング・ハイブリッドの3択を、5つの問いで判断する方法\n2026年時点で「ハイブリッドがデフォルト」と言われる理由\nAnthropicの「Contextual Retrieval」で検索失敗率が49%減った仕組み\nユースケース別の推奨構成と、実装前に確認すべきチェックリスト\n\n\n\n 「RAGとファインチューニング、どちらが正解ですか」で止まっていませんか\n社内ナレッジ検索や問い合わせ対応の自動化にLLMを使おうとしたとき、必ずこの壁にぶつかります。\n「RAGとファインチューニング、どちらを使えばいいのか」\n技術ブログを読めば読むほど意見が..."
+    },
+    {
+      "title": "ハーネスとか無視してAIで普通に開発した話",
+      "url": "https://zenn.dev/shindoi/articles/cbfa7698456b16",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_zenn",
+      "text": "お前らハーネスって言いたいだけちゃうんか\nハーネスハーネスみんなが言ってるのでどんなもんかと調べてみたら、要は 「AIにコードを書かせて、CI通るまで殴る」 ってことらしい。そんなの昔からみんなやってる。\nChatGPTが出たときからずっと変わらないAIの使い方の肝は 「何往復も対話する」 ということだ。\n初期のプロンプトエンジニアリングが狂っていたのは一回の問い合わせで精度の高い答えを出そうとしていたこと。その儚い夢のために Markdownで記述しよう とか 英語で問い合わせよう とか このプロンプトをコピペしよう とか意味不明な言説が出回ったが、あれってまだ使っている人いますか..."
+    },
+    {
+      "title": "システムプロンプトとユーザープロンプトの違い——LLMは2つの指示をどう区別しているのか",
+      "url": "https://zenn.dev/lumichy/articles/system-vs-user-prompt-llm-guide",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_zenn",
+      "text": "システムプロンプトとユーザープロンプトの違い——LLMは2つの指示をどう区別しているのか\n\nChatGPTやClaudeを使っていると、詳細設定では「system」とか「user」とか、入力欄が分かれていることに気づきますよね。APIを叩いたことがある人なら、role: \"system\" と role: \"user\" をJSON内で使い分けた経験があるはず。\nでも、この2つ、何がどう違うのか。片方を空にしたらどうなるのか。LLMの中で本当に区別されているのか——意外とちゃんと説明できる人は少ないです。\n「使い方」と「LLM内部の仕組み」の両面から整理していきます。\n\n\n 1. 一言で..."
+    },
+    {
+      "title": "自分のポートフォリオをAIに相談する — 動いた後の運用設計ガイド",
+      "url": "https://zenn.dev/wireharbor/books/portfolio-ai-guide",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_zenn",
+      "text": "note『自分のポートフォリオをAIに相談する』連載で最短ルートを通した先で、実運用に入ったときに詰まる場所・壊れる場所・守るべき境界を体系化する。エラー図鑑、セキュリティ設計、MCP 内部構造、プラットフォーム移行、データ設計、実用ユースケースを運用視点で書く。連載を読まなくても読める。"
+    },
+    {
+      "title": "自動運転体験から読み解くAIファースト設計の本質",
+      "url": "https://zenn.dev/dai_mywk/articles/06899d800d1bf3",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_zenn",
+      "text": "はじめに\nこの記事では、自動運転タクシーの体験談から浮かび上がった「不在の価値」という概念を起点に、AIファーストなビジネス設計がなぜ難しく、どこから考えるべきかを整理する。\nプロダクト設計やUX設計に関わる人、あるいはAI導入を検討している事業者に向けて、快適さの構造を分解しながら実践的な視点を提供することを目的としている。\n\n\n 前提知識・用語整理\nAIファーストとは\n業務やサービスの設計において、人間の対応を起点にするのではなく、AIによる処理を標準状態として設計すること。AIを「補助ツール」として後付けするのではなく、最初からAIが主体であることを前提に体験を設計するアプロ..."
+    },
+    {
+      "title": "ChatGPTが自信満々に嘘をつく\"本当の理由\" — OpenAIの論文でわかってました",
+      "url": "https://zenn.dev/koji_ai_lab/articles/5e0182282a8546",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_zenn",
+      "text": "米IT企業AIサイエンティストのこうじです。\nこの記事の内容は、インスタのリールで1分で解説しています。動画でサクッと知りたい方はこちらからどうぞ。\n👉 インスタで1分解説を見る\nいきなりですが、みなさん一度は経験ありませんか？\nChatGPTに質問したら、めちゃくちゃ流暢に、めちゃくちゃ自信満々に、完全な嘘を返された経験。\n存在しない論文を教えてきたり、行ったこともないレストランを絶賛してきたり、誰かの経歴を勝手に盛ったり。しかも、聞き返しても一切動揺せず、堂々と嘘を重ねてくる。\n「お前、なんでそんなに自信あんねん」と、画面の前で一人ツッコミを入れたこと、ありますよね。\nで、今日お伝え..."
+    },
+    {
+      "title": "LLMOとは何か——AI検索時代のWebサイト最適化",
+      "url": "https://zenn.dev/pulse_digital/articles/llmo-web-optimization-guide",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_zenn",
+      "text": "AI検索が変えたルール\nGoogleでURLを10本並べる時代は終わりつつある。\nChatGPT、Perplexity、Gemini——ユーザーが検索する先がLLMに移り始めている。ここで重要なのは、LLMが「どのサイトの情報を参照したか」を選ぶ基準が、従来のSEOとは微妙に違うということ。\n被リンクやドメインパワーだけでは足りない。LLMは「そのページが構造化されたデータを持っているか」「引用しやすい形式で情報を提示しているか」を見ている。\nこの最適化領域を**LLMO（Large Language Model Optimization）**と呼ぶ。\n\n SEOとLLMOの違い\n\n..."
+    },
+    {
+      "title": "NTTグループKaggle勉強会に参加してみた（2026/3/24）",
+      "url": "https://zenn.dev/nttdata_tech/articles/e956073315b83e",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_zenn",
+      "text": "はじめに\n2026年3月24日に、NTTグループ内でKaggle勉強会が開催されました。\n本記事では、当日の内容に基づいて、\n\nKaggleの始め方や活用方法\n各社の取り組み\n実務との関係\n\nといったポイントを整理します。\nこれからKaggleに取り組みたい方や、\n社内でのデータ分析・AI活用に関心のある方の参考になれば幸いです。\n\n\n 勉強会の概要\n本勉強会は、NTTグループ内の有志メンバーによる取り組みとして開催され、\nKaggleに取り組んでいる参加者を中心に、事例や経験の共有が行われました。\n目的としては、\n\nKaggleの理解促進\nグループ内のKaggle参加者のネットワー..."
+    },
+    {
+      "title": "LLMベンチマーク完全ガイド 主要15指標の読み方と自宅で実行する方法",
+      "url": "https://zenn.dev/0h_n0/articles/205a1900fbde2a",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_zenn",
+      "text": "LLMベンチマーク完全ガイド 主要15指標の読み方と自宅で実行する方法\n\n この記事でわかること\n\nMMLU、HumanEval、SWE-Bench Pro、Arena Eloなど主要15ベンチマークの評価方法とスコアの読み方\n\n\nlm-evaluation-harnessを使って自宅のGPUマシンでオープンソースLLMをベンチマークする手順\n\n自作ベンチマークをYAML設定ファイルで作成し、自社ドメインに特化した評価を回す方法\nベンチマークスコアと実運用性能の乖離、データ汚染問題などスコアを正しく解釈するための注意点\n\n日本語LLM評価に特化したJGLUE・llm-jp-eval・..."
+    },
+    {
+      "title": "AIトレーダー開発ログ #10: AIトレーディングシステムの全体設計",
+      "url": "https://zenn.dev/sigma_lab/articles/qros-research-devlog-10-architectu-20260331",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_zenn",
+      "text": "はじめに\n金融市場という荒波の中で安定した収益を追求する量的投資において、単一のアルゴリズムや予測モデルだけで勝ち続けることは困難です。市場は常に変容し、昨日の正解が今日の不正解になる「非定常性」という高い壁が存在するからです。\nQROS Helix プロジェクトも第10回を迎え、これまで個別に検証してきた「データ収集」「特徴量生成」「金融時系列予測モデル」を一つの有機的なエコシステムとして統合する段階に到達しました。\nこの記事では、データ取得から最終的な注文執行、そしてモデルの自己進化（再学習）までを網羅した、AIトレーディングシステムの全体アーキテクチャを解説します。AIトレード..."
+    },
+    {
+      "title": "因果推論の本質②：交絡因子 ─ 第三の変数の罠",
+      "url": "https://zenn.dev/kk_data13/articles/causal-inference-02",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_zenn",
+      "text": "この記事で答える問い\n\n全体で見ると「女性の方が合格率が低い」。\nしかし学部別に見ると「どの学部でも女性の方が合格率が高い」。\nいったいどちらが真実なのか？\n\n前回、「相関は因果ではない」ことを確認した。その元凶が交絡因子（confounder） だ。\n本記事では、交絡因子がなぜ因果推定を狂わせるのか、そして調整すべき変数の判断を間違えるとどうなるかを、シンプソンのパラドックスと符号反転の実例で体感する。\n\n 直感的理解\n\n 前回の復習\n前回の「相関と因果」で、アイスクリームと溺死の例を思い出そう。気温という第三の変数が、アイスの売上と水難事故の両方を動かしていた。この第三の変数が交..."
+    },
+    {
+      "title": "Elasticsearchの3検索を混ぜて精度検証してみた - Dense, Lexical, Sparse Retrival",
+      "url": "https://zenn.dev/taimo/articles/28a1d0eccbc199",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_zenn",
+      "text": "この記事で分かること\n\nElasticsearchで使える3つの検索手法 (Dense / Lexical / Sparse) の違いと、それらを RRF で統合した3-way検索の実務上の位置づけ\nJMTEBの11タスクで検証した結果 (NDCG@10)\n\n\n 最初に\n最近、仕事でElasticsearchを使い始めました。設計を進める上で迷ったのが、検索アルゴリズムをどう選定するかという点です。\nElasticsearchでは1つのインデックス上で Dense Retrieval / Lexical Retrieval / Sparse Retrieval の3手法が使えます。\n特に..."
+    },
+    {
+      "title": "NSA spies are reportedly using Anthropic’s Mythos, despite Pentagon feud",
+      "url": "https://techcrunch.com/2026/04/20/nsa-spies-are-reportedly-using-anthropics-mythos-despite-pentagon-feud/",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_techcrunch",
+      "text": "NSA is said to be using Anthropic's restricted Mythos AI model."
+    },
+    {
+      "title": "CEO and CFO suddenly depart AI nuclear power upstart Fermi",
+      "url": "https://techcrunch.com/2026/04/20/fermi-ceo-and-cfo-depart-texas-nuclear-power-ai/",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_techcrunch",
+      "text": "The startup, co-founded by former U.S. Energy Secretary Rick Perry, has faced headwinds with its AI campus in Texas."
+    },
+    {
+      "title": "OpenAI’s existential questions",
+      "url": "https://techcrunch.com/2026/04/19/openais-existential-questions/",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_techcrunch",
+      "text": "On the latest episode of Equity, we discuss OpenAI's latest acquisitions and whether they address \"two big existential problems\" for the company."
+    },
+    {
+      "title": "The 12-month window",
+      "url": "https://techcrunch.com/2026/04/19/the-12-month-window/",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_techcrunch",
+      "text": "A lot of AI startups exist partly because the foundation models haven't expanded into their category yet. As many jokingly acknowledge, that won't last forever."
+    },
+    {
+      "title": "TechCrunch Mobility: Uber enters its assetmaxxing era",
+      "url": "https://techcrunch.com/2026/04/19/techcrunch-mobility-uber-enters-its-assetmaxxing-era/",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_techcrunch",
+      "text": "Welcome back to TechCrunch Mobility, your hub for the future of transportation and now, more than ever, how AI is playing a part."
+    },
+    {
+      "title": "Railway secures $100 million to challenge AWS with AI-native cloud infrastructure",
+      "url": "https://venturebeat.com/infrastructure/railway-secures-usd100-million-to-challenge-aws-with-ai-native-cloud",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_venturebeat",
+      "text": "Railway, a San Francisco-based cloud platform that has quietly amassed two million developers without spending a dollar on marketing, announced Thursday that it raised $100 million in a Series B funding round, as surging demand for artificial intelligence applications exposes the limitations of lega"
+    },
+    {
+      "title": "Claude Code costs up to $200 a month. Goose does the same thing for free.",
+      "url": "https://venturebeat.com/infrastructure/claude-code-costs-up-to-usd200-a-month-goose-does-the-same-thing-for-free",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_venturebeat",
+      "text": "The artificial intelligence coding revolution comes with a catch: it&#x27;s expensive.Claude Code, Anthropic&#x27;s terminal-based AI agent that can write, debug, and deploy code autonomously, has captured the imagination of software developers worldwide. But its pricing — ranging from $20 to $200 p"
+    },
+    {
+      "title": "Listen Labs raises $69M after viral billboard hiring stunt to scale AI customer interviews",
+      "url": "https://venturebeat.com/technology/listen-labs-raises-usd69m-after-viral-billboard-hiring-stunt-to-scale-ai",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_venturebeat",
+      "text": "Alfred Wahlforss was running out of options. His startup, Listen Labs, needed to hire over 100 engineers, but competing against Mark Zuckerberg&#x27;s $100 million offers seemed impossible. So he spent $5,000 — a fifth of his marketing budget — on a billboard in San Francisco displaying what looked "
+    },
+    {
+      "title": "Salesforce rolls out new Slackbot AI agent as it battles Microsoft and Google in workplace AI",
+      "url": "https://venturebeat.com/technology/salesforce-rolls-out-new-slackbot-ai-agent-as-it-battles-microsoft-and",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_venturebeat",
+      "text": "Salesforce on Tuesday launched an entirely rebuilt version of Slackbot, the company&#x27;s workplace assistant, transforming it from a simple notification tool into what executives describe as a fully powered AI agent capable of searching enterprise data, drafting documents, and taking action on beh"
+    },
+    {
+      "title": "Anthropic launches Cowork, a Claude Desktop agent that works in your files — no coding required",
+      "url": "https://venturebeat.com/technology/anthropic-launches-cowork-a-claude-desktop-agent-that-works-in-your-files-no",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_venturebeat",
+      "text": "Anthropic released Cowork on Monday, a new AI agent capability that extends the power of its wildly successful Claude Code tool to non-technical users — and according to company insiders, the team built the entire feature in approximately a week and a half, largely using Claude Code itself.The launc"
+    },
+    {
+      "title": "The Download: murderous &#8216;mirror&#8217; bacteria, and Chinese workers fighting AI doubles",
+      "url": "https://www.technologyreview.com/2026/04/20/1136154/the-download-murderous-mirror-bacteria-chinese-workers-fight-ai-agents/",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_mit_review",
+      "text": "This is today&#8217;s edition of The Download, our weekday newsletter that provides a daily dose of what&#8217;s going on in the world of technology. No one’s sure if synthetic mirror life will kill us all In February 2019, a group of scientists proposed a high-risk, cutting-edge, irresistibly excit"
+    },
+    {
+      "title": "Colossal Biosciences said it cloned red wolves. Is it for real?",
+      "url": "https://www.technologyreview.com/2026/04/20/1135222/red-wolves-colossal-biosciences-clones/",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_mit_review",
+      "text": "If you want to capture something wolflike, it’s best to embark before dawn. So on a morning this January, with the eastern horizon still pink-hued, I drove with two young scientists into a blanket of fog. Forty miles to the west, the industrial sprawl of Houston spawned a golden glow. Tanner Broussa"
+    },
+    {
+      "title": "Chinese tech workers are starting to train their AI doubles&#8211;and pushing back",
+      "url": "https://www.technologyreview.com/2026/04/20/1136149/chinese-tech-workers-ai-colleagues/",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_mit_review",
+      "text": "Tech workers in China are being instructed by their bosses to train AI agents to replace them—and it’s prompting a wave of soul-searching among otherwise enthusiastic early adopters.&#160; Earlier this month a GitHub project called Colleague Skill, which claimed workers could use it to “distill” the"
+    },
+    {
+      "title": "The Download: bad news for inner Neanderthals, and AI warfare’s human illusion",
+      "url": "https://www.technologyreview.com/2026/04/17/1136112/the-download-inner-neanderthal-ai-war-human-in-the-loop/",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_mit_review",
+      "text": "This is today&#8217;s edition of The Download, our weekday newsletter that provides a daily dose of what&#8217;s going on in the world of technology. The problem with thinking you’re part Neanderthal There’s a theory that many of us have an “inner Neanderthal.” The idea is that Homo sapiens and a co"
+    },
+    {
+      "title": "The case for fixing everything",
+      "url": "https://www.technologyreview.com/2026/04/17/1135408/book-review-stewart-brand-fixing-everything-maintenance/",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_mit_review",
+      "text": "The handsome new book Maintenance: Of Everything, Part One, by the tech industry legend Stewart Brand, promises to be the first in a series offering “a comprehensive overview of the civilizational importance of maintenance.” One of Brand’s several biographers described him as a mainstay of both coun"
+    },
+    {
+      "title": "Optical Fiber Networks Can Keep Rail Networks Safe",
+      "url": "https://spectrum.ieee.org/distributed-acoustic-sensing-trains-railways",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_ieee",
+      "text": "This article is part of our exclusive IEEE Journal Watch series in partnership with IEEE Xplore.\nRail networks are vast, which makes it difficult to conduct comprehensive, continuous safety monitoring. Researchers in China have suggested analyzing the vibrations of existing fiber cables buried under"
+    },
+    {
+      "title": "​Boston Dynamics and Google DeepMind Teach Spot to Reason​",
+      "url": "https://spectrum.ieee.org/boston-dynamics-spot-google-deepmind",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_ieee",
+      "text": "The amazing and frustrating thing about robots is that they can do almost anything you want them to do, as long as you know how to ask properly. In the not-so-distant past, asking properly meant writing code, and while we’ve thankfully moved beyond that brittle constraint, there’s still an irritatin"
+    },
+    {
+      "title": "Sarang Gupta Builds AI Systems With Real-World Impact",
+      "url": "https://spectrum.ieee.org/openai-engineer-sarang-gupta",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_ieee",
+      "text": "Like many engineers, Sarang Gupta spent his childhood tinkering with everyday items around the house. From a young age he gravitated to projects that could make a difference in someone’s everyday life.When the family’s microwave plug broke, Gupta and his father figured out how to fix it. When a draw"
+    },
+    {
+      "title": "12 Graphs That Explain the State of AI in 2026",
+      "url": "https://spectrum.ieee.org/state-of-ai-index-2026",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_ieee",
+      "text": "The capabilities of leading AI models continue to accelerate, and the largest AI companies, including OpenAI and Anthropic, are hurtling toward IPOs later this year. Yet resentment toward AI continues to simmer, and in some cases has boiled over, especially in the United States, where local governme"
+    },
+    {
+      "title": "AI Models Map the Colorado River’s Hard Choices",
+      "url": "https://spectrum.ieee.org/colorado-river-water-shortage",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_ieee",
+      "text": "The Colorado River begins as snow. Every spring, the mountain snowpack of the Rockies melts into streams that feed into reservoirs that supply 40 million people across seven U.S. states. The system has worked, more or less, for a century. That century is over.By some measures, 2026 is shaping up to "
+    },
+    {
+      "title": "OpenAI helps Hyatt advance AI among colleagues",
+      "url": "https://openai.com/index/hyatt-advances-ai-with-chatgpt-enterprise",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_openai",
+      "text": "Hyatt deploys ChatGPT Enterprise across its global workforce, using GPT-5.4 and Codex to improve productivity, operations, and guest experiences."
+    },
+    {
+      "title": "Introducing GPT-Rosalind for life sciences research",
+      "url": "https://openai.com/index/introducing-gpt-rosalind",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_openai",
+      "text": "OpenAI introduces GPT-Rosalind, a frontier reasoning model built to accelerate drug discovery, genomics analysis, protein reasoning, and scientific research workflows."
+    },
+    {
+      "title": "Accelerating the cyber defense ecosystem that protects us all",
+      "url": "https://openai.com/index/accelerating-cyber-defense-ecosystem",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_openai",
+      "text": "Leading security firms and enterprises join OpenAI’s Trusted Access for Cyber, using GPT-5.4-Cyber and $10M in API grants to strengthen global cyber defense."
+    },
+    {
+      "title": "The next evolution of the Agents SDK",
+      "url": "https://openai.com/index/the-next-evolution-of-the-agents-sdk",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_openai",
+      "text": "OpenAI updates the Agents SDK with native sandbox execution and a model-native harness, helping developers build secure, long-running agents across files and tools."
+    },
+    {
+      "title": "Trusted access for the next era of cyber defense",
+      "url": "https://openai.com/index/scaling-trusted-access-for-cyber-defense",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_openai",
+      "text": "OpenAI expands its Trusted Access for Cyber program, introducing GPT-5.4-Cyber to vetted defenders and strengthening safeguards as AI cybersecurity capabilities advance."
+    },
+    {
+      "title": "7 ways to travel smarter this summer, with help from Google",
+      "url": "https://blog.google/products-and-platforms/products/search/summer-travel-tips-google-search-ai/",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_google_ai",
+      "text": "&lt;img src=\"https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Summer_Travel_Tips_2026_hero.max-600x600.format-webp.webp\"&gt;The latest tools from Google can help you plan trips, find a great deal and explore your next destination."
+    },
+    {
+      "title": "A new way to explore the web with AI Mode in Chrome",
+      "url": "https://blog.google/products-and-platforms/products/search/ai-mode-chrome/",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_google_ai",
+      "text": "&lt;img src=\"https://storage.googleapis.com/gweb-uniblog-publish-prod/original_images/AI_Mode_in_Chrome_-_Blog_header.png\"&gt;Today’s upgrades for AI Mode in Chrome transform how you interact with the web"
+    },
+    {
+      "title": "New ways to create personalized images in the Gemini app",
+      "url": "https://blog.google/innovation-and-ai/products/gemini-app/personal-intelligence-nano-banana/",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_google_ai",
+      "text": "&lt;img src=\"https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Blog_post_header.max-600x600.format-webp.webp\"&gt;Nano Banana 2 now uses your personal context and Google Photos to create images that reflect your unique life."
+    },
+    {
+      "title": "Gemini 3.1 Flash TTS: the next generation of expressive AI speech",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-1-flash-tts/",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_google_ai",
+      "text": "&lt;img src=\"https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemini-3.1-flash-tts_blog_keywo.max-600x600.format-webp.webp\"&gt;Gemini 3.1 Flash TTS is now available across Google products."
+    },
+    {
+      "title": "Turn your best AI prompts into one-click tools in Chrome",
+      "url": "https://blog.google/products-and-platforms/products/chrome/skills-in-chrome/",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_google_ai",
+      "text": "&lt;img src=\"https://storage.googleapis.com/gweb-uniblog-publish-prod/images/GoogleChrome_RR_Skills_KeywordH.max-600x600.format-webp.webp\"&gt;Skills in Chrome let you discover, save and remix AI workflows — and repeat them instantly."
+    },
+    {
+      "title": "Gemini Robotics-ER 1.6: Powering real-world robotics tasks through enhanced embodied reasoning",
+      "url": "https://deepmind.google/blog/gemini-robotics-er-1-6/",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_deepmind",
+      "text": "Gemini Robotics ER 1.6: Enhancing spatial reasoning and multi-view understanding for autonomous robotics."
+    },
+    {
+      "title": "Gemma 4: Byte for byte, the most capable open models",
+      "url": "https://deepmind.google/blog/gemma-4-byte-for-byte-the-most-capable-open-models/",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_deepmind",
+      "text": "Gemma 4: Our most intelligent open models to date, purpose-built for advanced reasoning and agentic workflows."
+    },
+    {
+      "title": "Gemini 3.1 Flash Live: Making audio AI more natural and reliable",
+      "url": "https://deepmind.google/blog/gemini-3-1-flash-live-making-audio-ai-more-natural-and-reliable/",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_deepmind",
+      "text": "Our latest voice model has improved precision and lower latency to make voice interactions more fluid, natural and precise."
+    },
+    {
+      "title": "Protecting people from harmful manipulation",
+      "url": "https://deepmind.google/blog/protecting-people-from-harmful-manipulation/",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_deepmind",
+      "text": "Google DeepMind researches AI's harmful manipulation risks across areas like finance and health, leading to new safety measures."
+    },
+    {
+      "title": "Identifying Interactions at Scale for LLMs",
+      "url": "http://bair.berkeley.edu/blog/2026/03/13/spex/",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_berkeley_ai",
+      "text": "&lt;!-- twitter --&gt;\n&lt;meta name=&quot;twitter:title&quot; content=&quot;Identifying Interactions at Scale for LLMs&quot; /&gt;\n\n&lt;meta name=&quot;twitter:card&quot; content=&quot;summary_large_image&quot; /&gt;\n\n&lt;meta name=&quot;twitter:image&quot; content=&quot;https://bair.berkeley.edu/s"
+    },
+    {
+      "title": "Information-Driven Design of Imaging Systems",
+      "url": "http://bair.berkeley.edu/blog/2026/01/10/information-driven-imaging/",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_berkeley_ai",
+      "text": "&lt;!--\nThese are comments in HTML. The above header text is needed to format the\ntitle, authors, etc. The &quot;information-driven-imaging&quot; is the representative image\nthat we use for each post for tweeting (see below as well) and for the\nemails to subscribers.\n\nThe `static/blog` directory is "
+    },
+    {
+      "title": "RL without TD learning",
+      "url": "http://bair.berkeley.edu/blog/2025/11/01/rl-without-td-learning/",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_berkeley_ai",
+      "text": "&lt;!-- twitter --&gt;\n&lt;meta name=&quot;twitter:title&quot; content=&quot;RL without TD learning&quot; /&gt;\n\n&lt;meta name=&quot;twitter:card&quot; content=&quot;summary_large_image&quot; /&gt;\n\n&lt;meta name=&quot;twitter:image&quot; content=&quot;https://bair.berkeley.edu/static/blog/rl-withou"
+    },
+    {
+      "title": "What exactly does word2vec learn?",
+      "url": "http://bair.berkeley.edu/blog/2025/09/01/qwem-word2vec-theory/",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_berkeley_ai",
+      "text": "&lt;!-- twitter --&gt;\n&lt;meta name=&quot;twitter:title&quot; content=&quot;What exactly does word2vec learn? A complete theory&quot; /&gt;\n\n&lt;meta name=&quot;twitter:card&quot; content=&quot;summary_large_image&quot; /&gt;\n\n&lt;meta name=&quot;twitter:image&quot; content=&quot;https://bair.berke"
+    },
+    {
+      "title": "Defending against Prompt Injection with Structured Queries (StruQ) and Preference Optimization (SecAlign)",
+      "url": "http://bair.berkeley.edu/blog/2025/04/11/prompt-injection-defense/",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_berkeley_ai",
+      "text": "&lt;!-- twitter --&gt;\n&lt;meta name=&quot;twitter:title&quot; content=&quot;Defending against Prompt Injection with Structured Queries (StruQ) and Preference Optimization (SecAlign)&quot; /&gt;\n\n&lt;meta name=&quot;twitter:card&quot; content=&quot;summary_large_image&quot; /&gt;\n\n&lt;meta name=&quo"
+    },
+    {
+      "title": "LinkBERT: Improving Language Model Training with Document Link",
+      "url": "/blog/linkbert/",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_stanford_ai",
+      "text": "&lt;h3 id=&quot;language-model-pretraining&quot;&gt;&lt;strong&gt;Language Model Pretraining&lt;/strong&gt;&lt;/h3&gt;\n&lt;p&gt;Language models (LMs), like BERT &lt;sup id=&quot;fnref:1&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/s"
+    },
+    {
+      "title": "Stanford AI Lab Papers and Talks at ACL 2022",
+      "url": "/blog/acl-2022/",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_stanford_ai",
+      "text": "&lt;p&gt;&lt;img class=&quot;postimage_75&quot; src=&quot;/blog/assets/img/posts/2022-05-25-acl-2022/logo.png&quot; /&gt;&lt;/p&gt;\n\n&lt;p&gt;The &lt;a href=&quot;https://www.2022.aclweb.org/&quot;&gt;60th Annual Meeting of the Association for Computational Linguistics&lt;/a&gt; (ACL) 2022 is taking"
+    },
+    {
+      "title": "Discovering the systematic errors made by machine learning models",
+      "url": "/blog/domino/",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_stanford_ai",
+      "text": "&lt;h1 id=&quot;discovering-systematic-errors-with-cross-modal-embeddings&quot;&gt;Discovering systematic errors with cross-modal embeddings&lt;/h1&gt;\n\n&lt;blockquote&gt;\n  &lt;p&gt;In this blog post, we introduce Domino, a new approach for discovering systematic errors made by machine learning mod"
+    },
+    {
+      "title": "Grading Complex Interactive Coding Programs with Reinforcement Learning",
+      "url": "/blog/play-to-grade/",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_stanford_ai",
+      "text": "&lt;script type=&quot;text/javascript&quot; src=&quot;https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML&quot;&gt;&lt;/script&gt;\n\n&lt;p&gt;&lt;strong&gt;[Summary] tl;dr:&lt;/strong&gt;\nA tremendous amount of effort has been poured into training AI algorithms to com"
+    }
+  ],
+  "summary": null,
+  "summarized_items": [
+    {
+      "title": "Significant-Gravitas/AutoGPT - AutoGPT is the vision of accessible AI for everyone, to use and to build on. Our mission is to provide the tools, so that you can focus on what matters.",
+      "url": "https://github.com/Significant-Gravitas/AutoGPT",
+      "score": 183604,
+      "comments": 0,
+      "source": "github_trending",
+      "text": "AutoGPT is the vision of accessible AI for everyone, to use and to build on. Our mission is to provide the tools, so that you can focus on what matters.",
+      "title_ja": "AutoGPT - すべての人向けのAIツール",
+      "summary_ja": "誰でも簡単にAIを活用できるためのツールを提供。ユーザー自身の目的に集中できるように設計されています。",
+      "importance": 9,
+      "tags": [
+        "LLM",
+        "オープンソース"
+      ],
+      "category": "技術"
+    },
+    {
+      "title": "ollama/ollama - Get up and running with Kimi-K2.5, GLM-5, MiniMax, DeepSeek, gpt-oss, Qwen, Gemma and other models.",
+      "url": "https://github.com/ollama/ollama",
+      "score": 169528,
+      "comments": 0,
+      "source": "github_trending",
+      "text": "Get up and running with Kimi-K2.5, GLM-5, MiniMax, DeepSeek, gpt-oss, Qwen, Gemma and other models.",
+      "title_ja": "ollama/ollama - 多種モデルの実行環境",
+      "summary_ja": "Kimi-K2.5、GLM-5、Qwenなど、多数のLLMモデルを簡単に実行できる環境を提供。",
+      "importance": 9,
+      "tags": [
+        "LLM",
+        "オープンソース"
+      ],
+      "category": "技術"
+    },
+    {
+      "title": "openclaw/openclaw - Your own personal AI assistant. Any OS. Any Platform. The lobster way. 🦞 ",
+      "url": "https://github.com/openclaw/openclaw",
+      "score": 361102,
+      "comments": 0,
+      "source": "github_trending",
+      "text": "Your own personal AI assistant. Any OS. Any Platform. The lobster way. 🦞 ",
+      "title_ja": "openclaw/openclaw - 自分のAIアシスタント",
+      "summary_ja": "OSやプラットフォームを選ばないパーソナライズAIアシスタント。ロブスターの方法で動作します。",
+      "importance": 8,
+      "tags": [
+        "AI Agent",
+        "オープンソース"
+      ],
+      "category": "技術"
+    },
+    {
+      "title": "n8n-io/n8n - Fair-code workflow automation platform with native AI capabilities. Combine visual building with custom code, self-host or cloud, 400+ integrations.",
+      "url": "https://github.com/n8n-io/n8n",
+      "score": 184852,
+      "comments": 0,
+      "source": "github_trending",
+      "text": "Fair-code workflow automation platform with native AI capabilities. Combine visual building with custom code, self-host or cloud, 400+ integrations.",
+      "title_ja": "n8n-io/n8n - ワークフロー自動化プラットフォーム",
+      "summary_ja": "視覚的ビルディングとカスタムコードを組み合わせたAI機能付きワークフロー自動化ツール。400以上の統合が可能。",
+      "importance": 8,
+      "tags": [
+        "コード",
+        "ビジネス"
+      ],
+      "category": "技術"
+    },
+    {
+      "title": "f/prompts.chat - f.k.a. Awesome ChatGPT Prompts. Share, discover, and collect prompts from the community. Free and open source — self-host for your organization with complete privacy.",
+      "url": "https://github.com/f/prompts.chat",
+      "score": 160197,
+      "comments": 0,
+      "source": "github_trending",
+      "text": "f.k.a. Awesome ChatGPT Prompts. Share, discover, and collect prompts from the community. Free and open source — self-host for your organization with complete privacy.",
+      "title_ja": "f/prompts.chat - コミュニティのプロンプト共有プラットフォーム",
+      "summary_ja": "ChatGPTプロンプトを共有・収集できるオープンソースツール。組織向けのプライバシー保護機能付き。",
+      "importance": 7,
+      "tags": [
+        "コード",
+        "オープンソース"
+      ],
+      "category": "ツール"
+    }
+  ],
+  "digest": "## 今日の最重要トレンド\nAIツールの**民主化**が本格化し、誰でも手軽に高度なAI機能を活用できる環境が整ってきています。複数のLLMモデルを簡単に実行できるollamaや、視覚的にワークフローを構築できるn8nなど、技術的専門知識がなくても利用できるツールが主流となっています。パーソナライゼーションと自動化を軸とした実用的なAIソリューションが注目されています。\n\n## ビジネスへの示唆\n企業は専門的なAI開発チームに依存せず、既存の業務プロセスを効率的に自動化できるようになります。400以上の統合が可能なワークフロー自動化により、コスト削減と生産性向上の両立が現実的になっています。\n\n## 注目すべき技術動向\nマルチモデル対応プラットフォームが普及し、用途に応じた最適なAIモデルの選択が容易になっています。コミュニティ主導のプロンプト共有により、AI活用のノウハウが組織を超えて蓄積・共有される仕組みが確立されつつあります。",
+  "top_tags": {
+    "オープンソース": 4,
+    "LLM": 2,
+    "コード": 2,
+    "AI Agent": 1,
+    "ビジネス": 1
+  }
+}

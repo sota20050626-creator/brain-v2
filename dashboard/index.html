@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brain</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Noto+Sans+JP:wght@300;400;700&display=swap');
+:root {
+  --bg: #060a0f;
+  --surface: #0d1117;
+  --surface2: #111820;
+  --border: #1a2332;
+  --accent: #00ff88;
+  --accent2: #0066ff;
+  --text: #c9d1d9;
+  --muted: #3d4d5c;
+  --warning: #ffaa00;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body { background:var(--bg); color:var(--text); font-family:'Noto Sans JP',sans-serif; min-height:100vh; }
+.grid-bg { position:fixed; inset:0; z-index:0; background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px); background-size:48px 48px; opacity:0.2; pointer-events:none; }
+.wrap { position:relative; z-index:1; max-width:1280px; margin:0 auto; padding:24px; }
+
+header { display:flex; align-items:center; justify-content:space-between; padding-bottom:20px; border-bottom:1px solid var(--border); margin-bottom:0; }
+.logo { font-family:'Space Mono',monospace; font-size:20px; font-weight:700; color:var(--accent); }
+.logo span { color:var(--text); opacity:0.5; }
+.status { display:flex; align-items:center; gap:8px; font-family:'Space Mono',monospace; font-size:11px; color:var(--muted); }
+.pulse { width:7px; height:7px; background:var(--accent); border-radius:50%; animation:pulse 2s infinite; flex-shrink:0; }
+@keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.3;transform:scale(0.6)} }
+
+.tabs { display:flex; gap:0; border-bottom:1px solid var(--border); margin-bottom:24px; }
+.tab { font-family:'Space Mono',monospace; font-size:11px; padding:14px 24px; cursor:pointer; color:var(--muted); border-bottom:2px solid transparent; transition:all 0.2s; letter-spacing:1px; text-transform:uppercase; background:none; border-top:none; border-left:none; border-right:none; }
+.tab.active { color:var(--accent); border-bottom-color:var(--accent); }
+.tab:hover { color:var(--text); }
+.tab-content { display:none; }
+.tab-content.active { display:block; }
+
+.main-grid { display:grid; grid-template-columns:1fr 280px; gap:20px; }
+.panel { background:var(--surface); border:1px solid var(--border); border-radius:8px; padding:20px; margin-bottom:16px; }
+.panel-title { font-family:'Space Mono',monospace; font-size:10px; color:var(--accent); letter-spacing:2px; text-transform:uppercase; margin-bottom:14px; }
+
+.digest { font-size:13px; line-height:1.9; color:var(--text); white-space:pre-wrap; }
+.tags { display:flex; flex-wrap:wrap; gap:8px; }
+.tag { background:rgba(0,255,136,0.07); border:1px solid rgba(0,255,136,0.2); color:var(--accent); font-family:'Space Mono',monospace; font-size:10px; padding:4px 10px; border-radius:20px; }
+.tag-count { opacity:0.4; }
+
+.cards { display:flex; flex-direction:column; gap:10px; }
+.card { background:var(--surface2); border:1px solid var(--border); border-radius:6px; padding:14px; cursor:pointer; transition:border-color 0.15s,transform 0.15s; position:relative; overflow:hidden; }
+.card:hover { border-color:var(--accent2); transform:translateX(3px); }
+.card-bar { position:absolute; top:0; left:0; right:0; height:2px; }
+.card-source { font-family:'Space Mono',monospace; font-size:9px; color:var(--muted); margin-bottom:6px; text-transform:uppercase; letter-spacing:1px; }
+.card-title { font-size:13px; font-weight:700; color:var(--text); margin-bottom:6px; line-height:1.4; }
+.card-summary { font-size:12px; color:var(--muted); line-height:1.6; margin-bottom:8px; }
+.card-tags { display:flex; gap:5px; flex-wrap:wrap; margin-bottom:6px; }
+.item-tag { font-size:9px; padding:2px 7px; background:rgba(0,102,255,0.1); border:1px solid rgba(0,102,255,0.2); color:var(--accent2); border-radius:10px; }
+.card-score { font-family:'Space Mono',monospace; font-size:10px; color:var(--muted); }
+
+.stat-grid { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+.stat { text-align:center; padding:14px; background:rgba(0,255,136,0.04); border:1px solid rgba(0,255,136,0.1); border-radius:6px; }
+.stat-value { font-family:'Space Mono',monospace; font-size:28px; font-weight:700; color:var(--accent); }
+.stat-label { font-size:10px; color:var(--muted); margin-top:4px; font-family:'Space Mono',monospace; }
+
+.history { display:flex; align-items:flex-end; gap:5px; height:70px; }
+.hist-bar { flex:1; background:var(--accent2); opacity:0.5; border-radius:2px; min-height:3px; }
+
+.proposal-item { font-size:12px; padding:10px; border:1px solid var(--border); border-radius:4px; margin-bottom:8px; color:var(--warning); font-family:'Space Mono',monospace; }
+.muted { color:var(--muted) !important; }
+.muted-msg { font-size:12px; color:var(--muted); padding:10px; }
+.kb-stats { display:flex; gap:16px; }
+.kb-stat { font-family:'Space Mono',monospace; font-size:11px; color:var(--muted); }
+.kb-stat span { color:var(--accent); }
+
+.cost-grid { display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-bottom:12px; }
+.cost-stat { text-align:center; padding:12px 8px; background:rgba(255,170,0,0.04); border:1px solid rgba(255,170,0,0.15); border-radius:6px; }
+.cost-value { font-family:'Space Mono',monospace; font-size:20px; font-weight:700; color:var(--warning); }
+.cost-label { font-size:10px; color:var(--muted); margin-top:4px; font-family:'Space Mono',monospace; }
+.cost-detail { font-family:'Space Mono',monospace; font-size:10px; color:var(--muted); line-height:1.8; }
+.cost-detail span { color:var(--accent); }
+
+.draft-card { background:var(--surface2); border:1px solid var(--border); border-radius:8px; padding:16px; margin-bottom:12px; }
+.draft-card:hover { border-color:var(--accent); }
+.draft-num { font-family:'Space Mono',monospace; font-size:9px; color:var(--accent); letter-spacing:2px; margin-bottom:8px; }
+.draft-text { font-size:13px; line-height:1.8; color:var(--text); margin-bottom:12px; }
+.copy-btn { background:var(--accent); color:#000; border:none; border-radius:4px; padding:6px 14px; font-family:'Space Mono',monospace; font-size:10px; font-weight:700; cursor:pointer; transition:all 0.2s; }
+.copy-btn:hover { opacity:0.8; }
+.copy-btn.copied { background:var(--accent2); color:#fff; }
+
+.note-date { font-family:'Space Mono',monospace; font-size:10px; color:var(--muted); margin-bottom:10px; }
+.note-preview { font-size:12px; line-height:1.8; color:var(--text); max-height:300px; overflow-y:auto; background:var(--surface2); border:1px solid var(--border); border-radius:6px; padding:14px; margin-bottom:12px; }
+.note-preview::-webkit-scrollbar { width:3px; }
+.note-preview::-webkit-scrollbar-thumb { background:var(--border); }
+.note-link { display:inline-block; color:var(--accent2); font-size:12px; text-decoration:none; border:1px solid rgba(0,102,255,0.3); padding:6px 14px; border-radius:4px; }
+.note-link:hover { background:rgba(0,102,255,0.1); }
+
+.github-link { display:flex; align-items:center; gap:8px; padding:10px 12px; background:var(--surface2); border:1px solid var(--border); border-radius:6px; margin-bottom:8px; text-decoration:none; color:var(--text); font-size:12px; transition:border-color 0.2s; }
+.github-link:hover { border-color:var(--accent2); }
+.github-badge { font-family:'Space Mono',monospace; font-size:9px; padding:2px 8px; border-radius:10px; flex-shrink:0; }
+.badge-pr { background:rgba(0,255,136,0.1); color:var(--accent); border:1px solid rgba(0,255,136,0.3); }
+.badge-issue { background:rgba(255,170,0,0.1); color:var(--warning); border:1px solid rgba(255,170,0,0.3); }
+.github-btn { display:block; text-align:center; margin-top:10px; padding:8px; background:rgba(0,102,255,0.1); border:1px solid rgba(0,102,255,0.3); border-radius:6px; color:var(--accent2); font-size:12px; text-decoration:none; }
+.github-btn:hover { background:rgba(0,102,255,0.2); }
+
+.chat-wrap { display:flex; flex-direction:column; height:calc(100vh - 220px); min-height:500px; }
+.chat-messages { flex:1; overflow-y:auto; padding:20px; display:flex; flex-direction:column; gap:16px; background:var(--surface); border:1px solid var(--border); border-radius:8px 8px 0 0; }
+.chat-messages::-webkit-scrollbar { width:4px; }
+.chat-messages::-webkit-scrollbar-thumb { background:var(--border); border-radius:2px; }
+.msg { display:flex; gap:12px; max-width:85%; animation:fadeIn 0.3s ease; }
+@keyframes fadeIn { from{opacity:0;transform:translateY(8px)} to{opacity:1;transform:translateY(0)} }
+.msg.user { align-self:flex-end; flex-direction:row-reverse; }
+.msg-avatar { width:32px; height:32px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:14px; flex-shrink:0; }
+.msg.brain .msg-avatar { background:rgba(0,255,136,0.1); border:1px solid rgba(0,255,136,0.3); }
+.msg.user .msg-avatar { background:rgba(0,102,255,0.1); border:1px solid rgba(0,102,255,0.3); }
+.msg-body { background:var(--surface2); border:1px solid var(--border); border-radius:8px; padding:12px 16px; font-size:13px; line-height:1.7; }
+.msg.user .msg-body { background:rgba(0,102,255,0.08); border-color:rgba(0,102,255,0.2); }
+.msg-label { font-family:'Space Mono',monospace; font-size:9px; color:var(--muted); margin-bottom:6px; text-transform:uppercase; letter-spacing:1px; }
+.chat-input-area { background:var(--surface); border:1px solid var(--border); border-top:none; border-radius:0 0 8px 8px; padding:16px; display:flex; gap:10px; align-items:flex-end; }
+.chat-input { flex:1; background:var(--surface2); border:1px solid var(--border); border-radius:6px; padding:12px 16px; color:var(--text); font-family:'Noto Sans JP',sans-serif; font-size:13px; resize:none; outline:none; line-height:1.5; max-height:120px; transition:border-color 0.2s; }
+.chat-input:focus { border-color:var(--accent2); }
+.chat-input::placeholder { color:var(--muted); }
+.send-btn { background:var(--accent); color:#000; border:none; border-radius:6px; padding:12px 20px; font-family:'Space Mono',monospace; font-size:11px; font-weight:700; cursor:pointer; transition:opacity 0.2s; white-space:nowrap; }
+.send-btn:hover { opacity:0.85; }
+.send-btn:disabled { opacity:0.4; cursor:not-allowed; }
+.api-key-notice { background:rgba(255,170,0,0.07); border:1px solid rgba(255,170,0,0.2); border-radius:8px; padding:16px; margin-bottom:16px; font-size:12px; color:var(--warning); line-height:1.7; }
+.api-input-wrap { display:flex; gap:8px; margin-top:10px; }
+.api-input { flex:1; background:var(--surface2); border:1px solid var(--border); border-radius:6px; padding:10px 14px; color:var(--text); font-family:'Space Mono',monospace; font-size:12px; outline:none; }
+.api-save-btn { background:var(--warning); color:#000; border:none; border-radius:6px; padding:10px 16px; font-family:'Space Mono',monospace; font-size:11px; font-weight:700; cursor:pointer; }
+.suggestions { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:16px; }
+.suggestion { background:var(--surface2); border:1px solid var(--border); border-radius:20px; padding:6px 14px; font-size:12px; color:var(--muted); cursor:pointer; transition:all 0.2s; }
+.suggestion:hover { border-color:var(--accent); color:var(--accent); }
+.thinking { display:flex; gap:4px; align-items:center; padding:4px 0; }
+.thinking span { width:6px; height:6px; background:var(--accent); border-radius:50%; animation:thinking 1.2s infinite; }
+.thinking span:nth-child(2) { animation-delay:0.2s; }
+.thinking span:nth-child(3) { animation-delay:0.4s; }
+@keyframes thinking { 0%,80%,100%{transform:scale(0.6);opacity:0.4} 40%{transform:scale(1);opacity:1} }
+</style>
+</head>
+<body>
+<div class="grid-bg"></div>
+<div class="wrap">
+
+<header>
+  <div class="logo">🧠 <span>Brain</span></div>
+  <div class="status"><span class="pulse"></span> 2026-04-20 自動更新</div>
+</header>
+
+<div class="tabs">
+  <button class="tab active" onclick="switchTab('dashboard',this)">// Dashboard</button>
+  <button class="tab" onclick="switchTab('manage',this)">// 管理</button>
+  <button class="tab" onclick="switchTab('chat',this)">// Brain に質問</button>
+</div>
+
+<!-- Dashboard タブ -->
+<div id="tab-dashboard" class="tab-content active">
+<div class="main-grid">
+  <div>
+    <div class="panel">
+      <div class="panel-title">// Today's Digest</div>
+      <div class="digest">## 今日の最重要トレンド
+AIツールの**民主化**が本格化し、誰でも手軽に高度なAI機能を活用できる環境が整ってきています。複数のLLMモデルを簡単に実行できるollamaや、視覚的にワークフローを構築できるn8nなど、技術的専門知識がなくても利用できるツールが主流となっています。パーソナライゼーションと自動化を軸とした実用的なAIソリューションが注目されています。
+
+## ビジネスへの示唆
+企業は専門的なAI開発チームに依存せず、既存の業務プロセスを効率的に自動化できるようになります。400以上の統合が可能なワークフロー自動化により、コスト削減と生産性向上の両立が現実的になっています。
+
+## 注目すべき技術動向
+マルチモデル対応プラットフォームが普及し、用途に応じた最適なAIモデルの選択が容易になっています。コミュニティ主導のプロンプト共有により、AI活用のノウハウが組織を超えて蓄積・共有される仕組みが確立されつつあります。</div>
+    </div>
+    <div class="panel">
+      <div class="panel-title">// Top Tags</div>
+      <div class="tags"><span class="tag">オープンソース <span class="tag-count">4</span></span><span class="tag">LLM <span class="tag-count">2</span></span><span class="tag">コード <span class="tag-count">2</span></span><span class="tag">AI Agent <span class="tag-count">1</span></span><span class="tag">ビジネス <span class="tag-count">1</span></span></div>
+    </div>
+    <div class="panel">
+      <div class="panel-title">// Articles (5 collected)</div>
+      <div class="cards"><div class="card" onclick="window.open('https://github.com/Significant-Gravitas/AutoGPT','_blank')"><div class="card-bar" style="background:#00ff88"></div><div class="card-source">github_trending</div><div class="card-title">AutoGPT - すべての人向けのAIツール</div><div class="card-summary">誰でも簡単にAIを活用できるためのツールを提供。ユーザー自身の目的に集中できるように設計されています。</div><div class="card-tags"><span class="item-tag">LLM</span><span class="item-tag">オープンソース</span></div><div class="card-score">重要度 9/10</div></div><div class="card" onclick="window.open('https://github.com/ollama/ollama','_blank')"><div class="card-bar" style="background:#00ff88"></div><div class="card-source">github_trending</div><div class="card-title">ollama/ollama - 多種モデルの実行環境</div><div class="card-summary">Kimi-K2.5、GLM-5、Qwenなど、多数のLLMモデルを簡単に実行できる環境を提供。</div><div class="card-tags"><span class="item-tag">LLM</span><span class="item-tag">オープンソース</span></div><div class="card-score">重要度 9/10</div></div><div class="card" onclick="window.open('https://github.com/openclaw/openclaw','_blank')"><div class="card-bar" style="background:#00ff88"></div><div class="card-source">github_trending</div><div class="card-title">openclaw/openclaw - 自分のAIアシスタント</div><div class="card-summary">OSやプラットフォームを選ばないパーソナライズAIアシスタント。ロブスターの方法で動作します。</div><div class="card-tags"><span class="item-tag">AI Agent</span><span class="item-tag">オープンソース</span></div><div class="card-score">重要度 8/10</div></div><div class="card" onclick="window.open('https://github.com/n8n-io/n8n','_blank')"><div class="card-bar" style="background:#00ff88"></div><div class="card-source">github_trending</div><div class="card-title">n8n-io/n8n - ワークフロー自動化プラットフォーム</div><div class="card-summary">視覚的ビルディングとカスタムコードを組み合わせたAI機能付きワークフロー自動化ツール。400以上の統合が可能。</div><div class="card-tags"><span class="item-tag">コード</span><span class="item-tag">ビジネス</span></div><div class="card-score">重要度 8/10</div></div><div class="card" onclick="window.open('https://github.com/f/prompts.chat','_blank')"><div class="card-bar" style="background:#ffaa00"></div><div class="card-source">github_trending</div><div class="card-title">f/prompts.chat - コミュニティのプロンプト共有プラットフォーム</div><div class="card-summary">ChatGPTプロンプトを共有・収集できるオープンソースツール。組織向けのプライバシー保護機能付き。</div><div class="card-tags"><span class="item-tag">コード</span><span class="item-tag">オープンソース</span></div><div class="card-score">重要度 7/10</div></div></div>
+    </div>
+  </div>
+  <div>
+    <div class="panel">
+      <div class="panel-title">// Stats</div>
+      <div class="stat-grid">
+        <div class="stat"><div class="stat-value">5</div><div class="stat-label">Today</div></div>
+        <div class="stat"><div class="stat-value">1</div><div class="stat-label">Days</div></div>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="panel-title">// Knowledge Base</div>
+      <div class="kb-stats">
+        <div class="kb-stat">蓄積 <span>1</span> 日</div>
+        <div class="kb-stat">記事 <span>5</span> 件</div>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="panel-title">// 7-Day Activity</div>
+      <div class="history"><div class="hist-bar" style="height:15px" title="2026-04-20 (5件)"></div></div>
+    </div>
+    <div class="panel">
+      <div class="panel-title">// API Cost</div>
+      <div class="cost-grid">
+        <div class="cost-stat">
+          <div class="cost-value">$0.456</div>
+          <div class="cost-label">今月 USD</div>
+        </div>
+        <div class="cost-stat">
+          <div class="cost-value">¥68</div>
+          <div class="cost-label">今月 円換算</div>
+        </div>
+      </div>
+      <div class="cost-detail">
+        今月のAPI呼び出し: <span>14</span> 回<br>
+        累計コスト: <span>$0.456</span>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="panel-title">// Pending Approval</div>
+      <div class="proposal-item">📋 proposal_2026-04-20.md</div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- 管理タブ -->
+<div id="tab-manage" class="tab-content">
+<div class="main-grid">
+  <div>
+    <div class="panel">
+      <div class="panel-title">// X 投稿下書き（今日+昨日の最新ニュースから生成）</div>
+      <div class="draft-card"><div class="draft-num">投稿 1</div><div class="draft-text">【速報】誰でも簡単にAIが使えるAutoGPT、ついに一般向けツール化！プログラミング知識ゼロでもOK。これまでエンジニア専用だったAI自動化が、今日からあなたの日常業務に。AI民主化の決定的瞬間。<br>#AutoGPT #AI民主化 #業務効率化</div><a class="draft-source-link" href="https://github.com/Significant-Gravitas/AutoGPT" target="_blank" onclick="event.stopPropagation()">🔗 引用元を見る</a><button class="copy-btn" onclick="copyText(`【速報】誰でも簡単にAIが使えるAutoGPT、ついに一般向けツール化！プログラミング知識ゼロでもOK。これまでエンジニア専用だったAI自動化が、今日からあなたの日常業務に。AI民主化の決定的瞬間。\n#AutoGPT #AI民主化 #業務効率化`, this)">コピー</button></div><div class="draft-card"><div class="draft-num">投稿 2</div><div class="draft-text">【衝撃】ローカルPCで最新AI全部動かせる時代到来！Ollama最新版でKimi、GLM-5、Qwen等の大規模言語モデルが手元で実行可能に。クラウド料金気にせず、プライバシー完全保護でAI使い放題の革命。<br>#Ollama #ローカルAI #プライバシー保護</div><a class="draft-source-link" href="https://github.com/ollama/ollama" target="_blank" onclick="event.stopPropagation()">🔗 引用元を見る</a><button class="copy-btn" onclick="copyText(`【衝撃】ローカルPCで最新AI全部動かせる時代到来！Ollama最新版でKimi、GLM-5、Qwen等の大規模言語モデルが手元で実行可能に。クラウド料金気にせず、プライバシー完全保護でAI使い放題の革命。\n#Ollama #ローカルAI #プライバシー保護`, this)">コピー</button></div><div class="draft-card"><div class="draft-num">投稿 3</div><div class="draft-text">【今話題】400以上のサービスと連携するAI自動化プラットフォーム「n8n」が凄すぎる件。ドラッグ&ドロップだけで複雑な業務フローを自動化。コード書けなくても今すぐ始められるワークフロー革命。<br>#n8n #ワークフロー自動化 #ノーコード</div><a class="draft-source-link" href="https://github.com/n8n-io/n8n" target="_blank" onclick="event.stopPropagation()">🔗 引用元を見る</a><button class="copy-btn" onclick="copyText(`【今話題】400以上のサービスと連携するAI自動化プラットフォーム「n8n」が凄すぎる件。ドラッグ&ドロップだけで複雑な業務フローを自動化。コード書けなくても今すぐ始められるワークフロー革命。\n#n8n #ワークフロー自動化 #ノーコード`, this)">コピー</button></div>
+    </div>
+    <div class="panel">
+      <div class="panel-title">// Note 下書き（毎週月曜自動生成）</div>
+      <div class="note-date">📅 2026-04-20 生成</div><div class="note-preview"># note記事下書き - 2026-04-20<br><br>> 無料部分はそのまま公開、有料部分は980円で設定推奨<br>> 固有名詞・数字を確認して投稿してください<br><br>---<br><br># 【2024年最新】オープンソースAIが変える「働き方革命」- 3つの大変化と来週の激震予想<br><br>## はじめに<br><br>今週のAI界隈は「民主化」というキーワードが完全に主役になりました。GoogleやOpenAIといった巨大企業が主導してきたAI業界に、個人でも企業でも誰もが使える強力なオープンソースツールが続々と登場。特に注目すべきは、単なるモデル公開ではなく「実際に使える環境」まで提供する流れです。この変化は、あなたの仕事や副業に直接影響する可能性が高いものばかり。今週起きた3つの大きな変化をまとめました。<br><br>## 今週起きた3大ニュース<br><br>### 1. AutoGPT - AI自動化の決定版が誰でも使える時代に<br><br>「すべての人向けのAIツール」をコンセプトに、AutoGPTが大幅アップデート。従来は技術者しか扱えなかった複雑なタスク自動化が、ノーコードで実現可能になりました。例えば「競合他社の情報を毎日収集してレポート作成」といった作業を、一度設定すれば AI が継続実行してくれます。<br><br>### 2. ollama - ローカルで動くAIの本格普及<br><br>ChatGPTのようなクラウドサービスに頼らず、自分のパソコンでGLM-5やQwenなど最新のAIモデルを実行できるollamaが急成長。データ漏洩の心配なし、月額料金なし、オフラインでも動作という三拍子で、企業導入が加速しています。<br><br>### 3. n8n - ワークフロー自動化にAI機能が本格統合<br><br>400以上のツールと連携できるワークフロー自動化プラットフォームn8nに、本格的なAI機能が追加。SlackからGmail、Excel、データベースまで、あらゆるツールをAIが仲介して自動連携させることが可能になりました。<br><br>---<br><br>**🔐 ここから有料部分（980円）**<br><br>## なぜこれが重要なのか<br><br>この3つの動きは、単なる技術アップデートではありません。AI活用の「権力構造」そのものが変わろうとしています。<br><br>従来のAI活用は「大手プラットフォームにお金を払って、その範囲内でできることをする」というモデルでした。ChatGPT Plusの月20ドル、Claude Proの月20ドル、Gemini Advancedの月20ドル...と、複数サービスを使えば月6000円を超えることも珍しくありません。<br><br>しかし今回の変化は根本的に違います。オープンソースという性質上、一度環境を構築すれば継続的なコストは電気代程度。しかも、大手サービスでは「できません」と言われることも、自分でカスタマイズして実現できます。<br><br>特にollamaの影響は計り知れません。企業の機密情報をクラウドに送らずに済む、APIの利用制限に縛られない、モデルを自社データで追加学習できる、といったメリットがあります。私の知り合いの中小企業経営者は、既にGPT-4レベルのモデルを自社サーバーで運用開始し、「月10万円のAI費用が電気代3000円になった」と話していました。<br><br>さらに重要なのは「組み合わせの力」です。AutoGPT + ollama + n8nを連携させれば、完全にオフラインで動作する高度なAIワークフローが構築できます。これは大手企業が提供するSaaSでは絶対に不可能な組み合わせです。<br><br>## あなたのビジネス・仕事への影響<br><br>この変化があなたに与える影響を、具体的な職種・業務別に整理してみました。<br><br>**フリーランス・個人事業主への影響**<br>最も大きな恩恵を受けるのがこの層です。例えばWebデザイナーなら、n8nでクライアントからのメール受信→要件整理→初回提案資料作成→返信まで自動化できます。私が試算したところ、月30件程度の案件対応にかかる事務作業時間を70%削減できました。浮いた時間で受注件数を増やすか、より高単価な企画業務にシフトするかの選択肢が生まれます。<br><br>**中小企業の経営者・管理職への影響**<br>大企業と同等のAI活用が可能になります。従来なら数百万円の予算が必要だったマーケティング自動化や顧客データ分析が、月数万円で実現可能。特に影響が大きいのは「人材不足」の解決です。採用が困難なデータアナリストやマーケティング担当者の業務を、AIと既存スタッフの組み合わせで代替できるケースが増えています。<br><br>**会社員（特にマーケティング・営業・企画職）への影響**<br>社内でのポジション確立に使えます。「AIワークフロー構築ができる人材」としての希少価値を高められます。ただし、ここで重要なのは単なるツールの使い方ではなく「どの...</div><a class="note-link" href="https://github.com/sota20050626-creator/brain/blob/main/knowledge/drafts/note_2026-04-20.md" target="_blank">GitHubで全文を見る →</a>
+    </div>
+  </div>
+  <div>
+    <div class="panel">
+      <div class="panel-title">// Pull Requests</div>
+      <div id="pr-list"><div class="muted-msg">読み込み中...</div></div>
+      <a class="github-btn" href="https://github.com/sota20050626-creator/brain/pulls" target="_blank">GitHubでPR一覧を見る →</a>
+    </div>
+    <div class="panel">
+      <div class="panel-title">// Issues</div>
+      <div id="issue-list"><div class="muted-msg">読み込み中...</div></div>
+      <a class="github-btn" href="https://github.com/sota20050626-creator/brain/issues" target="_blank">GitHubでIssue一覧を見る →</a>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- チャットタブ -->
+<div id="tab-chat" class="tab-content">
+  <div id="api-notice" class="api-key-notice">
+    APIキーを入力してください。ブラウザ内にのみ保存され外部には送信されません。
+    <div class="api-input-wrap">
+      <input class="api-input" id="api-key-input" type="password" placeholder="sk-ant-..." />
+      <button class="api-save-btn" onclick="saveApiKey()">保存</button>
+    </div>
+  </div>
+  <div class="suggestions">
+    <div class="suggestion" onclick="useSuggestion(this)">今週の最重要AIトレンドは？</div>
+    <div class="suggestion" onclick="useSuggestion(this)">LLM関連で注目すべきニュースは？</div>
+    <div class="suggestion" onclick="useSuggestion(this)">AIを使ったビジネスアイデアを提案して</div>
+    <div class="suggestion" onclick="useSuggestion(this)">中国のAI動向を教えて</div>
+    <div class="suggestion" onclick="useSuggestion(this)">オープンソースAIの最新情報は？</div>
+  </div>
+  <div class="chat-wrap">
+    <div class="chat-messages" id="chat-messages">
+      <div class="msg brain">
+        <div class="msg-avatar">🧠</div>
+        <div class="msg-body">
+          <div class="msg-label">Brain</div>
+          こんにちは！蓄積したAI情報（1日分・5件）を元に質問に答えます。
+        </div>
+      </div>
+    </div>
+    <div class="chat-input-area">
+      <textarea class="chat-input" id="chat-input" placeholder="Brainに質問する..." rows="1" onkeydown="handleKey(event)" oninput="autoResize(this)"></textarea>
+      <button class="send-btn" id="send-btn" onclick="sendMessage()">送信</button>
+    </div>
+  </div>
+</div>
+
+</div>
+<script>
+const KB_DATA = [{"date": "2026-04-20", "digest": "## 今日の最重要トレンド\nAIツールの**民主化**が本格化し、誰でも手軽に高度なAI機能を活用できる環境が整ってきています。複数のLLMモデルを簡単に実行できるollamaや、視覚的にワークフローを構築できるn8nなど、技術的専門知識がなくても利用できるツールが主流となっています。パーソナライゼーションと自動化を軸とした実用的なAIソリューションが注目されています。\n\n## ビジネスへの示唆\n企業は専門的なAI開発チームに依存せず、既存の業務プロセスを効率的に自動化できるようになります。400以上の統合が可能なワークフロー自動化により、コスト削減と生産性向上の両立が現実的になっています。\n\n## 注目すべき技術動向\nマルチモデル対応プラットフォームが普及し、用途に応じた最適なAIモデルの選択が容易になっています。コミュニティ主導のプロンプト共有により、AI活用のノウハウが組織を超えて蓄積・共有される仕組みが確立されつつあります。", "articles": [{"title": "AutoGPT - すべての人向けのAIツール", "summary": "誰でも簡単にAIを活用できるためのツールを提供。ユーザー自身の目的に集中できるように設計されています。", "importance": 9, "tags": ["LLM", "オープンソース"], "category": "技術", "source": "github_trending", "url": "https://github.com/Significant-Gravitas/AutoGPT"}, {"title": "ollama/ollama - 多種モデルの実行環境", "summary": "Kimi-K2.5、GLM-5、Qwenなど、多数のLLMモデルを簡単に実行できる環境を提供。", "importance": 9, "tags": ["LLM", "オープンソース"], "category": "技術", "source": "github_trending", "url": "https://github.com/ollama/ollama"}, {"title": "openclaw/openclaw - 自分のAIアシスタント", "summary": "OSやプラットフォームを選ばないパーソナライズAIアシスタント。ロブスターの方法で動作します。", "importance": 8, "tags": ["AI Agent", "オープンソース"], "category": "技術", "source": "github_trending", "url": "https://github.com/openclaw/openclaw"}, {"title": "n8n-io/n8n - ワークフロー自動化プラットフォーム", "summary": "視覚的ビルディングとカスタムコードを組み合わせたAI機能付きワークフロー自動化ツール。400以上の統合が可能。", "importance": 8, "tags": ["コード", "ビジネス"], "category": "技術", "source": "github_trending", "url": "https://github.com/n8n-io/n8n"}, {"title": "f/prompts.chat - コミュニティのプロンプト共有プラットフォーム", "summary": "ChatGPTプロンプトを共有・収集できるオープンソースツール。組織向けのプライバシー保護機能付き。", "importance": 7, "tags": ["コード", "オープンソース"], "category": "ツール", "source": "github_trending", "url": "https://github.com/f/prompts.chat"}]}];
+const GITHUB_REPO = "sota20050626-creator/brain";
+
+function switchTab(name, el) {
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+  el.classList.add('active');
+  document.getElementById('tab-' + name).classList.add('active');
+  if (name === 'manage') loadGithubData();
+}
+
+function copyText(text, btn) {
+  navigator.clipboard.writeText(text).then(() => {
+    btn.textContent = 'コピー済!';
+    btn.classList.add('copied');
+    setTimeout(() => {
+      btn.textContent = 'コピー';
+      btn.classList.remove('copied');
+    }, 2000);
+  });
+}
+
+async function loadGithubData() {
+  await Promise.all([loadPRs(), loadIssues()]);
+}
+
+async function loadPRs() {
+  const el = document.getElementById('pr-list');
+  try {
+    const res = await fetch('https://api.github.com/repos/' + GITHUB_REPO + '/pulls?state=open&per_page=5');
+    const prs = await res.json();
+    if (!prs.length) {
+      el.innerHTML = '<div class="muted-msg">オープンなPRはありません</div>';
+      return;
+    }
+    el.innerHTML = prs.map(pr =>
+      '<a class="github-link" href="' + pr.html_url + '" target="_blank">'
+      + '<span class="github-badge badge-pr">PR #' + pr.number + '</span>'
+      + '<span style="flex:1;font-size:11px">' + pr.title + '</span>'
+      + '</a>'
+    ).join('');
+  } catch(e) {
+    el.innerHTML = '<div class="muted-msg">PR取得エラー</div>';
+  }
+}
+
+async function loadIssues() {
+  const el = document.getElementById('issue-list');
+  try {
+    const res = await fetch('https://api.github.com/repos/' + GITHUB_REPO + '/issues?state=open&per_page=5');
+    const issues = await res.json();
+    const filtered = issues.filter(i => !i.pull_request);
+    if (!filtered.length) {
+      el.innerHTML = '<div class="muted-msg">オープンなIssueはありません</div>';
+      return;
+    }
+    el.innerHTML = filtered.map(issue =>
+      '<a class="github-link" href="' + issue.html_url + '" target="_blank">'
+      + '<span class="github-badge badge-issue">#' + issue.number + '</span>'
+      + '<span style="flex:1;font-size:11px">' + issue.title + '</span>'
+      + '</a>'
+    ).join('');
+  } catch(e) {
+    el.innerHTML = '<div class="muted-msg">Issue取得エラー</div>';
+  }
+}
+
+function saveApiKey() {
+  const key = document.getElementById('api-key-input').value.trim();
+  if (!key.startsWith('sk-ant-')) { alert('APIキーはsk-ant-で始まる必要があります'); return; }
+  sessionStorage.setItem('brain_api_key', key);
+  document.getElementById('api-notice').style.display = 'none';
+}
+
+window.addEventListener('load', () => {
+  if (sessionStorage.getItem('brain_api_key')) document.getElementById('api-notice').style.display = 'none';
+});
+
+function useSuggestion(el) {
+  const input = document.getElementById('chat-input');
+  input.value = el.textContent;
+  autoResize(input);
+}
+
+function autoResize(el) {
+  el.style.height = 'auto';
+  el.style.height = Math.min(el.scrollHeight, 120) + 'px';
+}
+
+function handleKey(e) {
+  if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendMessage(); }
+}
+
+function buildContext() {
+  if (!KB_DATA || KB_DATA.length === 0) return '（まだナレッジベースがありません）';
+  const lines = [];
+  for (const entry of KB_DATA.slice(0, 14)) {
+    lines.push('=== ' + entry.date + ' ===');
+    if (entry.digest) lines.push(entry.digest);
+    for (const a of (entry.articles || []).slice(0, 5)) {
+      lines.push('- ' + a.title + (a.summary ? ': ' + a.summary : ''));
+    }
+  }
+  return lines.join('\n');
+}
+
+async function sendMessage() {
+  const input = document.getElementById('chat-input');
+  const msg = input.value.trim();
+  if (!msg) return;
+  const apiKey = sessionStorage.getItem('brain_api_key');
+  if (!apiKey) { document.getElementById('api-notice').style.display = 'block'; return; }
+  appendMessage('user', msg);
+  input.value = '';
+  input.style.height = 'auto';
+  const btn = document.getElementById('send-btn');
+  btn.disabled = true;
+  const thinkingId = appendThinking();
+  const context = buildContext();
+  try {
+    const res = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: {
+        'x-api-key': apiKey,
+        'anthropic-version': '2023-06-01',
+        'content-type': 'application/json',
+        'anthropic-dangerous-direct-browser-access': 'true'
+      },
+      body: JSON.stringify({
+        model: 'claude-haiku-4-5-20251001',
+        max_tokens: 1000,
+        system: 'あなたはBrainというAI情報アナリストです。以下の蓄積されたAIニュースデータを元に、ユーザーの質問に日本語で答えてください。\n\n【蓄積データ】\n' + context,
+        messages: [{ role: 'user', content: msg }]
+      })
+    });
+    removeThinking(thinkingId);
+    if (!res.ok) {
+      const err = await res.json();
+      appendMessage('brain', 'エラー: ' + (err.error?.message || res.status));
+      return;
+    }
+    const data = await res.json();
+    appendMessage('brain', data.content[0].text);
+  } catch(e) {
+    removeThinking(thinkingId);
+    appendMessage('brain', 'エラー: ' + e.message);
+  } finally {
+    btn.disabled = false;
+  }
+}
+
+function appendMessage(role, text) {
+  const c = document.getElementById('chat-messages');
+  const div = document.createElement('div');
+  div.className = 'msg ' + role;
+  const avatar = role === 'brain' ? '🧠' : '👤';
+  const label = role === 'brain' ? 'Brain' : 'You';
+  div.innerHTML = '<div class="msg-avatar">' + avatar + '</div><div class="msg-body"><div class="msg-label">' + label + '</div>' + text.replace(/\n/g, '<br>') + '</div>';
+  c.appendChild(div);
+  c.scrollTop = c.scrollHeight;
+}
+
+function appendThinking() {
+  const c = document.getElementById('chat-messages');
+  const div = document.createElement('div');
+  const id = 'thinking-' + Date.now();
+  div.id = id;
+  div.className = 'msg brain';
+  div.innerHTML = '<div class="msg-avatar">🧠</div><div class="msg-body"><div class="msg-label">Brain</div><div class="thinking"><span></span><span></span><span></span></div></div>';
+  c.appendChild(div);
+  c.scrollTop = c.scrollHeight;
+  return id;
+}
+
+function removeThinking(id) {
+  const el = document.getElementById(id);
+  if (el) el.remove();
+}
+</script>
+</body>
+</html>
