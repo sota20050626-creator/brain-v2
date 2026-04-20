@@ -9,8 +9,13 @@ TODAY = datetime.now().strftime("%Y-%m-%d")
 DATA_FILE = Path("knowledge/daily/" + TODAY + ".json")
 COST_FILE = Path("knowledge/cost_log.json")
 
+# Claude API料金
 SONNET_INPUT_PRICE = 3.0 / 1_000_000
 SONNET_OUTPUT_PRICE = 15.0 / 1_000_000
+
+# Qwen3料金（OpenRouter経由）
+QWEN_INPUT_PRICE = 0.1 / 1_000_000
+QWEN_OUTPUT_PRICE = 0.3 / 1_000_000
 
 
 def load_cost_log():
@@ -20,8 +25,11 @@ def load_cost_log():
         return json.load(f)
 
 
-def save_cost(input_tokens, output_tokens, label):
-    cost = input_tokens * SONNET_INPUT_PRICE + output_tokens * SONNET_OUTPUT_PRICE
+def save_cost(input_tokens, output_tokens, label, model="claude"):
+    if model == "qwen":
+        cost = input_tokens * QWEN_INPUT_PRICE + output_tokens * QWEN_OUTPUT_PRICE
+    else:
+        cost = input_tokens * SONNET_INPUT_PRICE + output_tokens * SONNET_OUTPUT_PRICE
     log = load_cost_log()
     month = TODAY[:7]
     if month not in log["monthly"]:
@@ -32,6 +40,7 @@ def save_cost(input_tokens, output_tokens, label):
     log["monthly"][month]["calls"].append({
         "date": TODAY,
         "label": label,
+        "model": model,
         "input_tokens": input_tokens,
         "output_tokens": output_tokens,
         "usd": round(cost, 6)
@@ -39,11 +48,47 @@ def save_cost(input_tokens, output_tokens, label):
     log["total_usd"] = round(sum(v["usd"] for v in log["monthly"].values()), 6)
     with open(COST_FILE, "w", encoding="utf-8") as f:
         json.dump(log, f, ensure_ascii=False, indent=2)
-    print("  コスト記録: " + label + " $" + str(round(cost, 4)) + " (in:" + str(input_tokens) + " out:" + str(output_tokens) + ")")
+    print("  コスト記録: " + label + " $" + str(round(cost, 6)) + " [" + model + "]")
     return cost
 
 
+def call_qwen(prompt, max_tokens=2000, label="qwen_call"):
+    """Qwen3をOpenRouter経由で呼び出す（軽い処理用・激安）"""
+    api_key = os.environ.get("OPENROUTER_API_KEY")
+    if not api_key:
+        print("  OPENROUTER_API_KEY未設定、Claudeにフォールバック")
+        return call_claude(prompt, max_tokens, label)
+    payload = json.dumps({
+        "model": "qwen/qwen3-8b",
+        "max_tokens": max_tokens,
+        "messages": [{"role": "user", "content": prompt}]
+    }).encode()
+    req = urllib.request.Request(
+        "https://openrouter.ai/api/v1/chat/completions",
+        data=payload,
+        headers={
+            "Authorization": "Bearer " + api_key,
+            "Content-Type": "application/json",
+            "HTTP-Referer": "https://github.com/sota20050626-creator/brain-v2",
+        }
+    )
+    try:
+        with urllib.request.urlopen(req) as r:
+            result = json.loads(r.read())
+        usage = result.get("usage", {})
+        save_cost(
+            usage.get("prompt_tokens", 0),
+            usage.get("completion_tokens", 0),
+            label, model="qwen"
+        )
+        return result["choices"][0]["message"]["content"]
+    except Exception as e:
+        print("  Qwen3エラー: " + str(e) + " → Claudeにフォールバック")
+        return call_claude(prompt, max_tokens, label)
+
+
 def call_claude(prompt, max_tokens=2000, label="api_call"):
+    """Claude APIを呼び出す（重要な処理用・高品質）"""
     api_key = os.environ.get("ANTHROPIC_API_KEY")
     if not api_key:
         raise ValueError("ANTHROPIC_API_KEY not set")
@@ -64,12 +109,17 @@ def call_claude(prompt, max_tokens=2000, label="api_call"):
     with urllib.request.urlopen(req) as r:
         result = json.loads(r.read())
     usage = result.get("usage", {})
-    save_cost(usage.get("input_tokens", 0), usage.get("output_tokens", 0), label)
+    save_cost(
+        usage.get("input_tokens", 0),
+        usage.get("output_tokens", 0),
+        label, model="claude"
+    )
     return result["content"][0]["text"]
 
 
 def summarize_items(items):
-    top_items = sorted(items, key=lambda x: x.get("score", 0), reverse=True)[:10]
+    """要約はQwen3で処理（コスト削減）"""
+    top_items = sorted(items, key=lambda x: x.get("score", 0), reverse=True)[:5]
     items_text = "\n\n".join([
         "[" + str(i+1) + "] SOURCE: " + item["source"] + "\nTITLE: " + item["title"] + "\nTEXT: " + item.get("text","")[:200]
         for i, item in enumerate(top_items)
@@ -97,7 +147,8 @@ importanceは1から10で評価。
 tagsはLLM/Agent/ビジネス/画像生成/音声/コード/論文/中国AI/オープンソースから選択。
 categoryは技術/ビジネス/ツール/論文/その他から選択。"""
 
-    response = call_claude(prompt, max_tokens=3000, label="summarize_items")
+    # 要約はQwen3で処理（激安）
+    response = call_qwen(prompt, max_tokens=3000, label="summarize_items")
     try:
         match = re.search(r"\[.*\]", response, re.DOTALL)
         if not match:
@@ -124,6 +175,7 @@ categoryは技術/ビジネス/ツール/論文/その他から選択。"""
 
 
 def generate_daily_digest(items):
+    """digestはClaudeで処理（品質重視）"""
     top5 = items[:5]
     top5_text = "\n".join([
         "- " + item["title_ja"] + ": " + item["summary_ja"]
@@ -138,6 +190,7 @@ def generate_daily_digest(items):
 3. 注目すべき技術動向（2行以内）
 
 簡潔にまとめてください。"""
+    # digestはClaude（高品質）
     return call_claude(prompt, max_tokens=500, label="daily_digest")
 
 
@@ -150,7 +203,8 @@ def _count_tags(items):
 
 
 def main():
-    print("Brain Summarizer starting... [" + TODAY + "]")
+    print("Brain-v2 Summarizer starting... [" + TODAY + "]")
+    print("  モード: 要約=Qwen3（激安）/ Digest=Claude（高品質）")
     if not DATA_FILE.exists():
         print("No data file found: " + str(DATA_FILE))
         return
