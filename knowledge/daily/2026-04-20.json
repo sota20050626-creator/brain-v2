@@ -1,77 +1,77 @@
 {
   "date": "2026-04-20",
-  "collected_at": "2026-04-20T17:08:27.411229+00:00",
+  "collected_at": "2026-04-20T17:34:40.340577+00:00",
   "total": 111,
   "raw_items": [
     {
       "title": "Qwen3.6-Max-Preview: Smarter, Sharper, Still Evolving",
       "url": "https://qwen.ai/blog?id=qwen3.6-max-preview",
-      "score": 224,
-      "comments": 130,
-      "source": "hackernews",
-      "text": ""
-    },
-    {
-      "title": "Atlassian Enables Default Data Collection to Train AI",
-      "url": "https://letsdatascience.com/news/atlassian-enables-default-data-collection-to-train-ai-f71343d8",
-      "score": 274,
-      "comments": 66,
+      "score": 253,
+      "comments": 154,
       "source": "hackernews",
       "text": ""
     },
     {
       "title": "Deezer says 44% of songs uploaded to its platform daily are AI-generated",
       "url": "https://techcrunch.com/2026/04/20/deezer-says-44-of-songs-uploaded-to-its-platform-daily-are-ai-generated/",
-      "score": 82,
-      "comments": 73,
+      "score": 108,
+      "comments": 106,
       "source": "hackernews",
       "text": ""
     },
     {
-      "title": "I prompted ChatGPT, Claude, Perplexity, and Gemini and watched my Nginx logs",
-      "url": "https://surfacedby.com/blog/nginx-logs-ai-traffic-vs-referral-traffic",
-      "score": 84,
-      "comments": 13,
+      "title": "Atlassian enables default data collection to train AI",
+      "url": "https://letsdatascience.com/news/atlassian-enables-default-data-collection-to-train-ai-f71343d8",
+      "score": 302,
+      "comments": 72,
       "source": "hackernews",
       "text": ""
     },
     {
       "title": "Larry Tesler: A Personal History of Modeless Text Editing and Cut/Copy-Paste (2012)",
       "url": "https://dl.acm.org/doi/epdf/10.1145/2212877.2212896",
-      "score": 5,
-      "comments": 1,
+      "score": 13,
+      "comments": 3,
       "source": "hackernews",
       "text": ""
     },
     {
       "title": "NSA is using Anthropic's Mythos despite blacklist",
       "url": "https://www.axios.com/2026/04/19/nsa-anthropic-mythos-pentagon",
-      "score": 344,
-      "comments": 254,
+      "score": 350,
+      "comments": 257,
       "source": "hackernews",
       "text": ""
     },
     {
-      "title": "Claude Token Counter, now with model comparisons",
-      "url": "https://simonwillison.net/2026/Apr/20/claude-token-counts/",
-      "score": 187,
-      "comments": 73,
+      "title": "I prompted ChatGPT, Claude, Perplexity, and Gemini and watched my Nginx logs",
+      "url": "https://surfacedby.com/blog/nginx-logs-ai-traffic-vs-referral-traffic",
+      "score": 93,
+      "comments": 16,
       "source": "hackernews",
       "text": ""
     },
     {
       "title": "AI chatbots could be making you stupider",
       "url": "https://www.bbc.com/future/article/20260417-ai-chatbots-could-be-making-you-stupider",
-      "score": 7,
-      "comments": 2,
+      "score": 11,
+      "comments": 3,
+      "source": "hackernews",
+      "text": ""
+    },
+    {
+      "title": "Claude Token Counter, now with model comparisons",
+      "url": "https://simonwillison.net/2026/Apr/20/claude-token-counts/",
+      "score": 192,
+      "comments": 73,
       "source": "hackernews",
       "text": ""
     },
     {
       "title": "Allbirds' Move to AI Has Echoes of the Dot-Com Frenzy",
       "url": "https://www.bloomberg.com/news/newsletters/2026-04-20/allbirds-pivot-to-ai-stirs-memory-of-dot-com-boom-and-bust",
-      "score": 14,
-      "comments": 1,
+      "score": 17,
+      "comments": 3,
       "source": "hackernews",
       "text": ""
     },
@@ -86,7 +86,7 @@
     {
       "title": "ChatGPT and Codex Down",
       "url": "https://status.openai.com/history",
-      "score": 28,
+      "score": 29,
       "comments": 7,
       "source": "hackernews",
       "text": ""
@@ -94,16 +94,8 @@
     {
       "title": "Amazon's AI boom is creating mess of duplicate tools and data inside the company",
       "url": "https://www.businessinsider.com/ai-sprawl-amazon-tool-duplication-data-risk-2026-4",
-      "score": 31,
+      "score": 32,
       "comments": 11,
-      "source": "hackernews",
-      "text": ""
-    },
-    {
-      "title": "Show HN: CyberWriter – a .md editor built on Apple's (barely-used) on-device AI",
-      "url": "https://cyberwriter.app",
-      "score": 6,
-      "comments": 3,
       "source": "hackernews",
       "text": ""
     },
@@ -116,9 +108,17 @@
       "text": ""
     },
     {
+      "title": "Show HN: CyberWriter – a .md editor built on Apple's (barely-used) on-device AI",
+      "url": "https://cyberwriter.app",
+      "score": 8,
+      "comments": 3,
+      "source": "hackernews",
+      "text": ""
+    },
+    {
       "title": "2,100 Swiss municipalities showing which provider handles their official email",
       "url": "https://mxmap.ch/",
-      "score": 221,
+      "score": 223,
       "comments": 68,
       "source": "hackernews",
       "text": ""
@@ -134,7 +134,7 @@
     {
       "title": "The Victorian sex abuse scandal that shocked Britain and changed the law",
       "url": "https://theconversation.com/the-victorian-sex-abuse-scandal-that-shocked-britain-and-changed-the-law-long-before-epstein-278822",
-      "score": 34,
+      "score": 37,
       "comments": 0,
       "source": "hackernews",
       "text": ""
@@ -150,7 +150,7 @@
     {
       "title": "Yann LeCun says Dario Amodei \"knows nothing about AI effects on jobs\"",
       "url": "https://timesofindia.indiatimes.com/technology/tech-news/godfather-of-ai-and-metas-most-popular-ex-employee-yann-lecun-says-anthropic-ceo-dario-amodei-knows-absolutely-nothing-about-ai-effects-on-jobs-dario-is-wrong/articleshow/130377621.cms",
-      "score": 19,
+      "score": 20,
       "comments": 16,
       "source": "hackernews",
       "text": ""
@@ -158,7 +158,7 @@
     {
       "title": "Show HN: A lightweight way to make agents talk without paying for API usage",
       "url": "https://juanpabloaj.com/2026/04/16/a-lightweight-way-to-make-agents-talk-without-paying-for-api-usage/",
-      "score": 47,
+      "score": 48,
       "comments": 11,
       "source": "hackernews",
       "text": ""
@@ -166,7 +166,7 @@
     {
       "title": "Notion leaks email addresses of all editors of any public page",
       "url": "https://twitter.com/weezerOSINT/status/2045849358462222720",
-      "score": 385,
+      "score": 386,
       "comments": 143,
       "source": "hackernews",
       "text": ""
@@ -182,8 +182,8 @@
     {
       "title": "College instructor turns to typewriters to curb AI-written work",
       "url": "https://sentinelcolorado.com/uncategorized/a-college-instructor-turns-to-typewriters-to-curb-ai-written-work-and-teach-life-lessons/",
-      "score": 478,
-      "comments": 423,
+      "score": 480,
+      "comments": 424,
       "source": "hackernews",
       "text": ""
     },
@@ -318,7 +318,7 @@
     {
       "title": "ollama/ollama - Get up and running with Kimi-K2.5, GLM-5, MiniMax, DeepSeek, gpt-oss, Qwen, Gemma and other models.",
       "url": "https://github.com/ollama/ollama",
-      "score": 169528,
+      "score": 169529,
       "comments": 0,
       "source": "github_trending",
       "text": "Get up and running with Kimi-K2.5, GLM-5, MiniMax, DeepSeek, gpt-oss, Qwen, Gemma and other models."
@@ -326,7 +326,7 @@
     {
       "title": "f/prompts.chat - f.k.a. Awesome ChatGPT Prompts. Share, discover, and collect prompts from the community. Free and open source — self-host for your organization with complete privacy.",
       "url": "https://github.com/f/prompts.chat",
-      "score": 160197,
+      "score": 160201,
       "comments": 0,
       "source": "github_trending",
       "text": "f.k.a. Awesome ChatGPT Prompts. Share, discover, and collect prompts from the community. Free and open source — self-host for your organization with complete privacy."
@@ -334,7 +334,7 @@
     {
       "title": "huggingface/transformers - 🤗 Transformers: the model-definition framework for state-of-the-art machine learning models in text, vision, audio, and multimodal models, for both inference and training. ",
       "url": "https://github.com/huggingface/transformers",
-      "score": 159657,
+      "score": 159659,
       "comments": 0,
       "source": "github_trending",
       "text": "🤗 Transformers: the model-definition framework for state-of-the-art machine learning models in text, vision, audio, and multimodal models, for both inference and training. "
@@ -342,7 +342,7 @@
     {
       "title": "langgenius/dify - Production-ready platform for agentic workflow development.",
       "url": "https://github.com/langgenius/dify",
-      "score": 138496,
+      "score": 138497,
       "comments": 0,
       "source": "github_trending",
       "text": "Production-ready platform for agentic workflow development."
@@ -350,7 +350,7 @@
     {
       "title": "openclaw/openclaw - Your own personal AI assistant. Any OS. Any Platform. The lobster way. 🦞 ",
       "url": "https://github.com/openclaw/openclaw",
-      "score": 361102,
+      "score": 361118,
       "comments": 0,
       "source": "github_trending",
       "text": "Your own personal AI assistant. Any OS. Any Platform. The lobster way. 🦞 "
@@ -358,7 +358,7 @@
     {
       "title": "n8n-io/n8n - Fair-code workflow automation platform with native AI capabilities. Combine visual building with custom code, self-host or cloud, 400+ integrations.",
       "url": "https://github.com/n8n-io/n8n",
-      "score": 184852,
+      "score": 184854,
       "comments": 0,
       "source": "github_trending",
       "text": "Fair-code workflow automation platform with native AI capabilities. Combine visual building with custom code, self-host or cloud, 400+ integrations."
@@ -366,7 +366,7 @@
     {
       "title": "NousResearch/hermes-agent - The agent that grows with you",
       "url": "https://github.com/NousResearch/hermes-agent",
-      "score": 104811,
+      "score": 104855,
       "comments": 0,
       "source": "github_trending",
       "text": "The agent that grows with you"
@@ -374,7 +374,7 @@
     {
       "title": "lobehub/lobehub - The ultimate space for work and life — to find, build, and collaborate with agent teammates that grow with you. We are taking agent harness to the next level — enabling multi-agent collaboration, effortless agent team design, and introducing agents as the unit of work interaction.",
       "url": "https://github.com/lobehub/lobehub",
-      "score": 75392,
+      "score": 75393,
       "comments": 0,
       "source": "github_trending",
       "text": "The ultimate space for work and life — to find, build, and collaborate with agent teammates that grow with you. We are taking agent harness to the next level — enabling multi-agent collaboration, effortless agent team design, and introducing agents as the unit of work interaction."
@@ -382,7 +382,7 @@
     {
       "title": "thedotmack/claude-mem - A Claude Code plugin that automatically captures everything Claude does during your coding sessions, compresses it with AI (using Claude's agent-sdk), and injects relevant context back into future sessions.",
       "url": "https://github.com/thedotmack/claude-mem",
-      "score": 64076,
+      "score": 64097,
       "comments": 0,
       "source": "github_trending",
       "text": "A Claude Code plugin that automatically captures everything Claude does during your coding sessions, compresses it with AI (using Claude's agent-sdk), and injects relevant context back into future sessions."
@@ -428,44 +428,44 @@
       "text": "3行まとめ\n\n\nClaude Code に「設計」だけさせ、Codex CLI に「実装＋レビュー＋修正」を丸投げする skill を作った\nフェーズは 5 つ、所要 10〜20 分、main ブランチは拒否\ncodexに渡したい\n\n\n きっかけ\nClaude Codeを20xから5xに下げ、ChatGPT Proを契約した。のでせっかくならCodexを活用したいんだけど、Claude Codeで完結してしまう癖?切り替える面倒くささがどうしてもでてきた。\nClaude Codeの /feature-dev を多用しているけど、これの対話設計をそのままに、実装だけCodexに投げれれ..."
     },
     {
-      "title": "windows上のLLMとxangiを接続し、xangi同士で会話させる",
-      "url": "https://zenn.dev/okpisokapi/articles/ef4868910e73b1",
+      "title": "AIは役割だけでどこまで本気の議論ができるのか：ツール開発で得た学びと、会議そのものへの気づき",
+      "url": "https://zenn.dev/interpark/articles/59108508d7dec0",
       "score": 0,
       "comments": 0,
       "source": "rss_zenn",
-      "text": "本記事は個人的なメモを残していくための記事です\nDiscordにでxangiをBOTとして参加させ、参加させたBOT同士で会話ができれば面白そうだなということでセットアップをしていく\n今回は友人のもつLLMと自分が持つLLMをDiscordに参加させる\nxangiのGithubページについては以下の通り\nhttps://github.com/karaage0703/xangi\nv0.19.0を使用する\n前提：\n・windowsマシン上にollamaをインストールしてgemma4:26bを使えるようにしておく\n・windowsマシン上にVirtualBoxをインストールしてRockyLin..."
+      "text": "TL;DR\n\nAI壁打ちの偏りに課題を感じ、複数AIが多角的に議論するプロセスを可視化できるWebUIツールを探して、見つからなかったので自作しました\nNext.js + nginx + MySQL + Docker 構成に、CLAUDE.md（約300行の指示書）で動くAIファシリテーターを乗せ、MCP サーバー経由でベクトル検索・議事録・コスト管理まで一体化しています\n自前SSEオーケストレーター・Swarms・Agent Teams を経て、サブエージェント方式（claude -p --agents）に落ち着くまでの約1ヶ月の記録です\n開発の学び：ベクトル検索の導入でコストが3..."
     },
     {
-      "title": "SOWでシンプルにClaude Codeを活用する",
-      "url": "https://zenn.dev/chihaso/articles/2d613b6ac154e8",
+      "title": "話題のClaude Mythosを自作してRTX 4080で検証したら「ループ=思考の深さ」は幻想だった",
+      "url": "https://zenn.dev/seeda_yuto/articles/open-mythos-recurrent-depth-benchmark",
       "score": 0,
       "comments": 0,
       "source": "rss_zenn",
-      "text": "はじめに\nAIすごいですね（今更）\n私も現在は業務や個人開発をほとんど Claude Code か Codex で行っており、自分の手でコードを書くことはかなり少なくなりました。\n使い始めた頃は全然活用できていなかったのですが、「SOW」というものを知ってから便利に使えるようになりました。\n世間では日々様々な AI 活用術が飛び交っていますが、私はここ8ヶ月くらい、AIは「SOW」一本で使い続けており、特に不自由なく活用できていると感じます。\n今回は、SOW を使った自分なりのシンプルな AI 活用法をご紹介します。\n\n 三浦半島.rbでSOWに出会った\n私がSOWという言葉を知った..."
+      "text": "TL;DR\nX で話題の Claude Mythos（同じ層を何回もループさせて推論するタイプと噂）の再現実装で、4 モデル × 5 ループ回数 = 20 通りを総当たりした。\n\n\n\n検証したこと\n結果\n\n\n\n\nループ 1 回で動くか\n❌ 出力が完全崩壊（大モデルほど酷い）\n\n\nループ 2 回以上で伸びるか\n△ 2 回で頭打ち。16 回まで伸ばしても改善 4%\n\n\n小モデル × 多ループで大モデルに追いつけるか\n❌ パラメータ天井は超えられない\n\n\nループ 16 倍の速度コスト\n⚠️ 生成速度は約 1.7 倍遅\n\n\n\n「ループ回数 = 思考の深さ」という仮説は、少なくとも次単語予測タ..."
     },
     {
-      "title": "LLMコーディングエージェントの振る舞いを制約する設計思想",
-      "url": "https://zenn.dev/aienthusiast/articles/article-20260420-090110",
+      "title": "LLMに長期記憶を実装する：失敗",
+      "url": "https://zenn.dev/j_m/articles/29eb8c461f5d9e",
       "score": 0,
       "comments": 0,
       "source": "rss_zenn",
-      "text": "LLMによるコード生成の構造的問題\nLLM（Large Language Model）を活用したコーディング支援が一般化する中で、その課題も明確になってきた。Andrej Karpathyが指摘したように、LLMは誤った前提のもとで突き進み、不要な抽象化を生み出し、理解が不十分なコードを変更する傾向がある。これらは単なる「精度の問題」ではなく、LLMの推論プロセスに内在する構造的な課題だ。\n今回紹介する「andrej-karpathy-skills」リポジトリは、こうした課題に対して、単一の制約ファイルという最小限のアプローチで対処する試みである。過剰な機能追加ではなく、明確な原則に..."
+      "text": "https://zenn.dev/j_m/articles/efcc4f224cc8ca\n\n 本物のLaziness\nghostを作ったのは、Claudeに「コージブスキーの一般意味論を訳せ」（本でほしいんだけど、メルカリでも売ってないんすよね）と言ったら「いやいや、量多すぎるから無理無理」などと意味不明な供述をはじめたので、章単位で翻訳させた。そうすると、毎回説明しないといけない。面倒くさい。\n面倒なので、外部記憶を持たせた。\n水の低きに就くが如し。Larry WallのLazinessは反語だ。私のは本当の怠惰さだ。これは全く別のものであることを心のメモに付しておいてほしい。\n初めに..."
     },
     {
-      "title": "RAGかファインチューニングか、もう迷わない——2026年版・企業LLM導入の判断フロー",
-      "url": "https://zenn.dev/drasenas/articles/rag-ft-hybrid-2026",
+      "title": "Amazon SageMaker Hyperpod EKS で LLM 推論",
+      "url": "https://zenn.dev/tosshi/articles/314d07a9aad86f",
       "score": 0,
       "comments": 0,
       "source": "rss_zenn",
-      "text": "!\nこの記事でわかること\n\nRAG・ファインチューニング・ハイブリッドの3択を、5つの問いで判断する方法\n2026年時点で「ハイブリッドがデフォルト」と言われる理由\nAnthropicの「Contextual Retrieval」で検索失敗率が49%減った仕組み\nユースケース別の推奨構成と、実装前に確認すべきチェックリスト\n\n\n\n 「RAGとファインチューニング、どちらが正解ですか」で止まっていませんか\n社内ナレッジ検索や問い合わせ対応の自動化にLLMを使おうとしたとき、必ずこの壁にぶつかります。\n「RAGとファインチューニング、どちらを使えばいいのか」\n技術ブログを読めば読むほど意見が..."
+      "text": "はじめに\nhttps://zenn.dev/tosshi/articles/74b6adb2b322f3\n↑の敗北から一夜。AWS ParallelCluster で推論やコンテナ実験をすることに辛みを感じ始めたため、かなり重い腰を上げて EKS を使う道に歩み出します。せっかくなので Amazon SageMaker Hyperpod(SMHP) Workshop (EKS) を試してみます。Hyperpod Slurm の方はたまに使っていすが Hyperpod EKS の方はまだお友達になれていません。\n!\n目標: 今後のためにも SMHP EKS で推論を動かせるようにする。..."
     },
     {
-      "title": "ハーネスとか無視してAIで普通に開発した話",
-      "url": "https://zenn.dev/shindoi/articles/cbfa7698456b16",
+      "title": "AI for Science の歩き方 #12 ― 論文に「AI を使った」と書くべきか",
+      "url": "https://zenn.dev/aws_japan/articles/ai4s-12-rules-2026",
       "score": 0,
       "comments": 0,
       "source": "rss_zenn",
-      "text": "お前らハーネスって言いたいだけちゃうんか\nハーネスハーネスみんなが言ってるのでどんなもんかと調べてみたら、要は 「AIにコードを書かせて、CI通るまで殴る」 ってことらしい。そんなの昔からみんなやってる。\nChatGPTが出たときからずっと変わらないAIの使い方の肝は 「何往復も対話する」 ということだ。\n初期のプロンプトエンジニアリングが狂っていたのは一回の問い合わせで精度の高い答えを出そうとしていたこと。その儚い夢のために Markdownで記述しよう とか 英語で問い合わせよう とか このプロンプトをコピペしよう とか意味不明な言説が出回ったが、あれってまだ使っている人いますか..."
+      "text": "!\n本記事は「AI for Science の歩き方」シリーズの第 12 回です。初めての方は 第 1 回 からどうぞ。\n\nこの記事のゴール: AI 利用の開示ルールを理解し、安心して AI を活用できるようになる。\nこの記事では、AI 利用の開示ルール、各国の規制、出版社の方針を紹介します。\n\n 知的貢献の主体はあなた自身\nICMJE（国際医学雑誌編集者委員会）、COPE（出版倫理委員会）、ACS（米国化学会）など、主要な国際的ガイドライン策定機関がいずれも「AI は著者になれないが、利用を適切に開示すれば研究での活用は認められる」という立場を取っています。\nAI の利用を適切に開示す..."
     },
     {
       "title": "システムプロンプトとユーザープロンプトの違い——LLMは2つの指示をどう区別しているのか",
@@ -901,43 +901,12 @@
       "comments": 0,
       "source": "github_trending",
       "text": "AutoGPT is the vision of accessible AI for everyone, to use and to build on. Our mission is to provide the tools, so that you can focus on what matters.",
-      "title_ja": "AutoGPT - すべての人向けのAIツール",
-      "summary_ja": "誰でも簡単にAIを活用できるためのツールを提供。ユーザー自身の目的に集中できるように設計されています。",
+      "title_ja": "AutoGPT - 誰でもアクセス可能なAIプラットフォーム",
+      "summary_ja": "すべての人がAIを利用・構築できることを目指すプラットフォームです。ユーザーが重要なことに集中できるよう、必要なツールを提供することをミッションとしています。",
       "importance": 9,
       "tags": [
         "LLM",
-        "オープンソース"
-      ],
-      "category": "技術"
-    },
-    {
-      "title": "ollama/ollama - Get up and running with Kimi-K2.5, GLM-5, MiniMax, DeepSeek, gpt-oss, Qwen, Gemma and other models.",
-      "url": "https://github.com/ollama/ollama",
-      "score": 169528,
-      "comments": 0,
-      "source": "github_trending",
-      "text": "Get up and running with Kimi-K2.5, GLM-5, MiniMax, DeepSeek, gpt-oss, Qwen, Gemma and other models.",
-      "title_ja": "ollama/ollama - 多種モデルの実行環境",
-      "summary_ja": "Kimi-K2.5、GLM-5、Qwenなど、多数のLLMモデルを簡単に実行できる環境を提供。",
-      "importance": 9,
-      "tags": [
-        "LLM",
-        "オープンソース"
-      ],
-      "category": "技術"
-    },
-    {
-      "title": "openclaw/openclaw - Your own personal AI assistant. Any OS. Any Platform. The lobster way. 🦞 ",
-      "url": "https://github.com/openclaw/openclaw",
-      "score": 361102,
-      "comments": 0,
-      "source": "github_trending",
-      "text": "Your own personal AI assistant. Any OS. Any Platform. The lobster way. 🦞 ",
-      "title_ja": "openclaw/openclaw - 自分のAIアシスタント",
-      "summary_ja": "OSやプラットフォームを選ばないパーソナライズAIアシスタント。ロブスターの方法で動作します。",
-      "importance": 8,
-      "tags": [
-        "AI Agent",
+        "Agent",
         "オープンソース"
       ],
       "category": "技術"
@@ -945,42 +914,76 @@
     {
       "title": "n8n-io/n8n - Fair-code workflow automation platform with native AI capabilities. Combine visual building with custom code, self-host or cloud, 400+ integrations.",
       "url": "https://github.com/n8n-io/n8n",
-      "score": 184852,
+      "score": 184854,
       "comments": 0,
       "source": "github_trending",
       "text": "Fair-code workflow automation platform with native AI capabilities. Combine visual building with custom code, self-host or cloud, 400+ integrations.",
-      "title_ja": "n8n-io/n8n - ワークフロー自動化プラットフォーム",
-      "summary_ja": "視覚的ビルディングとカスタムコードを組み合わせたAI機能付きワークフロー自動化ツール。400以上の統合が可能。",
+      "title_ja": "n8n - ネイティブAI機能搭載ワークフロー自動化プラットフォーム",
+      "summary_ja": "ビジュアルビルディングとカスタムコードを組み合わせたワークフロー自動化プラットフォームです。400以上の統合機能とセルフホスト・クラウド両対応のAI機能を提供します。",
       "importance": 8,
       "tags": [
-        "コード",
-        "ビジネス"
+        "Agent",
+        "ビジネス",
+        "オープンソース"
+      ],
+      "category": "ビジネス"
+    },
+    {
+      "title": "ollama/ollama - Get up and running with Kimi-K2.5, GLM-5, MiniMax, DeepSeek, gpt-oss, Qwen, Gemma and other models.",
+      "url": "https://github.com/ollama/ollama",
+      "score": 169529,
+      "comments": 0,
+      "source": "github_trending",
+      "text": "Get up and running with Kimi-K2.5, GLM-5, MiniMax, DeepSeek, gpt-oss, Qwen, Gemma and other models.",
+      "title_ja": "Ollama - 多様なAIモデル統合実行環境",
+      "summary_ja": "Kimi-K2.5、GLM-5、MiniMax、DeepSeek、Qwen、Gemmaなど複数の主要AIモデルを簡単に実行できる環境を提供します。中国系モデルも多数サポートしています。",
+      "importance": 8,
+      "tags": [
+        "LLM",
+        "中国AI",
+        "オープンソース"
       ],
       "category": "技術"
     },
     {
       "title": "f/prompts.chat - f.k.a. Awesome ChatGPT Prompts. Share, discover, and collect prompts from the community. Free and open source — self-host for your organization with complete privacy.",
       "url": "https://github.com/f/prompts.chat",
-      "score": 160197,
+      "score": 160201,
       "comments": 0,
       "source": "github_trending",
       "text": "f.k.a. Awesome ChatGPT Prompts. Share, discover, and collect prompts from the community. Free and open source — self-host for your organization with complete privacy.",
-      "title_ja": "f/prompts.chat - コミュニティのプロンプト共有プラットフォーム",
-      "summary_ja": "ChatGPTプロンプトを共有・収集できるオープンソースツール。組織向けのプライバシー保護機能付き。",
+      "title_ja": "Prompts.chat - ChatGPTプロンプト共有コミュニティ",
+      "summary_ja": "コミュニティからプロンプトを共有、発見、収集できるプラットフォームです。完全なプライバシー保護付きでセルフホスト可能な無料オープンソースソリューションです。",
       "importance": 7,
       "tags": [
-        "コード",
+        "LLM",
+        "オープンソース"
+      ],
+      "category": "ツール"
+    },
+    {
+      "title": "openclaw/openclaw - Your own personal AI assistant. Any OS. Any Platform. The lobster way. 🦞 ",
+      "url": "https://github.com/openclaw/openclaw",
+      "score": 361118,
+      "comments": 0,
+      "source": "github_trending",
+      "text": "Your own personal AI assistant. Any OS. Any Platform. The lobster way. 🦞 ",
+      "title_ja": "OpenClaw - クロスプラットフォーム対応パーソナルAIアシスタント",
+      "summary_ja": "任意のOSとプラットフォームで動作するパーソナルAIアシスタントです。ユニークな「ロブスター方式」を採用したアプローチが特徴的です。",
+      "importance": 6,
+      "tags": [
+        "Agent",
         "オープンソース"
       ],
       "category": "ツール"
     }
   ],
-  "digest": "## 今日の最重要トレンド\nAIツールの**民主化**が本格化し、誰でも手軽に高度なAI機能を活用できる環境が整ってきています。複数のLLMモデルを簡単に実行できるollamaや、視覚的にワークフローを構築できるn8nなど、技術的専門知識がなくても利用できるツールが主流となっています。パーソナライゼーションと自動化を軸とした実用的なAIソリューションが注目されています。\n\n## ビジネスへの示唆\n企業は専門的なAI開発チームに依存せず、既存の業務プロセスを効率的に自動化できるようになります。400以上の統合が可能なワークフロー自動化により、コスト削減と生産性向上の両立が現実的になっています。\n\n## 注目すべき技術動向\nマルチモデル対応プラットフォームが普及し、用途に応じた最適なAIモデルの選択が容易になっています。コミュニティ主導のプロンプト共有により、AI活用のノウハウが組織を超えて蓄積・共有される仕組みが確立されつつあります。",
+  "digest": "## 今日の最重要トレンド\nAIの民主化が本格化しており、技術的知識がなくても誰でもAIを活用・構築できるプラットフォームが充実してきています。ワークフロー自動化とマルチモデル対応により、企業から個人まで幅広い層でAI導入の敷居が大幅に下がっています。コミュニティ主導でのナレッジ共有も活発化し、AIエコシステム全体の成熟度が高まっています。\n\n## ビジネスへの示唆\nローコード・ノーコードでのAI導入が現実的になり、中小企業でも業務自動化による生産性向上が容易に実現可能になりました。セルフホスト対応製品の充実により、データプライバシーを重視する企業でも安心してAIを活用できる環境が整いつつあります。\n\n## 注目すべき技術動向\n複数のAIモデルを統合的に活用できる環境整備が進み、用途に応じて最適なモデルを選択・切り替える運用が一般化しています。クロスプラットフォーム対応とコミュニティ主導のオープンソース化により、AI技術のオープン化と標準化が加速しています。",
   "top_tags": {
-    "オープンソース": 4,
-    "LLM": 2,
-    "コード": 2,
-    "AI Agent": 1,
-    "ビジネス": 1
+    "オープンソース": 5,
+    "LLM": 3,
+    "Agent": 3,
+    "ビジネス": 1,
+    "中国AI": 1
   }
 }
