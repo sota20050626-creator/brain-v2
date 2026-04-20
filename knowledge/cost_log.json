@@ -1,7 +1,7 @@
 {
   "monthly": {
     "2026-04": {
-      "usd": 0.93287,
+      "usd": 1.388444,
       "calls": [
         {
           "date": "2026-04-20",
@@ -202,11 +202,111 @@
           "input_tokens": 2301,
           "output_tokens": 2000,
           "usd": 0.036903
+        },
+        {
+          "date": "2026-04-20",
+          "label": "summarize_items",
+          "model": "claude",
+          "input_tokens": 739,
+          "output_tokens": 777,
+          "usd": 0.013872
+        },
+        {
+          "date": "2026-04-20",
+          "label": "daily_digest",
+          "model": "claude",
+          "input_tokens": 560,
+          "output_tokens": 359,
+          "usd": 0.007065
+        },
+        {
+          "date": "2026-04-20",
+          "label": "x_drafts",
+          "input_tokens": 916,
+          "output_tokens": 409,
+          "usd": 0.008883
+        },
+        {
+          "date": "2026-04-20",
+          "label": "analyze_trends",
+          "input_tokens": 361,
+          "output_tokens": 729,
+          "usd": 0.012018
+        },
+        {
+          "date": "2026-04-20",
+          "label": "business_ideas",
+          "input_tokens": 906,
+          "output_tokens": 1500,
+          "usd": 0.025218
+        },
+        {
+          "date": "2026-04-20",
+          "label": "note_draft",
+          "input_tokens": 1567,
+          "output_tokens": 2105,
+          "usd": 0.036276
+        },
+        {
+          "date": "2026-04-20",
+          "label": "agent_improvements",
+          "input_tokens": 1352,
+          "output_tokens": 1000,
+          "usd": 0.019056
+        },
+        {
+          "date": "2026-04-20",
+          "label": "improve_collector.py",
+          "input_tokens": 1342,
+          "output_tokens": 4000,
+          "usd": 0.064026
+        },
+        {
+          "date": "2026-04-20",
+          "label": "improve_summarizer.py",
+          "input_tokens": 1225,
+          "output_tokens": 3124,
+          "usd": 0.050535
+        },
+        {
+          "date": "2026-04-20",
+          "label": "improve_growth.py",
+          "input_tokens": 1232,
+          "output_tokens": 4000,
+          "usd": 0.063696
+        },
+        {
+          "date": "2026-04-20",
+          "label": "discover_tech",
+          "input_tokens": 914,
+          "output_tokens": 782,
+          "usd": 0.014472
+        },
+        {
+          "date": "2026-04-20",
+          "label": "tech_integration_summarizer.py",
+          "input_tokens": 1359,
+          "output_tokens": 3314,
+          "usd": 0.053787
+        },
+        {
+          "date": "2026-04-20",
+          "label": "tech_integration_summarizer.py",
+          "input_tokens": 1364,
+          "output_tokens": 3963,
+          "usd": 0.063537
+        },
+        {
+          "date": "2026-04-20",
+          "label": "sales_analyze_batch",
+          "input_tokens": 1811,
+          "output_tokens": 1180,
+          "usd": 0.023133
         }
       ],
-      "input_tokens": 33053,
-      "output_tokens": 56780
+      "input_tokens": 48701,
+      "output_tokens": 84022
     }
   },
-  "total_usd": 0.93287
+  "total_usd": 1.388444
 }
