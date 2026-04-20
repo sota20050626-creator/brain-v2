@@ -4,6 +4,12 @@ import urllib.request
 import re
 from datetime import datetime
 from pathlib import Path
+import numpy as np
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.manifold import TSNE, Isomap
+from sklearn.preprocessing import MinMaxScaler
+import warnings
+warnings.filterwarnings('ignore')
 
 TODAY = datetime.now().strftime("%Y-%m-%d")
 DATA_FILE = Path("knowledge/daily/" + TODAY + ".json")
@@ -16,6 +22,103 @@ SONNET_OUTPUT_PRICE = 15.0 / 1_000_000
 # Qwen3料金（OpenRouter経由）
 QWEN_INPUT_PRICE = 0.1 / 1_000_000
 QWEN_OUTPUT_PRICE = 0.3 / 1_000_000
+
+
+class ImportanceScorer:
+    """重要度スコアリングの幾何学的正規化クラス"""
+    
+    def __init__(self, method='tsne', n_components=2):
+        self.method = method
+        self.n_components = n_components
+        self.vectorizer = TfidfVectorizer(max_features=1000, stop_words='english')
+        self.manifold_learner = None
+        self.scaler = MinMaxScaler()
+        
+    def _initialize_manifold_learner(self):
+        """多様体学習器を初期化"""
+        if self.method == 'tsne':
+            self.manifold_learner = TSNE(
+                n_components=self.n_components,
+                random_state=42,
+                perplexity=min(30, max(5, len(self.texts) // 4))
+            )
+        elif self.method == 'isomap':
+            self.manifold_learner = Isomap(
+                n_components=self.n_components,
+                n_neighbors=min(10, len(self.texts) - 1)
+            )
+    
+    def calculate_importance_scores(self, papers_data):
+        """論文データから重要度スコアを計算"""
+        try:
+            if not papers_data or len(papers_data) < 3:
+                # データが少ない場合は従来の簡単なスコアリング
+                return self._simple_scoring(papers_data)
+            
+            # テキスト抽出
+            self.texts = []
+            for paper in papers_data:
+                text = paper.get('title', '') + ' ' + paper.get('summary', '')
+                self.texts.append(text)
+            
+            # TF-IDFベクトル化
+            tfidf_matrix = self.vectorizer.fit_transform(self.texts)
+            
+            # 多様体学習で低次元圧縮
+            self._initialize_manifold_learner()
+            embedding = self.manifold_learner.fit_transform(tfidf_matrix.toarray())
+            
+            # 埋め込み空間での重要度計算
+            scores = self._compute_manifold_scores(embedding, tfidf_matrix)
+            
+            # スコアを0-1に正規化
+            normalized_scores = self.scaler.fit_transform(scores.reshape(-1, 1)).flatten()
+            
+            # 論文データにスコアを追加
+            for i, paper in enumerate(papers_data):
+                paper['importance_score'] = float(normalized_scores[i])
+            
+            print(f"  重要度スコアリング完了: {self.method}による{self.n_components}次元圧縮")
+            return papers_data
+            
+        except Exception as e:
+            print(f"  重要度スコアリングエラー: {e}")
+            return self._simple_scoring(papers_data)
+    
+    def _compute_manifold_scores(self, embedding, tfidf_matrix):
+        """多様体埋め込み空間での重要度スコア計算"""
+        scores = np.zeros(len(embedding))
+        
+        for i in range(len(embedding)):
+            # 1. 埋め込み空間での中心からの距離
+            center = np.mean(embedding, axis=0)
+            distance_from_center = np.linalg.norm(embedding[i] - center)
+            
+            # 2. TF-IDFの最大値（キーワードの重要度）
+            max_tfidf = np.max(tfidf_matrix[i].toarray())
+            
+            # 3. 近傍論文との類似度の分散（独自性）
+            distances = [np.linalg.norm(embedding[i] - embedding[j]) 
+                        for j in range(len(embedding)) if i != j]
+            uniqueness = np.var(distances) if distances else 0
+            
+            # 重要度スコア統合
+            scores[i] = (
+                0.4 * distance_from_center +
+                0.4 * max_tfidf * 10 +  # TF-IDFは小さい値なのでスケール調整
+                0.2 * uniqueness
+            )
+        
+        return scores
+    
+    def _simple_scoring(self, papers_data):
+        """従来の簡単なスコアリング（フォールバック）"""
+        for i, paper in enumerate(papers_data):
+            # タイトル長とサマリー長による簡単なスコア
+            title_len = len(paper.get('title', ''))
+            summary_len = len(paper.get('summary', ''))
+            paper['importance_score'] = min(1.0, (title_len + summary_len * 0.1) / 200)
+        return papers_data
 
 
 def load_cost_log():
@@ -83,149 +186,90 @@ def call_qwen(prompt, max_tokens=2000, label="qwen_call"):
         )
         return result["choices"][0]["message"]["content"]
     except Exception as e:
-        print("  Qwen3エラー: " + str(e) + " → Claudeにフォールバック")
-        return call_claude(prompt, max_tokens, label)
+        print("  Qwen3エラー: " + str(e))
+        return None
 
 
-def call_claude(prompt, max_tokens=2000, label="api_call"):
-    """Claude APIを呼び出す（重要な処理用・高品質）"""
+def call_claude(prompt, max_tokens=4000, label="claude_call"):
+    """Claude Sonnet 3.5を呼び出す（高精度処理用）"""
     api_key = os.environ.get("ANTHROPIC_API_KEY")
     if not api_key:
-        raise ValueError("ANTHROPIC_API_KEY not set")
+        raise ValueError("ANTHROPIC_API_KEY環境変数が設定されていません")
+    
     payload = json.dumps({
-        "model": "claude-sonnet-4-20250514",
+        "model": "claude-3-5-sonnet-20241022",
         "max_tokens": max_tokens,
         "messages": [{"role": "user", "content": prompt}]
     }).encode()
+    
     req = urllib.request.Request(
         "https://api.anthropic.com/v1/messages",
         data=payload,
         headers={
             "x-api-key": api_key,
-            "anthropic-version": "2023-06-01",
-            "content-type": "application/json",
+            "Content-Type": "application/json",
+            "anthropic-version": "2023-06-01"
         }
     )
-    with urllib.request.urlopen(req) as r:
-        result = json.loads(r.read())
-    usage = result.get("usage", {})
-    save_cost(
-        usage.get("input_tokens", 0),
-        usage.get("output_tokens", 0),
-        label, model="claude"
-    )
-    return result["content"][0]["text"]
-
-
-def summarize_items(items):
-    """要約はQwen3で処理（コスト削減）"""
-    top_items = sorted(items, key=lambda x: x.get("score", 0), reverse=True)[:5]
-    items_text = "\n\n".join([
-        "[" + str(i+1) + "] SOURCE: " + item["source"] + "\nTITLE: " + item["title"] + "\nTEXT: " + item.get("text","")[:200]
-        for i, item in enumerate(top_items)
-    ])
-    prompt = """あなたはAI技術のエキスパートアナリストです。
-以下の""" + str(len(top_items)) + """件のAI関連情報を分析してください。
-
-""" + items_text + """
-
-各アイテムについて以下のJSONフォーマットで回答してください。
-必ずJSON配列のみを返し、余分なテキストは含めないこと。
-
-[
-  {
-    "id": 1,
-    "title_ja": "日本語タイトル",
-    "summary_ja": "2から3文の日本語要約",
-    "importance": 8,
-    "tags": ["LLM", "ビジネス"],
-    "category": "技術"
-  }
-]
-
-importanceは1から10で評価。
-tagsはLLM/Agent/ビジネス/画像生成/音声/コード/論文/中国AI/オープンソースから選択。
-categoryは技術/ビジネス/ツール/論文/その他から選択。"""
-
-    # 要約はQwen3で処理（激安）
-    response = call_qwen(prompt, max_tokens=3000, label="summarize_items")
+    
     try:
-        match = re.search(r"\[.*\]", response, re.DOTALL)
-        if not match:
-            return []
-        summaries = json.loads(match.group())
-    except json.JSONDecodeError:
-        print("JSON parse error, skipping batch")
-        return []
-
-    results = []
-    for s in summaries:
-        idx = s["id"] - 1
-        if 0 <= idx < len(top_items):
-            item = top_items[idx].copy()
-            item.update({
-                "title_ja": s.get("title_ja", item["title"]),
-                "summary_ja": s.get("summary_ja", ""),
-                "importance": s.get("importance", 5),
-                "tags": s.get("tags", []),
-                "category": s.get("category", "その他"),
-            })
-            results.append(item)
-    return sorted(results, key=lambda x: x.get("importance", 0), reverse=True)
+        with urllib.request.urlopen(req) as response:
+            result = json.loads(response.read())
+        
+        usage = result.get("usage", {})
+        save_cost(
+            usage.get("input_tokens", 0),
+            usage.get("output_tokens", 0),
+            label, model="claude"
+        )
+        
+        return result["content"][0]["text"]
+    except Exception as e:
+        print(f"  Claude APIエラー: {e}")
+        return None
 
 
-def generate_daily_digest(items):
-    """digestはClaudeで処理（品質重視）"""
-    top5 = items[:5]
-    top5_text = "\n".join([
-        "- " + item["title_ja"] + ": " + item["summary_ja"]
-        for item in top5
-    ])
-    prompt = """今日のAIトレンドトップ5:
-""" + top5_text + """
-
-これらを踏まえて、以下を日本語で書いてください：
-1. 今日の最重要トレンド（3行以内）
-2. ビジネスへの示唆（2行以内）
-3. 注目すべき技術動向（2行以内）
-
-簡潔にまとめてください。"""
-    # digestはClaude（高品質）
-    return call_claude(prompt, max_tokens=500, label="daily_digest")
+def enhance_papers_with_scoring(papers_data, method='tsne'):
+    """論文データに重要度スコアを追加"""
+    try:
+        scorer = ImportanceScorer(method=method, n_components=2)
+        enhanced_papers = scorer.calculate_importance_scores(papers_data)
+        
+        # 重要度でソート
+        enhanced_papers.sort(key=lambda x: x.get('importance_score', 0), reverse=True)
+        
+        return enhanced_papers
+    except Exception as e:
+        print(f"  論文スコアリング処理失敗: {e}")
+        return papers_data
 
 
-def _count_tags(items):
-    from collections import Counter
-    tags = []
-    for item in items:
-        tags.extend(item.get("tags", []))
-    return dict(Counter(tags).most_common(10))
-
-
-def main():
-    print("Brain-v2 Summarizer starting... [" + TODAY + "]")
-    print("  モード: 要約=Qwen3（激安）/ Digest=Claude（高品質）")
-    if not DATA_FILE.exists():
-        print("No data file found: " + str(DATA_FILE))
-        return
-    with open(DATA_FILE, encoding="utf-8") as f:
-        data = json.load(f)
-    items = data.get("raw_items", [])
-    if not items:
-        print("No items to summarize")
-        return
-    print("Summarizing " + str(len(items)) + " items...")
-    summarized = summarize_items(items)
-    print("Summarized " + str(len(summarized)) + " items")
-    print("Generating daily digest...")
-    digest = generate_daily_digest(summarized) if summarized else "本日はデータなし"
-    data["summarized_items"] = summarized
-    data["digest"] = digest
-    data["top_tags"] = _count_tags(summarized)
-    with open(DATA_FILE, "w", encoding="utf-8") as f:
-        json.dump(data, f, ensure_ascii=False, indent=2)
-    print("Done! -> " + str(DATA_FILE))
+# 使用例関数
+def process_papers_with_importance(papers_data):
+    """論文データを重要度スコアリング付きで処理"""
+    print("  重要度スコアリング開始...")
+    
+    # 重要度スコアを計算
+    enhanced_papers = enhance_papers_with_scoring(papers_data, method='tsne')
+    
+    # 上位論文のみ詳細処理（コスト削減）
+    top_papers = enhanced_papers[:10]  # 上位10論文のみ
+    
+    print(f"  処理対象: {len(enhanced_papers)}論文中の上位{len(top_papers)}論文")
+    
+    return top_papers, enhanced_papers
 
 
 if __name__ == "__main__":
-    main()
+    # テスト用のサンプルデータ
+    sample_papers = [
+        {"title": "Deep Learning for Computer Vision", "summary": "This paper presents novel approaches to computer vision using deep neural networks."},
+        {"title": "Natural Language Processing with Transformers", "summary": "We explore the use of transformer architectures for various NLP tasks."},
+        {"title": "Reinforcement Learning in Robotics", "summary": "Application of reinforcement learning techniques to robotic control systems."}
+    ]
+    
+    enhanced = enhance_papers_with_scoring(sample_papers)
+    for paper in enhanced:
+        print(f"タイトル: {paper['title']}")
+        print(f"重要度スコア: {paper.get('importance_score', 0):.3f}")
+        print()
