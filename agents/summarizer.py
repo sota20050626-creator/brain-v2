@@ -9,11 +9,8 @@ TODAY = datetime.now().strftime("%Y-%m-%d")
 DATA_FILE = Path("knowledge/daily/" + TODAY + ".json")
 COST_FILE = Path("knowledge/cost_log.json")
 
-# Claude API料金
 SONNET_INPUT_PRICE = 3.0 / 1_000_000
 SONNET_OUTPUT_PRICE = 15.0 / 1_000_000
-
-# Qwen3料金（OpenRouter経由）
 QWEN_INPUT_PRICE = 0.1 / 1_000_000
 QWEN_OUTPUT_PRICE = 0.3 / 1_000_000
 
@@ -53,7 +50,6 @@ def save_cost(input_tokens, output_tokens, label, model="claude"):
 
 
 def call_qwen(prompt, max_tokens=2000, label="qwen_call"):
-    """Qwen3をOpenRouter経由で呼び出す（軽い処理用・激安）"""
     api_key = os.environ.get("OPENROUTER_API_KEY")
     if not api_key:
         print("  OPENROUTER_API_KEY未設定、Claudeにフォールバック")
@@ -88,7 +84,6 @@ def call_qwen(prompt, max_tokens=2000, label="qwen_call"):
 
 
 def call_claude(prompt, max_tokens=2000, label="api_call"):
-    """Claude APIを呼び出す（重要な処理用・高品質）"""
     api_key = os.environ.get("ANTHROPIC_API_KEY")
     if not api_key:
         raise ValueError("ANTHROPIC_API_KEY not set")
@@ -118,41 +113,39 @@ def call_claude(prompt, max_tokens=2000, label="api_call"):
 
 
 def summarize_items(items, batch_size=10, max_items=200):
-    """要約はQwen3で処理（バッチ処理・最大200件）"""
     top_items = sorted(items, key=lambda x: x.get("score", 0), reverse=True)[:max_items]
     all_results = []
 
     for batch_start in range(0, len(top_items), batch_size):
         batch = top_items[batch_start:batch_start + batch_size]
         items_text = "\n\n".join([
-            "[" + str(i+1) + "] SOURCE: " + item["source"] + "\nTITLE: " + item["title"] + "\nTEXT: " + item.get("text","")[:200]
+            "[" + str(i+1) + "] SOURCE: " + item["source"] + "\nTITLE: " + item["title"] + "\nTEXT: " + item.get("text", "")[:200]
             for i, item in enumerate(batch)
         ])
-        prompt = """あなたはAI技術のエキスパートアナリストです。
-以下の""" + str(len(batch)) + """件のAI関連情報を分析してください。
-
-""" + items_text + """
-
-各アイテムについて以下のJSONフォーマットで回答してください。
-必ずJSON配列のみを返し、余分なテキストは含めないこと。
-
-[
-  {
-    "id": 1,
-    "title_ja": "日本語タイトル",
-    "summary_ja": "2から3文の日本語要約",
-    "importance": 8,
-    "tags": ["LLM", "ビジネス"],
-    "category": "技術"
-  }
-]
-
-importanceは1から10で評価。
-tagsはLLM/Agent/ビジネス/画像生成/音声/コード/論文/中国AI/オープンソースから選択。
-categoryは技術/ビジネス/ツール/論文/その他から選択。"""
+        prompt = (
+            "あなたはAI技術のエキスパートアナリストです。\n"
+            "以下の" + str(len(batch)) + "件のAI関連情報を分析してください。\n\n"
+            + items_text + "\n\n"
+            "各アイテムについて以下のJSONフォーマットで回答してください。\n"
+            "必ずJSON配列のみを返し、余分なテキストは含めないこと。\n\n"
+            "[\n"
+            "  {\n"
+            "    \"id\": 1,\n"
+            "    \"title_ja\": \"日本語タイトル\",\n"
+            "    \"summary_ja\": \"2から3文の日本語要約\",\n"
+            "    \"importance\": 8,\n"
+            "    \"tags\": [\"LLM\", \"ビジネス\"],\n"
+            "    \"category\": \"技術\"\n"
+            "  }\n"
+            "]\n\n"
+            "importanceは1から10で評価。\n"
+            "tagsはLLM/Agent/ビジネス/画像生成/音声/コード/論文/中国AI/オープンソースから選択。\n"
+            "categoryは技術/ビジネス/ツール/論文/その他から選択。"
+        )
 
         label = "summarize_batch_" + str(batch_start // batch_size + 1)
         response = call_qwen(prompt, max_tokens=3000, label=label)
+
         try:
             match = re.search(r"\[.*\]", response, re.DOTALL)
             if not match:
@@ -181,23 +174,21 @@ categoryは技術/ビジネス/ツール/論文/その他から選択。"""
 
 
 def generate_daily_digest(items):
-    """digestはClaudeで処理（品質重視）"""
     top5 = items[:5]
     top5_text = "\n".join([
         "- " + item["title_ja"] + ": " + item["summary_ja"]
         for item in top5
     ])
-    prompt = """今日のAIトレンドトップ5:
-""" + top5_text + """
-
-これらを踏まえて、以下を日本語で書いてください：
-1. 今日の最重要トレンド（3行以内）
-2. ビジネスへの示唆（2行以内）
-3. 注目すべき技術動向（2行以内）
-
-簡潔にまとめてください。"""
-        # digestはQwen3（完全無料化）
-        return call_qwen(prompt, max_tokens=500, label="daily_digest")
+    prompt = (
+        "今日のAIトレンドトップ5:\n"
+        + top5_text + "\n\n"
+        "これらを踏まえて、以下を日本語で書いてください：\n"
+        "1. 今日の最重要トレンド（3行以内）\n"
+        "2. ビジネスへの示唆（2行以内）\n"
+        "3. 注目すべき技術動向（2行以内）\n\n"
+        "簡潔にまとめてください。"
+    )
+    return call_qwen(prompt, max_tokens=500, label="daily_digest")
 
 
 def _count_tags(items):
@@ -210,7 +201,7 @@ def _count_tags(items):
 
 def main():
     print("Brain-v2 Summarizer starting... [" + TODAY + "]")
-    print("  モード: 要約=Qwen3（激安）/ Digest=Claude（高品質）")
+    print("  モード: 要約=Qwen3（激安）/ Digest=Qwen3（完全無料化）")
     if not DATA_FILE.exists():
         print("No data file found: " + str(DATA_FILE))
         return
