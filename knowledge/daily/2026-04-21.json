@@ -1,100 +1,100 @@
 {
   "date": "2026-04-21",
-  "collected_at": "2026-04-21T14:45:56.527804+00:00",
-  "total": 117,
+  "collected_at": "2026-04-21T16:06:04.664317+00:00",
+  "total": 116,
   "raw_items": [
+    {
+      "title": "Show HN: GoModel – an open-source AI gateway in Go; 44x lighter than LiteLLM",
+      "url": "https://github.com/ENTERPILOT/GOModel/",
+      "score": 38,
+      "comments": 11,
+      "source": "hackernews",
+      "text": ""
+    },
     {
       "title": "Tindie store under \"scheduled maintenance\" for days",
       "url": "https://www.tindie.com/",
-      "score": 43,
-      "comments": 10,
+      "score": 65,
+      "comments": 20,
       "source": "hackernews",
       "text": ""
     },
     {
       "title": "Anthropic says OpenClaw-style Claude CLI usage is allowed again",
       "url": "https://docs.openclaw.ai/providers/anthropic",
-      "score": 329,
-      "comments": 197,
+      "score": 364,
+      "comments": 213,
       "source": "hackernews",
       "text": ""
     },
     {
       "title": "Anthropic takes $5B from Amazon and pledges $100B in cloud spending in return",
       "url": "https://techcrunch.com/2026/04/20/anthropic-takes-5b-from-amazon-and-pledges-100b-in-cloud-spending-in-return/",
-      "score": 63,
-      "comments": 61,
-      "source": "hackernews",
-      "text": ""
-    },
-    {
-      "title": "Show HN: GoModel – an open-source AI gateway in Go; 44x lighter than LiteLLM",
-      "url": "https://github.com/ENTERPILOT/GOModel/",
-      "score": 3,
-      "comments": 0,
+      "score": 120,
+      "comments": 118,
       "source": "hackernews",
       "text": ""
     },
     {
       "title": "Salmon exposed to cocaine and its main byproduct roam more widely",
       "url": "https://www.science.org/content/article/cocaine-pollution-gives-salmon-wanderlust",
-      "score": 82,
-      "comments": 47,
+      "score": 106,
+      "comments": 60,
       "source": "hackernews",
       "text": ""
     },
     {
       "title": "The Beauty of Bonsai Styles",
       "url": "https://longwoodgardens.org/blog/2023-05-17/beauty-bonsai-styles",
-      "score": 138,
-      "comments": 25,
+      "score": 158,
+      "comments": 28,
       "source": "hackernews",
       "text": ""
     },
     {
       "title": "A Roblox cheat and one AI tool brought down Vercel's platform",
       "url": "https://webmatrices.com/post/how-a-roblox-cheat-and-one-ai-tool-brought-down-vercel-s-entire-platform",
-      "score": 235,
-      "comments": 131,
-      "source": "hackernews",
-      "text": ""
-    },
-    {
-      "title": "Qwen3.6-Max-Preview: Smarter, Sharper, Still Evolving",
-      "url": "https://qwen.ai/blog?id=qwen3.6-max-preview",
-      "score": 661,
-      "comments": 356,
+      "score": 258,
+      "comments": 140,
       "source": "hackernews",
       "text": ""
     },
     {
       "title": "Less human AI agents, please",
       "url": "https://nial.se/blog/less-human-ai-agents-please/",
-      "score": 45,
-      "comments": 74,
+      "score": 79,
+      "comments": 97,
       "source": "hackernews",
       "text": ""
     },
     {
-      "title": "Air is full of DNA",
-      "url": "https://www.nature.com/articles/d41586-026-01099-2",
-      "score": 145,
-      "comments": 47,
+      "title": "Qwen3.6-Max-Preview: Smarter, Sharper, Still Evolving",
+      "url": "https://qwen.ai/blog?id=qwen3.6-max-preview",
+      "score": 671,
+      "comments": 359,
       "source": "hackernews",
       "text": ""
     },
     {
       "title": "Kimi vendor verifier – verify accuracy of inference providers",
       "url": "https://www.kimi.com/blog/kimi-vendor-verifier",
-      "score": 288,
-      "comments": 27,
+      "score": 296,
+      "comments": 28,
+      "source": "hackernews",
+      "text": ""
+    },
+    {
+      "title": "Air is full of DNA",
+      "url": "https://www.nature.com/articles/d41586-026-01099-2",
+      "score": 155,
+      "comments": 50,
       "source": "hackernews",
       "text": ""
     },
     {
       "title": "Ternary Bonsai: Top Intelligence at 1.58 Bits",
       "url": "https://prismml.com/news/ternary-bonsai",
-      "score": 199,
+      "score": 206,
       "comments": 54,
       "source": "hackernews",
       "text": ""
@@ -102,112 +102,112 @@
     {
       "title": "How a subsea cable is repaired (2021)",
       "url": "https://www.onesteppower.com/post/subsea-cable-repair",
-      "score": 109,
-      "comments": 32,
+      "score": 113,
+      "comments": 33,
       "source": "hackernews",
       "text": ""
     },
     {
       "title": "Types and Neural Networks",
       "url": "https://www.brunogavranovic.com/posts/2026-04-20-types-and-neural-networks.html",
-      "score": 62,
-      "comments": 11,
+      "score": 68,
+      "comments": 14,
       "source": "hackernews",
       "text": ""
     },
     {
       "title": "Soul Player C64 – A real transformer running on a 1 MHz Commodore 64",
       "url": "https://github.com/gizmo64k/soulplayer-c64",
-      "score": 139,
-      "comments": 39,
-      "source": "hackernews",
-      "text": ""
-    },
-    {
-      "title": "Show HN: Mediator.ai – Using Nash bargaining and LLMs to systematize fairness",
-      "url": "https://mediator.ai/",
-      "score": 104,
-      "comments": 54,
+      "score": 142,
+      "comments": 42,
       "source": "hackernews",
       "text": ""
     },
     {
       "title": "Even 'uncensored' models can't say what they want",
       "url": "https://morgin.ai/articles/even-uncensored-models-cant-say-what-they-want.html",
-      "score": 138,
-      "comments": 107,
+      "score": 144,
+      "comments": 111,
+      "source": "hackernews",
+      "text": ""
+    },
+    {
+      "title": "Show HN: Mediator.ai – Using Nash bargaining and LLMs to systematize fairness",
+      "url": "https://mediator.ai/",
+      "score": 109,
+      "comments": 58,
       "source": "hackernews",
       "text": ""
     },
     {
       "title": "Atlassian enables default data collection to train AI",
       "url": "https://letsdatascience.com/news/atlassian-enables-default-data-collection-to-train-ai-f71343d8",
-      "score": 583,
+      "score": 586,
       "comments": 130,
-      "source": "hackernews",
-      "text": ""
-    },
-    {
-      "title": "OpenAI ad partner now selling ChatGPT ad placements based on “prompt relevance”",
-      "url": "https://www.adweek.com/media/exclusive-leaked-deck-reveals-stackadapts-playbook-for-chatgpt-ads/",
-      "score": 285,
-      "comments": 145,
       "source": "hackernews",
       "text": ""
     },
     {
       "title": "Figma's woes compound with Claude Design",
       "url": "https://martinalderson.com/posts/figmas-woes-compound-with-claude-design/",
-      "score": 117,
-      "comments": 98,
+      "score": 118,
+      "comments": 99,
+      "source": "hackernews",
+      "text": ""
+    },
+    {
+      "title": "OpenAI ad partner now selling ChatGPT ad placements based on “prompt relevance”",
+      "url": "https://www.adweek.com/media/exclusive-leaked-deck-reveals-stackadapts-playbook-for-chatgpt-ads/",
+      "score": 289,
+      "comments": 148,
       "source": "hackernews",
       "text": ""
     },
     {
       "title": "'The status quo is unsustainable': scrutiny of Kalshi, Polymarket explodes",
       "url": "https://www.politico.com/news/2026/04/01/congress-kalshi-polymarket-regulation-00852370",
-      "score": 3,
-      "comments": 0,
-      "source": "hackernews",
-      "text": ""
-    },
-    {
-      "title": "OpenAI Is Working with Consultants to Sell Codex",
-      "url": "https://www.wsj.com/cio-journal/openai-is-working-with-consultants-to-sell-codex-f355b1b9",
-      "score": 8,
-      "comments": 0,
+      "score": 10,
+      "comments": 2,
       "source": "hackernews",
       "text": ""
     },
     {
       "title": "Deezer says 44% of songs uploaded to its platform daily are AI-generated",
       "url": "https://techcrunch.com/2026/04/20/deezer-says-44-of-songs-uploaded-to-its-platform-daily-are-ai-generated/",
-      "score": 352,
-      "comments": 369,
-      "source": "hackernews",
-      "text": ""
-    },
-    {
-      "title": "Linux PTP mainline development war story and new features",
-      "url": "https://bootlin.com/blog/linux-ptp-mainline-development-war-story-and-new-features/",
-      "score": 21,
-      "comments": 0,
+      "score": 354,
+      "comments": 370,
       "source": "hackernews",
       "text": ""
     },
     {
       "title": "Claude Token Counter, now with model comparisons",
       "url": "https://simonwillison.net/2026/Apr/20/claude-token-counts/",
-      "score": 220,
+      "score": 221,
       "comments": 84,
+      "source": "hackernews",
+      "text": ""
+    },
+    {
+      "title": "Linux PTP mainline development war story and new features",
+      "url": "https://bootlin.com/blog/linux-ptp-mainline-development-war-story-and-new-features/",
+      "score": 22,
+      "comments": 0,
       "source": "hackernews",
       "text": ""
     },
     {
       "title": "NSA is using Anthropic's Mythos despite blacklist",
       "url": "https://www.axios.com/2026/04/19/nsa-anthropic-mythos-pentagon",
-      "score": 466,
-      "comments": 329,
+      "score": 467,
+      "comments": 332,
+      "source": "hackernews",
+      "text": ""
+    },
+    {
+      "title": "OpenAI Is Working with Consultants to Sell Codex",
+      "url": "https://www.wsj.com/cio-journal/openai-is-working-with-consultants-to-sell-codex-f355b1b9",
+      "score": 10,
+      "comments": 0,
       "source": "hackernews",
       "text": ""
     },
@@ -222,8 +222,8 @@
     {
       "title": "AI Resistance: some recent anti-AI stuff that’s worth discussing",
       "url": "https://stephvee.ca/blog/artificial%20intelligence/ai-resistance-is-growing/",
-      "score": 369,
-      "comments": 379,
+      "score": 371,
+      "comments": 385,
       "source": "hackernews",
       "text": ""
     },
@@ -231,15 +231,7 @@
       "title": "A Pascal's Wager for AI doomers",
       "url": "https://pluralistic.net/2026/04/16/pascals-wager/",
       "score": 66,
-      "comments": 106,
-      "source": "hackernews",
-      "text": ""
-    },
-    {
-      "title": "Larry Tesler: A Personal History of Modeless Text Editing and Cut/Copy-Paste (2012)",
-      "url": "https://dl.acm.org/doi/epdf/10.1145/2212877.2212896",
-      "score": 45,
-      "comments": 11,
+      "comments": 111,
       "source": "hackernews",
       "text": ""
     },
@@ -366,7 +358,7 @@
     {
       "title": "Significant-Gravitas/AutoGPT - AutoGPT is the vision of accessible AI for everyone, to use and to build on. Our mission is to provide the tools, so that you can focus on what matters.",
       "url": "https://github.com/Significant-Gravitas/AutoGPT",
-      "score": 183632,
+      "score": 183634,
       "comments": 0,
       "source": "github_trending",
       "text": "AutoGPT is the vision of accessible AI for everyone, to use and to build on. Our mission is to provide the tools, so that you can focus on what matters."
@@ -374,7 +366,7 @@
     {
       "title": "ollama/ollama - Get up and running with Kimi-K2.5, GLM-5, MiniMax, DeepSeek, gpt-oss, Qwen, Gemma and other models.",
       "url": "https://github.com/ollama/ollama",
-      "score": 169604,
+      "score": 169613,
       "comments": 0,
       "source": "github_trending",
       "text": "Get up and running with Kimi-K2.5, GLM-5, MiniMax, DeepSeek, gpt-oss, Qwen, Gemma and other models."
@@ -382,7 +374,7 @@
     {
       "title": "f/prompts.chat - f.k.a. Awesome ChatGPT Prompts. Share, discover, and collect prompts from the community. Free and open source — self-host for your organization with complete privacy.",
       "url": "https://github.com/f/prompts.chat",
-      "score": 160288,
+      "score": 160297,
       "comments": 0,
       "source": "github_trending",
       "text": "f.k.a. Awesome ChatGPT Prompts. Share, discover, and collect prompts from the community. Free and open source — self-host for your organization with complete privacy."
@@ -390,7 +382,7 @@
     {
       "title": "huggingface/transformers - 🤗 Transformers: the model-definition framework for state-of-the-art machine learning models in text, vision, audio, and multimodal models, for both inference and training. ",
       "url": "https://github.com/huggingface/transformers",
-      "score": 159695,
+      "score": 159699,
       "comments": 0,
       "source": "github_trending",
       "text": "🤗 Transformers: the model-definition framework for state-of-the-art machine learning models in text, vision, audio, and multimodal models, for both inference and training. "
@@ -398,7 +390,7 @@
     {
       "title": "langgenius/dify - Production-ready platform for agentic workflow development.",
       "url": "https://github.com/langgenius/dify",
-      "score": 138628,
+      "score": 138638,
       "comments": 0,
       "source": "github_trending",
       "text": "Production-ready platform for agentic workflow development."
@@ -406,7 +398,7 @@
     {
       "title": "openclaw/openclaw - Your own personal AI assistant. Any OS. Any Platform. The lobster way. 🦞 ",
       "url": "https://github.com/openclaw/openclaw",
-      "score": 361675,
+      "score": 361721,
       "comments": 0,
       "source": "github_trending",
       "text": "Your own personal AI assistant. Any OS. Any Platform. The lobster way. 🦞 "
@@ -414,7 +406,7 @@
     {
       "title": "n8n-io/n8n - Fair-code workflow automation platform with native AI capabilities. Combine visual building with custom code, self-host or cloud, 400+ integrations.",
       "url": "https://github.com/n8n-io/n8n",
-      "score": 184973,
+      "score": 184983,
       "comments": 0,
       "source": "github_trending",
       "text": "Fair-code workflow automation platform with native AI capabilities. Combine visual building with custom code, self-host or cloud, 400+ integrations."
@@ -422,7 +414,7 @@
     {
       "title": "NousResearch/hermes-agent - The agent that grows with you",
       "url": "https://github.com/NousResearch/hermes-agent",
-      "score": 107427,
+      "score": 107588,
       "comments": 0,
       "source": "github_trending",
       "text": "The agent that grows with you"
@@ -430,7 +422,7 @@
     {
       "title": "lobehub/lobehub - The ultimate space for work and life — to find, build, and collaborate with agent teammates that grow with you. We are taking agent harness to the next level — enabling multi-agent collaboration, effortless agent team design, and introducing agents as the unit of work interaction.",
       "url": "https://github.com/lobehub/lobehub",
-      "score": 75438,
+      "score": 75439,
       "comments": 0,
       "source": "github_trending",
       "text": "The ultimate space for work and life — to find, build, and collaborate with agent teammates that grow with you. We are taking agent harness to the next level — enabling multi-agent collaboration, effortless agent team design, and introducing agents as the unit of work interaction."
@@ -438,42 +430,10 @@
     {
       "title": "thedotmack/claude-mem - A Claude Code plugin that automatically captures everything Claude does during your coding sessions, compresses it with AI (using Claude's agent-sdk), and injects relevant context back into future sessions.",
       "url": "https://github.com/thedotmack/claude-mem",
-      "score": 64924,
+      "score": 64970,
       "comments": 0,
       "source": "github_trending",
       "text": "A Claude Code plugin that automatically captures everything Claude does during your coding sessions, compresses it with AI (using Claude's agent-sdk), and injects relevant context back into future sessions."
-    },
-    {
-      "title": "伏線エンジンの設計 — 計画的伏線とAI自動生成を両立させる",
-      "url": "https://zenn.dev/tenchan0517/articles/novel-foreshadowing-engine",
-      "score": 0,
-      "comments": 0,
-      "source": "rss_zenn",
-      "text": "AIは伏線を忘れます\n物語の中盤で登場人物がさりげなく拾った石が、終盤で決定的な意味を持つ。伏線とはそういうものです。読者はそれを覚えています。「あのとき拾った石だ」と気づいた瞬間、物語の評価が一段上がります。\nところがAI（LLM）は忘れます。\nコンテキストウィンドウには限界があり、10万トークンを超える長編小説では序盤の描写が文字通り「見えなくなる」ことがあります。読者が覚えている伏線を、書き手であるAIが忘れている。これは致命的な問題です。\n自分が開発しているAI小説自動生成システムでは、この問題を「伏線エンジン」という独立したサブシステムで解決しています。この記事では、その設..."
-    },
-    {
-      "title": "Cloud Logging × Claude Code で問い合わせ一次対応を「システム的に辿れる」状態にした",
-      "url": "https://zenn.dev/pivotmedia/articles/cloud-logging-claude-code-inquiry-investigation",
-      "score": 0,
-      "comments": 0,
-      "source": "rss_zenn",
-      "text": "こんにちは。PIVOTのテックリード @tawachan です。\n以前、「なぜタスク管理をNotionからGitHub Projectsへ移行したのか」という記事で、AIが操作しやすいタスク管理基盤を作った話を書きました。あれから半年ほど経ち、その基盤がタスク管理の枠を超えて広がってきたので、今回はその続きを書きます。\nテーマは、Cloud Logging × Claude Code で問い合わせの一次調査を「システム的に辿れる」状態にした話です。\n\n 起票はClaude Codeで、がチームに定着した\n前回の記事で紹介した専用リポジトリは、もともとGitHub ProjectsでIss..."
-    },
-    {
-      "title": "AI企業の時価総額が1兆ドルを超えた週に、CEOの自宅に火炎瓶が投げ込まれた ──１次データで読む、AI時代の構造的非対称",
-      "url": "https://zenn.dev/leading_ai/articles/34403f03716e87",
-      "score": 0,
-      "comments": 0,
-      "source": "rss_zenn",
-      "text": "同じ週に起きた、二つの出来事\n2026年4月。\nAI企業の企業価値が1兆ドルを超えた。同じ週に、そのCEOの自宅に火炎瓶が投げ込まれ、別の企業では1,000人がレイオフされた。\nこれは偶然ではない。同じ構造から生まれている。\nエンジニアとして、この「構造」を一次データで可視化するOSS書籍を書いた。\n\n なぜエンジニアがこのテーマを書くのか\nAIの社会的インパクトを語る記事は多い。しかし、その大半はオピニオンだ。\n本書のアプローチは異なる。以下の一次データソースを横断し、定量的に構造を記述する。\n\n\nPew Research Center — AI世論調査の経年データ\n\nGallu..."
-    },
-    {
-      "title": "キャラクターとロールの2軸で表現する『部活駆動開発』を考えてみた",
-      "url": "https://zenn.dev/tokium_dev/articles/1d9370794363c8",
-      "score": 0,
-      "comments": 0,
-      "source": "rss_zenn",
-      "text": "好きなアニメの世界観をエージェントに持ち込んで、「部活」というやりとりをロール設計に使えないかを考えた記事です。その構想と、『薄氷（うすらひ）』という試作をまとめています。完成されたものではないので、ひとつの方向として読んでいただけますと幸いです。\n\n 1. はじめに\n私がこの記事を書くきっかけになったのは、おしおさん が投稿されていたmulti-agent-shogunの記事でした。\nhttps://zenn.dev/shio_shoppaize/articles/5fee11d03a11a1\nClaude Code ユーザーなら、一度は目にしたことがあるのではないかと思います。本当に..."
     },
     {
       "title": "AI が設計して、AI が強度検証する — Kiro × FreeCAD FEM でロボットアームCAE構造解析",
@@ -482,6 +442,62 @@
       "comments": 0,
       "source": "rss_zenn",
       "text": "はじめに\n本記事は Kiro × 設計開発シリーズの 3 本目です。\n\n1本目：入門編（Python だけで CFD と STL モデリング） — CAD,CAE ソフトを使わず、Python（numpy-stl、格子ボルツマン法）だけで CFD シミュレーションと 3D モデル生成\n2本目：CAD 編集編（STEP + FreeCAD） — ロボットアームを STEP 形式で出力し、FreeCAD でフィレット追加・穴追加\n3本目：CAE 解析編（FreeCAD FEM）（本記事）— ロボットアームの構造解析、応力・変位をFreeCAD で定量評価\n\n本シリーズでは、AWS の A..."
+    },
+    {
+      "title": "LLMプロンプトにエビデンスベースの心理学を組み込む ― 恋愛分析AIの設計",
+      "url": "https://zenn.dev/m_naoki_m/articles/e52131f6230b4e",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_zenn",
+      "text": "恋愛メッセージ分析AIアプリ Relora（リローラ） は、チャットのスクリーンショットをOCRで構造化し、Amazon Bedrock経由でLLM（Qwen3 Next 80B / Claude Sonnet 4.6）に心理分析と返信候補を生成させるアプリです。\n一般論のLLMに「恋愛相談に乗って」と投げると、出てくるのは「あなたの気持ちを尊重してくれる相手かどうか見極めましょう」みたいな、どこにでもある助言です。これではユーザーの課題は解決しません。\n本記事は、学術的エビデンスに基づく恋愛心理学をLLMのシステムプロンプトに構造的に埋め込む 設計判断と、その実装を解説します。対象読者..."
+    },
+    {
+      "title": "AIエージェント、結局どれを選べばいいのか｜Dify / n8n / CrewAIを実務目線で比較",
+      "url": "https://zenn.dev/tigerone1945/articles/dcfced1d90a4b4",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_zenn",
+      "text": "はじめに\nAIエージェントツール、増えすぎてこうなってませんか？👇\n\n「結局どれを選べばいいの？」\n\n本記事では、主要なAIエージェントツールを実務目線で比較し、結論まで出します。\n\n\n 結論\n迷ったらこれ👇\n\n\n\n目的\nおすすめ\n\n\n\n\n非エンジニア・ナレッジ活用\nDify\n\n\n業務自動化（SaaS連携）\nn8n\n\n\n高度な制御・開発\nCrewAI\n\n\n\n👉 用途で選べばほぼ失敗しません\n\n上記以外のも色々ありますが、個人的な好みで選択していますので、この点は理解しておいてください\nCrewAIの代わりにOpen Clawを選ぶべきかもしれませんが、安全性に疑問があるので含めていま..."
+    },
+    {
+      "title": "sentinel をはじめよう！ — API キー取得からアバター表示まで🤖",
+      "url": "https://zenn.dev/pla/articles/8eb22e3c84d358",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_zenn",
+      "text": "sentinel をはじめよう\nsentinel は Windows に常駐する AI アシスタントです。\nテキストチャット、音声会話、アバター表示をひとつのウィンドウから使えます。\nこの記事では インストールから最初のアバター表示まで を順を追って説明します。\n\n\n 1. ダウンロードと起動\nhttps://pxr.booth.pm/items/8090485\nBoothの配布ページ から sentinel_0.4.3.zip をダウンロードします。\nインストーラーはありません。\nダウンロードした .zip を解凍して.exeをそのまま起動してください。\n!\nWindows Sma..."
+    },
+    {
+      "title": "直観の行列化：四元数と幾何代数による「計算可能な哲学」の構築 概要【第1論文】",
+      "url": "https://zenn.dev/kiichi34578/articles/0cdafe5d98aad3",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_zenn",
+      "text": "概要（アブストラクト）\n本稿は、人間の身体的直観（暗黙知）を数学的構造へと変換し、大規模言語モデル（LLM）上で演算可能なシステムとして実装するまでの理論的軌跡である。\n筆者は長年、人間の意識や言葉の重みを測る身体的アプローチを探求してきた。\n本研究では、その直観的理解を四元数（Quaternion）および幾何代数（Geometric Algebra）の枠組みに統合し、複雑な精神活動を4×4および8×8の実数行列（Mats形式）として可視化することに成功した。\nこれにより、従来の確率論に依存するAIのハルシネーション（構造的矛盾）を排除し、自然界の法則に合致した「嘘のつけない推論エン..."
+    },
+    {
+      "title": "承認してない git tag を Claude Code に打たれた話 — LLM Agent の構造的 Rule Violation",
+      "url": "https://zenn.dev/yottayoshida/articles/claude-code-structural-rule-violation",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_zenn",
+      "text": "!\nこの記事は omamori（AI CLI 経由の破壊的コマンドをブロックする macOS 向けガードツール）の v0.9.5 リリース作業中に起きた、Claude Code Auto モードの rule violation 問題の記録と構造分析だ。\n\n\n TL;DR\n\nomamori v0.9.5 リリース中、Claude Code Auto モードが 1 step ごとに承認を取る手順を skip して release ceremony（PR merge / git tag / GitHub Release 公開）を連続実行した\n手順は orchestrator.md に書いていた..."
+    },
+    {
+      "title": "LLM に図面情報を全部見せる設計をやめた話",
+      "url": "https://zenn.dev/0xliclog/articles/bdbc550a999dfd",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_zenn",
+      "text": "LLM に大量の構造化データを扱わせたいとき、最初にやりがちな設計があります。全部コンテキストに入れて見せる方法です。\n自分も、AutoCAD 上で動作する AI エージェントを個人で開発する中で、まさにそれを試しました。ユーザーが自然言語で指示すると、図面上の線・円・文字・ブロック参照などを調査したり、条件に応じて編集したりするツールです。\n\nAutoCAD 上で動作する AI エージェント\n開発を始めた当初、自分はかなり素朴にこう考えていました。\n図面の情報を全部 LLM に見せれば、賢く判断してくれるのでは?\n結論から言うと、この設計はやめました。LLM に大量の図面情報をそのまま..."
+    },
+    {
+      "title": "伏線エンジンの設計 — 計画的伏線とAI自動生成を両立させる",
+      "url": "https://zenn.dev/tenchan0517/articles/novel-foreshadowing-engine",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_zenn",
+      "text": "AIは伏線を忘れます\n物語の中盤で登場人物がさりげなく拾った石が、終盤で決定的な意味を持つ。伏線とはそういうものです。読者はそれを覚えています。「あのとき拾った石だ」と気づいた瞬間、物語の評価が一段上がります。\nところがAI（LLM）は忘れます。\nコンテキストウィンドウには限界があり、10万トークンを超える長編小説では序盤の描写が文字通り「見えなくなる」ことがあります。読者が覚えている伏線を、書き手であるAIが忘れている。これは致命的な問題です。\n自分が開発しているAI小説自動生成システムでは、この問題を「伏線エンジン」という独立したサブシステムで解決しています。この記事では、その設..."
     },
     {
       "title": "そのAIアプリはテストされているか",
@@ -500,28 +516,20 @@
       "text": "※こちらはFANBOXに掲載した内容とだいたい同じものです。\n以前、試験的に執筆した一次創作小説をカクヨムにて公開しました。\nhttps://kakuyomu.jp/works/822139841665191226\n今流行りの追放なろう系っぽいフォーマットですが、『ハイパーミッドナイト教育番組』をテーマに、『たん◯んぼくのまち』や『こ◯まちだいすき』っぽい雰囲気でお届けいたします。みんなも地理学をすこれ！！！\n\n↑主人公の星守咲ちゃん。かわいいですね。私が描きました。\n本来であればFANBOXの支援者限定で連載したかったのですが、この小説は冒頭の説明文にもあるとおり、世界観やキャラクター..."
     },
     {
-      "title": "LLMプロンプトにエビデンスベースの心理学を組み込む ― 恋愛分析AIの設計",
-      "url": "https://zenn.dev/m_naoki_m/articles/e52131f6230b4e",
+      "title": "SaaSのアカウント課金モデルはAI時代に崩壊するのか：Salesforce Headless 360が示す構造変化",
+      "url": "https://zenn.dev/dai_mywk/articles/d51ea1e6e2651e",
       "score": 0,
       "comments": 0,
       "source": "rss_zenn",
-      "text": "恋愛メッセージ分析AIアプリ Relora（リローラ） は、チャットのスクリーンショットをOCRで構造化し、Amazon Bedrock経由でLLM（Qwen3 Next 80B / Claude Sonnet 4.6）に心理分析と返信候補を生成させるアプリです。\n一般論のLLMに「恋愛相談に乗って」と投げると、出てくるのは「あなたの気持ちを尊重してくれる相手かどうか見極めましょう」みたいな、どこにでもある助言です。これではユーザーの課題は解決しません。\n本記事は、学術的エビデンスに基づく恋愛心理学をLLMのシステムプロンプトに構造的に埋め込む 設計判断と、その実装を解説します。対象読者..."
+      "text": "SaaSのアカウント課金モデルはAI時代に崩壊するのか：Salesforce Headless 360が示す構造変化\n\n はじめに\nSalesforceが2026年4月に発表した「Headless 360」は、単なる新機能の追加ではなく、SaaS全体のビジネスモデルへの根本的な問いかけを含んでいます。\nこの記事では、Headless 360の仕組みを入り口に、AIエージェント時代におけるSaaSのマネタイズモデルの変化について整理します。\n\n\n Headless 360とは何か\nSalesforce Headless 360の要点は以下の3点です。\n\nSalesforceの機能を API..."
     },
     {
-      "title": "P/D Disaggregated Inference with LMCache - 2",
-      "url": "https://zenn.dev/tosshi/articles/787683d9455ec8",
+      "title": "AI主要3社ダイジェスト 2026-04-21 ─ Claude / OpenAI / Google AI が同点首位に収束した2日間",
+      "url": "https://zenn.dev/hageoyaji/articles/2026-04-21-20-55-43_ai-digest",
       "score": 0,
       "comments": 0,
       "source": "rss_zenn",
-      "text": "https://zenn.dev/tosshi/articles/b9fdb42d36bd82\n!\n本記事は ↑ の記事に続くシリーズ第 2 部です！第 1 部では PD 分離推論 with LMCache の概念と実際の結果確認の流れについて説明しました。本記事では、実際の実装リファレンスを提示しながら注意ポイントを解説します。\n\n\n はじめに\n今回は実装編ということで実際に動かすまでの手順を解説していこうと思います。色々と試行錯誤するための実験環境であり、本番向けではないのでご注意ください。\n\n インフラストラクチャ構築\n大枠はこちらに記載のワークショップに手順があるのでそちらをまず..."
-    },
-    {
-      "title": "「AI脆弱性の嵐」が来る──Mythosレディなセキュリティプログラムの構築が求められる",
-      "url": "https://zenn.dev/wfukatsu/articles/1a1676c6fad824",
-      "score": 0,
-      "comments": 0,
-      "source": "rss_zenn",
-      "text": "2026年4月、Cloud Security Alliance（CSA）のCISOコミュニティ、SANS、[un]prompted、OWASP GenAIセキュリティプロジェクトらが連名で、緊急戦略ブリーフィング「The AI Vulnerability Storm: Building Mythos-Ready Security Programs」を公開しました。AnthropicのClaude Mythos Preview発表、そして過去最大規模の多者間脆弱性調整プロジェクト「Project Glasswing」の立ち上げを契機に、AI によってセキュリティの前提が構造的に書き換えられ..."
+      "text": "AI主要3社ダイジェスト 2026-04-21\nClaude / OpenAI / Google AI の3社を公式サイト・評価サイトから独立調査し、横断比較したダイジェストです。前回版(2026-04-19)からわずか2日の間に、総合ランキングが大きく動きました。\n!\n本記事は3社の公式ドキュメント・公式ブログ・Reddit/HN/Qiita/Zenn/note/各種レビューサイトを一次・二次ソースに要約・編集したものです。判定は 2026-04-21 時点 の情報に基づきます。\n\n\n エグゼクティブサマリー\n\n\n3社同点首位 20 点:Claude / OpenAI / Goog..."
     },
     {
       "title": "ChatGPTの回答をClaudeにフィードバックしてブラッシュアップするプロンプト設計",
@@ -546,22 +554,6 @@
       "comments": 0,
       "source": "rss_zenn",
       "text": "note『自分のポートフォリオをAIに相談する』連載で最短ルートを通した先で、実運用に入ったときに詰まる場所・壊れる場所・守るべき境界を体系化する。エラー図鑑、セキュリティ設計、MCP 内部構造、プラットフォーム移行、データ設計、実用ユースケースを運用視点で書く。連載を読まなくても読める。"
-    },
-    {
-      "title": "自動運転体験から読み解くAIファースト設計の本質",
-      "url": "https://zenn.dev/dai_mywk/articles/06899d800d1bf3",
-      "score": 0,
-      "comments": 0,
-      "source": "rss_zenn",
-      "text": "はじめに\nこの記事では、自動運転タクシーの体験談から浮かび上がった「不在の価値」という概念を起点に、AIファーストなビジネス設計がなぜ難しく、どこから考えるべきかを整理する。\nプロダクト設計やUX設計に関わる人、あるいはAI導入を検討している事業者に向けて、快適さの構造を分解しながら実践的な視点を提供することを目的としている。\n\n\n 前提知識・用語整理\nAIファーストとは\n業務やサービスの設計において、人間の対応を起点にするのではなく、AIによる処理を標準状態として設計すること。AIを「補助ツール」として後付けするのではなく、最初からAIが主体であることを前提に体験を設計するアプロ..."
-    },
-    {
-      "title": "ChatGPTが自信満々に嘘をつく\"本当の理由\" — OpenAIの論文でわかってました",
-      "url": "https://zenn.dev/koji_ai_lab/articles/5e0182282a8546",
-      "score": 0,
-      "comments": 0,
-      "source": "rss_zenn",
-      "text": "米IT企業AIサイエンティストのこうじです。\nこの記事の内容は、インスタのリールで1分で解説しています。動画でサクッと知りたい方はこちらからどうぞ。\n👉 インスタで1分解説を見る\nいきなりですが、みなさん一度は経験ありませんか？\nChatGPTに質問したら、めちゃくちゃ流暢に、めちゃくちゃ自信満々に、完全な嘘を返された経験。\n存在しない論文を教えてきたり、行ったこともないレストランを絶賛してきたり、誰かの経歴を勝手に盛ったり。しかも、聞き返しても一切動揺せず、堂々と嘘を重ねてくる。\n「お前、なんでそんなに自信あんねん」と、画面の前で一人ツッコミを入れたこと、ありますよね。\nで、今日お伝え..."
     },
     {
       "title": "【因果推論 #3】因果グラフ（DAG）─ Fork/Chain/Colliderの3パターン",
@@ -604,36 +596,36 @@
       "text": "ツール呼び出しでも大きいモデルは勝てなかった\nLLMにツールを持たせる（function calling / tool use）。これはエージェントの基盤技術であり、RAGの次の進化であり、ローカルLLMの実用性を左右する機能だ。\nでは、どのモデルがfunction callingで最も正確か。13モデルをQ4_K_M量子化でテストした2026年のベンチマーク（JD Hodges, 2026）の結果は、予想を裏切るものだった。\n97.5%の精度を出したのは3.4GBのモデルだった。25GBのモデルは85%で負けた。\n少なくともこのテスト環境では、大きいモデルが強いという前提は成り立た..."
     },
     {
+      "title": "AI Dungeon maker Latitude unveils Voyage, a platform for creating AI-powered RPGs",
+      "url": "https://techcrunch.com/2026/04/21/voyage-is-an-ai-rpg-platform-for-creating-custom-gaming-worlds-with-ai-generated-npc-interactions/",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_techcrunch",
+      "text": "Latitude's new AI-native platform, Voyage, aims to help gamers create their very own role-playing game."
+    },
+    {
+      "title": "Bond, a new social media platform, wants to use AI to help you kick your doomscrolling habit",
+      "url": "https://techcrunch.com/2026/04/21/bond-social-media-platform-ai-memories-kick-doomscrolling-habit/",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_techcrunch",
+      "text": "Bond wants you to get off the couch and get back into the real world, its creator says. The new platform's AI system is designed to motivate users to do things away from the app."
+    },
+    {
+      "title": "YouTube expands its AI likeness detection technology to celebrities",
+      "url": "https://techcrunch.com/2026/04/21/youtube-expands-its-ai-likeness-detection-technology-to-celebrities/",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_techcrunch",
+      "text": "YouTube is expanding its AI likeness detection tool to celebrities, giving talent and their reps a way to find and remove deepfakes."
+    },
+    {
       "title": "GRAI believes AI can make music more social, not replace artists",
       "url": "https://techcrunch.com/2026/04/21/grai-believes-ai-can-make-music-more-social-not-replace-artists/",
       "score": 0,
       "comments": 0,
       "source": "rss_techcrunch",
       "text": "AI music startup GRAI says fans want to remix tracks, not generate songs from scratch."
-    },
-    {
-      "title": "Google rolls out Gemini in Chrome in APAC countries",
-      "url": "https://techcrunch.com/2026/04/20/google-rolls-out-gemini-in-chrome-in-seven-new-countries/",
-      "score": 0,
-      "comments": 0,
-      "source": "rss_techcrunch",
-      "text": "Google is rolling out Gemini in Chrome in Australia, Indonesia, Japan, the Philippines, Singapore, South Korea, and Vietnam. The company is rolling this feature out to both desktop and iOS in all of these countries except Japan."
-    },
-    {
-      "title": "It&#8217;s not just one thing — it&#8217;s another thing",
-      "url": "https://techcrunch.com/2026/04/20/ai-writing-its-not-just-this-its-that-barrons/",
-      "score": 0,
-      "comments": 0,
-      "source": "rss_techcrunch",
-      "text": "This sentence construction (\"It's not just this — it's that\") has become so common in AI-generated writing that it's no longer just a clue that a piece of writing may be synthetic — it's almost a guarantee."
-    },
-    {
-      "title": "NSA spies are reportedly using Anthropic’s Mythos, despite Pentagon feud",
-      "url": "https://techcrunch.com/2026/04/20/nsa-spies-are-reportedly-using-anthropics-mythos-despite-pentagon-feud/",
-      "score": 0,
-      "comments": 0,
-      "source": "rss_techcrunch",
-      "text": "NSA is said to be using Anthropic's restricted Mythos AI model."
     },
     {
       "title": "Railway secures $100 million to challenge AWS with AI-native cloud infrastructure",
@@ -700,7 +692,7 @@
       "text": "If you want to capture something wolflike, it’s best to embark before dawn. So on a morning this January, with the eastern horizon still pink-hued, I drove with two young scientists into a blanket of fog. Forty miles to the west, the industrial sprawl of Houston spawned a golden glow. Tanner Broussa"
     },
     {
-      "title": "Chinese tech workers are starting to train their AI doubles&#8211;and pushing back",
+      "title": "Chinese tech workers are starting to train their AI doubles—and pushing back",
       "url": "https://www.technologyreview.com/2026/04/20/1136149/chinese-tech-workers-ai-colleagues/",
       "score": 0,
       "comments": 0,
