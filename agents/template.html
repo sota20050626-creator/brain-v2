@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Brain</title>
+<title>Brain v2</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Noto+Sans+JP:wght@300;400;700&display=swap');
 :root {
@@ -16,6 +16,7 @@
   --text: #c9d1d9;
   --muted: #3d4d5c;
   --warning: #ffaa00;
+  --free: #00e5ff;
 }
 * { margin:0; padding:0; box-sizing:border-box; }
 body { background:var(--bg); color:var(--text); font-family:'Noto Sans JP',sans-serif; min-height:100vh; }
@@ -25,6 +26,7 @@ body { background:var(--bg); color:var(--text); font-family:'Noto Sans JP',sans-
 header { display:flex; align-items:center; justify-content:space-between; padding-bottom:20px; border-bottom:1px solid var(--border); margin-bottom:0; }
 .logo { font-family:'Space Mono',monospace; font-size:20px; font-weight:700; color:var(--accent); }
 .logo span { color:var(--text); opacity:0.5; }
+.logo .v2 { font-size:13px; color:var(--free); margin-left:6px; border:1px solid var(--free); padding:2px 8px; border-radius:10px; vertical-align:middle; opacity:1; }
 .status { display:flex; align-items:center; gap:8px; font-family:'Space Mono',monospace; font-size:11px; color:var(--muted); }
 .pulse { width:7px; height:7px; background:var(--accent); border-radius:50%; animation:pulse 2s infinite; flex-shrink:0; }
 @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.3;transform:scale(0.6)} }
@@ -71,12 +73,22 @@ header { display:flex; align-items:center; justify-content:space-between; paddin
 .kb-stat { font-family:'Space Mono',monospace; font-size:11px; color:var(--muted); }
 .kb-stat span { color:var(--accent); }
 
-.cost-grid { display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-bottom:12px; }
-.cost-stat { text-align:center; padding:12px 8px; background:rgba(255,170,0,0.04); border:1px solid rgba(255,170,0,0.15); border-radius:6px; }
-.cost-value { font-family:'Space Mono',monospace; font-size:20px; font-weight:700; color:var(--warning); }
+/* コストパネル v2（Qwen3無料化強調） */
+.model-row { display:flex; gap:8px; margin-bottom:10px; flex-wrap:wrap; }
+.model-badge { display:inline-flex; align-items:center; gap:5px; font-family:'Space Mono',monospace; font-size:9px; padding:3px 8px; border-radius:10px; }
+.model-badge.qwen { background:rgba(0,229,255,0.1); border:1px solid rgba(0,229,255,0.3); color:var(--free); }
+.model-badge.claude { background:rgba(0,255,136,0.07); border:1px solid rgba(0,255,136,0.2); color:var(--accent); }
+.cost-grid { display:grid; grid-template-columns:1fr 1fr 1fr; gap:8px; margin-bottom:12px; }
+.cost-stat { text-align:center; padding:12px 8px; border-radius:6px; }
+.cost-stat.free { background:rgba(0,229,255,0.04); border:1px solid rgba(0,229,255,0.3); }
+.cost-stat.paid { background:rgba(255,170,0,0.04); border:1px solid rgba(255,170,0,0.15); }
+.cost-value { font-family:'Space Mono',monospace; font-size:20px; font-weight:700; }
+.cost-value.free-color { color:var(--free); }
+.cost-value.paid-color { color:var(--warning); }
 .cost-label { font-size:10px; color:var(--muted); margin-top:4px; font-family:'Space Mono',monospace; }
 .cost-detail { font-family:'Space Mono',monospace; font-size:10px; color:var(--muted); line-height:1.8; }
 .cost-detail span { color:var(--accent); }
+.cost-detail .free-text { color:var(--free); }
 
 .draft-card { background:var(--surface2); border:1px solid var(--border); border-radius:8px; padding:16px; margin-bottom:12px; }
 .draft-card:hover { border-color:var(--accent); }
@@ -85,6 +97,8 @@ header { display:flex; align-items:center; justify-content:space-between; paddin
 .copy-btn { background:var(--accent); color:#000; border:none; border-radius:4px; padding:6px 14px; font-family:'Space Mono',monospace; font-size:10px; font-weight:700; cursor:pointer; transition:all 0.2s; }
 .copy-btn:hover { opacity:0.8; }
 .copy-btn.copied { background:var(--accent2); color:#fff; }
+.draft-source-link { display:inline-block; color:var(--muted); font-size:10px; text-decoration:none; margin-right:10px; }
+.draft-source-link:hover { color:var(--accent2); }
 
 .note-date { font-family:'Space Mono',monospace; font-size:10px; color:var(--muted); margin-bottom:10px; }
 .note-preview { font-size:12px; line-height:1.8; color:var(--text); max-height:300px; overflow-y:auto; background:var(--surface2); border:1px solid var(--border); border-radius:6px; padding:14px; margin-bottom:12px; }
@@ -140,7 +154,7 @@ header { display:flex; align-items:center; justify-content:space-between; paddin
 <div class="wrap">
 
 <header>
-  <div class="logo">🧠 <span>Brain</span></div>
+  <div class="logo">🧠 <span>Brain</span><span class="v2">v2</span></div>
   <div class="status"><span class="pulse"></span> {{TODAY}} 自動更新</div>
 </header>
 
@@ -187,19 +201,28 @@ header { display:flex; align-items:center; justify-content:space-between; paddin
       <div class="history">{{HISTORY_HTML}}</div>
     </div>
     <div class="panel">
-      <div class="panel-title">// API Cost</div>
+      <div class="panel-title">// API Cost（v2）</div>
+      <div class="model-row">
+        <span class="model-badge qwen">⚡ Qwen3 FREE</span>
+        <span class="model-badge claude">✦ Claude API</span>
+      </div>
       <div class="cost-grid">
-        <div class="cost-stat">
-          <div class="cost-value">${{MONTH_USD}}</div>
+        <div class="cost-stat free">
+          <div class="cost-value free-color">$0</div>
+          <div class="cost-label">要約コスト</div>
+        </div>
+        <div class="cost-stat paid">
+          <div class="cost-value paid-color">${{MONTH_USD}}</div>
           <div class="cost-label">今月 USD</div>
         </div>
-        <div class="cost-stat">
-          <div class="cost-value">¥{{MONTH_JPY}}</div>
+        <div class="cost-stat paid">
+          <div class="cost-value paid-color">¥{{MONTH_JPY}}</div>
           <div class="cost-label">今月 円換算</div>
         </div>
       </div>
       <div class="cost-detail">
         今月のAPI呼び出し: <span>{{MONTH_CALLS}}</span> 回<br>
+        要約処理: <span class="free-text">Qwen3.6（完全無料）</span><br>
         累計コスト: <span>${{TOTAL_USD}}</span>
       </div>
     </div>
@@ -260,7 +283,7 @@ header { display:flex; align-items:center; justify-content:space-between; paddin
       <div class="msg brain">
         <div class="msg-avatar">🧠</div>
         <div class="msg-body">
-          <div class="msg-label">Brain</div>
+          <div class="msg-label">Brain v2</div>
           こんにちは！蓄積したAI情報（{{KB_DAYS}}日分・{{KB_ARTICLES}}件）を元に質問に答えます。
         </div>
       </div>
@@ -289,10 +312,7 @@ function copyText(text, btn) {
   navigator.clipboard.writeText(text).then(() => {
     btn.textContent = 'コピー済!';
     btn.classList.add('copied');
-    setTimeout(() => {
-      btn.textContent = 'コピー';
-      btn.classList.remove('copied');
-    }, 2000);
+    setTimeout(() => { btn.textContent = 'コピー'; btn.classList.remove('copied'); }, 2000);
   });
 }
 
@@ -305,19 +325,14 @@ async function loadPRs() {
   try {
     const res = await fetch('https://api.github.com/repos/' + GITHUB_REPO + '/pulls?state=open&per_page=5');
     const prs = await res.json();
-    if (!prs.length) {
-      el.innerHTML = '<div class="muted-msg">オープンなPRはありません</div>';
-      return;
-    }
+    if (!prs.length) { el.innerHTML = '<div class="muted-msg">オープンなPRはありません</div>'; return; }
     el.innerHTML = prs.map(pr =>
       '<a class="github-link" href="' + pr.html_url + '" target="_blank">'
       + '<span class="github-badge badge-pr">PR #' + pr.number + '</span>'
       + '<span style="flex:1;font-size:11px">' + pr.title + '</span>'
       + '</a>'
     ).join('');
-  } catch(e) {
-    el.innerHTML = '<div class="muted-msg">PR取得エラー</div>';
-  }
+  } catch(e) { el.innerHTML = '<div class="muted-msg">PR取得エラー</div>'; }
 }
 
 async function loadIssues() {
@@ -326,19 +341,14 @@ async function loadIssues() {
     const res = await fetch('https://api.github.com/repos/' + GITHUB_REPO + '/issues?state=open&per_page=5');
     const issues = await res.json();
     const filtered = issues.filter(i => !i.pull_request);
-    if (!filtered.length) {
-      el.innerHTML = '<div class="muted-msg">オープンなIssueはありません</div>';
-      return;
-    }
+    if (!filtered.length) { el.innerHTML = '<div class="muted-msg">オープンなIssueはありません</div>'; return; }
     el.innerHTML = filtered.map(issue =>
       '<a class="github-link" href="' + issue.html_url + '" target="_blank">'
       + '<span class="github-badge badge-issue">#' + issue.number + '</span>'
       + '<span style="flex:1;font-size:11px">' + issue.title + '</span>'
       + '</a>'
     ).join('');
-  } catch(e) {
-    el.innerHTML = '<div class="muted-msg">Issue取得エラー</div>';
-  }
+  } catch(e) { el.innerHTML = '<div class="muted-msg">Issue取得エラー</div>'; }
 }
 
 function saveApiKey() {
@@ -405,7 +415,7 @@ async function sendMessage() {
       body: JSON.stringify({
         model: 'claude-haiku-4-5-20251001',
         max_tokens: 1000,
-        system: 'あなたはBrainというAI情報アナリストです。以下の蓄積されたAIニュースデータを元に、ユーザーの質問に日本語で答えてください。\n\n【蓄積データ】\n' + context,
+        system: 'あなたはBrain v2というAI情報アナリストです。以下の蓄積されたAIニュースデータを元に、ユーザーの質問に日本語で答えてください。\n\n【蓄積データ】\n' + context,
         messages: [{ role: 'user', content: msg }]
       })
     });
@@ -430,7 +440,7 @@ function appendMessage(role, text) {
   const div = document.createElement('div');
   div.className = 'msg ' + role;
   const avatar = role === 'brain' ? '🧠' : '👤';
-  const label = role === 'brain' ? 'Brain' : 'You';
+  const label = role === 'brain' ? 'Brain v2' : 'You';
   div.innerHTML = '<div class="msg-avatar">' + avatar + '</div><div class="msg-body"><div class="msg-label">' + label + '</div>' + text.replace(/\n/g, '<br>') + '</div>';
   c.appendChild(div);
   c.scrollTop = c.scrollHeight;
@@ -442,7 +452,7 @@ function appendThinking() {
   const id = 'thinking-' + Date.now();
   div.id = id;
   div.className = 'msg brain';
-  div.innerHTML = '<div class="msg-avatar">🧠</div><div class="msg-body"><div class="msg-label">Brain</div><div class="thinking"><span></span><span></span><span></span></div></div>';
+  div.innerHTML = '<div class="msg-avatar">🧠</div><div class="msg-body"><div class="msg-label">Brain v2</div><div class="thinking"><span></span><span></span><span></span></div></div>';
   c.appendChild(div);
   c.scrollTop = c.scrollHeight;
   return id;
