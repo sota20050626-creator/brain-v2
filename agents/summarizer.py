@@ -196,7 +196,7 @@ def generate_daily_digest(items):
 3. 注目すべき技術動向（2行以内）
 
 簡潔にまとめてください。"""
-    # digestはQwen3（完全無料化）
+        # digestはQwen3（完全無料化）
         return call_qwen(prompt, max_tokens=500, label="daily_digest")
 
 
