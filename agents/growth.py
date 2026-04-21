@@ -25,6 +25,8 @@ DRAFTS_DIR.mkdir(parents=True, exist_ok=True)
 
 SONNET_INPUT_PRICE = 3.0 / 1_000_000
 SONNET_OUTPUT_PRICE = 15.0 / 1_000_000
+QWEN_INPUT_PRICE = 0.1 / 1_000_000
+QWEN_OUTPUT_PRICE = 0.3 / 1_000_000
 
 
 def load_cost_log():
@@ -34,8 +36,11 @@ def load_cost_log():
         return json.load(f)
 
 
-def save_cost(input_tokens, output_tokens, label):
-    cost = input_tokens * SONNET_INPUT_PRICE + output_tokens * SONNET_OUTPUT_PRICE
+def save_cost(input_tokens, output_tokens, label, model="claude"):
+    if model == "qwen":
+        cost = input_tokens * QWEN_INPUT_PRICE + output_tokens * QWEN_OUTPUT_PRICE
+    else:
+        cost = input_tokens * SONNET_INPUT_PRICE + output_tokens * SONNET_OUTPUT_PRICE
     log = load_cost_log()
     month = TODAY[:7]
     if month not in log["monthly"]:
@@ -46,6 +51,7 @@ def save_cost(input_tokens, output_tokens, label):
     log["monthly"][month]["calls"].append({
         "date": TODAY,
         "label": label,
+        "model": model,
         "input_tokens": input_tokens,
         "output_tokens": output_tokens,
         "usd": round(cost, 6)
@@ -56,7 +62,43 @@ def save_cost(input_tokens, output_tokens, label):
     return cost
 
 
+def call_qwen(prompt, max_tokens=2000, label="qwen_call"):
+    """Qwen3をOpenRouter経由で呼び出す（テキスト生成用・無料）"""
+    api_key = os.environ.get("OPENROUTER_API_KEY")
+    if not api_key:
+        print("  OPENROUTER_API_KEY未設定 → Claudeにフォールバック")
+        return call_claude(prompt, max_tokens, label)
+    payload = json.dumps({
+        "model": "qwen/qwen3-next-80b-a3b-instruct:free",
+        "max_tokens": max_tokens,
+        "messages": [{"role": "user", "content": prompt}]
+    }).encode()
+    req = urllib.request.Request(
+        "https://openrouter.ai/api/v1/chat/completions",
+        data=payload,
+        headers={
+            "Authorization": "Bearer " + api_key,
+            "Content-Type": "application/json",
+            "HTTP-Referer": "https://github.com/sota20050626-creator/brain-v2",
+        }
+    )
+    try:
+        with urllib.request.urlopen(req, timeout=30) as r:
+            result = json.loads(r.read())
+        usage = result.get("usage", {})
+        save_cost(
+            usage.get("prompt_tokens", 0),
+            usage.get("completion_tokens", 0),
+            label, model="qwen"
+        )
+        return result["choices"][0]["message"]["content"]
+    except Exception as e:
+        print("  Qwen3エラー: " + str(e) + " → Claudeにフォールバック")
+        return call_claude(prompt, max_tokens, label)
+
+
 def call_claude(prompt, max_tokens=2000, label="api_call"):
+    """Claude APIを呼び出す（コード生成など品質重視の処理用）"""
     api_key = os.environ.get("ANTHROPIC_API_KEY")
     payload = json.dumps({
         "model": "claude-sonnet-4-20250514",
@@ -75,7 +117,7 @@ def call_claude(prompt, max_tokens=2000, label="api_call"):
     with urllib.request.urlopen(req) as r:
         result = json.loads(r.read())
     usage = result.get("usage", {})
-    save_cost(usage.get("input_tokens", 0), usage.get("output_tokens", 0), label)
+    save_cost(usage.get("input_tokens", 0), usage.get("output_tokens", 0), label, model="claude")
     return result["content"][0]["text"]
 
 
@@ -112,53 +154,37 @@ def load_latest_items():
 
 def generate_x_drafts(items):
     top_items = sorted(items, key=lambda x: x.get("importance", 0), reverse=True)[:10]
-    # ★ URLを含めてClaudeに渡す
     items_text = "\n".join([
         "- " + item.get("title_ja", item.get("title", "")) + ": " + item.get("summary_ja", "")[:80]
         + " [URL: " + item.get("url", "") + "]"
         for item in top_items
     ])
-    prompt = """あなたはAI情報を発信するXアカウントの中の人です。
-今日・昨日のAIニュースの中から最もホットなものを選んで、X投稿文を3本作成してください。
-
-【最新AIニュース（今日+昨日）】
-""" + items_text + """
-
-【選び方のルール】
-- 最もインパクトが大きいBIGNEWSを優先する
-- 「え、マジで？」「知らなかった」と思わせるものを選ぶ
-- 業界の転換点になりそうなものを優先する
-- 3本は全て異なるトピックにする
-
-【投稿文のルール】
-- 各投稿は140文字以内
-- 専門用語を使いすぎず、一般人にも刺さる表現
-- 体言止め・断言系で書く
-- 「速報」「今」「たった今」などの鮮度を感じさせる言葉を入れる
-- 末尾に関連ハッシュタグを2〜3個
-
-【出力形式】
-投稿1:
-（本文）
-引用元: （元記事のURL）
-
-投稿2:
-（本文）
-引用元: （元記事のURL）
-
-投稿3:
-（本文）
-引用元: （元記事のURL）"""
-    return call_claude(prompt, max_tokens=900, label="x_drafts")
+    prompt = (
+        "あなたはAI情報を発信するXアカウントの中の人です。\n"
+        "今日・昨日のAIニュースの中から最もホットなものを選んで、X投稿文を3本作成してください。\n\n"
+        "【最新AIニュース（今日+昨日）】\n"
+        + items_text + "\n\n"
+        "【選び方のルール】\n"
+        "- 最もインパクトが大きいBIGNEWSを優先する\n"
+        "- 「え、マジで？」「知らなかった」と思わせるものを選ぶ\n"
+        "- 3本は全て異なるトピックにする\n\n"
+        "【投稿文のルール】\n"
+        "- 各投稿は140文字以内\n"
+        "- 体言止め・断言系で書く\n"
+        "- 末尾に関連ハッシュタグを2〜3個\n\n"
+        "【出力形式】\n"
+        "投稿1:\n（本文）\n引用元: （元記事のURL）\n\n"
+        "投稿2:\n（本文）\n引用元: （元記事のURL）\n\n"
+        "投稿3:\n（本文）\n引用元: （元記事のURL）"
+    )
+    return call_qwen(prompt, max_tokens=900, label="x_drafts")
 
 
 def save_x_drafts(drafts_text):
     path = DRAFTS_DIR / ("x_" + TODAY + ".md")
     with open(path, "w", encoding="utf-8") as f:
         f.write("# X投稿下書き - " + TODAY + "\n\n")
-        f.write("> 今日+昨日(" + YESTERDAY + ")の最新AIニュースをもとに生成\n")
-        f.write("> 確認して気に入ったものをそのままXに投稿してください\n")
-        f.write("> 引用元URLはリプライまたは投稿末尾に添付推奨\n\n")
+        f.write("> 今日+昨日(" + YESTERDAY + ")の最新AIニュースをもとに生成\n\n")
         f.write(drafts_text)
     print("  X下書き保存完了: " + str(path))
     return path
@@ -174,41 +200,33 @@ def analyze_trends(items, tags):
         k + "(" + str(v) + "回)" for k, v in
         sorted(tags.items(), key=lambda x: x[1], reverse=True)[:10]
     ])
-    prompt = """あなたはAI技術のストラテジストです。
-過去30日間のAIトレンドデータを分析してください。
-
-【重要度上位の記事】
-""" + items_text + """
-
-【頻出タグ】
-""" + tags_text + """
-
-以下を分析してください：
-1. 主要トレンド3つ（それぞれ2〜3文）
-2. 次の1ヶ月で注目すべき技術・動向
-3. 見落とされているが重要なシグナル
-
-日本語で、具体的かつ鋭い分析をしてください。"""
-    return call_claude(prompt, max_tokens=1000, label="analyze_trends")
+    prompt = (
+        "あなたはAI技術のストラテジストです。\n"
+        "過去30日間のAIトレンドデータを分析してください。\n\n"
+        "【重要度上位の記事】\n" + items_text + "\n\n"
+        "【頻出タグ】\n" + tags_text + "\n\n"
+        "以下を分析してください：\n"
+        "1. 主要トレンド3つ（それぞれ2〜3文）\n"
+        "2. 次の1ヶ月で注目すべき技術・動向\n"
+        "3. 見落とされているが重要なシグナル\n\n"
+        "日本語で、具体的かつ鋭い分析をしてください。"
+    )
+    return call_qwen(prompt, max_tokens=1000, label="analyze_trends")
 
 
 def generate_business_ideas(trend_analysis):
-    prompt = """以下のAIトレンド分析を基に、具体的なビジネスアイデアを3つ提案してください。
-
-【トレンド分析】
-""" + trend_analysis + """
-
-各アイデアについて：
-- アイデア名
-- 一言説明
-- ターゲット顧客
-- 収益モデル（具体的な金額感も含む）
-- 最初の1ヶ月でできる最小限の実装
-- リスクと対策
-
-実現可能性が高く、$30/月以下のコストで始められるものを優先してください。
-日本語で具体的に書いてください。"""
-    return call_claude(prompt, max_tokens=1500, label="business_ideas")
+    prompt = (
+        "以下のAIトレンド分析を基に、具体的なビジネスアイデアを3つ提案してください。\n\n"
+        "【トレンド分析】\n" + trend_analysis + "\n\n"
+        "各アイデアについて：\n"
+        "- アイデア名\n- 一言説明\n- ターゲット顧客\n"
+        "- 収益モデル（具体的な金額感も含む）\n"
+        "- 最初の1ヶ月でできる最小限の実装\n"
+        "- リスクと対策\n\n"
+        "実現可能性が高く、$30/月以下のコストで始められるものを優先してください。\n"
+        "日本語で具体的に書いてください。"
+    )
+    return call_qwen(prompt, max_tokens=1500, label="business_ideas")
 
 
 def generate_note_draft(trend_analysis, items):
@@ -217,54 +235,39 @@ def generate_note_draft(trend_analysis, items):
         "- " + item.get("title_ja", "") + ": " + item.get("summary_ja", "")[:120]
         for item in top_items
     ])
-    prompt = """あなたはフォロワー数万人のAI情報発信者です。
-今週のAIトレンドをもとに、noteで売れる有料記事の下書きを作成してください。
-
-【今週のトレンド分析】
-""" + trend_analysis + """
-
-【注目ニュース TOP7】
-""" + items_text + """
-
-【記事の要件】
-- 読者層：AI初心者〜中級者、副業・ビジネスに興味がある20〜40代
-- 価格設定：980円
-- 文字数：全体で3000〜4000字
-- 無料部分と有料部分を明確に分ける
-
-【構成】
-
-タイトル（クリックしたくなる、数字・感情・具体性を含むタイトル）
-
-はじめに（無料・200字）
-
-今週起きた3大ニュース（無料・各150字）
-
-ここから有料（980円）
-
-なぜこれが重要なのか（有料・400字）
-
-あなたのビジネス・仕事への影響（有料・400字）
-
-来週の注目ポイント（有料・300字）
-
-編集後記（有料・200字）
-
-【文体ルール】
-- です・ます調だが堅すぎない
-- 専門用語は必ず一言で説明を添える
-- 数字・固有名詞を積極的に使う
-- 日本語で書く"""
-    return call_claude(prompt, max_tokens=3000, label="note_draft")
+    prompt = (
+        "あなたはフォロワー数万人のAI情報発信者です。\n"
+        "今週のAIトレンドをもとに、noteで売れる有料記事の下書きを作成してください。\n\n"
+        "【今週のトレンド分析】\n" + trend_analysis + "\n\n"
+        "【注目ニュース TOP7】\n" + items_text + "\n\n"
+        "【記事の要件】\n"
+        "- 読者層：AI初心者〜中級者、副業・ビジネスに興味がある20〜40代\n"
+        "- 価格設定：980円\n"
+        "- 文字数：全体で3000〜4000字\n"
+        "- 無料部分と有料部分を明確に分ける\n\n"
+        "【構成】\n"
+        "タイトル（クリックしたくなる、数字・感情・具体性を含むタイトル）\n"
+        "はじめに（無料・200字）\n"
+        "今週起きた3大ニュース（無料・各150字）\n"
+        "ここから有料（980円）\n"
+        "なぜこれが重要なのか（有料・400字）\n"
+        "あなたのビジネス・仕事への影響（有料・400字）\n"
+        "来週の注目ポイント（有料・300字）\n"
+        "編集後記（有料・200字）\n\n"
+        "【文体ルール】\n"
+        "- です・ます調だが堅すぎない\n"
+        "- 専門用語は必ず一言で説明を添える\n"
+        "- 数字・固有名詞を積極的に使う\n"
+        "- 日本語で書く"
+    )
+    return call_qwen(prompt, max_tokens=3000, label="note_draft")
 
 
 def save_note_draft(note_text):
     path = DRAFTS_DIR / ("note_" + TODAY + ".md")
     with open(path, "w", encoding="utf-8") as f:
         f.write("# note記事下書き - " + TODAY + "\n\n")
-        f.write("> 無料部分はそのまま公開、有料部分は980円で設定推奨\n")
-        f.write("> 固有名詞・数字を確認して投稿してください\n\n")
-        f.write("---\n\n")
+        f.write("> 無料部分はそのまま公開、有料部分は980円で設定推奨\n\n---\n\n")
         f.write(note_text)
     print("  note下書き保存完了: " + str(path))
     return path
@@ -278,20 +281,17 @@ def generate_agent_improvements():
             with open(path, encoding="utf-8") as f:
                 agent_files[agent] = f.read()[:1000]
     agents_text = "\n\n".join(["=== " + k + " ===\n" + v for k, v in agent_files.items()])
-    prompt = """あなたは自律型AIシステムのアーキテクトです。
-以下のエージェントシステムの改善提案をしてください。
-
-【現在のエージェント概要】
-""" + agents_text + """
-
-改善提案（優先度順に3つ）：
-1. 新しいデータソースの追加
-2. 処理精度・効率の改善
-3. 新機能の追加
-
-各提案について「実装コスト」「期待効果」「リスク」を明記してください。
-これらは提案です。実装はオーナーの承認後に行います。"""
-    return call_claude(prompt, max_tokens=1000, label="agent_improvements")
+    prompt = (
+        "あなたは自律型AIシステムのアーキテクトです。\n"
+        "以下のエージェントシステムの改善提案をしてください。\n\n"
+        "【現在のエージェント概要】\n" + agents_text + "\n\n"
+        "改善提案（優先度順に3つ）：\n"
+        "1. 新しいデータソースの追加\n"
+        "2. 処理精度・効率の改善\n"
+        "3. 新機能の追加\n\n"
+        "各提案について「実装コスト」「期待効果」「リスク」を明記してください。"
+    )
+    return call_qwen(prompt, max_tokens=1000, label="agent_improvements")
 
 
 def fetch_latest_ai_papers():
@@ -326,36 +326,26 @@ def discover_applicable_technologies(papers, current_code_summary):
         "- " + p["title"] + ": " + p["summary"][:150]
         for p in papers[:10]
     ])
-    prompt = """あなたはAIシステムのアーキテクトです。
-以下の最新AI論文の中から、このシステムに搭載できる技術を見つけてください。
-
-【最新AI論文】
-""" + papers_text + """
-
-【現在のシステム概要】
-""" + current_code_summary + """
-
-【評価基準】
-- Pythonで実装可能か
-- 外部APIなしで動作するか
-- 既存機能を壊さないか
-- 実装工数が小さいか（100行以内）
-
-搭載可能な技術を最大3つ、以下のJSON形式で返してください：
-[
-  {
-    "title": "技術名",
-    "paper_url": "論文URL",
-    "description": "何をするか（1文）",
-    "target_file": "collector.py or summarizer.py or growth.py",
-    "benefit": "搭載するとどう良くなるか",
-    "risk": "リスク",
-    "implementation_hint": "実装のヒント（具体的に）"
-  }
-]
-
-JSONのみを返してください。"""
-    response = call_claude(prompt, max_tokens=2000, label="discover_tech")
+    prompt = (
+        "あなたはAIシステムのアーキテクトです。\n"
+        "以下の最新AI論文の中から、このシステムに搭載できる技術を見つけてください。\n\n"
+        "【最新AI論文】\n" + papers_text + "\n\n"
+        "【現在のシステム概要】\n" + current_code_summary + "\n\n"
+        "搭載可能な技術を最大3つ、以下のJSON形式で返してください：\n"
+        "[\n"
+        "  {\n"
+        "    \"title\": \"技術名\",\n"
+        "    \"paper_url\": \"論文URL\",\n"
+        "    \"description\": \"何をするか（1文）\",\n"
+        "    \"target_file\": \"collector.py or summarizer.py or growth.py\",\n"
+        "    \"benefit\": \"搭載するとどう良くなるか\",\n"
+        "    \"risk\": \"リスク\",\n"
+        "    \"implementation_hint\": \"実装のヒント（具体的に）\"\n"
+        "  }\n"
+        "]\n\n"
+        "JSONのみを返してください。"
+    )
+    response = call_qwen(prompt, max_tokens=2000, label="discover_tech")
     try:
         match = re.search(r"\[.*\]", response, re.DOTALL)
         if not match:
@@ -367,23 +357,21 @@ JSONのみを返してください。"""
 
 
 def generate_tech_integration_code(tech, current_code, filename):
-    prompt = """あなたは優秀なPythonエンジニアです。
-以下の技術を既存のコードに統合してください。
-
-【統合する技術】
-名前: """ + tech["title"] + """
-説明: """ + tech["description"] + """
-実装のヒント: """ + tech["implementation_hint"] + """
-
-【現在の """ + filename + """ コード】
-""" + current_code[:3000] + """
-
-【ルール】
-- 既存の機能は必ず維持する
-- 新技術の追加は最小限にとどめる
-- 失敗しても既存機能が動くようにtry/exceptを使う
-- 必ず ```python から始まり ``` で終わる形式で返す
-- 必ず動作するコードを返す"""
+    # コード生成はClaude（品質重視）
+    prompt = (
+        "あなたは優秀なPythonエンジニアです。\n"
+        "以下の技術を既存のコードに統合してください。\n\n"
+        "【統合する技術】\n"
+        "名前: " + tech["title"] + "\n"
+        "説明: " + tech["description"] + "\n"
+        "実装のヒント: " + tech["implementation_hint"] + "\n\n"
+        "【現在の " + filename + " コード】\n"
+        + current_code[:3000] + "\n\n"
+        "【ルール】\n"
+        "- 既存の機能は必ず維持する\n"
+        "- 失敗しても既存機能が動くようにtry/exceptを使う\n"
+        "- 必ず ```python から始まり ``` で終わる形式で返す"
+    )
     return call_claude(prompt, max_tokens=4000, label="tech_integration_" + filename)
 
 
@@ -407,6 +395,7 @@ def get_file_content(repo, filepath, token):
 
 
 def generate_improved_code(current_code, filename, trend_analysis):
+    # コード生成はClaude（品質重視）
     if filename == "collector.py":
         direction = "新しいAI情報ソースの追加、収集精度の向上、エラーハンドリングの強化"
     elif filename == "summarizer.py":
@@ -414,20 +403,17 @@ def generate_improved_code(current_code, filename, trend_analysis):
     else:
         direction = "投稿文の品質向上、提案精度の改善、エラーハンドリングの強化"
 
-    prompt = """あなたは優秀なPythonエンジニアです。
-以下の """ + filename + """ を改善してください。
-
-【現在のコード】
-""" + current_code[:3000] + """
-
-【改善の方針】
-""" + direction + """
-
-【ルール】
-- 既存の機能は必ず維持する
-- 変更は最小限にとどめる
-- 必ず ```python から始まり ``` で終わる形式で返す
-- 必ず動作するコードを返す"""
+    prompt = (
+        "あなたは優秀なPythonエンジニアです。\n"
+        "以下の " + filename + " を改善してください。\n\n"
+        "【現在のコード】\n" + current_code[:3000] + "\n\n"
+        "【改善の方針】\n" + direction + "\n\n"
+        "【ルール】\n"
+        "- 既存の機能は必ず維持する\n"
+        "- 変更は最小限にとどめる\n"
+        "- 必ず ```python から始まり ``` で終わる形式で返す\n"
+        "- 必ず動作するコードを返す"
+    )
     return call_claude(prompt, max_tokens=4000, label="improve_" + filename)
 
 
@@ -447,10 +433,7 @@ def create_branch(repo, branch_name, token):
         print("  ブランチSHA取得エラー: " + str(e))
         return False
 
-    payload = json.dumps({
-        "ref": "refs/heads/" + branch_name,
-        "sha": sha
-    }).encode()
+    payload = json.dumps({"ref": "refs/heads/" + branch_name, "sha": sha}).encode()
     req = urllib.request.Request(
         "https://api.github.com/repos/" + repo + "/git/refs",
         data=payload,
@@ -563,9 +546,7 @@ def auto_improve_and_pr(trend_analysis):
     pr_body += "### 改善されたファイル\n"
     for f in improved_files:
         pr_body += "- " + f + "\n"
-    pr_body += "\n### 改善の根拠\n"
-    pr_body += trend_analysis[:300] + "\n\n"
-    pr_body += "### 確認方法\n"
+    pr_body += "\n### 確認方法\n"
     pr_body += "1. Files changed タブで差分を確認\n"
     pr_body += "2. 問題なければ Merge pull request を押すだけ\n"
     pr_body += "3. 問題があれば Close pull request で却下\n\n"
@@ -591,11 +572,11 @@ def auto_integrate_new_tech(trend_analysis):
         print("  論文取得失敗、スキップ")
         return
 
-    current_code_summary = """
-- collector.py: HackerNews/ArXiv/GitHubからAI情報を収集
-- summarizer.py: Claude APIで日本語要約・重要度スコアリング
-- growth.py: X投稿文・note下書き・自動PR生成
-"""
+    current_code_summary = (
+        "- collector.py: HackerNews/ArXiv/GitHubからAI情報を収集\n"
+        "- summarizer.py: Qwen3で日本語要約・重要度スコアリング\n"
+        "- growth.py: X投稿文・note下書き・自動PR生成\n"
+    )
 
     print("  搭載可能な新技術を分析中...")
     technologies = discover_applicable_technologies(papers, current_code_summary)
@@ -634,17 +615,10 @@ def auto_integrate_new_tech(trend_analysis):
         return
 
     pr_body = "## Brain 新技術自動搭載PR - " + TODAY + "\n\n"
-    pr_body += "### 搭載された技術\n"
     for tech in integrated:
         pr_body += "#### " + tech["title"] + "\n"
         pr_body += "- 論文: " + tech.get("paper_url", "不明") + "\n"
-        pr_body += "- 効果: " + tech.get("benefit", "") + "\n"
-        pr_body += "- リスク: " + tech.get("risk", "") + "\n"
-        pr_body += "- 対象: " + tech.get("target_file", "") + "\n\n"
-    pr_body += "### 確認方法\n"
-    pr_body += "1. Files changed タブで差分を確認\n"
-    pr_body += "2. 問題なければ Merge pull request を押すだけ\n"
-    pr_body += "3. 問題があれば Close pull request で却下\n\n"
+        pr_body += "- 効果: " + tech.get("benefit", "") + "\n\n"
     pr_body += "> このPRはBrain Growth Agentが最新論文を解析して自動生成しました\n"
 
     titles = [t["title"] for t in integrated]
@@ -659,7 +633,6 @@ def create_github_issue(title, body):
     token = os.environ.get("GITHUB_TOKEN")
     repo = os.environ.get("GITHUB_REPOSITORY")
     if not token or not repo:
-        print("  GITHUB_TOKEN または GITHUB_REPOSITORY が未設定のためスキップ")
         return
     payload = json.dumps({
         "title": title,
@@ -678,53 +651,31 @@ def create_github_issue(title, body):
     try:
         with urllib.request.urlopen(req) as r:
             result = json.loads(r.read())
-            print("  Issue作成完了: #" + str(result["number"]) + " " + result["html_url"])
+            print("  Issue作成完了: #" + str(result["number"]))
     except Exception as e:
         print("  Issue作成エラー: " + str(e))
 
 
 def create_approval_request(trend_analysis, business_ideas, agent_improvements, note_path):
-    proposal = {
-        "date": TODAY,
-        "status": "pending_approval",
-        "trend_analysis": trend_analysis,
-        "business_ideas": business_ideas,
-        "agent_improvements": agent_improvements,
-        "note_draft_path": str(note_path),
-        "approval_notes": "",
-    }
-    filepath = PROPOSALS_DIR / ("proposal_" + TODAY + ".json")
-    with open(filepath, "w", encoding="utf-8") as f:
-        json.dump(proposal, f, ensure_ascii=False, indent=2)
-
     md_path = PROPOSALS_DIR / ("proposal_" + TODAY + ".md")
     with open(md_path, "w", encoding="utf-8") as f:
         f.write("# Brain 週次レポート - " + TODAY + "\n\n")
-        f.write("ステータス: 承認待ち\n\n---\n\n")
         f.write("## トレンド分析\n\n" + trend_analysis + "\n\n---\n\n")
         f.write("## ビジネスアイデア\n\n" + business_ideas + "\n\n---\n\n")
-        f.write("## エージェント改善提案\n\n" + agent_improvements + "\n\n---\n\n")
-        f.write("## note下書き\n\n" + str(note_path) + " を確認してください\n\n---\n\n")
-        f.write("## 承認方法\n\nPRをMergeするだけ\n")
+        f.write("## エージェント改善提案\n\n" + agent_improvements + "\n\n")
 
-    issue_body = "## Brain 週次レポート - " + TODAY + "\n\n"
-    issue_body += "### トレンド分析\n" + trend_analysis[:500] + "...\n\n"
-    issue_body += "### ビジネスアイデア\n" + business_ideas[:500] + "...\n\n"
-    issue_body += "### エージェント改善提案\n" + agent_improvements[:300] + "...\n\n"
-    issue_body += "---\n"
-    issue_body += "詳細: knowledge/proposals/proposal_" + TODAY + ".md\n"
-    issue_body += "note下書き: knowledge/drafts/note_" + TODAY + ".md\n"
-    issue_body += "X下書き: knowledge/drafts/x_" + TODAY + ".md\n\n"
-    issue_body += "### 承認方法\n"
-    issue_body += "- 承認: PRをMerge\n"
-    issue_body += "- 却下: PRをClose\n"
-
+    issue_body = (
+        "## Brain 週次レポート - " + TODAY + "\n\n"
+        "### トレンド分析\n" + trend_analysis[:500] + "...\n\n"
+        "詳細: knowledge/proposals/proposal_" + TODAY + ".md\n"
+    )
     create_github_issue("Brain 週次レポート " + TODAY, issue_body)
-    return filepath, md_path
+    return md_path
 
 
 def main():
     print("Brain Growth Agent 起動... [" + TODAY + "] (weekday=" + str(WEEKDAY) + ")")
+    print("  モード: テキスト生成=Qwen3 / コード生成=Claude")
 
     items, digests, tags = load_recent_data(days=30)
     print("  過去30日分 " + str(len(items)) + " 件のデータを読み込みました")
