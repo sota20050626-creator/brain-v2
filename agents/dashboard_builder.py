@@ -11,7 +11,7 @@ COST_FILE = Path("knowledge/cost_log.json")
 OUTPUT = Path("dashboard/index.html")
 OUTPUT.parent.mkdir(exist_ok=True)
 
-GITHUB_REPO = "sota20050626-creator/brain"
+GITHUB_REPO = "sota20050626-creator/brain-v2"
 
 
 def load_recent(days=7):
