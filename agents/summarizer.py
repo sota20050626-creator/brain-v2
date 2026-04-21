@@ -50,10 +50,11 @@ def save_cost(input_tokens, output_tokens, label, model="claude"):
 
 
 def call_qwen(prompt, max_tokens=2000, label="qwen_call"):
+    """Qwen3をOpenRouter経由で呼び出す（失敗時はNoneを返す・Claudeフォールバックなし）"""
     api_key = os.environ.get("OPENROUTER_API_KEY")
     if not api_key:
-        print("  OPENROUTER_API_KEY未設定、Claudeにフォールバック")
-        return call_claude(prompt, max_tokens, label)
+        print("  OPENROUTER_API_KEY未設定")
+        return None
     payload = json.dumps({
         "model": "qwen/qwen3.6-plus-preview:free",
         "max_tokens": max_tokens,
@@ -69,7 +70,7 @@ def call_qwen(prompt, max_tokens=2000, label="qwen_call"):
         }
     )
     try:
-        with urllib.request.urlopen(req) as r:
+        with urllib.request.urlopen(req, timeout=30) as r:
             result = json.loads(r.read())
         usage = result.get("usage", {})
         save_cost(
@@ -79,8 +80,8 @@ def call_qwen(prompt, max_tokens=2000, label="qwen_call"):
         )
         return result["choices"][0]["message"]["content"]
     except Exception as e:
-        print("  Qwen3エラー: " + str(e) + " → Claudeにフォールバック")
-        return call_claude(prompt, max_tokens, label)
+        print("  Qwen3エラー: " + str(e))
+        return None
 
 
 def call_claude(prompt, max_tokens=2000, label="api_call"):
@@ -112,7 +113,7 @@ def call_claude(prompt, max_tokens=2000, label="api_call"):
     return result["content"][0]["text"]
 
 
-def summarize_items(items, batch_size=10, max_items=200):
+def summarize_items(items, batch_size=10, max_items=30):
     top_items = sorted(items, key=lambda x: x.get("score", 0), reverse=True)[:max_items]
     all_results = []
 
@@ -145,6 +146,10 @@ def summarize_items(items, batch_size=10, max_items=200):
 
         label = "summarize_batch_" + str(batch_start // batch_size + 1)
         response = call_qwen(prompt, max_tokens=3000, label=label)
+
+        if response is None:
+            print("  バッチ " + str(batch_start // batch_size + 1) + " スキップ（Qwen3失敗）")
+            continue
 
         try:
             match = re.search(r"\[.*\]", response, re.DOTALL)
