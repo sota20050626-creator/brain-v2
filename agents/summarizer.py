@@ -117,15 +117,19 @@ def call_claude(prompt, max_tokens=2000, label="api_call"):
     return result["content"][0]["text"]
 
 
-def summarize_items(items):
-    """要約はQwen3で処理（コスト削減）"""
-    top_items = sorted(items, key=lambda x: x.get("score", 0), reverse=True)[:5]
-    items_text = "\n\n".join([
-        "[" + str(i+1) + "] SOURCE: " + item["source"] + "\nTITLE: " + item["title"] + "\nTEXT: " + item.get("text","")[:200]
-        for i, item in enumerate(top_items)
-    ])
-    prompt = """あなたはAI技術のエキスパートアナリストです。
-以下の""" + str(len(top_items)) + """件のAI関連情報を分析してください。
+def summarize_items(items, batch_size=10, max_items=200):
+    """要約はQwen3で処理（バッチ処理・最大200件）"""
+    top_items = sorted(items, key=lambda x: x.get("score", 0), reverse=True)[:max_items]
+    all_results = []
+
+    for batch_start in range(0, len(top_items), batch_size):
+        batch = top_items[batch_start:batch_start + batch_size]
+        items_text = "\n\n".join([
+            "[" + str(i+1) + "] SOURCE: " + item["source"] + "\nTITLE: " + item["title"] + "\nTEXT: " + item.get("text","")[:200]
+            for i, item in enumerate(batch)
+        ])
+        prompt = """あなたはAI技術のエキスパートアナリストです。
+以下の""" + str(len(batch)) + """件のAI関連情報を分析してください。
 
 """ + items_text + """
 
@@ -147,31 +151,33 @@ importanceは1から10で評価。
 tagsはLLM/Agent/ビジネス/画像生成/音声/コード/論文/中国AI/オープンソースから選択。
 categoryは技術/ビジネス/ツール/論文/その他から選択。"""
 
-    # 要約はQwen3で処理（激安）
-    response = call_qwen(prompt, max_tokens=3000, label="summarize_items")
-    try:
-        match = re.search(r"\[.*\]", response, re.DOTALL)
-        if not match:
-            return []
-        summaries = json.loads(match.group())
-    except json.JSONDecodeError:
-        print("JSON parse error, skipping batch")
-        return []
+        label = "summarize_batch_" + str(batch_start // batch_size + 1)
+        response = call_qwen(prompt, max_tokens=3000, label=label)
+        try:
+            match = re.search(r"\[.*\]", response, re.DOTALL)
+            if not match:
+                continue
+            summaries = json.loads(match.group())
+        except json.JSONDecodeError:
+            print("JSON parse error, skipping batch " + str(batch_start // batch_size + 1))
+            continue
 
-    results = []
-    for s in summaries:
-        idx = s["id"] - 1
-        if 0 <= idx < len(top_items):
-            item = top_items[idx].copy()
-            item.update({
-                "title_ja": s.get("title_ja", item["title"]),
-                "summary_ja": s.get("summary_ja", ""),
-                "importance": s.get("importance", 5),
-                "tags": s.get("tags", []),
-                "category": s.get("category", "その他"),
-            })
-            results.append(item)
-    return sorted(results, key=lambda x: x.get("importance", 0), reverse=True)
+        for s in summaries:
+            idx = s["id"] - 1
+            if 0 <= idx < len(batch):
+                item = batch[idx].copy()
+                item.update({
+                    "title_ja": s.get("title_ja", item["title"]),
+                    "summary_ja": s.get("summary_ja", ""),
+                    "importance": s.get("importance", 5),
+                    "tags": s.get("tags", []),
+                    "category": s.get("category", "その他"),
+                })
+                all_results.append(item)
+
+        print("  バッチ " + str(batch_start // batch_size + 1) + " 完了 (" + str(len(batch)) + "件)")
+
+    return sorted(all_results, key=lambda x: x.get("importance", 0), reverse=True)
 
 
 def generate_daily_digest(items):
