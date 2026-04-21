@@ -56,7 +56,7 @@ def call_qwen(prompt, max_tokens=2000, label="qwen_call"):
         print("  OPENROUTER_API_KEY未設定")
         return None
     payload = json.dumps({
-        "model": "qwen/qwen3.6-plus-preview:free",
+        "model": "qwen/qwen3-next-80b-a3b-instruct:free",
         "max_tokens": max_tokens,
         "messages": [{"role": "user", "content": prompt}]
     }).encode()
