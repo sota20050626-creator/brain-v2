@@ -1,237 +1,229 @@
 {
   "date": "2026-04-21",
-  "collected_at": "2026-04-21T16:06:04.664317+00:00",
-  "total": 116,
+  "collected_at": "2026-04-21T21:50:02.206911+00:00",
+  "total": 114,
   "raw_items": [
     {
-      "title": "Show HN: GoModel – an open-source AI gateway in Go; 44x lighter than LiteLLM",
+      "title": "Claude Code removed from Anthropic's Pro plan",
+      "url": "https://claude.com/pricing",
+      "score": 99,
+      "comments": 38,
+      "source": "hackernews",
+      "text": ""
+    },
+    {
+      "title": "Show HN: GoModel – an open-source AI gateway in Go",
       "url": "https://github.com/ENTERPILOT/GOModel/",
-      "score": 38,
-      "comments": 11,
+      "score": 147,
+      "comments": 56,
       "source": "hackernews",
       "text": ""
     },
     {
-      "title": "Tindie store under \"scheduled maintenance\" for days",
-      "url": "https://www.tindie.com/",
-      "score": 65,
-      "comments": 20,
+      "title": "Trellis AI (YC W24) Is hiring engineers to build self-improving agents",
+      "url": "https://www.ycombinator.com/companies/trellis-ai/jobs/SvzJaTH-member-of-technical-staff-product-engineering-full-time",
+      "score": 1,
+      "comments": 0,
       "source": "hackernews",
       "text": ""
     },
     {
-      "title": "Anthropic says OpenClaw-style Claude CLI usage is allowed again",
-      "url": "https://docs.openclaw.ai/providers/anthropic",
-      "score": 364,
-      "comments": 213,
+      "title": "Zindex – Diagram Infrastructure for Agents",
+      "url": "https://zindex.ai/",
+      "score": 6,
+      "comments": 2,
       "source": "hackernews",
       "text": ""
     },
     {
-      "title": "Anthropic takes $5B from Amazon and pledges $100B in cloud spending in return",
-      "url": "https://techcrunch.com/2026/04/20/anthropic-takes-5b-from-amazon-and-pledges-100b-in-cloud-spending-in-return/",
-      "score": 120,
-      "comments": 118,
+      "title": "Show HN: Ctx – a /resume that works across Claude Code and Codex",
+      "url": "https://github.com/dchu917/ctx",
+      "score": 47,
+      "comments": 18,
       "source": "hackernews",
       "text": ""
     },
     {
-      "title": "Salmon exposed to cocaine and its main byproduct roam more widely",
-      "url": "https://www.science.org/content/article/cocaine-pollution-gives-salmon-wanderlust",
-      "score": 106,
-      "comments": 60,
-      "source": "hackernews",
-      "text": ""
-    },
-    {
-      "title": "The Beauty of Bonsai Styles",
-      "url": "https://longwoodgardens.org/blog/2023-05-17/beauty-bonsai-styles",
-      "score": 158,
-      "comments": 28,
-      "source": "hackernews",
-      "text": ""
-    },
-    {
-      "title": "A Roblox cheat and one AI tool brought down Vercel's platform",
-      "url": "https://webmatrices.com/post/how-a-roblox-cheat-and-one-ai-tool-brought-down-vercel-s-entire-platform",
-      "score": 258,
-      "comments": 140,
-      "source": "hackernews",
-      "text": ""
-    },
-    {
-      "title": "Less human AI agents, please",
-      "url": "https://nial.se/blog/less-human-ai-agents-please/",
-      "score": 79,
-      "comments": 97,
-      "source": "hackernews",
-      "text": ""
-    },
-    {
-      "title": "Qwen3.6-Max-Preview: Smarter, Sharper, Still Evolving",
-      "url": "https://qwen.ai/blog?id=qwen3.6-max-preview",
-      "score": 671,
-      "comments": 359,
-      "source": "hackernews",
-      "text": ""
-    },
-    {
-      "title": "Kimi vendor verifier – verify accuracy of inference providers",
-      "url": "https://www.kimi.com/blog/kimi-vendor-verifier",
-      "score": 296,
-      "comments": 28,
-      "source": "hackernews",
-      "text": ""
-    },
-    {
-      "title": "Air is full of DNA",
-      "url": "https://www.nature.com/articles/d41586-026-01099-2",
-      "score": 155,
-      "comments": 50,
-      "source": "hackernews",
-      "text": ""
-    },
-    {
-      "title": "Ternary Bonsai: Top Intelligence at 1.58 Bits",
-      "url": "https://prismml.com/news/ternary-bonsai",
-      "score": 206,
-      "comments": 54,
-      "source": "hackernews",
-      "text": ""
-    },
-    {
-      "title": "How a subsea cable is repaired (2021)",
-      "url": "https://www.onesteppower.com/post/subsea-cable-repair",
-      "score": 113,
-      "comments": 33,
-      "source": "hackernews",
-      "text": ""
-    },
-    {
-      "title": "Types and Neural Networks",
-      "url": "https://www.brunogavranovic.com/posts/2026-04-20-types-and-neural-networks.html",
-      "score": 68,
-      "comments": 14,
-      "source": "hackernews",
-      "text": ""
-    },
-    {
-      "title": "Soul Player C64 – A real transformer running on a 1 MHz Commodore 64",
-      "url": "https://github.com/gizmo64k/soulplayer-c64",
-      "score": 142,
-      "comments": 42,
-      "source": "hackernews",
-      "text": ""
-    },
-    {
-      "title": "Even 'uncensored' models can't say what they want",
-      "url": "https://morgin.ai/articles/even-uncensored-models-cant-say-what-they-want.html",
-      "score": 144,
-      "comments": 111,
+      "title": "Meta capturing employee mouse movements, keystrokes for AI training data",
+      "url": "https://economictimes.indiatimes.com/tech/technology/meta-to-start-capturing-employee-mouse-movements-keystrokes-for-ai-training-data/articleshow/130422612.cms?from=mdr",
+      "score": 154,
+      "comments": 99,
       "source": "hackernews",
       "text": ""
     },
     {
       "title": "Show HN: Mediator.ai – Using Nash bargaining and LLMs to systematize fairness",
       "url": "https://mediator.ai/",
-      "score": 109,
+      "score": 140,
+      "comments": 72,
+      "source": "hackernews",
+      "text": ""
+    },
+    {
+      "title": "Show HN: Daemons – we pivoted from building agents to cleaning up after them",
+      "url": "https://charlielabs.ai/",
+      "score": 44,
+      "comments": 26,
+      "source": "hackernews",
+      "text": ""
+    },
+    {
+      "title": "Salmon exposed to cocaine and its main byproduct roam more widely",
+      "url": "https://www.science.org/content/article/cocaine-pollution-gives-salmon-wanderlust",
+      "score": 126,
+      "comments": 83,
+      "source": "hackernews",
+      "text": ""
+    },
+    {
+      "title": "Anthropic takes $5B from Amazon and pledges $100B in cloud spending in return",
+      "url": "https://techcrunch.com/2026/04/20/anthropic-takes-5b-from-amazon-and-pledges-100b-in-cloud-spending-in-return/",
+      "score": 245,
+      "comments": 255,
+      "source": "hackernews",
+      "text": ""
+    },
+    {
+      "title": "The Beauty of Bonsai Styles",
+      "url": "https://longwoodgardens.org/blog/2023-05-17/beauty-bonsai-styles",
+      "score": 193,
+      "comments": 36,
+      "source": "hackernews",
+      "text": ""
+    },
+    {
+      "title": "Tindie store under \"scheduled maintenance\" for days",
+      "url": "https://www.tindie.com/",
+      "score": 100,
+      "comments": 57,
+      "source": "hackernews",
+      "text": ""
+    },
+    {
+      "title": "Air Force can't quit the A-10 Warthog, extends service into 2030",
+      "url": "https://taskandpurpose.com/news/air-force-a10-warthog-2030/",
+      "score": 6,
+      "comments": 0,
+      "source": "hackernews",
+      "text": ""
+    },
+    {
+      "title": "Less human AI agents, please",
+      "url": "https://nial.se/blog/less-human-ai-agents-please/",
+      "score": 123,
+      "comments": 131,
+      "source": "hackernews",
+      "text": ""
+    },
+    {
+      "title": "Anthropic says OpenClaw-style Claude CLI usage is allowed again",
+      "url": "https://docs.openclaw.ai/providers/anthropic",
+      "score": 466,
+      "comments": 264,
+      "source": "hackernews",
+      "text": ""
+    },
+    {
+      "title": "Kimi vendor verifier – verify accuracy of inference providers",
+      "url": "https://www.kimi.com/blog/kimi-vendor-verifier",
+      "score": 306,
+      "comments": 29,
+      "source": "hackernews",
+      "text": ""
+    },
+    {
+      "title": "Ternary Bonsai: Top Intelligence at 1.58 Bits",
+      "url": "https://prismml.com/news/ternary-bonsai",
+      "score": 219,
+      "comments": 54,
+      "source": "hackernews",
+      "text": ""
+    },
+    {
+      "title": "Air is full of DNA",
+      "url": "https://www.nature.com/articles/d41586-026-01099-2",
+      "score": 165,
       "comments": 58,
       "source": "hackernews",
       "text": ""
     },
     {
-      "title": "Atlassian enables default data collection to train AI",
-      "url": "https://letsdatascience.com/news/atlassian-enables-default-data-collection-to-train-ai-f71343d8",
-      "score": 586,
-      "comments": 130,
+      "title": "OpenAI Livestream: ChatGPT Images 2.0",
+      "url": "https://openai.com/live/",
+      "score": 85,
+      "comments": 75,
       "source": "hackernews",
       "text": ""
     },
     {
-      "title": "Figma's woes compound with Claude Design",
-      "url": "https://martinalderson.com/posts/figmas-woes-compound-with-claude-design/",
-      "score": 118,
-      "comments": 99,
+      "title": "Meta will train AI agents by tracking employees' mouse, keyboard use",
+      "url": "https://arstechnica.com/ai/2026/04/meta-will-use-employee-tracking-software-to-help-train-ai-agents-report/ning-data-2026-04-21/",
+      "score": 4,
+      "comments": 1,
       "source": "hackernews",
       "text": ""
     },
     {
-      "title": "OpenAI ad partner now selling ChatGPT ad placements based on “prompt relevance”",
-      "url": "https://www.adweek.com/media/exclusive-leaked-deck-reveals-stackadapts-playbook-for-chatgpt-ads/",
-      "score": 289,
-      "comments": 148,
+      "title": "How a subsea cable is repaired (2021)",
+      "url": "https://www.onesteppower.com/post/subsea-cable-repair",
+      "score": 120,
+      "comments": 36,
       "source": "hackernews",
       "text": ""
     },
     {
-      "title": "'The status quo is unsustainable': scrutiny of Kalshi, Polymarket explodes",
-      "url": "https://www.politico.com/news/2026/04/01/congress-kalshi-polymarket-regulation-00852370",
-      "score": 10,
+      "title": "Running Faster to Go Nowhere: The AI Adoption Trap",
+      "url": "https://educatedguesser.substack.com/p/running-faster-to-go-nowhere-the",
+      "score": 7,
+      "comments": 1,
+      "source": "hackernews",
+      "text": ""
+    },
+    {
+      "title": "Mozilla Used Anthropic's Mythos to Find and Fix 271 Bugs in Firefox",
+      "url": "https://www.wired.com/story/mozilla-used-anthropics-mythos-to-find-271-bugs-in-firefox/",
+      "score": 13,
       "comments": 2,
       "source": "hackernews",
       "text": ""
     },
     {
-      "title": "Deezer says 44% of songs uploaded to its platform daily are AI-generated",
-      "url": "https://techcrunch.com/2026/04/20/deezer-says-44-of-songs-uploaded-to-its-platform-daily-are-ai-generated/",
-      "score": 354,
+      "title": "Soul Player C64 – A real transformer running on a 1 MHz Commodore 64",
+      "url": "https://github.com/gizmo64k/soulplayer-c64",
+      "score": 145,
+      "comments": 45,
+      "source": "hackernews",
+      "text": ""
+    },
+    {
+      "title": "Even 'uncensored' models can't say what they want",
+      "url": "https://morgin.ai/articles/even-uncensored-models-cant-say-what-they-want.html",
+      "score": 159,
+      "comments": 126,
+      "source": "hackernews",
+      "text": ""
+    },
+    {
+      "title": "Types and Neural Networks",
+      "url": "https://www.brunogavranovic.com/posts/2026-04-20-types-and-neural-networks.html",
+      "score": 75,
+      "comments": 24,
+      "source": "hackernews",
+      "text": ""
+    },
+    {
+      "title": "Qwen3.6-Max-Preview: Smarter, Sharper, Still Evolving",
+      "url": "https://qwen.ai/blog?id=qwen3.6-max-preview",
+      "score": 689,
       "comments": 370,
       "source": "hackernews",
       "text": ""
     },
     {
-      "title": "Claude Token Counter, now with model comparisons",
-      "url": "https://simonwillison.net/2026/Apr/20/claude-token-counts/",
-      "score": 221,
-      "comments": 84,
-      "source": "hackernews",
-      "text": ""
-    },
-    {
-      "title": "Linux PTP mainline development war story and new features",
-      "url": "https://bootlin.com/blog/linux-ptp-mainline-development-war-story-and-new-features/",
-      "score": 22,
-      "comments": 0,
-      "source": "hackernews",
-      "text": ""
-    },
-    {
-      "title": "NSA is using Anthropic's Mythos despite blacklist",
-      "url": "https://www.axios.com/2026/04/19/nsa-anthropic-mythos-pentagon",
-      "score": 467,
-      "comments": 332,
-      "source": "hackernews",
-      "text": ""
-    },
-    {
-      "title": "OpenAI Is Working with Consultants to Sell Codex",
-      "url": "https://www.wsj.com/cio-journal/openai-is-working-with-consultants-to-sell-codex-f355b1b9",
-      "score": 10,
-      "comments": 0,
-      "source": "hackernews",
-      "text": ""
-    },
-    {
-      "title": "Show HN: Holos – QEMU/KVM with a compose-style YAML, GPUs and health checks",
-      "url": "https://github.com/zeroecco/holos",
-      "score": 50,
-      "comments": 22,
-      "source": "hackernews",
-      "text": ""
-    },
-    {
-      "title": "AI Resistance: some recent anti-AI stuff that’s worth discussing",
-      "url": "https://stephvee.ca/blog/artificial%20intelligence/ai-resistance-is-growing/",
-      "score": 371,
-      "comments": 385,
-      "source": "hackernews",
-      "text": ""
-    },
-    {
-      "title": "A Pascal's Wager for AI doomers",
-      "url": "https://pluralistic.net/2026/04/16/pascals-wager/",
-      "score": 66,
-      "comments": 111,
+      "title": "Recommended GPU Repairshop in Europe (Germany)",
+      "url": "https://news.ycombinator.com/item?id=47824738",
+      "score": 29,
+      "comments": 13,
       "source": "hackernews",
       "text": ""
     },
@@ -358,7 +350,7 @@
     {
       "title": "Significant-Gravitas/AutoGPT - AutoGPT is the vision of accessible AI for everyone, to use and to build on. Our mission is to provide the tools, so that you can focus on what matters.",
       "url": "https://github.com/Significant-Gravitas/AutoGPT",
-      "score": 183634,
+      "score": 183638,
       "comments": 0,
       "source": "github_trending",
       "text": "AutoGPT is the vision of accessible AI for everyone, to use and to build on. Our mission is to provide the tools, so that you can focus on what matters."
@@ -366,15 +358,23 @@
     {
       "title": "ollama/ollama - Get up and running with Kimi-K2.5, GLM-5, MiniMax, DeepSeek, gpt-oss, Qwen, Gemma and other models.",
       "url": "https://github.com/ollama/ollama",
-      "score": 169613,
+      "score": 169634,
       "comments": 0,
       "source": "github_trending",
       "text": "Get up and running with Kimi-K2.5, GLM-5, MiniMax, DeepSeek, gpt-oss, Qwen, Gemma and other models."
     },
     {
+      "title": "affaan-m/everything-claude-code - The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.",
+      "url": "https://github.com/affaan-m/everything-claude-code",
+      "score": 163089,
+      "comments": 0,
+      "source": "github_trending",
+      "text": "The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond."
+    },
+    {
       "title": "f/prompts.chat - f.k.a. Awesome ChatGPT Prompts. Share, discover, and collect prompts from the community. Free and open source — self-host for your organization with complete privacy.",
       "url": "https://github.com/f/prompts.chat",
-      "score": 160297,
+      "score": 160309,
       "comments": 0,
       "source": "github_trending",
       "text": "f.k.a. Awesome ChatGPT Prompts. Share, discover, and collect prompts from the community. Free and open source — self-host for your organization with complete privacy."
@@ -382,23 +382,15 @@
     {
       "title": "huggingface/transformers - 🤗 Transformers: the model-definition framework for state-of-the-art machine learning models in text, vision, audio, and multimodal models, for both inference and training. ",
       "url": "https://github.com/huggingface/transformers",
-      "score": 159699,
+      "score": 159706,
       "comments": 0,
       "source": "github_trending",
       "text": "🤗 Transformers: the model-definition framework for state-of-the-art machine learning models in text, vision, audio, and multimodal models, for both inference and training. "
     },
     {
-      "title": "langgenius/dify - Production-ready platform for agentic workflow development.",
-      "url": "https://github.com/langgenius/dify",
-      "score": 138638,
-      "comments": 0,
-      "source": "github_trending",
-      "text": "Production-ready platform for agentic workflow development."
-    },
-    {
       "title": "openclaw/openclaw - Your own personal AI assistant. Any OS. Any Platform. The lobster way. 🦞 ",
       "url": "https://github.com/openclaw/openclaw",
-      "score": 361721,
+      "score": 361840,
       "comments": 0,
       "source": "github_trending",
       "text": "Your own personal AI assistant. Any OS. Any Platform. The lobster way. 🦞 "
@@ -406,15 +398,23 @@
     {
       "title": "n8n-io/n8n - Fair-code workflow automation platform with native AI capabilities. Combine visual building with custom code, self-host or cloud, 400+ integrations.",
       "url": "https://github.com/n8n-io/n8n",
-      "score": 184983,
+      "score": 185018,
       "comments": 0,
       "source": "github_trending",
       "text": "Fair-code workflow automation platform with native AI capabilities. Combine visual building with custom code, self-host or cloud, 400+ integrations."
     },
     {
+      "title": "langgenius/dify - Production-ready platform for agentic workflow development.",
+      "url": "https://github.com/langgenius/dify",
+      "score": 138659,
+      "comments": 0,
+      "source": "github_trending",
+      "text": "Production-ready platform for agentic workflow development."
+    },
+    {
       "title": "NousResearch/hermes-agent - The agent that grows with you",
       "url": "https://github.com/NousResearch/hermes-agent",
-      "score": 107588,
+      "score": 107980,
       "comments": 0,
       "source": "github_trending",
       "text": "The agent that grows with you"
@@ -422,58 +422,50 @@
     {
       "title": "lobehub/lobehub - The ultimate space for work and life — to find, build, and collaborate with agent teammates that grow with you. We are taking agent harness to the next level — enabling multi-agent collaboration, effortless agent team design, and introducing agents as the unit of work interaction.",
       "url": "https://github.com/lobehub/lobehub",
-      "score": 75439,
+      "score": 75446,
       "comments": 0,
       "source": "github_trending",
       "text": "The ultimate space for work and life — to find, build, and collaborate with agent teammates that grow with you. We are taking agent harness to the next level — enabling multi-agent collaboration, effortless agent team design, and introducing agents as the unit of work interaction."
     },
     {
-      "title": "thedotmack/claude-mem - A Claude Code plugin that automatically captures everything Claude does during your coding sessions, compresses it with AI (using Claude's agent-sdk), and injects relevant context back into future sessions.",
-      "url": "https://github.com/thedotmack/claude-mem",
-      "score": 64970,
-      "comments": 0,
-      "source": "github_trending",
-      "text": "A Claude Code plugin that automatically captures everything Claude does during your coding sessions, compresses it with AI (using Claude's agent-sdk), and injects relevant context back into future sessions."
-    },
-    {
-      "title": "AI が設計して、AI が強度検証する — Kiro × FreeCAD FEM でロボットアームCAE構造解析",
-      "url": "https://zenn.dev/aws_japan/articles/a5cd987ecb59ff",
+      "title": "AIエージェントのためのGoogleを作っている",
+      "url": "https://zenn.dev/koki_uchiyama/articles/568399a978341b",
       "score": 0,
       "comments": 0,
       "source": "rss_zenn",
-      "text": "はじめに\n本記事は Kiro × 設計開発シリーズの 3 本目です。\n\n1本目：入門編（Python だけで CFD と STL モデリング） — CAD,CAE ソフトを使わず、Python（numpy-stl、格子ボルツマン法）だけで CFD シミュレーションと 3D モデル生成\n2本目：CAD 編集編（STEP + FreeCAD） — ロボットアームを STEP 形式で出力し、FreeCAD でフィレット追加・穴追加\n3本目：CAE 解析編（FreeCAD FEM）（本記事）— ロボットアームの構造解析、応力・変位をFreeCAD で定量評価\n\n本シリーズでは、AWS の A..."
+      "text": "人間にGoogleが必要だったように、AIエージェントにも同じものが必要だ。\n\n\n 問題\nWebの黎明期、情報は存在していた——しかし、見つけ出すことは混沌だった。Yahooはディレクトリを作った。人々はカテゴリを辿った。それはうまく機能した、しばらくは。\nやがてコンテンツが爆発的に増えた。Yahooは追いつけなくなった。新たな問題が浮上した。ページを「見つける」だけでなく、どのページが信頼できるかを判断することだ。\nGoogleはページランクで解決した——リンク構造を信頼性のシグナルとして使い、良いコンテンツを上位に押し上げた。\n今、AIエージェントとAPIの世界で、同じ構造が別のレイ..."
     },
     {
-      "title": "LLMプロンプトにエビデンスベースの心理学を組み込む ― 恋愛分析AIの設計",
-      "url": "https://zenn.dev/m_naoki_m/articles/e52131f6230b4e",
+      "title": "Azure SRE エージェントは ISUCON で戦えるか？パフォーマンスチューニングに挑戦してみた",
+      "url": "https://zenn.dev/microsoft/articles/78e01f5932c025",
       "score": 0,
       "comments": 0,
       "source": "rss_zenn",
-      "text": "恋愛メッセージ分析AIアプリ Relora（リローラ） は、チャットのスクリーンショットをOCRで構造化し、Amazon Bedrock経由でLLM（Qwen3 Next 80B / Claude Sonnet 4.6）に心理分析と返信候補を生成させるアプリです。\n一般論のLLMに「恋愛相談に乗って」と投げると、出てくるのは「あなたの気持ちを尊重してくれる相手かどうか見極めましょう」みたいな、どこにでもある助言です。これではユーザーの課題は解決しません。\n本記事は、学術的エビデンスに基づく恋愛心理学をLLMのシステムプロンプトに構造的に埋め込む 設計判断と、その実装を解説します。対象読者..."
+      "text": "Azure SRE エージェントは、Microsoft が提供する運用支援サービスです。主に Azure を対象に、障害対応や定期タスクを AI エージェントが補助してくれます。\nhttps://learn.microsoft.com/ja-jp/azure/sre-agent/overview?tabs=task\nインシデント対応での文脈で取り上げられることが多い SRE エージェントですが、応用の可能性は多岐にわたります。これは、SRE エージェントが以下のような能力を持つためです。\n\nサンドボックス環境で Python や Azure CLI などの任意コマンドを実行する\nMCP（..."
     },
     {
-      "title": "AIエージェント、結局どれを選べばいいのか｜Dify / n8n / CrewAIを実務目線で比較",
-      "url": "https://zenn.dev/tigerone1945/articles/dcfced1d90a4b4",
+      "title": "Ollama＋Whisper＋edge-ttsでつくる英会話練習アプリ",
+      "url": "https://zenn.dev/kjak/articles/9a2089d8cc8d2c",
       "score": 0,
       "comments": 0,
       "source": "rss_zenn",
-      "text": "はじめに\nAIエージェントツール、増えすぎてこうなってませんか？👇\n\n「結局どれを選べばいいの？」\n\n本記事では、主要なAIエージェントツールを実務目線で比較し、結論まで出します。\n\n\n 結論\n迷ったらこれ👇\n\n\n\n目的\nおすすめ\n\n\n\n\n非エンジニア・ナレッジ活用\nDify\n\n\n業務自動化（SaaS連携）\nn8n\n\n\n高度な制御・開発\nCrewAI\n\n\n\n👉 用途で選べばほぼ失敗しません\n\n上記以外のも色々ありますが、個人的な好みで選択していますので、この点は理解しておいてください\nCrewAIの代わりにOpen Clawを選ぶべきかもしれませんが、安全性に疑問があるので含めていま..."
+      "text": "はじめに\n生成AIで英会話の練習をしたいけど、推論毎に消費されるトークンの節約をしたい。そんな動機からローカルLLMを使った英会話練習アプリを作りました。\n↓↓インスピレーション\nhttps://qiita.com/shotaloss/items/3542e1d186e888c0482f\nこのアプリの特徴は以下のとおりです。\n\n\n完全無料・オフライン動作（音声読み上げのみインターネット必要）\nマイクで話しかけるとWhisperが音声認識してテキスト変換\n\nedge-ttsによる流暢な英語音声でAIが返答を読み上げ\n3往復の会話後に日本語でフィードバックを生成\n言いたかったことを日本語..."
     },
     {
-      "title": "sentinel をはじめよう！ — API キー取得からアバター表示まで🤖",
-      "url": "https://zenn.dev/pla/articles/8eb22e3c84d358",
+      "title": "なぜClaude Mythosはサイバーセキュリティに強いのか？",
+      "url": "https://zenn.dev/eri_tech404/articles/e4f49ff0a6c770",
       "score": 0,
       "comments": 0,
       "source": "rss_zenn",
-      "text": "sentinel をはじめよう\nsentinel は Windows に常駐する AI アシスタントです。\nテキストチャット、音声会話、アバター表示をひとつのウィンドウから使えます。\nこの記事では インストールから最初のアバター表示まで を順を追って説明します。\n\n\n 1. ダウンロードと起動\nhttps://pxr.booth.pm/items/8090485\nBoothの配布ページ から sentinel_0.4.3.zip をダウンロードします。\nインストーラーはありません。\nダウンロードした .zip を解凍して.exeをそのまま起動してください。\n!\nWindows Sma..."
+      "text": "はじめに\nAnthropic社が発表した最新モデル「Claude Mythos」。このモデルについて、AnthropicのCEOは「プログラミングに特化するように作成した」と明言しています。\nしかし、実際に市場でClaude Mythosが高く評価されている領域の一つが「サイバーセキュリティ」です。\n\n\n 💻 プログラミングの正体は「論理的思考」である\nそもそもプログラミングとは、ただコードをタイピングする作業ではありません。その本質は高度な論理的思考力が問われる知的作業です。\n論理的思考とは、言い換えれば「推論の繰り返しと、そのまとめ」のプロセスです。システムがどう動くべきか、なぜ..."
     },
     {
-      "title": "直観の行列化：四元数と幾何代数による「計算可能な哲学」の構築 概要【第1論文】",
-      "url": "https://zenn.dev/kiichi34578/articles/0cdafe5d98aad3",
+      "title": "1.2Bモデルが tool calling を拒否する問題を few-shot で突破した話",
+      "url": "https://zenn.dev/heinz/articles/223739b1204d1f",
       "score": 0,
       "comments": 0,
       "source": "rss_zenn",
-      "text": "概要（アブストラクト）\n本稿は、人間の身体的直観（暗黙知）を数学的構造へと変換し、大規模言語モデル（LLM）上で演算可能なシステムとして実装するまでの理論的軌跡である。\n筆者は長年、人間の意識や言葉の重みを測る身体的アプローチを探求してきた。\n本研究では、その直観的理解を四元数（Quaternion）および幾何代数（Geometric Algebra）の枠組みに統合し、複雑な精神活動を4×4および8×8の実数行列（Mats形式）として可視化することに成功した。\nこれにより、従来の確率論に依存するAIのハルシネーション（構造的矛盾）を排除し、自然界の法則に合致した「嘘のつけない推論エン..."
+      "text": "1.2Bモデルが「できません」と言い張る問題を解決した\n\n 3行まとめ\n\nlfm25-1.2b の tool calling 成功率が 50% しかなく、特に shell 書き込み系は全拒否だった\nsystem prompt の強化もツール名の変更も効かず、few-shot 例の注入だけが突破口だった\n対話履歴に「前に成功した」例を仕込むと、モデルは安心して同じ行動を取ってくれる\n\n\n\n 前回のあらすじ\n前回の記事で、隣の PC の RTX 2080 で lfm25-1.2b を動かして Hermes Agent に繋いだ。tool calling のテストをしたら、成功率 50%。..."
     },
     {
       "title": "承認してない git tag を Claude Code に打たれた話 — LLM Agent の構造的 Rule Violation",
@@ -596,36 +588,44 @@
       "text": "ツール呼び出しでも大きいモデルは勝てなかった\nLLMにツールを持たせる（function calling / tool use）。これはエージェントの基盤技術であり、RAGの次の進化であり、ローカルLLMの実用性を左右する機能だ。\nでは、どのモデルがfunction callingで最も正確か。13モデルをQ4_K_M量子化でテストした2026年のベンチマーク（JD Hodges, 2026）の結果は、予想を裏切るものだった。\n97.5%の精度を出したのは3.4GBのモデルだった。25GBのモデルは85%で負けた。\n少なくともこのテスト環境では、大きいモデルが強いという前提は成り立た..."
     },
     {
+      "title": "AI research lab NeoCognition lands $40M seed to build agents that learn like humans",
+      "url": "https://techcrunch.com/2026/04/21/ai-research-lab-neocognition-lands-40m-seed-to-build-agents-that-learn-like-humans/",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_techcrunch",
+      "text": "Founded by an OSU researcher, the startup is developing AI agents that can become experts in any domain."
+    },
+    {
+      "title": "ChatGPT&#8217;s new Images 2.0 model is surprisingly good at generating text",
+      "url": "https://techcrunch.com/2026/04/21/chatgpts-new-images-2-0-model-is-surprisingly-good-at-generating-text/",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_techcrunch",
+      "text": "ChatGPT Images 2.0, the newest image-generation model from OpenAI, shows just how much AI capabilities have evolved over the last few years."
+    },
+    {
+      "title": "Sam Altman throws shade at Anthropic&#8217;s cyber model, Mythos: &#8216;fear-based marketing&#8217;",
+      "url": "https://techcrunch.com/2026/04/21/sam-altman-throws-shade-at-anthropics-cyber-model-mythos-fear-based-marketing/",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_techcrunch",
+      "text": "This week, during a podcast appearance, OpenAI CEO Sam Altman called out his competitor's new cybersecurity model, noting that the company was using fear to make its product sound more impressive than it actually is."
+    },
+    {
+      "title": "Clarifai deletes 3 million photos that OkCupid provided to train facial recognition AI, report says",
+      "url": "https://techcrunch.com/2026/04/21/clarifai-okcupid-facial-recognition-ai-ftc-settlement/",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_techcrunch",
+      "text": "The photo deletion comes after an FTC settlement with Clarifai. The company had asked OkCupid — whose executives had invested in Clarifai — to share data in 2014, according to court documents."
+    },
+    {
       "title": "AI Dungeon maker Latitude unveils Voyage, a platform for creating AI-powered RPGs",
       "url": "https://techcrunch.com/2026/04/21/voyage-is-an-ai-rpg-platform-for-creating-custom-gaming-worlds-with-ai-generated-npc-interactions/",
       "score": 0,
       "comments": 0,
       "source": "rss_techcrunch",
       "text": "Latitude's new AI-native platform, Voyage, aims to help gamers create their very own role-playing game."
-    },
-    {
-      "title": "Bond, a new social media platform, wants to use AI to help you kick your doomscrolling habit",
-      "url": "https://techcrunch.com/2026/04/21/bond-social-media-platform-ai-memories-kick-doomscrolling-habit/",
-      "score": 0,
-      "comments": 0,
-      "source": "rss_techcrunch",
-      "text": "Bond wants you to get off the couch and get back into the real world, its creator says. The new platform's AI system is designed to motivate users to do things away from the app."
-    },
-    {
-      "title": "YouTube expands its AI likeness detection technology to celebrities",
-      "url": "https://techcrunch.com/2026/04/21/youtube-expands-its-ai-likeness-detection-technology-to-celebrities/",
-      "score": 0,
-      "comments": 0,
-      "source": "rss_techcrunch",
-      "text": "YouTube is expanding its AI likeness detection tool to celebrities, giving talent and their reps a way to find and remove deepfakes."
-    },
-    {
-      "title": "GRAI believes AI can make music more social, not replace artists",
-      "url": "https://techcrunch.com/2026/04/21/grai-believes-ai-can-make-music-more-social-not-replace-artists/",
-      "score": 0,
-      "comments": 0,
-      "source": "rss_techcrunch",
-      "text": "AI music startup GRAI says fans want to remix tracks, not generate songs from scratch."
     },
     {
       "title": "Railway secures $100 million to challenge AWS with AI-native cloud infrastructure",
@@ -668,44 +668,28 @@
       "text": "Anthropic released Cowork on Monday, a new AI agent capability that extends the power of its wildly successful Claude Code tool to non-technical users — and according to company insiders, the team built the entire feature in approximately a week and a half, largely using Claude Code itself.The launc"
     },
     {
-      "title": "The Download: turning down human noise, and LA&#8217;s stunning subway upgrade",
-      "url": "https://www.technologyreview.com/2026/04/21/1136246/the-download-human-noise-la-subway-upgrade/",
+      "title": "A natural protein may protect the GI tract from infection",
+      "url": "https://www.technologyreview.com/2026/04/21/1134858/a-natural-protein-may-protect-the-gi-tract-from-infection/",
       "score": 0,
       "comments": 0,
       "source": "rss_mit_review",
-      "text": "This is today&#8217;s edition of The Download, our weekday newsletter that provides a daily dose of what&#8217;s going on in the world of technology. The noise we make is hurting animals. Can we learn to shut up? As human society has expanded, animals have started struggling to hear one another. For"
+      "text": "Embedded in the body’s mucosal surfaces, proteins called lectins bind to sugars found on cell surfaces. A team led by MIT chemistry professor Laura Kiessling has found that one such protein, intelectin-2, both helps fortify the mucosal barrier and offers broad-spectrum protection against harmful bac"
     },
     {
-      "title": "The Download: murderous &#8216;mirror&#8217; bacteria, and Chinese workers fighting AI doubles",
-      "url": "https://www.technologyreview.com/2026/04/20/1136154/the-download-murderous-mirror-bacteria-chinese-workers-fight-ai-agents/",
+      "title": "This tool could show how consciousness works",
+      "url": "https://www.technologyreview.com/2026/04/21/1134862/this-tool-could-show-how-consciousness-works/",
       "score": 0,
       "comments": 0,
       "source": "rss_mit_review",
-      "text": "This is today&#8217;s edition of The Download, our weekday newsletter that provides a daily dose of what&#8217;s going on in the world of technology. No one’s sure if synthetic mirror life will kill us all In February 2019, a group of scientists proposed a high-risk, cutting-edge, irresistibly excit"
+      "text": "How does the physical matter in our brains translate into thoughts, sensations, and emotions? It’s hard to explore that question without neurosurgery. But in a recent paper, MIT philosopher Matthias Michel, Lincoln Lab researcher Daniel Freeman, and colleagues outline a strategy for doing so with an"
     },
     {
-      "title": "Colossal Biosciences said it cloned red wolves. Is it for real?",
-      "url": "https://www.technologyreview.com/2026/04/20/1135222/red-wolves-colossal-biosciences-clones/",
+      "title": "AI at MIT",
+      "url": "https://www.technologyreview.com/2026/04/21/1134938/ai-at-mit/",
       "score": 0,
       "comments": 0,
       "source": "rss_mit_review",
-      "text": "If you want to capture something wolflike, it’s best to embark before dawn. So on a morning this January, with the eastern horizon still pink-hued, I drove with two young scientists into a blanket of fog. Forty miles to the west, the industrial sprawl of Houston spawned a golden glow. Tanner Broussa"
-    },
-    {
-      "title": "Chinese tech workers are starting to train their AI doubles—and pushing back",
-      "url": "https://www.technologyreview.com/2026/04/20/1136149/chinese-tech-workers-ai-colleagues/",
-      "score": 0,
-      "comments": 0,
-      "source": "rss_mit_review",
-      "text": "Tech workers in China are being instructed by their bosses to train AI agents to replace them—and it’s prompting a wave of soul-searching among otherwise enthusiastic early adopters.&#160; Earlier this month a GitHub project called Colleague Skill, which claimed workers could use it to “distill” the"
-    },
-    {
-      "title": "The Download: bad news for inner Neanderthals, and AI warfare’s human illusion",
-      "url": "https://www.technologyreview.com/2026/04/17/1136112/the-download-inner-neanderthal-ai-war-human-in-the-loop/",
-      "score": 0,
-      "comments": 0,
-      "source": "rss_mit_review",
-      "text": "This is today&#8217;s edition of The Download, our weekday newsletter that provides a daily dose of what&#8217;s going on in the world of technology. The problem with thinking you’re part Neanderthal There’s a theory that many of us have an “inner Neanderthal.” The idea is that Homo sapiens and a co"
+      "text": "At&#160;MIT, AI has become so pervasive that you can almost find your way into it without meaning to. Take Sili Deng, an associate professor of mechanical engineering. Deng says she still doesn’t know whether she’d have gone all in on artificial intelligence had it not been for the covid pandemic. S"
     },
     {
       "title": "Optical Fiber Networks Can Keep Rail Networks Safe",
