@@ -1,7 +1,7 @@
 {
   "monthly": {
     "2026-04": {
-      "usd": 1.457717,
+      "usd": 1.814714,
       "calls": [
         {
           "date": "2026-04-20",
@@ -332,11 +332,129 @@
           "input_tokens": 2629,
           "output_tokens": 2000,
           "usd": 0.037887
+        },
+        {
+          "date": "2026-04-21",
+          "label": "summarize_batch_1",
+          "model": "claude",
+          "input_tokens": 1160,
+          "output_tokens": 1498,
+          "usd": 0.02595
+        },
+        {
+          "date": "2026-04-21",
+          "label": "summarize_batch_2",
+          "model": "claude",
+          "input_tokens": 588,
+          "output_tokens": 1815,
+          "usd": 0.028989
+        },
+        {
+          "date": "2026-04-21",
+          "label": "summarize_batch_3",
+          "model": "claude",
+          "input_tokens": 561,
+          "output_tokens": 1391,
+          "usd": 0.022548
+        },
+        {
+          "date": "2026-04-21",
+          "label": "summarize_batch_4",
+          "model": "claude",
+          "input_tokens": 795,
+          "output_tokens": 1565,
+          "usd": 0.02586
+        },
+        {
+          "date": "2026-04-21",
+          "label": "summarize_batch_5",
+          "model": "claude",
+          "input_tokens": 990,
+          "output_tokens": 1627,
+          "usd": 0.027375
+        },
+        {
+          "date": "2026-04-21",
+          "label": "summarize_batch_6",
+          "model": "claude",
+          "input_tokens": 2248,
+          "output_tokens": 1750,
+          "usd": 0.032994
+        },
+        {
+          "date": "2026-04-21",
+          "label": "summarize_batch_7",
+          "model": "claude",
+          "input_tokens": 2150,
+          "output_tokens": 1552,
+          "usd": 0.02973
+        },
+        {
+          "date": "2026-04-21",
+          "label": "summarize_batch_8",
+          "model": "claude",
+          "input_tokens": 1071,
+          "output_tokens": 1556,
+          "usd": 0.026553
+        },
+        {
+          "date": "2026-04-21",
+          "label": "summarize_batch_9",
+          "model": "claude",
+          "input_tokens": 1024,
+          "output_tokens": 1566,
+          "usd": 0.026562
+        },
+        {
+          "date": "2026-04-21",
+          "label": "summarize_batch_10",
+          "model": "claude",
+          "input_tokens": 1111,
+          "output_tokens": 1458,
+          "usd": 0.025203
+        },
+        {
+          "date": "2026-04-21",
+          "label": "summarize_batch_11",
+          "model": "claude",
+          "input_tokens": 1214,
+          "output_tokens": 1387,
+          "usd": 0.024447
+        },
+        {
+          "date": "2026-04-21",
+          "label": "summarize_batch_12",
+          "model": "claude",
+          "input_tokens": 389,
+          "output_tokens": 170,
+          "usd": 0.003717
+        },
+        {
+          "date": "2026-04-21",
+          "label": "daily_digest",
+          "model": "claude",
+          "input_tokens": 595,
+          "output_tokens": 360,
+          "usd": 0.007185
+        },
+        {
+          "date": "2026-04-21",
+          "label": "x_drafts",
+          "input_tokens": 1611,
+          "output_tokens": 460,
+          "usd": 0.011733
+        },
+        {
+          "date": "2026-04-21",
+          "label": "sales_analyze_batch",
+          "input_tokens": 2717,
+          "output_tokens": 2000,
+          "usd": 0.038151
         }
       ],
-      "input_tokens": 54122,
-      "output_tokens": 87556
+      "input_tokens": 72346,
+      "output_tokens": 107711
     }
   },
-  "total_usd": 1.457717
+  "total_usd": 1.814714
 }
