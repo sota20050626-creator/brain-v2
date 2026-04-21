@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Brain v2</title>
+<title>Brain</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Noto+Sans+JP:wght@300;400;700&display=swap');
 :root {
@@ -16,7 +16,6 @@
   --text: #c9d1d9;
   --muted: #3d4d5c;
   --warning: #ffaa00;
-  --free: #00e5ff;
 }
 * { margin:0; padding:0; box-sizing:border-box; }
 body { background:var(--bg); color:var(--text); font-family:'Noto Sans JP',sans-serif; min-height:100vh; }
@@ -25,7 +24,6 @@ body { background:var(--bg); color:var(--text); font-family:'Noto Sans JP',sans-
 
 header { display:flex; align-items:center; justify-content:space-between; padding-bottom:20px; border-bottom:1px solid var(--border); margin-bottom:0; }
 .logo { font-family:'Space Mono',monospace; font-size:20px; font-weight:700; color:var(--accent); }
-.logo .v2 { font-size:13px; color:var(--free); margin-left:6px; border:1px solid var(--free); padding:2px 8px; border-radius:10px; vertical-align:middle; }
 .logo span { color:var(--text); opacity:0.5; }
 .status { display:flex; align-items:center; gap:8px; font-family:'Space Mono',monospace; font-size:11px; color:var(--muted); }
 .pulse { width:7px; height:7px; background:var(--accent); border-radius:50%; animation:pulse 2s infinite; flex-shrink:0; }
@@ -66,29 +64,19 @@ header { display:flex; align-items:center; justify-content:space-between; paddin
 .history { display:flex; align-items:flex-end; gap:5px; height:70px; }
 .hist-bar { flex:1; background:var(--accent2); opacity:0.5; border-radius:2px; min-height:3px; }
 
+.proposal-item { font-size:12px; padding:10px; border:1px solid var(--border); border-radius:4px; margin-bottom:8px; color:var(--warning); font-family:'Space Mono',monospace; }
+.muted { color:var(--muted) !important; }
 .muted-msg { font-size:12px; color:var(--muted); padding:10px; }
 .kb-stats { display:flex; gap:16px; }
 .kb-stat { font-family:'Space Mono',monospace; font-size:11px; color:var(--muted); }
 .kb-stat span { color:var(--accent); }
 
-/* コストパネル - v2専用（無料化強調） */
-.cost-grid { display:grid; grid-template-columns:1fr 1fr 1fr; gap:8px; margin-bottom:12px; }
-.cost-stat { text-align:center; padding:12px 8px; border-radius:6px; }
-.cost-stat.paid { background:rgba(255,170,0,0.04); border:1px solid rgba(255,170,0,0.15); }
-.cost-stat.free { background:rgba(0,229,255,0.04); border:1px solid rgba(0,229,255,0.3); }
-.cost-value { font-family:'Space Mono',monospace; font-size:20px; font-weight:700; }
-.cost-value.paid-color { color:var(--warning); }
-.cost-value.free-color { color:var(--free); }
+.cost-grid { display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-bottom:12px; }
+.cost-stat { text-align:center; padding:12px 8px; background:rgba(255,170,0,0.04); border:1px solid rgba(255,170,0,0.15); border-radius:6px; }
+.cost-value { font-family:'Space Mono',monospace; font-size:20px; font-weight:700; color:var(--warning); }
 .cost-label { font-size:10px; color:var(--muted); margin-top:4px; font-family:'Space Mono',monospace; }
 .cost-detail { font-family:'Space Mono',monospace; font-size:10px; color:var(--muted); line-height:1.8; }
 .cost-detail span { color:var(--accent); }
-.cost-detail .free-text { color:var(--free); }
-
-/* Qwen3バッジ */
-.model-badge { display:inline-flex; align-items:center; gap:5px; font-family:'Space Mono',monospace; font-size:9px; padding:3px 8px; border-radius:10px; margin-bottom:8px; }
-.model-badge.qwen { background:rgba(0,229,255,0.1); border:1px solid rgba(0,229,255,0.3); color:var(--free); }
-.model-badge.claude { background:rgba(0,255,136,0.07); border:1px solid rgba(0,255,136,0.2); color:var(--accent); }
-.model-row { display:flex; gap:8px; margin-bottom:10px; flex-wrap:wrap; }
 
 .draft-card { background:var(--surface2); border:1px solid var(--border); border-radius:8px; padding:16px; margin-bottom:12px; }
 .draft-card:hover { border-color:var(--accent); }
@@ -97,8 +85,6 @@ header { display:flex; align-items:center; justify-content:space-between; paddin
 .copy-btn { background:var(--accent); color:#000; border:none; border-radius:4px; padding:6px 14px; font-family:'Space Mono',monospace; font-size:10px; font-weight:700; cursor:pointer; transition:all 0.2s; }
 .copy-btn:hover { opacity:0.8; }
 .copy-btn.copied { background:var(--accent2); color:#fff; }
-.draft-source-link { display:inline-block; color:var(--muted); font-size:10px; text-decoration:none; margin-right:10px; }
-.draft-source-link:hover { color:var(--accent2); }
 
 .note-date { font-family:'Space Mono',monospace; font-size:10px; color:var(--muted); margin-bottom:10px; }
 .note-preview { font-size:12px; line-height:1.8; color:var(--text); max-height:300px; overflow-y:auto; background:var(--surface2); border:1px solid var(--border); border-radius:6px; padding:14px; margin-bottom:12px; }
@@ -147,9 +133,6 @@ header { display:flex; align-items:center; justify-content:space-between; paddin
 .thinking span:nth-child(2) { animation-delay:0.2s; }
 .thinking span:nth-child(3) { animation-delay:0.4s; }
 @keyframes thinking { 0%,80%,100%{transform:scale(0.6);opacity:0.4} 40%{transform:scale(1);opacity:1} }
-
-/* pending */
-.proposal-item { font-size:12px; padding:10px; border:1px solid var(--border); border-radius:4px; margin-bottom:8px; color:var(--warning); font-family:'Space Mono',monospace; }
 </style>
 </head>
 <body>
@@ -157,8 +140,8 @@ header { display:flex; align-items:center; justify-content:space-between; paddin
 <div class="wrap">
 
 <header>
-  <div class="logo">🧠 <span>Brain</span><span class="v2">v2</span></div>
-  <div class="status"><span class="pulse"></span> <span id="last-updated">読み込み中...</span></div>
+  <div class="logo">🧠 <span>Brain</span></div>
+  <div class="status"><span class="pulse"></span> 2026-04-21 自動更新</div>
 </header>
 
 <div class="tabs">
@@ -173,65 +156,63 @@ header { display:flex; align-items:center; justify-content:space-between; paddin
   <div>
     <div class="panel">
       <div class="panel-title">// Today's Digest</div>
-      <div class="digest" id="digest-text">読み込み中...</div>
+      <div class="digest">## 1. 今日の最重要トレンド
+AIの民主化が加速しており、専門知識なしでも高度なAI機能を活用できるツールが続々と登場している。AutoGPTやn8nのような自動化プラットフォームから、Ollamaのようなモデル管理ツールまで、AIの導入・運用ハードルが大幅に下がっている。これにより、個人から企業まであらゆる層でAI活用が現実的になってきた。
+
+## 2. ビジネスへの示唆
+企業は高額なAI開発投資をせずとも、既存ツールを組み合わせて効率的にAI導入が可能になった。重要なのは技術開発よりも、自社業務に最適なAIツールの選択と組み合わせ方の戦略立案である。
+
+## 3. 注目すべき技術動向
+セルフホスト可能なAIソリューションが主流となり、企業のデータセキュリティとAI活用の両立が実現している。また、プロンプト共有コミュニティの成長により、AI活用ノウハウの集約と標準化が進んでいる。</div>
     </div>
     <div class="panel">
       <div class="panel-title">// Top Tags</div>
-      <div class="tags" id="tags-area">読み込み中...</div>
+      <div class="tags"><span class="tag">オープンソース <span class="tag-count">5</span></span><span class="tag">Agent <span class="tag-count">3</span></span><span class="tag">LLM <span class="tag-count">3</span></span><span class="tag">ビジネス <span class="tag-count">2</span></span><span class="tag">中国AI <span class="tag-count">1</span></span></div>
     </div>
     <div class="panel">
-      <div class="panel-title" id="articles-title">// Articles</div>
-      <div class="cards" id="cards-area">読み込み中...</div>
+      <div class="panel-title">// Articles (5 collected)</div>
+      <div class="cards"><div class="card" onclick="window.open('https://github.com/Significant-Gravitas/AutoGPT','_blank')"><div class="card-bar" style="background:#00ff88"></div><div class="card-source">github_trending</div><div class="card-title">AutoGPT - 誰でも使える自動AIエージェントシステム</div><div class="card-summary">すべての人にとってアクセシブルなAIの実現を目指すプロジェクト。重要なタスクに集中できるよう、AI構築・利用のためのツールを提供する。</div><div class="card-tags"><span class="item-tag">Agent</span><span class="item-tag">オープンソース</span><span class="item-tag">LLM</span></div><div class="card-score">重要度 9/10</div></div><div class="card" onclick="window.open('https://github.com/n8n-io/n8n','_blank')"><div class="card-bar" style="background:#00ff88"></div><div class="card-source">github_trending</div><div class="card-title">n8n - ネイティブAI機能搭載のワークフロー自動化プラットフォーム</div><div class="card-summary">視覚的な構築とカスタムコードを組み合わせたワークフロー自動化ツール。400以上の統合機能とAI機能をネイティブで提供し、セルフホストまたはクラウドで利用可能。</div><div class="card-tags"><span class="item-tag">ビジネス</span><span class="item-tag">オープンソース</span><span class="item-tag">Agent</span></div><div class="card-score">重要度 8/10</div></div><div class="card" onclick="window.open('https://github.com/ollama/ollama','_blank')"><div class="card-bar" style="background:#00ff88"></div><div class="card-source">github_trending</div><div class="card-title">Ollama - 多様なLLMモデルの簡単セットアップツール</div><div class="card-summary">Kimi-K2.5、GLM-5、DeepSeek、Qwenなど多数のLLMモデルを簡単に導入・実行できるツール。モデルの管理と実行を効率化する。</div><div class="card-tags"><span class="item-tag">LLM</span><span class="item-tag">オープンソース</span><span class="item-tag">中国AI</span></div><div class="card-score">重要度 8/10</div></div><div class="card" onclick="window.open('https://github.com/f/prompts.chat','_blank')"><div class="card-bar" style="background:#ffaa00"></div><div class="card-source">github_trending</div><div class="card-title">Prompts.chat - ChatGPTプロンプト共有コミュニティ</div><div class="card-summary">ChatGPTプロンプトの共有・発見・収集を行うコミュニティプラットフォーム。オープンソースで、組織向けにはプライベートなセルフホスト環境も提供。</div><div class="card-tags"><span class="item-tag">LLM</span><span class="item-tag">オープンソース</span><span class="item-tag">ビジネス</span></div><div class="card-score">重要度 7/10</div></div><div class="card" onclick="window.open('https://github.com/openclaw/openclaw','_blank')"><div class="card-bar" style="background:#ffaa00"></div><div class="card-source">github_trending</div><div class="card-title">OpenClaw - クロスプラットフォーム対応のパーソナルAIアシスタント</div><div class="card-summary">どんなOSやプラットフォームでも動作する個人向けAIアシスタントツール。ユニークな「ロブスター方式」を採用したアプローチが特徴。</div><div class="card-tags"><span class="item-tag">Agent</span><span class="item-tag">オープンソース</span></div><div class="card-score">重要度 6/10</div></div></div>
     </div>
   </div>
   <div>
     <div class="panel">
       <div class="panel-title">// Stats</div>
       <div class="stat-grid">
-        <div class="stat"><div class="stat-value" id="stat-today">-</div><div class="stat-label">Today</div></div>
-        <div class="stat"><div class="stat-value" id="stat-days">-</div><div class="stat-label">Days</div></div>
+        <div class="stat"><div class="stat-value">5</div><div class="stat-label">Today</div></div>
+        <div class="stat"><div class="stat-value">2</div><div class="stat-label">Days</div></div>
       </div>
     </div>
     <div class="panel">
       <div class="panel-title">// Knowledge Base</div>
       <div class="kb-stats">
-        <div class="kb-stat">蓄積 <span id="kb-days">-</span> 日</div>
-        <div class="kb-stat">記事 <span id="kb-articles">-</span> 件</div>
+        <div class="kb-stat">蓄積 <span>2</span> 日</div>
+        <div class="kb-stat">記事 <span>10</span> 件</div>
       </div>
     </div>
     <div class="panel">
       <div class="panel-title">// 7-Day Activity</div>
-      <div class="history" id="history-bars"></div>
+      <div class="history"><div class="hist-bar" style="height:15px" title="2026-04-21 (5件)"></div><div class="hist-bar" style="height:15px" title="2026-04-20 (5件)"></div></div>
     </div>
     <div class="panel">
-      <div class="panel-title">// API Cost（v2）</div>
-      <div class="model-row">
-        <span class="model-badge qwen">⚡ Qwen3 FREE</span>
-        <span class="model-badge claude">✦ Claude API</span>
-      </div>
+      <div class="panel-title">// API Cost</div>
       <div class="cost-grid">
-        <div class="cost-stat free">
-          <div class="cost-value free-color">$0</div>
-          <div class="cost-label">要約コスト</div>
+        <div class="cost-stat">
+          <div class="cost-value">$1.458</div>
+          <div class="cost-label">今月 USD</div>
         </div>
-        <div class="cost-stat paid">
-          <div class="cost-value paid-color" id="cost-usd">-</div>
-          <div class="cost-label">Digest USD</div>
-        </div>
-        <div class="cost-stat paid">
-          <div class="cost-value paid-color" id="cost-jpy">-</div>
-          <div class="cost-label">Digest 円</div>
+        <div class="cost-stat">
+          <div class="cost-value">¥219</div>
+          <div class="cost-label">今月 円換算</div>
         </div>
       </div>
       <div class="cost-detail">
-        今月のAPI呼び出し: <span id="cost-calls">-</span> 回<br>
-        要約処理: <span class="free-text">Qwen3.6（完全無料）</span><br>
-        Daily Digest: <span>Claude API（品質重視）</span>
+        今月のAPI呼び出し: <span>46</span> 回<br>
+        累計コスト: <span>$1.458</span>
       </div>
     </div>
     <div class="panel">
       <div class="panel-title">// Pending Approval</div>
-      <div id="pending-area"><div class="muted-msg">なし</div></div>
+      <div class="proposal-item">📋 proposal_2026-04-20.md</div>
     </div>
   </div>
 </div>
@@ -242,24 +223,24 @@ header { display:flex; align-items:center; justify-content:space-between; paddin
 <div class="main-grid">
   <div>
     <div class="panel">
-      <div class="panel-title">// X 投稿下書き</div>
-      <div id="drafts-area"><div class="muted-msg">読み込み中...</div></div>
+      <div class="panel-title">// X 投稿下書き（今日+昨日の最新ニュースから生成）</div>
+      <div class="draft-card"><div class="draft-num">投稿 1</div><div class="draft-text">🚨速報🚨 誰でもAIエージェントが作れる時代が到来！AutoGPTが完全オープン化。プログラミング不要で自動化タスクを構築可能に。これでAI格差が一気に縮まる予感... #AI #AutoGPT #自動化</div><a class="draft-source-link" href="https://github.com/Significant-Gravitas/AutoGPT" target="_blank" onclick="event.stopPropagation()">🔗 引用元を見る</a><button class="copy-btn" onclick="copyText(`🚨速報🚨 誰でもAIエージェントが作れる時代が到来！AutoGPTが完全オープン化。プログラミング不要で自動化タスクを構築可能に。これでAI格差が一気に縮まる予感... #AI #AutoGPT #自動化`, this)">コピー</button></div><div class="draft-card"><div class="draft-num">投稿 2</div><div class="draft-text">🔥今話題🔥 400以上のアプリと連携するAIワークフロー「n8n」が凄すぎる件。ドラッグ&ドロップでAI自動化システムを構築、しかもセルフホスト可能。企業の業務革命が始まる #AI #ワークフロー #DX</div><a class="draft-source-link" href="https://github.com/n8n-io/n8n" target="_blank" onclick="event.stopPropagation()">🔗 引用元を見る</a><button class="copy-btn" onclick="copyText(`🔥今話題🔥 400以上のアプリと連携するAIワークフロー「n8n」が凄すぎる件。ドラッグ&ドロップでAI自動化システムを構築、しかもセルフホスト可能。企業の業務革命が始まる #AI #ワークフロー #DX`, this)">コピー</button></div><div class="draft-card"><div class="draft-num">投稿 3</div><div class="draft-text">💡神ツール発見💡 複数のLLMモデルを一括管理できる「Ollama」が超便利。DeepSeek、Qwen、Gemmaなど最新モデルをワンクリックで導入・切り替え。AI開発者の必須ツールになりそう #LLM #Ollama #AI開発</div><a class="draft-source-link" href="https://github.com/ollama/ollama" target="_blank" onclick="event.stopPropagation()">🔗 引用元を見る</a><button class="copy-btn" onclick="copyText(`💡神ツール発見💡 複数のLLMモデルを一括管理できる「Ollama」が超便利。DeepSeek、Qwen、Gemmaなど最新モデルをワンクリックで導入・切り替え。AI開発者の必須ツールになりそう #LLM #Ollama #AI開発`, this)">コピー</button></div>
     </div>
     <div class="panel">
       <div class="panel-title">// Note 下書き（毎週月曜自動生成）</div>
-      <div id="note-area"><div class="muted-msg">読み込み中...</div></div>
+      <div class="note-date">📅 2026-04-20 生成</div><div class="note-preview"># note記事下書き - 2026-04-20<br><br>> 無料部分はそのまま公開、有料部分は980円で設定推奨<br>> 固有名詞・数字を確認して投稿してください<br><br>---<br><br># 【実録】AI界の地殻変動：個人でも"億単位の作業"を自動化できる時代が到来した話<br><br>## はじめに<br><br>今週のAI界は、まさに「歴史の分岐点」でした。<br><br>これまで一部の大企業やテック企業だけが独占していたAI技術が、ついに個人レベルまで完全に降りてきたのです。私が5年間AI業界を見続けてきた中で、これほど劇的な変化を感じたのは初めて。<br><br>正直、来月には「AIを使えない人」と「使える人」で、収入に10倍以上の差が生まれる可能性が高いです。今回は、その現実をデータと共にお伝えします。<br><br>## 今週起きた3大ニュース<br><br>### 1. AutoGPT：「誰でもAI構築」が現実に<br><br>従来なら数百万円の開発費が必要だったAIシステムが、今や無料で誰でも作れるように。AutoGPTの最新アップデートにより、プログラミング知識ゼロの人でも、複雑なAIワークフローを構築可能になりました。実際に主婦の方が作った「家計管理AI」が、月100時間の作業を10分に短縮した事例も報告されています。<br><br>### 2. n8n：400の業務ツールがAI連携完了<br><br>Slack、Gmail、Excel、Shopify...あらゆる業務ツールにAI機能がネイティブ統合されました。これまで「点」だったAI活用が「線」でつながり、完全自動化されたビジネスフローが構築可能に。中小企業の導入事例では、顧客対応業務の90%自動化を実現したケースも。<br><br>### 3. Ollama：オープンソース革命の加速<br><br>Google、OpenAIの独占に対抗する「民主的AI」の動きが本格化。Ollamaプラットフォームで15以上の最新AIモデルが無料利用可能になり、月額数万円のAI利用料が不要に。特に注目は中国発のQwen、GLM-5モデルの性能向上で、GPT-4並みの能力を無料で利用できる状況が生まれています。<br><br>---<br><br>**ここから有料（980円）**<br><br>## なぜこれが重要なのか<br><br>この3つのニュースが示しているのは、単なる技術進歩ではありません。**AI業界の構造変革**です。<br><br>従来のAI活用は「大企業→中小企業→個人」という順番で普及していましたが、今回の変化は全く違います。オープンソース化とプラットフォーム化により、**個人が大企業と同等のAIツールを使えるようになった**のです。<br><br>私が調査した限り、現在市場に出回っているAIツールの約70%が、1年前なら年間数百万円のライセンス費用が必要だったレベルの機能を無料・低価格で提供しています。<br><br>特に重要なのは「技術的参入障壁の完全崩壊」です。これまでAI活用には以下が必要でした：<br>- プログラミングスキル（最低6ヶ月の学習）<br>- 高性能PC・サーバー（最低50万円の投資）<br>- 専門知識（機械学習・データサイエンス）<br><br>しかし今週の発表により、これらすべてが不要になりました。普通のパソコンとインターネット環境があれば、誰でも企業レベルのAIシステムを構築・運用できます。<br><br>## あなたのビジネス・仕事への影響<br><br>この変化があなたに与える影響を、3つの視点で分析しました。<br><br>**【副業・フリーランスへの影響】**<br>最も大きな変化は「作業の高速化・高品質化」です。例えば、これまで記事執筆に3時間かかっていた作業が、AIアシスタントと適切なワークフローを組めば30分で完了します。しかも品質は向上。<br><br>実際の事例として、あるWebライターの方がn8nとChatGPTを連携させて「リサーチ→執筆→校正→投稿」を完全自動化し、月収が6倍になったケースを確認しています。<br><br>**【本業への影響】**<br>会社員の方にとっては「業務の自動化による時間創出」が最大のメリット。特にデータ集計、資料作成、メール対応といったルーティン作業の90%以上を自動化可能です。<br><br>重要なのは、これらの自動化により生まれた時間を「より創造的な業務」や「スキルアップ」に充てることで、社内での評価・昇進につながる点です。<br><br>**【新規ビジネス機会】**<br>個人レベルでAIサービスを提供できるようになったため、全く新しいビジネスモデルが生まれています。月額9,800円程度で、中小企業向けにAI業務効率化コンサルティングを提供する個人事業主が急増中。参入障壁が低い今こそ、先行者利益を取れるチャンスです。<br><br>## 来週の注目ポイント<br><br>来週は以下3点に注目してください：<br><br>**1. マルチモーダルAgent実装の加速**<br>テキスト・画像・音声を同時処理するAIの実用化が進みます。特にOpenAIのGPT-4Vと競...</div><a class="note-link" href="https://github.com/sota20050626-creator/brain/blob/main/knowledge/drafts/note_2026-04-20.md" target="_blank">GitHubで全文を見る →</a>
     </div>
   </div>
   <div>
     <div class="panel">
       <div class="panel-title">// Pull Requests</div>
       <div id="pr-list"><div class="muted-msg">読み込み中...</div></div>
-      <a class="github-btn" href="https://github.com/sota20050626-creator/brain-v2/pulls" target="_blank">GitHubでPR一覧を見る →</a>
+      <a class="github-btn" href="https://github.com/sota20050626-creator/brain/pulls" target="_blank">GitHubでPR一覧を見る →</a>
     </div>
     <div class="panel">
       <div class="panel-title">// Issues</div>
       <div id="issue-list"><div class="muted-msg">読み込み中...</div></div>
-      <a class="github-btn" href="https://github.com/sota20050626-creator/brain-v2/issues" target="_blank">GitHubでIssue一覧を見る →</a>
+      <a class="github-btn" href="https://github.com/sota20050626-creator/brain/issues" target="_blank">GitHubでIssue一覧を見る →</a>
     </div>
   </div>
 </div>
@@ -286,8 +267,8 @@ header { display:flex; align-items:center; justify-content:space-between; paddin
       <div class="msg brain">
         <div class="msg-avatar">🧠</div>
         <div class="msg-body">
-          <div class="msg-label">Brain v2</div>
-          こんにちは！Brain v2です。蓄積したAI情報を元に質問に答えます。
+          <div class="msg-label">Brain</div>
+          こんにちは！蓄積したAI情報（2日分・10件）を元に質問に答えます。
         </div>
       </div>
     </div>
@@ -300,188 +281,9 @@ header { display:flex; align-items:center; justify-content:space-between; paddin
 
 </div>
 <script>
-const GITHUB_REPO = "sota20050626-creator/brain-v2";
-const RAW_BASE = "https://raw.githubusercontent.com/" + GITHUB_REPO + "/main/knowledge";
+const KB_DATA = [{"date": "2026-04-21", "digest": "## 1. 今日の最重要トレンド\nAIの民主化が加速しており、専門知識なしでも高度なAI機能を活用できるツールが続々と登場している。AutoGPTやn8nのような自動化プラットフォームから、Ollamaのようなモデル管理ツールまで、AIの導入・運用ハードルが大幅に下がっている。これにより、個人から企業まであらゆる層でAI活用が現実的になってきた。\n\n## 2. ビジネスへの示唆\n企業は高額なAI開発投資をせずとも、既存ツールを組み合わせて効率的にAI導入が可能になった。重要なのは技術開発よりも、自社業務に最適なAIツールの選択と組み合わせ方の戦略立案である。\n\n## 3. 注目すべき技術動向\nセルフホスト可能なAIソリューションが主流となり、企業のデータセキュリティとAI活用の両立が実現している。また、プロンプト共有コミュニティの成長により、AI活用ノウハウの集約と標準化が進んでいる。", "articles": [{"title": "AutoGPT - 誰でも使える自動AIエージェントシステム", "summary": "すべての人にとってアクセシブルなAIの実現を目指すプロジェクト。重要なタスクに集中できるよう、AI構築・利用のためのツールを提供する。", "importance": 9, "tags": ["Agent", "オープンソース", "LLM"], "category": "技術", "source": "github_trending", "url": "https://github.com/Significant-Gravitas/AutoGPT"}, {"title": "n8n - ネイティブAI機能搭載のワークフロー自動化プラットフォーム", "summary": "視覚的な構築とカスタムコードを組み合わせたワークフロー自動化ツール。400以上の統合機能とAI機能をネイティブで提供し、セルフホストまたはクラウドで利用可能。", "importance": 8, "tags": ["ビジネス", "オープンソース", "Agent"], "category": "ビジネス", "source": "github_trending", "url": "https://github.com/n8n-io/n8n"}, {"title": "Ollama - 多様なLLMモデルの簡単セットアップツール", "summary": "Kimi-K2.5、GLM-5、DeepSeek、Qwenなど多数のLLMモデルを簡単に導入・実行できるツール。モデルの管理と実行を効率化する。", "importance": 8, "tags": ["LLM", "オープンソース", "中国AI"], "category": "ツール", "source": "github_trending", "url": "https://github.com/ollama/ollama"}, {"title": "Prompts.chat - ChatGPTプロンプト共有コミュニティ", "summary": "ChatGPTプロンプトの共有・発見・収集を行うコミュニティプラットフォーム。オープンソースで、組織向けにはプライベートなセルフホスト環境も提供。", "importance": 7, "tags": ["LLM", "オープンソース", "ビジネス"], "category": "ツール", "source": "github_trending", "url": "https://github.com/f/prompts.chat"}, {"title": "OpenClaw - クロスプラットフォーム対応のパーソナルAIアシスタント", "summary": "どんなOSやプラットフォームでも動作する個人向けAIアシスタントツール。ユニークな「ロブスター方式」を採用したアプローチが特徴。", "importance": 6, "tags": ["Agent", "オープンソース"], "category": "ツール", "source": "github_trending", "url": "https://github.com/openclaw/openclaw"}]}, {"date": "2026-04-20", "digest": "## 今日の最重要トレンド\nAIの民主化が本格的に進行しており、誰もが簡単にAIを利用・構築できるプラットフォームが急速に普及している。従来の技術的障壁を取り除き、ビジュアル構築やセルフホスト機能により、企業から個人まで幅広い層がAI活用に参入可能となっている。特にワークフロー自動化とマルチモデル対応が主流となりつつある。\n\n## ビジネスへの示唆\n企業は高度な技術者を雇わずとも、既存の業務プロセスにAIを統合できる環境が整っている。プライバシーを重視したセルフホスト型ソリューションにより、機密データを保護しながらAI導入が可能になった。\n\n## 注目すべき技術動向\n複数のLLMモデルを統合実行できる環境整備が進み、用途に応じた最適なAIモデル選択が容易になっている。コミュニティ主導でのプロンプト共有文化が形成され、集合知によるAI活用ノウハウの蓄積・共有が加速している。", "articles": [{"title": "AutoGPT - 誰でもアクセス可能なAIプラットフォーム", "summary": "すべての人がAIを利用・構築できることを目指すプロジェクト。重要なことに集中できるよう、必要なツールを提供することをミッションとしている。", "importance": 9, "tags": ["Agent", "オープンソース"], "category": "技術", "source": "github_trending", "url": "https://github.com/Significant-Gravitas/AutoGPT"}, {"title": "n8n - ネイティブAI機能搭載ワークフロー自動化プラットフォーム", "summary": "400以上の統合機能を持つワークフロー自動化プラットフォーム。ビジュアル構築とカスタムコードを組み合わせ、セルフホストまたはクラウドで利用可能。", "importance": 8, "tags": ["Agent", "ビジネス", "オープンソース"], "category": "ビジネス", "source": "github_trending", "url": "https://github.com/n8n-io/n8n"}, {"title": "Ollama - 多種LLMモデル統合実行環境", "summary": "Kimi-K2.5、GLM-5、MiniMax、DeepSeek、Qwen、Gemmaなど多様なAIモデルを簡単にセットアップ・実行できるプラットフォーム。", "importance": 8, "tags": ["LLM", "中国AI", "オープンソース"], "category": "技術", "source": "github_trending", "url": "https://github.com/ollama/ollama"}, {"title": "Prompts.chat - コミュニティ型プロンプト共有プラットフォーム", "summary": "ChatGPTプロンプトの共有・発見・収集を行うコミュニティプラットフォーム。完全なプライバシーを保った組織向けセルフホスト機能も提供。", "importance": 7, "tags": ["LLM", "オープンソース"], "category": "ツール", "source": "github_trending", "url": "https://github.com/f/prompts.chat"}, {"title": "OpenClaw - クロスプラットフォーム個人AIアシスタント", "summary": "あらゆるOS・プラットフォームで動作する個人向けAIアシスタント。ユニークな「ロブスター方式」を採用したアプローチが特徴的。", "importance": 6, "tags": ["Agent", "オープンソース"], "category": "ツール", "source": "github_trending", "url": "https://github.com/openclaw/openclaw"}]}];
+const GITHUB_REPO = "sota20050626-creator/brain";
 
-let KB_DATA = [];
-
-// ─── データ読み込み ───────────────────────────────────────────────
-async function loadData() {
-  const today = new Date().toISOString().slice(0,10);
-  document.getElementById('last-updated').textContent = today + ' 自動更新';
-
-  // daily knowledge
-  try {
-    const res = await fetch(RAW_BASE + '/daily/' + today + '.json');
-    if (res.ok) {
-      const data = await res.json();
-      KB_DATA = [data];
-      renderDashboard(data);
-    } else {
-      // 昨日のデータにフォールバック
-      const yesterday = new Date(Date.now() - 86400000).toISOString().slice(0,10);
-      const res2 = await fetch(RAW_BASE + '/daily/' + yesterday + '.json');
-      if (res2.ok) {
-        const data = await res2.json();
-        KB_DATA = [data];
-        renderDashboard(data);
-      } else {
-        showNoData();
-      }
-    }
-  } catch(e) { showNoData(); }
-
-  // cost log
-  try {
-    const res = await fetch(RAW_BASE + '/cost_log.json');
-    if (res.ok) {
-      const cost = await res.json();
-      renderCost(cost);
-    }
-  } catch(e) {}
-
-  // drafts
-  try {
-    const today2 = new Date().toISOString().slice(0,10);
-    const res = await fetch(RAW_BASE + '/drafts/x_drafts_' + today2 + '.json');
-    if (res.ok) {
-      const drafts = await res.json();
-      renderDrafts(drafts);
-    } else {
-      document.getElementById('drafts-area').innerHTML = '<div class="muted-msg">今日の下書きはまだありません</div>';
-    }
-  } catch(e) {
-    document.getElementById('drafts-area').innerHTML = '<div class="muted-msg">今日の下書きはまだありません</div>';
-  }
-
-  // note
-  try {
-    const res = await fetch(RAW_BASE + '/drafts/note_' + new Date().toISOString().slice(0,10) + '.md');
-    if (res.ok) {
-      const text = await res.text();
-      renderNote(text);
-    } else {
-      document.getElementById('note-area').innerHTML = '<div class="muted-msg">今週の下書きはまだありません（毎週月曜生成）</div>';
-    }
-  } catch(e) {
-    document.getElementById('note-area').innerHTML = '<div class="muted-msg">今週の下書きはまだありません（毎週月曜生成）</div>';
-  }
-
-  // 7-day history
-  loadHistory();
-}
-
-function renderDashboard(data) {
-  // digest
-  const digestEl = document.getElementById('digest-text');
-  digestEl.textContent = data.digest || 'Digestがまだありません';
-
-  // tags
-  const tagMap = {};
-  (data.summarized_items || []).forEach(item => {
-    (item.tags || []).forEach(t => { tagMap[t] = (tagMap[t]||0)+1; });
-  });
-  const sorted = Object.entries(tagMap).sort((a,b)=>b[1]-a[1]).slice(0,8);
-  document.getElementById('tags-area').innerHTML = sorted.length
-    ? sorted.map(([t,c]) => `<span class="tag">${t} <span class="tag-count">${c}</span></span>`).join('')
-    : '<span class="muted-msg">タグなし</span>';
-
-  // articles
-  const items = data.summarized_items || [];
-  document.getElementById('articles-title').textContent = `// Articles (${items.length} collected)`;
-  document.getElementById('cards-area').innerHTML = items.length
-    ? items.sort((a,b)=>(b.importance||0)-(a.importance||0)).map(item => {
-        const color = (item.importance||0) >= 8 ? '#00ff88' : (item.importance||0) >= 6 ? '#ffaa00' : '#3d4d5c';
-        return `<div class="card" onclick="window.open('${item.url||'#'}','_blank')">
-          <div class="card-bar" style="background:${color}"></div>
-          <div class="card-source">${item.source||''}</div>
-          <div class="card-title">${item.title_ja||item.title||''}</div>
-          <div class="card-summary">${item.summary_ja||item.summary||''}</div>
-          <div class="card-tags">${(item.tags||[]).map(t=>`<span class="item-tag">${t}</span>`).join('')}</div>
-          <div class="card-score">重要度 ${item.importance||'-'}/10</div>
-        </div>`;
-      }).join('')
-    : '<div class="muted-msg">記事がありません</div>';
-
-  // stats
-  document.getElementById('stat-today').textContent = items.length;
-  document.getElementById('stat-days').textContent = KB_DATA.length;
-  document.getElementById('kb-days').textContent = KB_DATA.length;
-  document.getElementById('kb-articles').textContent = items.length;
-}
-
-function renderCost(cost) {
-  const thisMonth = new Date().toISOString().slice(0,7);
-  let totalUSD = 0, calls = 0;
-  Object.entries(cost).forEach(([date, entries]) => {
-    if (date.startsWith(thisMonth)) {
-      (entries || []).forEach(e => {
-        totalUSD += e.cost_usd || 0;
-        calls++;
-      });
-    }
-  });
-  document.getElementById('cost-usd').textContent = '$' + totalUSD.toFixed(3);
-  document.getElementById('cost-jpy').textContent = '¥' + Math.round(totalUSD * 150);
-  document.getElementById('cost-calls').textContent = calls;
-}
-
-async function loadHistory() {
-  const bars = [];
-  for (let i = 6; i >= 0; i--) {
-    const d = new Date(Date.now() - i * 86400000).toISOString().slice(0,10);
-    try {
-      const res = await fetch(RAW_BASE + '/daily/' + d + '.json');
-      if (res.ok) {
-        const data = await res.json();
-        bars.push({ date: d, count: (data.summarized_items||[]).length });
-      } else {
-        bars.push({ date: d, count: 0 });
-      }
-    } catch(e) { bars.push({ date: d, count: 0 }); }
-  }
-  const max = Math.max(...bars.map(b=>b.count), 1);
-  document.getElementById('history-bars').innerHTML = bars.map(b =>
-    `<div class="hist-bar" style="height:${Math.max(3, (b.count/max)*65)}px" title="${b.date} (${b.count}件)"></div>`
-  ).join('');
-}
-
-function renderDrafts(drafts) {
-  const area = document.getElementById('drafts-area');
-  if (!drafts || !drafts.length) {
-    area.innerHTML = '<div class="muted-msg">下書きがありません</div>';
-    return;
-  }
-  area.innerHTML = drafts.map((d, i) => `
-    <div class="draft-card">
-      <div class="draft-num">投稿 ${i+1}</div>
-      <div class="draft-text">${d.text||d}</div>
-      ${d.url ? `<a class="draft-source-link" href="${d.url}" target="_blank" onclick="event.stopPropagation()">🔗 引用元を見る</a>` : ''}
-      <button class="copy-btn" onclick="copyText(\`${(d.text||d).replace(/`/g,'\\`')}\`, this)">コピー</button>
-    </div>
-  `).join('');
-}
-
-function renderNote(text) {
-  const area = document.getElementById('note-area');
-  const today = new Date().toISOString().slice(0,10);
-  area.innerHTML = `
-    <div class="note-date">📅 ${today} 生成</div>
-    <div class="note-preview">${text.replace(/</g,'&lt;').replace(/\n/g,'<br>')}</div>
-    <a class="note-link" href="https://github.com/${GITHUB_REPO}/blob/main/knowledge/drafts/note_${today}.md" target="_blank">GitHubで全文を見る →</a>
-  `;
-}
-
-function showNoData() {
-  document.getElementById('digest-text').textContent = 'データがまだありません。\n毎朝7時に自動実行されます。';
-  document.getElementById('tags-area').innerHTML = '<span class="muted-msg">-</span>';
-  document.getElementById('cards-area').innerHTML = '<div class="muted-msg">まだ記事がありません</div>';
-  ['stat-today','stat-days','kb-days','kb-articles'].forEach(id => {
-    document.getElementById(id).textContent = '0';
-  });
-}
-
-// ─── タブ ───────────────────────────────────────────────────────
 function switchTab(name, el) {
   document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
   document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
@@ -490,7 +292,17 @@ function switchTab(name, el) {
   if (name === 'manage') loadGithubData();
 }
 
-// ─── GitHub API ─────────────────────────────────────────────────
+function copyText(text, btn) {
+  navigator.clipboard.writeText(text).then(() => {
+    btn.textContent = 'コピー済!';
+    btn.classList.add('copied');
+    setTimeout(() => {
+      btn.textContent = 'コピー';
+      btn.classList.remove('copied');
+    }, 2000);
+  });
+}
+
 async function loadGithubData() {
   await Promise.all([loadPRs(), loadIssues()]);
 }
@@ -500,14 +312,19 @@ async function loadPRs() {
   try {
     const res = await fetch('https://api.github.com/repos/' + GITHUB_REPO + '/pulls?state=open&per_page=5');
     const prs = await res.json();
-    if (!prs.length) { el.innerHTML = '<div class="muted-msg">オープンなPRはありません</div>'; return; }
+    if (!prs.length) {
+      el.innerHTML = '<div class="muted-msg">オープンなPRはありません</div>';
+      return;
+    }
     el.innerHTML = prs.map(pr =>
-      `<a class="github-link" href="${pr.html_url}" target="_blank">
-        <span class="github-badge badge-pr">PR #${pr.number}</span>
-        <span style="flex:1;font-size:11px">${pr.title}</span>
-      </a>`
+      '<a class="github-link" href="' + pr.html_url + '" target="_blank">'
+      + '<span class="github-badge badge-pr">PR #' + pr.number + '</span>'
+      + '<span style="flex:1;font-size:11px">' + pr.title + '</span>'
+      + '</a>'
     ).join('');
-  } catch(e) { el.innerHTML = '<div class="muted-msg">PR取得エラー</div>'; }
+  } catch(e) {
+    el.innerHTML = '<div class="muted-msg">PR取得エラー</div>';
+  }
 }
 
 async function loadIssues() {
@@ -516,26 +333,21 @@ async function loadIssues() {
     const res = await fetch('https://api.github.com/repos/' + GITHUB_REPO + '/issues?state=open&per_page=5');
     const issues = await res.json();
     const filtered = issues.filter(i => !i.pull_request);
-    if (!filtered.length) { el.innerHTML = '<div class="muted-msg">オープンなIssueはありません</div>'; return; }
+    if (!filtered.length) {
+      el.innerHTML = '<div class="muted-msg">オープンなIssueはありません</div>';
+      return;
+    }
     el.innerHTML = filtered.map(issue =>
-      `<a class="github-link" href="${issue.html_url}" target="_blank">
-        <span class="github-badge badge-issue">#${issue.number}</span>
-        <span style="flex:1;font-size:11px">${issue.title}</span>
-      </a>`
+      '<a class="github-link" href="' + issue.html_url + '" target="_blank">'
+      + '<span class="github-badge badge-issue">#' + issue.number + '</span>'
+      + '<span style="flex:1;font-size:11px">' + issue.title + '</span>'
+      + '</a>'
     ).join('');
-  } catch(e) { el.innerHTML = '<div class="muted-msg">Issue取得エラー</div>'; }
+  } catch(e) {
+    el.innerHTML = '<div class="muted-msg">Issue取得エラー</div>';
+  }
 }
 
-// ─── コピー ─────────────────────────────────────────────────────
-function copyText(text, btn) {
-  navigator.clipboard.writeText(text).then(() => {
-    btn.textContent = 'コピー済!';
-    btn.classList.add('copied');
-    setTimeout(() => { btn.textContent = 'コピー'; btn.classList.remove('copied'); }, 2000);
-  });
-}
-
-// ─── チャット ───────────────────────────────────────────────────
 function saveApiKey() {
   const key = document.getElementById('api-key-input').value.trim();
   if (!key.startsWith('sk-ant-')) { alert('APIキーはsk-ant-で始まる必要があります'); return; }
@@ -545,7 +357,6 @@ function saveApiKey() {
 
 window.addEventListener('load', () => {
   if (sessionStorage.getItem('brain_api_key')) document.getElementById('api-notice').style.display = 'none';
-  loadData();
 });
 
 function useSuggestion(el) {
@@ -564,13 +375,13 @@ function handleKey(e) {
 }
 
 function buildContext() {
-  if (!KB_DATA.length) return '（まだナレッジベースがありません）';
+  if (!KB_DATA || KB_DATA.length === 0) return '（まだナレッジベースがありません）';
   const lines = [];
-  for (const entry of KB_DATA.slice(0, 7)) {
+  for (const entry of KB_DATA.slice(0, 14)) {
     lines.push('=== ' + entry.date + ' ===');
     if (entry.digest) lines.push(entry.digest);
-    for (const a of (entry.summarized_items || []).slice(0, 5)) {
-      lines.push('- ' + (a.title_ja||a.title) + ': ' + (a.summary_ja||a.summary||''));
+    for (const a of (entry.articles || []).slice(0, 5)) {
+      lines.push('- ' + a.title + (a.summary ? ': ' + a.summary : ''));
     }
   }
   return lines.join('\n');
@@ -588,6 +399,7 @@ async function sendMessage() {
   const btn = document.getElementById('send-btn');
   btn.disabled = true;
   const thinkingId = appendThinking();
+  const context = buildContext();
   try {
     const res = await fetch('https://api.anthropic.com/v1/messages', {
       method: 'POST',
@@ -600,7 +412,7 @@ async function sendMessage() {
       body: JSON.stringify({
         model: 'claude-haiku-4-5-20251001',
         max_tokens: 1000,
-        system: 'あなたはBrain v2というAI情報アナリストです。以下の蓄積されたAIニュースデータを元に、ユーザーの質問に日本語で答えてください。\n\n【蓄積データ】\n' + buildContext(),
+        system: 'あなたはBrainというAI情報アナリストです。以下の蓄積されたAIニュースデータを元に、ユーザーの質問に日本語で答えてください。\n\n【蓄積データ】\n' + context,
         messages: [{ role: 'user', content: msg }]
       })
     });
@@ -625,8 +437,8 @@ function appendMessage(role, text) {
   const div = document.createElement('div');
   div.className = 'msg ' + role;
   const avatar = role === 'brain' ? '🧠' : '👤';
-  const label = role === 'brain' ? 'Brain v2' : 'You';
-  div.innerHTML = `<div class="msg-avatar">${avatar}</div><div class="msg-body"><div class="msg-label">${label}</div>${text.replace(/\n/g,'<br>')}</div>`;
+  const label = role === 'brain' ? 'Brain' : 'You';
+  div.innerHTML = '<div class="msg-avatar">' + avatar + '</div><div class="msg-body"><div class="msg-label">' + label + '</div>' + text.replace(/\n/g, '<br>') + '</div>';
   c.appendChild(div);
   c.scrollTop = c.scrollHeight;
 }
@@ -637,7 +449,7 @@ function appendThinking() {
   const id = 'thinking-' + Date.now();
   div.id = id;
   div.className = 'msg brain';
-  div.innerHTML = '<div class="msg-avatar">🧠</div><div class="msg-body"><div class="msg-label">Brain v2</div><div class="thinking"><span></span><span></span><span></span></div></div>';
+  div.innerHTML = '<div class="msg-avatar">🧠</div><div class="msg-body"><div class="msg-label">Brain</div><div class="thinking"><span></span><span></span><span></span></div></div>';
   c.appendChild(div);
   c.scrollTop = c.scrollHeight;
   return id;
