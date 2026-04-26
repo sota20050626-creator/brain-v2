@@ -1,0 +1,939 @@
+{
+  "date": "2026-04-26",
+  "collected_at": "2026-04-26T04:26:28.752562+00:00",
+  "total": 116,
+  "raw_items": [
+    {
+      "title": "Amateur armed with ChatGPT solves an Erdős problem",
+      "url": "https://www.scientificamerican.com/article/amateur-armed-with-chatgpt-vibe-maths-a-60-year-old-problem/",
+      "score": 160,
+      "comments": 97,
+      "source": "hackernews",
+      "text": ""
+    },
+    {
+      "title": "OpenAI Privacy Filter",
+      "url": "https://openai.com/index/introducing-openai-privacy-filter/",
+      "score": 143,
+      "comments": 24,
+      "source": "hackernews",
+      "text": ""
+    },
+    {
+      "title": "1-Bit Hokusai's \"The Great Wave\" (2023)",
+      "url": "https://www.hypertalking.com/2023/05/08/1-bit-pixel-art-of-hokusais-the-great-wave-off-kanagawa/",
+      "score": 536,
+      "comments": 88,
+      "source": "hackernews",
+      "text": ""
+    },
+    {
+      "title": "DeepSeek-V4 on Day 0: From Fast Inference to Verified RL with SGLang and Miles",
+      "url": "https://www.lmsys.org/blog/2026-04-25-deepseek-v4/",
+      "score": 16,
+      "comments": 0,
+      "source": "hackernews",
+      "text": ""
+    },
+    {
+      "title": "GPT‑5.5 Bio Bug Bounty",
+      "url": "https://openai.com/index/gpt-5-5-bio-bug-bounty/",
+      "score": 139,
+      "comments": 99,
+      "source": "hackernews",
+      "text": ""
+    },
+    {
+      "title": "Plain text has been around for decades and it’s here to stay",
+      "url": "https://unsung.aresluna.org/plain-text-has-been-around-for-decades-and-its-here-to-stay/",
+      "score": 284,
+      "comments": 142,
+      "source": "hackernews",
+      "text": ""
+    },
+    {
+      "title": "Iliad fragment found in Roman-era mummy",
+      "url": "https://www.thehistoryblog.com/archives/75877",
+      "score": 242,
+      "comments": 87,
+      "source": "hackernews",
+      "text": ""
+    },
+    {
+      "title": "Lambda Calculus Benchmark for AI",
+      "url": "https://victortaelin.github.io/lambench/",
+      "score": 135,
+      "comments": 40,
+      "source": "hackernews",
+      "text": ""
+    },
+    {
+      "title": "Agents Aren't Coworkers, Embed Them in Your Software",
+      "url": "https://www.feldera.com/blog/ai-agents-arent-coworkers-embed-them-in-your-software",
+      "score": 41,
+      "comments": 18,
+      "source": "hackernews",
+      "text": ""
+    },
+    {
+      "title": "DeepSeek v4",
+      "url": "https://api-docs.deepseek.com/news/news260424",
+      "score": 2038,
+      "comments": 1554,
+      "source": "hackernews",
+      "text": ""
+    },
+    {
+      "title": "Hokusai and Tesselations",
+      "url": "https://dl.ndl.go.jp/pid/1899550/1/11/",
+      "score": 94,
+      "comments": 14,
+      "source": "hackernews",
+      "text": ""
+    },
+    {
+      "title": "The mail sent to a video game publisher",
+      "url": "https://www.gamefile.news/p/panic-mail-arco-despelote-time-flies-thank-goodness-teeth",
+      "score": 137,
+      "comments": 4,
+      "source": "hackernews",
+      "text": ""
+    },
+    {
+      "title": "Google plans to invest up to $40B in Anthropic",
+      "url": "https://www.bloomberg.com/news/articles/2026-04-24/google-plans-to-invest-up-to-40-billion-in-anthropic",
+      "score": 799,
+      "comments": 798,
+      "source": "hackernews",
+      "text": ""
+    },
+    {
+      "title": "Open source memory layer so any AI agent can do what Claude.ai and ChatGPT do",
+      "url": "https://alash3al.github.io/stash?_v01",
+      "score": 165,
+      "comments": 70,
+      "source": "hackernews",
+      "text": ""
+    },
+    {
+      "title": "Work with the garage door up (2024)",
+      "url": "https://notes.andymatuschak.org/Work_with_the_garage_door_up",
+      "score": 187,
+      "comments": 126,
+      "source": "hackernews",
+      "text": ""
+    },
+    {
+      "title": "GPT-5.5",
+      "url": "https://openai.com/index/introducing-gpt-5-5/",
+      "score": 1559,
+      "comments": 1040,
+      "source": "hackernews",
+      "text": ""
+    },
+    {
+      "title": "Show HN: A Karpathy-style LLM wiki your agents maintain (Markdown and Git)",
+      "url": "https://github.com/nex-crm/wuphf",
+      "score": 228,
+      "comments": 105,
+      "source": "hackernews",
+      "text": ""
+    },
+    {
+      "title": "AI agents that argue with each other to improve decisions",
+      "url": "https://github.com/rockcat/HATS",
+      "score": 26,
+      "comments": 16,
+      "source": "hackernews",
+      "text": ""
+    },
+    {
+      "title": "US special forces soldier arrested after allegedly winning $400k on Maduro raid",
+      "url": "https://www.cnn.com/2026/04/23/politics/us-special-forces-soldier-arrested-maduro-raid-trade",
+      "score": 680,
+      "comments": 736,
+      "source": "hackernews",
+      "text": ""
+    },
+    {
+      "title": "AI Might Be Lying to Your Boss",
+      "url": "https://williamoconnell.me/blog/post/ai-ide/",
+      "score": 14,
+      "comments": 0,
+      "source": "hackernews",
+      "text": ""
+    },
+    {
+      "title": "I cancelled Claude: Token issues, declining quality, and poor support",
+      "url": "https://nickyreinert.de/en/2026/2026-04-24-claude-critics/",
+      "score": 939,
+      "comments": 564,
+      "source": "hackernews",
+      "text": ""
+    },
+    {
+      "title": "Show HN: Browser Harness – Gives LLM freedom to complete any browser task",
+      "url": "https://github.com/browser-use/browser-harness",
+      "score": 118,
+      "comments": 60,
+      "source": "hackernews",
+      "text": ""
+    },
+    {
+      "title": "Hear your agent suffer through your code",
+      "url": "https://github.com/AndrewVos/endless-toil",
+      "score": 210,
+      "comments": 90,
+      "source": "hackernews",
+      "text": ""
+    },
+    {
+      "title": "Email could have been X.400 times better",
+      "url": "https://buttondown.com/blog/x400-vs-smtp-email",
+      "score": 229,
+      "comments": 196,
+      "source": "hackernews",
+      "text": ""
+    },
+    {
+      "title": "Bitwarden CLI compromised in ongoing Checkmarx supply chain campaign",
+      "url": "https://socket.dev/blog/bitwarden-cli-compromised",
+      "score": 862,
+      "comments": 420,
+      "source": "hackernews",
+      "text": ""
+    },
+    {
+      "title": "An update on recent Claude Code quality reports",
+      "url": "https://www.anthropic.com/engineering/april-23-postmortem",
+      "score": 932,
+      "comments": 719,
+      "source": "hackernews",
+      "text": ""
+    },
+    {
+      "title": "Nicholas Carlini – Black-hat LLMs [video]",
+      "url": "https://www.youtube.com/watch?v=1sd26pWhfmg",
+      "score": 19,
+      "comments": 1,
+      "source": "hackernews",
+      "text": ""
+    },
+    {
+      "title": "MiniZinc, constraint modelling language solve discrete optimisation problems",
+      "url": "https://www.minizinc.org",
+      "score": 56,
+      "comments": 0,
+      "source": "hackernews",
+      "text": ""
+    },
+    {
+      "title": "CC-Canary: Detect early signs of regressions in Claude Code",
+      "url": "https://github.com/delta-hq/cc-canary",
+      "score": 66,
+      "comments": 32,
+      "source": "hackernews",
+      "text": ""
+    },
+    {
+      "title": "Seeing Fast and Slow: Learning the Flow of Time in Videos",
+      "url": "http://arxiv.org/abs/2604.21931v1",
+      "score": 0,
+      "comments": 0,
+      "source": "arxiv",
+      "text": "How can we tell whether a video has been sped up or slowed down? How can we generate videos at different speeds? Although videos have been central to modern computer vision research, little attention has been paid to perceiving and controlling the passage of time. In this paper, we study time as a learnable visual concept and develop models for reasoning about and manipulating the flow of time in videos. We first exploit the multimodal cues and temporal structure naturally present in videos to l"
+    },
+    {
+      "title": "Temporal Taskification in Streaming Continual Learning: A Source of Evaluation Instability",
+      "url": "http://arxiv.org/abs/2604.21930v1",
+      "score": 0,
+      "comments": 0,
+      "source": "arxiv",
+      "text": "Streaming Continual Learning (CL) typically converts a continuous stream into a sequence of discrete tasks through temporal partitioning. We argue that this temporal taskification step is not a neutral preprocessing choice, but a structural component of evaluation: different valid splits of the same stream can induce different CL regimes and therefore different benchmark conclusions. To study this effect, we introduce a taskification-level framework based on plasticity and stability profiles, a "
+    },
+    {
+      "title": "Evaluation of Automatic Speech Recognition Using Generative Large Language Models",
+      "url": "http://arxiv.org/abs/2604.21928v1",
+      "score": 0,
+      "comments": 0,
+      "source": "arxiv",
+      "text": "Automatic Speech Recognition (ASR) is traditionally evaluated using Word Error Rate (WER), a metric that is insensitive to meaning. Embedding-based semantic metrics are better correlated with human perception, but decoder-based Large Language Models (LLMs) remain underexplored for this task. This paper evaluates their relevance through three approaches: (1) selecting the best hypothesis between two candidates, (2) computing semantic distance using generative embeddings, and (3) qualitative class"
+    },
+    {
+      "title": "Fine-Tuning Regimes Define Distinct Continual Learning Problems",
+      "url": "http://arxiv.org/abs/2604.21927v1",
+      "score": 0,
+      "comments": 0,
+      "source": "arxiv",
+      "text": "Continual learning (CL) studies how models acquire tasks sequentially while retaining previously learned knowledge. Despite substantial progress in benchmarking CL methods, comparative evaluations typically keep the fine-tuning regime fixed. In this paper, we argue that the fine-tuning regime, defined by the trainable parameter subspace, is itself a key evaluation variable. We formalize adaptation regimes as projected optimization over fixed trainable subspaces, showing that changing the trainab"
+    },
+    {
+      "title": "Seeing Without Eyes: 4D Human-Scene Understanding from Wearable IMUs",
+      "url": "http://arxiv.org/abs/2604.21926v1",
+      "score": 0,
+      "comments": 0,
+      "source": "arxiv",
+      "text": "Understanding human activities and their surrounding environments typically relies on visual perception, yet cameras pose persistent challenges in privacy, safety, energy efficiency, and scalability. We explore an alternative: 4D perception without vision. Its goal is to reconstruct human motion and 3D scene layouts purely from everyday wearable sensors. For this we introduce IMU-to-4D, a framework that repurposes large language models for non-visual spatiotemporal understanding of human-scene d"
+    },
+    {
+      "title": "Long-Horizon Manipulation via Trace-Conditioned VLA Planning",
+      "url": "http://arxiv.org/abs/2604.21924v1",
+      "score": 0,
+      "comments": 0,
+      "source": "arxiv",
+      "text": "Long-horizon manipulation remains challenging for vision-language-action (VLA) policies: real tasks are multi-step, progress-dependent, and brittle to compounding execution errors. We present LoHo-Manip, a modular framework that scales short-horizon VLA execution to long-horizon instruction following via a dedicated task-management VLM. The manager is decoupled from the executor and is invoked in a receding-horizon manner: given the current observation, it predicts a progress-aware remaining pla"
+    },
+    {
+      "title": "The Sample Complexity of Multicalibration",
+      "url": "http://arxiv.org/abs/2604.21923v1",
+      "score": 0,
+      "comments": 0,
+      "source": "arxiv",
+      "text": "We study the minimax sample complexity of multicalibration in the batch setting. A learner observes $n$ i.i.d. samples from an unknown distribution and must output a (possibly randomized) predictor whose population multicalibration error, measured by Expected Calibration Error (ECE), is at most $\\varepsilon$ with respect to a given family of groups. For every fixed $κ&gt; 0$, in the regime $|G|\\le \\varepsilon^{-κ}$, we prove that $\\widetildeΘ(\\varepsilon^{-3})$ samples are necessary and sufficie"
+    },
+    {
+      "title": "Context Unrolling in Omni Models",
+      "url": "http://arxiv.org/abs/2604.21921v1",
+      "score": 0,
+      "comments": 0,
+      "source": "arxiv",
+      "text": "We present Omni, a unified multimodal model natively trained on diverse modalities, including text, images, videos, 3D geometry, and hidden representations. We find that such training enables Context Unrolling, where the model explicitly reasons across multiple modal representations before producing predictions. This process enables the model to aggregate complementary information across heterogeneous modalities, facilitating a more faithful approximation of the shared multimodal knowledge manif"
+    },
+    {
+      "title": "MathDuels: Evaluating LLMs as Problem Posers and Solvers",
+      "url": "http://arxiv.org/abs/2604.21916v1",
+      "score": 0,
+      "comments": 0,
+      "source": "arxiv",
+      "text": "As frontier language models attain near-ceiling performance on static mathematical benchmarks, existing evaluations are increasingly unable to differentiate model capabilities, largely because they cast models solely as solvers of fixed problem sets. We introduce MathDuels, a self-play benchmark in which models occupy dual roles: each authors math problems under adversarial prompting and solves problems authored by every other participant. Problems are produced through a three-stage generation p"
+    },
+    {
+      "title": "Vista4D: Video Reshooting with 4D Point Clouds",
+      "url": "http://arxiv.org/abs/2604.21915v1",
+      "score": 0,
+      "comments": 0,
+      "source": "arxiv",
+      "text": "We present Vista4D, a robust and flexible video reshooting framework that grounds the input video and target cameras in a 4D point cloud. Specifically, given an input video, our method re-synthesizes the scene with the same dynamics from a different camera trajectory and viewpoint. Existing video reshooting methods often struggle with depth estimation artifacts of real-world dynamic videos, while also failing to preserve content appearance and failing to maintain precise camera control for chall"
+    },
+    {
+      "title": "VistaBot: View-Robust Robot Manipulation via Spatiotemporal-Aware View Synthesis",
+      "url": "http://arxiv.org/abs/2604.21914v1",
+      "score": 0,
+      "comments": 0,
+      "source": "arxiv",
+      "text": "Recently, end-to-end robotic manipulation models have gained significant attention for their generalizability and scalability. However, they often suffer from limited robustness to camera viewpoint changes when training with a fixed camera. In this paper, we propose VistaBot, a novel framework that integrates feed-forward geometric models with video diffusion models to achieve view-robust closed-loop manipulation without requiring camera calibration at test time. Our approach consists of three k"
+    },
+    {
+      "title": "When Prompts Override Vision: Prompt-Induced Hallucinations in LVLMs",
+      "url": "http://arxiv.org/abs/2604.21911v1",
+      "score": 0,
+      "comments": 0,
+      "source": "arxiv",
+      "text": "Despite impressive progress in capabilities of large vision-language models (LVLMs), these systems remain vulnerable to hallucinations, i.e., outputs that are not grounded in the visual input. Prior work has attributed hallucinations in LVLMs to factors such as limitations of the vision backbone or the dominance of the language component, yet the relative importance of these factors remains unclear. To resolve this ambiguity, We propose HalluScope, a benchmark to better understand the extent to "
+    },
+    {
+      "title": "From Research Question to Scientific Workflow: Leveraging Agentic AI for Science Automation",
+      "url": "http://arxiv.org/abs/2604.21910v1",
+      "score": 0,
+      "comments": 0,
+      "source": "arxiv",
+      "text": "Scientific workflow systems automate execution -- scheduling, fault tolerance, resource management -- but not the semantic translation that precedes it. Scientists still manually convert research questions into workflow specifications, a task requiring both domain knowledge and infrastructure expertise. We propose an agentic architecture that closes this gap through three layers: an LLM interprets natural language into structured intents (semantic layer); validated generators produce reproducibl"
+    },
+    {
+      "title": "Directional Confusions Reveal Divergent Inductive Biases Through Rate-Distortion Geometry in Human and Machine Vision",
+      "url": "http://arxiv.org/abs/2604.21909v1",
+      "score": 0,
+      "comments": 0,
+      "source": "arxiv",
+      "text": "Humans and modern vision models can reach similar classification accuracy while making systematically different kinds of mistakes - differing not in how often they err, but in who gets mistaken for whom, and in which direction. We show that these directional confusions reveal distinct inductive biases that are invisible to accuracy alone. Using matched human and deep vision model responses on a natural-image categorization task under 12 perturbation types, we quantify asymmetry in confusion matr"
+    },
+    {
+      "title": "Low-Rank Adaptation Redux for Large Models",
+      "url": "http://arxiv.org/abs/2604.21905v1",
+      "score": 0,
+      "comments": 0,
+      "source": "arxiv",
+      "text": "Low-rank adaptation (LoRA) has emerged as the de facto standard for parameter-efficient fine-tuning (PEFT) of foundation models, enabling the adaptation of billion-parameter networks with minimal computational and memory overhead. Despite its empirical success and rapid proliferation of variants, it remains elusive which architectural choices, optimization techniques, and deployment constraints should guide practical method selection. This overview revisits LoRA through the lens of signal proces"
+    },
+    {
+      "title": "f/prompts.chat - f.k.a. Awesome ChatGPT Prompts. Share, discover, and collect prompts from the community. Free and open source — self-host for your organization with complete privacy.",
+      "url": "https://github.com/f/prompts.chat",
+      "score": 160681,
+      "comments": 0,
+      "source": "github_trending",
+      "text": "f.k.a. Awesome ChatGPT Prompts. Share, discover, and collect prompts from the community. Free and open source — self-host for your organization with complete privacy."
+    },
+    {
+      "title": "langgenius/dify - Production-ready platform for agentic workflow development.",
+      "url": "https://github.com/langgenius/dify",
+      "score": 139163,
+      "comments": 0,
+      "source": "github_trending",
+      "text": "Production-ready platform for agentic workflow development."
+    },
+    {
+      "title": "NousResearch/hermes-agent - The agent that grows with you",
+      "url": "https://github.com/NousResearch/hermes-agent",
+      "score": 116952,
+      "comments": 0,
+      "source": "github_trending",
+      "text": "The agent that grows with you"
+    },
+    {
+      "title": "firecrawl/firecrawl - 🔥 The API to search, scrape, and interact with the web for AI",
+      "url": "https://github.com/firecrawl/firecrawl",
+      "score": 112265,
+      "comments": 0,
+      "source": "github_trending",
+      "text": "🔥 The API to search, scrape, and interact with the web for AI"
+    },
+    {
+      "title": "vllm-project/vllm - A high-throughput and memory-efficient inference and serving engine for LLMs",
+      "url": "https://github.com/vllm-project/vllm",
+      "score": 78151,
+      "comments": 0,
+      "source": "github_trending",
+      "text": "A high-throughput and memory-efficient inference and serving engine for LLMs"
+    },
+    {
+      "title": "openclaw/openclaw - Your own personal AI assistant. Any OS. Any Platform. The lobster way. 🦞 ",
+      "url": "https://github.com/openclaw/openclaw",
+      "score": 363986,
+      "comments": 0,
+      "source": "github_trending",
+      "text": "Your own personal AI assistant. Any OS. Any Platform. The lobster way. 🦞 "
+    },
+    {
+      "title": "lobehub/lobehub - The ultimate space for work and life — to find, build, and collaborate with agent teammates that grow with you. We are taking agent harness to the next level — enabling multi-agent collaboration, effortless agent team design, and introducing agents as the unit of work interaction.",
+      "url": "https://github.com/lobehub/lobehub",
+      "score": 75650,
+      "comments": 0,
+      "source": "github_trending",
+      "text": "The ultimate space for work and life — to find, build, and collaborate with agent teammates that grow with you. We are taking agent harness to the next level — enabling multi-agent collaboration, effortless agent team design, and introducing agents as the unit of work interaction."
+    },
+    {
+      "title": "thedotmack/claude-mem - A Claude Code plugin that automatically captures everything Claude does during your coding sessions, compresses it with AI (using Claude's agent-sdk), and injects relevant context back into future sessions.",
+      "url": "https://github.com/thedotmack/claude-mem",
+      "score": 67563,
+      "comments": 0,
+      "source": "github_trending",
+      "text": "A Claude Code plugin that automatically captures everything Claude does during your coding sessions, compresses it with AI (using Claude's agent-sdk), and injects relevant context back into future sessions."
+    },
+    {
+      "title": "hesreallyhim/awesome-claude-code - A curated list of awesome skills, hooks, slash-commands, agent orchestrators, applications, and plugins for Claude Code by Anthropic",
+      "url": "https://github.com/hesreallyhim/awesome-claude-code",
+      "score": 41053,
+      "comments": 0,
+      "source": "github_trending",
+      "text": "A curated list of awesome skills, hooks, slash-commands, agent orchestrators, applications, and plugins for Claude Code by Anthropic"
+    },
+    {
+      "title": "tensorflow/tensorflow - An Open Source Machine Learning Framework for Everyone",
+      "url": "https://github.com/tensorflow/tensorflow",
+      "score": 194882,
+      "comments": 0,
+      "source": "github_trending",
+      "text": "An Open Source Machine Learning Framework for Everyone"
+    },
+    {
+      "title": "「AIを壁打ち相手に銀行級の送金APIを設計する。二重送金を防ぐ『論理の要塞化』プロセス」",
+      "url": "https://zenn.dev/hinaena/articles/b8cc317f31bcc8",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_zenn",
+      "text": "AIを壁打ち相手に銀行級の送金APIを設計する。二重送金を防ぐ『論理の要塞化』プロセス\n「二重送金」という、金融システムにおける最大の禁忌。\n通常、これを防ぐためには膨大な経験と、シニアエンジニアによる血の滲むようなレビューが必要だ。しかし、私は今回、それを「AIとの20往復の対話」だけで解決した。\n重要なのは、AIがコードを書いたことではない。私がAIを「攻撃者」と「防御者」という二つのペルソナに分け、その間で論理の矛盾を徹底的に炙り出し、「状態遷移（State Machine）」という規律によってシステムを支配したことだ。\n本記事では、AIとの知的な死闘を経て、銀行グレードの堅牢..."
+    },
+    {
+      "title": "Masked Autoencoders (MAE) 論文解説 ― なぜ高マスク率と非対称設計が効くのか",
+      "url": "https://zenn.dev/mantis_ryuji/articles/67e096d62c9265",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_zenn",
+      "text": "Masked Autoencoders (MAE) 論文解説 ― なぜ高マスク率と非対称設計が効くのか\nMasked Autoencoders（MAE）は、Vision Transformer 時代の自己教師あり学習を語るうえで外せない論文である。実際、この論文はしばしば「画像版 BERT」として紹介される。もちろん、その説明が完全に誤っているわけではない。入力の一部を隠し、隠した部分を予測するという枠組みだけを見れば、たしかに発想の表面はよく似ている。\nしかし、この理解だけでは MAE の本質をかなり取りこぼす。というのも、MAE の重要性は「画像でも masked modelin..."
+    },
+    {
+      "title": "2026年にCGIでWebアプリを作る",
+      "url": "https://zenn.dev/alarky/articles/cgi-modern-web-app-2026",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_zenn",
+      "text": "CGI は本当に死んだのか？\nCGI と聞いて何を思い浮かべますか。Perl のアクセスカウンター、掲示板スクリプト、cgi-bin ディレクトリ——2000年代の Web 開発を支えた技術ですが、今ではレガシーの代名詞のように扱われています。Ruby 4.0 では cgi が標準ライブラリから削除されるなど、言語レベルで CGI から離れる動きもあります。\nしかし CGI という仕組み自体は死んでいません。Apache は今も CGI をサポートしていますし、レンタルサーバーでは当たり前に使えます。Go は net/http/cgi を標準ライブラリで提供しており、同じ http...."
+    },
+    {
+      "title": "AI時代、エンジニアは「ドメインを兼業する」ようになる",
+      "url": "https://zenn.dev/kkdev92/articles/ai-era-engineer-domain-hybrid",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_zenn",
+      "text": "AI時代、エンジニアは「ドメインを兼業する」ようになる\nいつものツール紹介ではなく、最近考えていることを書いてみます。\nAI時代にエンジニアの役割はどう変わるのか、というテーマです。\n「AIにエンジニアの仕事は奪われるのか」「コードを書く価値は下がるのか」といった論点もありますが、自分の感覚としては、エンジニアという職業がなくなるというより、役割の境界そのものが溶けていく のではないかと思っています。\nこれまでのエンジニアは、ドメインエキスパートに話を聞いて要件に落とし込み、システムを作る存在でした。これからはそれだけでは足りなくなる。AIによって実装コストが下がると、エンジニアはド..."
+    },
+    {
+      "title": "AI を活用した2つの開発フロー エージェント駆動開発 × ドキュメントファースト開発",
+      "url": "https://zenn.dev/m_525/articles/3556bee089853f",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_zenn",
+      "text": "はじめに\n最近、Claude Code や Cursor を使って開発することが増えてきて、「AI との開発って結局どうやるのが正解なんだろう？」とずっと考えてました\nVibe Coding みたいに全部 AI に任せるのも楽だけど、プロダクションで動くものを作ろうとすると品質が担保できない。かといって従来通りに全部自分で書くなら AI 使う意味が薄い\n試行錯誤した結果、フェーズによって開発手法を使い分けるのが一番しっくりきました\n\n なぜ2つに分けるのか\n0→1 と 1→N では、リスクの種類がまったく違う\n\n\n\n観点\n0→1（MVP）\n1→N（機能追加）\n\n\n\n\n既存コード\nない..."
+    },
+    {
+      "title": "RAGとは？仕組みと実装パターンをエンジニア向けに解説",
+      "url": "https://zenn.dev/btncon/articles/899c6e03132015",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_zenn",
+      "text": "はじめに\nRAG（Retrieval-Augmented Generation）は、LLMに外部知識を参照させるアーキテクチャです。\n「ChatGPTに社内の情報を答えさせたい」「最新の情報を含めたい」というニーズに応える手法として、エンタープライズAI活用の中核技術になっています。\n本記事では、RAGの仕組みから実装パターン、選択肢の比較まで技術者向けに解説します。\n\n\n RAGの基本アーキテクチャ\n【インデックス構築フェーズ（Indexing）】\nドキュメント → チャンク分割 → エンベッディング → ベクトルDB保存\n\n【推論フェーズ（Retrieval + Generati..."
+    },
+    {
+      "title": "AIエージェント時代に必要なのは「モデルを信じること」ではなく「行為を統治すること」だ",
+      "url": "https://zenn.dev/mkz0010/articles/bc7b94b515b8b5",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_zenn",
+      "text": "AIエージェント時代に必要なのは「モデルを信じること」ではなく「行為を統治すること」だ\nAIセキュリティの議論は、これまで主に「モデルが何を出力するか」に集中してきました。\n\nハルシネーションを起こさないか\n不適切な出力をしないか\n機密情報を漏らさないか\nプロンプトインジェクションに騙されないか\nモデルの出力は信頼できるか\n\nこれらは今でも重要です。\nしかし、AIが単に文章を生成するだけではなく、ツールを呼び出し、外部システムへアクセスし、人間の代理として処理を実行するようになると、セキュリティ上の問いは変わります。\nAIエージェントが以下のような行為を行う場合を考えます。\n\n社内デ..."
+    },
+    {
+      "title": "NeMo Agent Toolkit 実践運用編 — Guardrails × Langfuse",
+      "url": "https://zenn.dev/himorishige/books/nemo-agent-toolkit-production-ops",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_zenn",
+      "text": "NVIDIA NeMo Agent Toolkit を本番運用品質に引き上げるための続編ハンズオン本。LangGraph による振る舞い設計、NeMo Guardrails と多言語 Safety Guard による安全レール、Langfuse self-hosted による観測・プロンプト管理・コスト追跡・評価データセット管理の 4 本柱を、社内ドキュメント Q&A 題材で一気通貫に構築します。"
+    },
+    {
+      "title": "NIM + Docker ではじめる NeMo Agent Toolkit ハンズオン",
+      "url": "https://zenn.dev/himorishige/books/nemo-agent-toolkit-nim-handson",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_zenn",
+      "text": "NVIDIA NeMo Agent Toolkit を、GPU 不要の NIM と Colima + Docker で一から学ぶハンズオン本。基礎の ReAct エージェントから RAG、マルチエージェント、評価、デプロイまで段階的に積み上げます。"
+    },
+    {
+      "title": "DeepSeek V4 APIマイグレーションガイド — 2026年7月24日の廃止期限前に知っておくべきこと",
+      "url": "https://zenn.dev/agdexai/articles/deepseek-v4-migration-2026",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_zenn",
+      "text": "DeepSeek APIを使っている方は知っておくべき期限があります：2026年7月24日に、レガシーモデル名 deepseek-chat と deepseek-reasoner が廃止されます。\nDeepSeek V4は2026年4月24日にリリースされました。1Mコンテキスト、新しいアテンションアーキテクチャ、エージェンティックコーディングのオープンソースSOTA。本記事では、移行に必要なすべての情報を解説します。\n\n 何が変わったか\nDeepSeek V4は2種類のバリアントがあります：\n\n\n\nモデル\n総パラメータ数\nアクティブパラメータ\nコンテキスト\n用途\n\n\n\n\ndeepsee..."
+    },
+    {
+      "title": "【2026年4月版】ChatGPT・Claude・Gemini 徹底比較",
+      "url": "https://zenn.dev/aipedia/articles/5bdcc55c203d8f",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_zenn",
+      "text": "業務で使う AI ツールを選ぶとき、「機能比較表は見たけど、結局どれが自分の用途に合うか分からない」という壁にぶつかったことはないでしょうか。\n本記事では「ChatGPT・Claude・Gemini 徹底比較」を、AIpedia 編集部が実務で使った結果を 数値ベースで 整理した記事のダイジェストとして共有します。\n\n\n TL;DR\n\n初心者ならChatGPT\nコード・長文ならClaude\n調査とGoogle Workspace連携ならGemini\n1本に絞るなら月¥3,000のChatGPT PlusかClaude Pro\n\n\n\n 詳細\n\n 選ぶ基準：3つのポイント\n\n 基準1：主な使..."
+    },
+    {
+      "title": "ChatGPT PlusのProjectsだけでプログラミング言語を作り始めた",
+      "url": "https://zenn.dev/tkithrta/articles/2b0134084a45d6",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_zenn",
+      "text": "あねタイプ\n!\nいわゆるバイブコーディングで作り始めただけで、私が今まで公開してきたOSSを異なり、今後作り続けるか今のところ未定です。\n\nAneというプログラミング言語を作り始めました。\nhttps://gitlab.com/tkithrta/ane\n\n\nカテゴリ: systems programming language\n\n実行方式: ahead-of-time compiled\n\nプログラミング言語: Python 3.13\n\n影響を受けた言語: Lua (Luau), Rust, Zig\n\nメインバックエンド: ISO C99 (Clang)\n\n型: static, expl..."
+    },
+    {
+      "title": "AIでバズ動画を簡単に作る方法【無料プロンプトあり】",
+      "url": "https://zenn.dev/mofunyan/articles/f35bd8aced8027",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_zenn",
+      "text": "バズる動画を作りたいけど、何から始めればいいかわからない人は多いと思います。\nそんなときに使えるのが、AIです。\nAIを使えば、誰でも簡単に動画のネタや台本を作ることができます。\n\nここでは、すぐに使える簡単なプロンプトを紹介します。\n\n 実際に使えるプロンプト例\n\n ① 短尺動画の台本を作る\n「○○について、30秒の短尺動画の台本を作ってください。最初の3秒で興味を引く構成にしてください。」\n\n ② バズりやすいフックを作る\n「○○のテーマで、視聴者の興味を引く短いフックを10個作ってください。」\n\nこれらはとてもシンプルですが、作業時間を大きく短縮できます。\n\nもっと使えるプロンプト..."
+    },
+    {
+      "title": "AIに頼りすぎて、コードが読めなくなっていないか",
+      "url": "https://zenn.dev/ykohashi/articles/2026-04-23_01",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_zenn",
+      "text": "!\nSo AI is making me Lazy... (Xavier Womack) という記事を読んで、自分の経験と照らし合わせて書いたものです。\n\n\n きっかけ\ndaily.devで流れてきた記事がちょっと刺さった。\nタイトルは「So AI is making me Lazy…（AIのせいで怠惰になってる）」。書いたのは15歳のXavierさんで、コーディング歴5年らしい。年齢に驚きつつ、内容が普通に的を射ていたので、自分の整理も兼ねて書いておきたい。\n自分はエンジニア歴8年ほど。普段からClaude CodeやOpenClaw経由のモデルなど、AIコーディング支援はかなり使い倒..."
+    },
+    {
+      "title": "🧭パワエレエンジニアがPhysical AIを目指す理由",
+      "url": "https://zenn.dev/ziyun510/articles/88efb491f2f484",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_zenn",
+      "text": "はじめに\nはじめまして。Jun です。\nパワーエレクトロニクスの業界で数年、モータドライブの設計・制御に関わってきました。\n…で、いきなりですが、今後のパワエレとAIの融合について 最近めちゃくちゃ考えています。\n私の中でパワエレは揺るがないもので，電気で動いているものにはハード・ソフトの観点で必ずパワエレ技術が使用されていると思っています。\n一方でAIについては今後の可能性について議論されていることが多く，具体的にパワエレとどのように共存していくかが気になっています。\nパワエレ×AI がどんな価値を生むのか，どんなことができる世界になるのかを自分なりに考えたいと思う今日この頃です。..."
+    },
+    {
+      "title": "機械学習論文を毎日自動収集してAIで日本語解説するサイトを作った",
+      "url": "https://zenn.dev/karaagedesu/articles/c433e8675300bc",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_zenn",
+      "text": "機械学習論文を毎日自動収集してAIで日本語解説するサイトを作った\n\n 作ったもの\nMLinfo — arXiv・HuggingFace・GitHubから機械学習・AI関連の論文とリポジトリを毎日自動収集し、AIが日本語で要約・解説するサービスです。\nhttps://mlinfo.vercel.app\n現在 1,700件以上 の論文・リポジトリを収録しています。\n\n\n 作った理由\n機械学習エンジニアとして働いていると、arXivには毎日大量の論文が出るし、GitHubにも面白いリポジトリが次々と登場します。でも英語の論文を毎日チェックするのは正直しんどい。\n「タイトルだけ見て日本語で何..."
+    },
+    {
+      "title": "Embeddingモデルの精度×コスト×速度を同時評価する多軸スコアカード実装ガイド",
+      "url": "https://zenn.dev/0h_n0/articles/e29a6eb94a42a7",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_zenn",
+      "text": "Embeddingモデルの精度×コスト×速度を同時評価する多軸スコアカード実装ガイド\n\n この記事でわかること\n\nMTEBスコアだけでは判断できない理由と、コスト・レイテンシ・ストレージを含む多軸評価の必要性\n2026年4月時点の主要8モデルのAPI料金・次元数・MTEB性能の横断比較データ\nPythonで多軸スコアカードを実装し、用途別にPareto最適なモデルを自動選定する方法\nMatryoshka次元削減×量子化の組み合わせがコストと精度に与える影響の定量データ\n日本語RAGタスクにおけるモデル選定の実測値と、ベンチマークとのギャップ\n\n\n 対象読者\n\n\n想定読者: 中級者〜上..."
+    },
+    {
+      "title": "クラスタリングを避けるためにInfinite Latent Feature Modelを実用化したい",
+      "url": "https://zenn.dev/momen8/articles/6b38bb6fe74255",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_zenn",
+      "text": "実務でのクラスタリングはできれば避けたい\nマーケティングに近い環境でデータサイエンティストをしているもめんです。\n現場で顧客を理解する道具として真っ先に出てくるものがクラスタリングですが、タイトルの通り私はあまり好きではありません。理由はシンプルで、解釈が面倒かつクラスタ数制限がきついからです。\n実務上は解釈できるクラスタ数が望まれるためせいぜい 10 個程度にしなければならない場合が多いですが、顧客はもっと多様に存在しています。（しかも、データをたくさん入れればよいという思い込みから、大量の変数を投入し、部分的にしか違わない似たクラスタを量産する場合も多い）\nということで、クラスタ..."
+    },
+    {
+      "title": "GPUクラウドRunpodを利用するときのTips",
+      "url": "https://zenn.dev/moutend/articles/b56040846a35b1",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_zenn",
+      "text": "はじめに\nRunpodは直感的に使えて便利なのですが、いくつか罠があったのでメモします。なお、Runpodの概要と基本的な使い方については以下の記事にまとめられています。詳細かつ丁寧に書かれた記事ですので一読をお勧めします。\nhttps://zenn.dev/nttdata_tech/articles/4b742038898d4e\n\n Tips 1: CUDAバージョンを明示的に設定しよう\nNVIDIAのGPUを利用するとき、以下のエラーが発生してコンテナの起動に失敗することがあります。ログはダッシュボードでLogs→System→Downloadからダウンロードできます。\nnvid..."
+    },
+    {
+      "title": "Anthropic created a test marketplace for agent-on-agent commerce",
+      "url": "https://techcrunch.com/2026/04/25/anthropic-created-a-test-marketplace-for-agent-on-agent-commerce/",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_techcrunch",
+      "text": "In a recent experiment, Anthropic created a classified marketplace where AI agents represented both buyers and sellers, striking real deals for real goods and real money."
+    },
+    {
+      "title": "Maine&#8217;s governor vetoes data center moratorium",
+      "url": "https://techcrunch.com/2026/04/25/maines-governor-vetoes-data-center-moratorium/",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_techcrunch",
+      "text": "L.D. 307 would have imposed the country’s first statewide moratorium on new data centers — lasting, in this case, until November 1, 2027."
+    },
+    {
+      "title": "OpenAI CEO apologizes to Tumbler Ridge community",
+      "url": "https://techcrunch.com/2026/04/25/openai-ceo-apologizes-to-tumbler-ridge-community/",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_techcrunch",
+      "text": "In a letter to the residents of Tumbler Ridge, Canada, OpenAI CEO Sam Altman said he is “deeply sorry” that his company failed to alert law enforcement about the suspect in a recent mass shooting."
+    },
+    {
+      "title": "Why Cohere is merging with Aleph Alpha",
+      "url": "https://techcrunch.com/2026/04/25/why-cohere-is-merging-with-aleph-alpha/",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_techcrunch",
+      "text": "Canadian AI startup Cohere is taking over Germany-based Aleph Alpha with support from Lidl’s owner, Schwarz Group. With the blessing of their governments, the companies intend to offer a sovereign alternative to enterprises in an AI landscape dominated by American players."
+    },
+    {
+      "title": "Why Tokyo is the most important tech destination of 2026",
+      "url": "https://techcrunch.com/2026/04/25/why-tokyo-is-the-most-important-tech-destination-of-2026/",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_techcrunch",
+      "text": "SusHi Tech Tokyo 2026 has four tightly defined technology domains, each backed by live demonstrations, dedicated exhibit floors, and sessions featuring the people actually building and funding these technologies globally."
+    },
+    {
+      "title": "Railway secures $100 million to challenge AWS with AI-native cloud infrastructure",
+      "url": "https://venturebeat.com/infrastructure/railway-secures-usd100-million-to-challenge-aws-with-ai-native-cloud",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_venturebeat",
+      "text": "Railway, a San Francisco-based cloud platform that has quietly amassed two million developers without spending a dollar on marketing, announced Thursday that it raised $100 million in a Series B funding round, as surging demand for artificial intelligence applications exposes the limitations of lega"
+    },
+    {
+      "title": "Claude Code costs up to $200 a month. Goose does the same thing for free.",
+      "url": "https://venturebeat.com/infrastructure/claude-code-costs-up-to-usd200-a-month-goose-does-the-same-thing-for-free",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_venturebeat",
+      "text": "The artificial intelligence coding revolution comes with a catch: it&#x27;s expensive.Claude Code, Anthropic&#x27;s terminal-based AI agent that can write, debug, and deploy code autonomously, has captured the imagination of software developers worldwide. But its pricing — ranging from $20 to $200 p"
+    },
+    {
+      "title": "Listen Labs raises $69M after viral billboard hiring stunt to scale AI customer interviews",
+      "url": "https://venturebeat.com/technology/listen-labs-raises-usd69m-after-viral-billboard-hiring-stunt-to-scale-ai",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_venturebeat",
+      "text": "Alfred Wahlforss was running out of options. His startup, Listen Labs, needed to hire over 100 engineers, but competing against Mark Zuckerberg&#x27;s $100 million offers seemed impossible. So he spent $5,000 — a fifth of his marketing budget — on a billboard in San Francisco displaying what looked "
+    },
+    {
+      "title": "Salesforce rolls out new Slackbot AI agent as it battles Microsoft and Google in workplace AI",
+      "url": "https://venturebeat.com/technology/salesforce-rolls-out-new-slackbot-ai-agent-as-it-battles-microsoft-and",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_venturebeat",
+      "text": "Salesforce on Tuesday launched an entirely rebuilt version of Slackbot, the company&#x27;s workplace assistant, transforming it from a simple notification tool into what executives describe as a fully powered AI agent capable of searching enterprise data, drafting documents, and taking action on beh"
+    },
+    {
+      "title": "Anthropic launches Cowork, a Claude Desktop agent that works in your files — no coding required",
+      "url": "https://venturebeat.com/technology/anthropic-launches-cowork-a-claude-desktop-agent-that-works-in-your-files-no",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_venturebeat",
+      "text": "Anthropic released Cowork on Monday, a new AI agent capability that extends the power of its wildly successful Claude Code tool to non-technical users — and according to company insiders, the team built the entire feature in approximately a week and a half, largely using Claude Code itself.The launc"
+    },
+    {
+      "title": "Three reasons why DeepSeek’s new model matters",
+      "url": "https://www.technologyreview.com/2026/04/24/1136422/why-deepseeks-v4-matters/",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_mit_review",
+      "text": "On Friday, Chinese AI firm DeepSeek released a preview of V4, its long-awaited new flagship model. Notably, the model can process much longer prompts than its last generation, thanks to a new design that helps it handle large amounts of text more efficiently. Like DeepSeek’s previous models, V4 is o"
+    },
+    {
+      "title": "The Download: supercharged scams and studying AI healthcare",
+      "url": "https://www.technologyreview.com/2026/04/24/1136400/the-download-supercharged-scams-questionable-ai-healthcare/",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_mit_review",
+      "text": "This is today&#8217;s edition of The Download, our weekday newsletter that provides a daily dose of what&#8217;s going on in the world of technology. We’re in a new era of AI-driven scams When ChatGPT was released in late 2022, it showed how easily generative AI could create human-like text. This qu"
+    },
+    {
+      "title": "Health-care AI is here. We don’t know if it actually helps patients.",
+      "url": "https://www.technologyreview.com/2026/04/24/1136352/health-care-ai-dont-know-actually-helps-patients/",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_mit_review",
+      "text": "I don’t need to tell you that AI is everywhere. Or that it is being used, increasingly, in hospitals. Doctors are using AI to help them with notetaking. AI-based tools are trawling through patient records, flagging people who may require certain support or treatments. They are also used to interpret"
+    },
+    {
+      "title": "The Download: introducing the Nature issue",
+      "url": "https://www.technologyreview.com/2026/04/23/1136346/the-download-introducing-nature-issue/",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_mit_review",
+      "text": "This is today&#8217;s edition of The Download, our weekday newsletter that provides a daily dose of what&#8217;s going on in the world of technology. Introducing: the Nature issue When we talk about “nature,” we usually mean something untouched by humans. But little of that world exists today.&#160;"
+    },
+    {
+      "title": "The Download: introducing the 10 Things That Matter in AI Right Now",
+      "url": "https://www.technologyreview.com/2026/04/22/1136310/the-download-10-things-that-matter-in-ai-right-now/",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_mit_review",
+      "text": "This is today&#8217;s edition of The Download, our weekday newsletter that provides a daily dose of what&#8217;s going on in the world of technology. Introducing: 10 Things That Matter in AI Right Now What actually matters in AI right now? It’s getting harder to tell amid the constant launches, hype"
+    },
+    {
+      "title": "What Anthropic’s Mythos Means for the Future of Cybersecurity",
+      "url": "https://spectrum.ieee.org/ai-cybersecurity-mythos",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_ieee",
+      "text": "Two weeks ago, Anthropic announced that its new model, Claude Mythos Preview, can autonomously find and weaponize software vulnerabilities, turning them into working exploits without expert guidance. These were vulnerabilities in key software like operating systems and internet infrastructure that t"
+    },
+    {
+      "title": "AI Designs Thermoelectric Generators 10,000 Times Faster Than We Can",
+      "url": "https://spectrum.ieee.org/ai-designed-thermoelectric-generator",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_ieee",
+      "text": "Waste heat is everywhere: car engines, industrial machinery, kitchen appliances—even your own body. Some of that lost energy can be converted into electricity using thermoelectric generators: compact, solid-state devices that produce power directly from temperature differences without the need for s"
+    },
+    {
+      "title": "AI Agent Designs a RISC-V CPU Core From Scratch",
+      "url": "https://spectrum.ieee.org/ai-chip-design",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_ieee",
+      "text": "In 2020, researchers fine-tuned a GPT-2 model to design fragments of logic circuits; in 2023, researchers used GPT-4 to help design an 8-bit processor with a novel instruction set; by 2024, a variety of LLMs could design and test chips with basic functionality, like dice rolls (though often these we"
+    },
+    {
+      "title": "Optical Fiber Networks Can Keep Rail Networks Safe",
+      "url": "https://spectrum.ieee.org/distributed-acoustic-sensing-trains-railways",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_ieee",
+      "text": "This article is part of our exclusive IEEE Journal Watch series in partnership with IEEE Xplore.\nRail networks are vast, which makes it difficult to conduct comprehensive, continuous safety monitoring. Researchers in China have suggested analyzing the vibrations of existing fiber cables buried under"
+    },
+    {
+      "title": "​Boston Dynamics and Google DeepMind Teach Spot to Reason​",
+      "url": "https://spectrum.ieee.org/boston-dynamics-spot-google-deepmind",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_ieee",
+      "text": "The amazing and frustrating thing about robots is that they can do almost anything you want them to do, as long as you know how to ask properly. In the not-so-distant past, asking properly meant writing code, and while we’ve thankfully moved beyond that brittle constraint, there’s still an irritatin"
+    },
+    {
+      "title": "Introducing GPT-5.5",
+      "url": "https://openai.com/index/introducing-gpt-5-5",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_openai",
+      "text": "Introducing GPT-5.5, our smartest model yet—faster, more capable, and built for complex tasks like coding, research, and data analysis across tools."
+    },
+    {
+      "title": "GPT-5.5 System Card",
+      "url": "https://openai.com/index/gpt-5-5-system-card",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_openai",
+      "text": ""
+    },
+    {
+      "title": "Codex settings",
+      "url": "https://openai.com/academy/codex-settings",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_openai",
+      "text": "Learn how to configure Codex settings, including personalization, detail level, and permissions, to run tasks smoothly and customize your workflow."
+    },
+    {
+      "title": "Making ChatGPT better for clinicians",
+      "url": "https://openai.com/index/making-chatgpt-better-for-clinicians",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_openai",
+      "text": "OpenAI makes ChatGPT for Clinicians free for verified U.S. physicians, nurse practitioners, and pharmacists, supporting clinical care, documentation, and research."
+    },
+    {
+      "title": "8 Gemini tips for organizing your space (and life)",
+      "url": "https://blog.google/products-and-platforms/products/gemini/gemini-spring-cleaning-tips/",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_google_ai",
+      "text": "&lt;img src=\"https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Gemini_Spring_Cleaning_hero.max-600x600.format-webp.webp\"&gt;Organize your home and digital space with Gemini. Use AI-powered tips for cleaning schedules, inbox decluttering, seasonal chores."
+    },
+    {
+      "title": "Here’s how our TPUs power increasingly demanding AI workloads.",
+      "url": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/what-is-a-tpu/",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_google_ai",
+      "text": "&lt;img src=\"https://storage.googleapis.com/gweb-uniblog-publish-prod/images/What_is_a_TPU_social.max-600x600.format-webp.webp\"&gt;Learn how Google’s TPUs power increasingly demanding AI workloads with this new video."
+    },
+    {
+      "title": "Elevating Austria: Google invests in its first data center in the Alps.",
+      "url": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/google-data-center-austria/",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_google_ai",
+      "text": "&lt;img src=\"https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Google_Kronstorf_Data_Center_1.max-600x600.format-webp.webp\"&gt;Google has been a proud part of Austria’s landscape for years, and today, we’re announcing our first data center in Kronstorf, generating 100 direct jobs. This"
+    },
+    {
+      "title": "We're launching two specialized TPUs for the agentic era.",
+      "url": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/tpus-8t-8i-cloud-next/",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_google_ai",
+      "text": "&lt;img src=\"https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Were_launching_two_TPUs_social.max-600x600.format-webp.webp\"&gt;The eighth generation of Google’s TPU includes two specialized chips that will power the future of AI."
+    },
+    {
+      "title": "3 new ways Ads Advisor is making Google Ads safer and faster",
+      "url": "https://blog.google/products/ads-commerce/ads-advisor-google-ads/",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_google_ai",
+      "text": "&lt;img src=\"https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Road_to_GML_Master-Header.max-600x600.format-webp.webp\"&gt;Three new agentic safety and policy features integrated into Ads Advisor will help protect and streamline your Google Ads account."
+    },
+    {
+      "title": "Decoupled DiLoCo: A new frontier for resilient, distributed AI training",
+      "url": "https://deepmind.google/blog/decoupled-diloco/",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_deepmind",
+      "text": ""
+    },
+    {
+      "title": "Partnering with industry leaders to accelerate AI transformation",
+      "url": "https://deepmind.google/blog/partnering-with-industry-leaders-to-accelerate-ai-transformation/",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_deepmind",
+      "text": "Google DeepMind partners with global consultancies to bring the power of frontier AI to organizations around the world."
+    },
+    {
+      "title": "Gemini 3.1 Flash TTS: the next generation of expressive AI speech",
+      "url": "https://deepmind.google/blog/gemini-3-1-flash-tts-the-next-generation-of-expressive-ai-speech/",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_deepmind",
+      "text": "Our newest audio model introduces granular audio tags that give you precise control to direct AI speech for expressive audio generation."
+    },
+    {
+      "title": "Gemini Robotics-ER 1.6: Powering real-world robotics tasks through enhanced embodied reasoning",
+      "url": "https://deepmind.google/blog/gemini-robotics-er-1-6/",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_deepmind",
+      "text": "Gemini Robotics ER 1.6: Enhancing spatial reasoning and multi-view understanding for autonomous robotics."
+    },
+    {
+      "title": "Gemma 4: Byte for byte, the most capable open models",
+      "url": "https://deepmind.google/blog/gemma-4-byte-for-byte-the-most-capable-open-models/",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_deepmind",
+      "text": "Gemma 4: Our most intelligent open models to date, purpose-built for advanced reasoning and agentic workflows."
+    },
+    {
+      "title": "Gradient-based Planning for World Models at Longer Horizons",
+      "url": "http://bair.berkeley.edu/blog/2026/04/20/grasp/",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_berkeley_ai",
+      "text": "&lt;!-- twitter --&gt;\n&lt;meta name=&quot;twitter:title&quot; content=&quot;Gradient-based Planning for World Models at Longer Horizons&quot; /&gt;\n\n&lt;meta name=&quot;twitter:card&quot; content=&quot;summary_large_image&quot; /&gt;\n\n&lt;meta name=&quot;twitter:image&quot; content=&quot;https://ba"
+    },
+    {
+      "title": "Identifying Interactions at Scale for LLMs",
+      "url": "http://bair.berkeley.edu/blog/2026/03/13/spex/",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_berkeley_ai",
+      "text": "&lt;!-- twitter --&gt;\n&lt;meta name=&quot;twitter:title&quot; content=&quot;Identifying Interactions at Scale for LLMs&quot; /&gt;\n\n&lt;meta name=&quot;twitter:card&quot; content=&quot;summary_large_image&quot; /&gt;\n\n&lt;meta name=&quot;twitter:image&quot; content=&quot;https://bair.berkeley.edu/s"
+    },
+    {
+      "title": "Information-Driven Design of Imaging Systems",
+      "url": "http://bair.berkeley.edu/blog/2026/01/10/information-driven-imaging/",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_berkeley_ai",
+      "text": "&lt;!--\nThese are comments in HTML. The above header text is needed to format the\ntitle, authors, etc. The &quot;information-driven-imaging&quot; is the representative image\nthat we use for each post for tweeting (see below as well) and for the\nemails to subscribers.\n\nThe `static/blog` directory is "
+    },
+    {
+      "title": "RL without TD learning",
+      "url": "http://bair.berkeley.edu/blog/2025/11/01/rl-without-td-learning/",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_berkeley_ai",
+      "text": "&lt;!-- twitter --&gt;\n&lt;meta name=&quot;twitter:title&quot; content=&quot;RL without TD learning&quot; /&gt;\n\n&lt;meta name=&quot;twitter:card&quot; content=&quot;summary_large_image&quot; /&gt;\n\n&lt;meta name=&quot;twitter:image&quot; content=&quot;https://bair.berkeley.edu/static/blog/rl-withou"
+    },
+    {
+      "title": "What exactly does word2vec learn?",
+      "url": "http://bair.berkeley.edu/blog/2025/09/01/qwem-word2vec-theory/",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_berkeley_ai",
+      "text": "&lt;!-- twitter --&gt;\n&lt;meta name=&quot;twitter:title&quot; content=&quot;What exactly does word2vec learn? A complete theory&quot; /&gt;\n\n&lt;meta name=&quot;twitter:card&quot; content=&quot;summary_large_image&quot; /&gt;\n\n&lt;meta name=&quot;twitter:image&quot; content=&quot;https://bair.berke"
+    },
+    {
+      "title": "LinkBERT: Improving Language Model Training with Document Link",
+      "url": "/blog/linkbert/",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_stanford_ai",
+      "text": "&lt;h3 id=&quot;language-model-pretraining&quot;&gt;&lt;strong&gt;Language Model Pretraining&lt;/strong&gt;&lt;/h3&gt;\n&lt;p&gt;Language models (LMs), like BERT &lt;sup id=&quot;fnref:1&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/s"
+    },
+    {
+      "title": "Stanford AI Lab Papers and Talks at ACL 2022",
+      "url": "/blog/acl-2022/",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_stanford_ai",
+      "text": "&lt;p&gt;&lt;img class=&quot;postimage_75&quot; src=&quot;/blog/assets/img/posts/2022-05-25-acl-2022/logo.png&quot; /&gt;&lt;/p&gt;\n\n&lt;p&gt;The &lt;a href=&quot;https://www.2022.aclweb.org/&quot;&gt;60th Annual Meeting of the Association for Computational Linguistics&lt;/a&gt; (ACL) 2022 is taking"
+    },
+    {
+      "title": "Discovering the systematic errors made by machine learning models",
+      "url": "/blog/domino/",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_stanford_ai",
+      "text": "&lt;h1 id=&quot;discovering-systematic-errors-with-cross-modal-embeddings&quot;&gt;Discovering systematic errors with cross-modal embeddings&lt;/h1&gt;\n\n&lt;blockquote&gt;\n  &lt;p&gt;In this blog post, we introduce Domino, a new approach for discovering systematic errors made by machine learning mod"
+    },
+    {
+      "title": "Grading Complex Interactive Coding Programs with Reinforcement Learning",
+      "url": "/blog/play-to-grade/",
+      "score": 0,
+      "comments": 0,
+      "source": "rss_stanford_ai",
+      "text": "&lt;script type=&quot;text/javascript&quot; src=&quot;https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML&quot;&gt;&lt;/script&gt;\n\n&lt;p&gt;&lt;strong&gt;[Summary] tl;dr:&lt;/strong&gt;\nA tremendous amount of effort has been poured into training AI algorithms to com"
+    }
+  ],
+  "summary": null,
+  "summarized_items": [],
+  "digest": "本日はデータなし",
+  "top_tags": {}
+}
